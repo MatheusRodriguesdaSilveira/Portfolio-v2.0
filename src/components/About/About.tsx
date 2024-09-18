@@ -65,20 +65,16 @@ export const Step = () => {
                 </span>
               </button>
 
-              <div className="flex justify-center items-center rounded-full p-0.5 mb-1 max-sm:mb-0 max-sm:justify-center bg-gradient-to-br from-cyan-400 to-blue-900 group-hover:from-cyan-800 group-hover:to-blue-900 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800 duration-300">
-                <button className="group/button relative inline-flex h-12 w-12 max-sm:h-9 max-sm:w-9  items-center justify-center overflow-hidden max-sm:px-2 max-sm:py-1.5 ease-in bg-gray-900 rounded-full group-hover:bg-opacity-0 duration-150 font-medium text-white transition-all hover:w-[175px] lg:h-10 lg:w-10 xl:h-12 xl:w-12">
+              <div className="flex justify-center items-center rounded-full p-0.5 mb-1 max-sm:mb-1.5 max-sm:justify-center bg-gradient-to-br from-cyan-400 to-blue-900 group-hover:from-cyan-800 group-hover:to-blue-900 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800 duration-300">
+                <button className="group/button relative inline-flex max-sm:h-[54px] max-sm:w-[54px] max-sm:px-4 max-sm:py-3.5 lg:h-10 lg:w-10 xl:h-12 xl:w-12 items-center justify-center overflow-hidden ease-in bg-gray-900 rounded-full group-hover:bg-opacity-0 duration-150 font-medium text-white transition-all hover:w-[175px]">
                   <span className="justify-center items-center flex">
                     <p className="flex gap-1 whitespace-nowrap text-sm opacity-0 transition-all duration-150 group-hover/button:-translate-x-2.5 group-hover/button:opacity-100">
-                      <a
-                        href="/curriculo/CV-Matheus.pdf"
-                        download="CV-Matheus.pdf"
-                        target="_blank"
-                      >
+                      <a href="/.pdf" download="CV-Matheus.pdf" target="_blank">
                         Link to my CV
                       </a>
                       <File className="size-4 mb-1" />
                     </p>
-                    <div className="absolute right-3.5 max-sm:right-2 lg:right-2 xl:right-3.5">
+                    <div className="absolute right-3.5 max-sm:right-4 lg:right-2 xl:right-3.5">
                       <MoveRight className="size-5" />
                     </div>
                   </span>

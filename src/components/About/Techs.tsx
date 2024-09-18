@@ -22,15 +22,15 @@ const logos = [
 
 export function ActionsGrid() {
   return (
-    <div className="w-full flex flex-col justify-center items-center mb-20 mt-[-30px]">
-      <div className="flex justify-center items-center mt-2">
-        <h2 className="text-xl md:text-3xl bg-gradient-to-r from-sky-600 via-sky-400 to-sky-800 bg-clip-text text-transparent">
+    <div className="w-full flex flex-col justify-center items-center mb-20 mt-[-40px]">
+      <div className="flex justify-center items-center mt-2 space-x-2">
+        <h2 className="text-xl md:text-3xl bg-gradient-to-r from-sky-600 via-sky-400 to-sky-800 bg-clip-text text-transparent leading-tight">
           Skills
         </h2>
-        <span>
-          <Ampersand className="text-zinc-400 size-7 mx-2" />
+        <span className="flex items-center">
+          <Ampersand className="text-zinc-400 size-7 max-sm:size-5 mx-2" />
         </span>
-        <h2 className="text-xl md:text-3xl bg-gradient-to-r from-sky-600 via-sky-400 to-sky-800 bg-clip-text text-transparent">
+        <h2 className="text-xl md:text-3xl bg-gradient-to-r from-sky-600 via-sky-400 to-sky-800 bg-clip-text text-transparent leading-tight">
           Technologies
         </h2>
       </div>
