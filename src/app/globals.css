@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #09090b;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+/* Header */
+header a {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  transition: 2.2s;
+}
+
+header a:hover {
+  color: #fff;
+  transform: scale(1.09);
+}
+
+header nav ul {
+  list-style-type: none;
+}
+
+header nav li {
+  display: inline-block;
+  padding: 0 40px;
+}
+
+nav ul li a:hover {
+  color: #00f2ff;
+}
+
+nav ul li a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #00ffff;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+nav ul li a:hover::before {
+  visibility: visible;
+  width: 100%;
+}
+
+/* Projects */
+.portfolio-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  width: 100%;
+  margin: 10px;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.row {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.row img {
+  max-width: 400px;
+  min-width: 100%;
+  min-height: 355px;
+  max-height: 355px;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s;
+}
+
+.layer {
+  width: 100%;
+  height: 0;
+  background: rgba(255, 255, 255, 0.743);
+  position: absolute;
+  border-radius: 10px;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 40px;
+  transition: height 0.5s;
+  box-sizing: border-box;
+}
+
+.layer i {
+  color: black;
+  margin-top: 10px;
+  font-size: 20px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row:hover img {
+  transform: scale(1.1);
+}
+
+.row:hover .layer {
+  height: 100%;
+}
+
+/* img flutuar */
+@keyframes flutuar {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-55px);
+  }
+}
+
+img {
+  animation: flutuar 2s ease-in-out infinite alternate;
+}
+
+/* Bounce */
+@keyframes custom-bounce {
+  0%,
+  100% {
+    transform: translateY(0px);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(9px);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.bounce-custom {
+  animation: custom-bounce 1s infinite;
+}
