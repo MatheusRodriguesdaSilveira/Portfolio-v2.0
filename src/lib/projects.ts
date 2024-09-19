@@ -46,6 +46,17 @@ export const projects = [
     },
     {
       id: 4,
+      image: "/in orbit.jpeg",
+      alt: "in orbit",
+      title: "In.Orbit",
+      description:
+        "Aplicação web que permite aos usuários adicionar metas com base nos dias da semana, onde essa apliação usa um backend feito em Node Js.",
+      techStack: "React | Node Js | TypeScript | TailwindCss",
+      liveLink: "https://in-orbit-frontend-one.vercel.app",
+      repoLink: "https://github.com/MatheusRodriguesdaSilveira/In.Orbit-Frontend",
+    },
+    {
+      id: 4,
       image: "/task list.png",
       alt: "task list",
       title: "Task List",
@@ -64,10 +75,10 @@ export const projects = [
         "Aplicação web que permite aos usuários adicionar, visualizar e editar, remover alunos de uma lista de notas.",
       techStack: "React | Next | TypeScript | TailwindCss",
       liveLink: "https://grade-table.vercel.app",
-      repoLink: "https://github.com/MatheusRodriguesdaSilveira/Grade-Table",
+      repoLink: "https://github.com/MatheusRodriguesdaSilveira/Grade-Table"
     },
     {
-      id: 6,
+      id: 7,
       image: "/weather app.jpeg",
       alt: "weather app",
       title: "Project Sushi Shop",
