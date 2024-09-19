@@ -1,4 +1,5 @@
 "use client";
+import HyperText from "@/components/magicui/hyper-text";
 import { Ampersand, CodeXml } from "lucide-react";
 import { FaReact, FaHtml5, FaGithub, FaGitAlt } from "react-icons/fa";
 import {
@@ -23,16 +24,13 @@ const logos = [
 export function ActionsGrid() {
   return (
     <div className="w-full flex flex-col justify-center items-center mb-20 mt-[-40px]">
-      <div className="flex justify-center items-center mt-2 space-x-2">
-        <h2 className="text-xl md:text-3xl bg-gradient-to-r from-sky-600 via-sky-400 to-sky-800 bg-clip-text text-transparent leading-tight">
-          Skills
-        </h2>
-        <span className="flex items-center">
-          <Ampersand className="text-zinc-400 size-7 max-sm:size-5 mx-2" />
-        </span>
-        <h2 className="text-xl md:text-3xl bg-gradient-to-r from-sky-600 via-sky-400 to-sky-800 bg-clip-text text-transparent leading-tight">
-          Technologies
-        </h2>
+      <div className="flex justify-center items-center mt-2 space-x-2 leading-height ">
+        <HyperText className="text-xl md:text-3xl text-white" text="Skills" />
+        <span className="text-white text-lg max-sm:text-sm">|</span>
+        <HyperText
+          className="text-xl md:text-3xl text-white"
+          text="Technologies"
+        />
       </div>
 
       <div className="mx-auto w-full px-4 md:px-8">

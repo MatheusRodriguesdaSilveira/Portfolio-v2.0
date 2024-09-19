@@ -15,7 +15,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
         <div className="flex flex-col gap-6 max-w-2xl">
           <div className="flex flex-col items-start">
             <BlurFade delay={0.25 * 1.5} inView>
-              <h1 className="text-zinc-400 text-6xl font-medium max-sm:text-3xl lg:text-5xl xl:text-6xl flex gap-4 max-sm:gap-1 mb-1.5 px-1">
+              <h1 className="text-zinc-200 text-6xl font-medium max-sm:text-3xl lg:text-5xl xl:text-6xl flex gap-4 max-sm:gap-1 mb-1.5 px-1">
                 FRONTEND
                 <div className="flex mt-2 gap-2 max-sm:gap-0.5 max-sm:px-2 max-sm:mt-[-8px]">
                   <button
@@ -57,7 +57,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
           </div>
           <div>
             <BlurFade delay={0.25 * 1.2} inView>
-              <p className="text-zinc-400 leading-loose text-xl mb-5 max-sm:text-sm lg:text-lg xl:text-xl">
+              <p className="text-zinc-200 leading-loose text-xl mb-5 max-sm:text-sm lg:text-lg xl:text-xl">
                 Olá 👋 meu nome é Matheus, tenho 19 anos e sou Desenvolvedor
                 Frontend. Estou em busca de novas oportunidades na área de
                 tecnologia, onde possa aplicar e expandir minhas habilidades
@@ -103,14 +103,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
 
         <div className="flex w-[500px] max-sm:w-[200px] lg:w-[400px] xl:w-[500px] max-sm:mt-32">
           <BlurFade delay={0.25 * 1.6} inView>
-            <Image
-              src={Code}
-              alt="code"
-              className="rounded-lg"
-              style={{
-                maskImage: `linear-gradient(to top, transparent, blue 10%)`,
-              }}
-            />
+            <Image src={Code} alt="code" className="rounded-lg" />
           </BlurFade>
         </div>
       </div>

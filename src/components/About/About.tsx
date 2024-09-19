@@ -25,21 +25,21 @@ export const Step = () => {
           </div>
 
           <div className="txt-about-me text-center lg:text-left max-sm:m-5">
-            <h2 className="text-4xl max-sm:text-3xl text-zinc-400 mb-8 max-sm:m-10 text-nowrap">
+            <h2 className="text-4xl max-sm:text-3xl text-zinc-200 mb-8 max-sm:m-10 text-nowrap">
               <span className="bg-gradient-to-r from-sky-500 via-sky-300 to-sky-800 bg-clip-text text-transparent block">
                 Hello!
               </span>{" "}
               I'm Matheus Rodrigues
             </h2>
 
-            <p className="text-zinc-400 max-sm:m-10 mb-5">
+            <p className="text-zinc-200 max-sm:m-10 mb-5">
               Sou estudante de Análise e Desenvolvimento de Sistemas e estou à
               procura de oportunidades na área da Tecnologia. Meu foco é colocar
               minhas habilidades técnicas em prática, buscando aprimorá-las em
               um ambiente colaborativo e inovador. Estou empenhado em
               desenvolver minhas habilidades profissionais e contribuir de forma
-              significativa para o sucesso da equipe e dos projetos da
-              empresa.👨🏻‍💻.
+              significativa para o sucesso da equipe e dos projetos da empresa
+              👨🏻‍💻.
             </p>
 
             <div className="flex items-center gap-3 max-sm:mb-10 max-sm:justify-center max-lg:justify-center">
@@ -69,7 +69,11 @@ export const Step = () => {
                 <button className="group/button relative inline-flex max-sm:h-[54px] max-sm:w-[54px] max-sm:px-4 max-sm:py-3.5 lg:h-10 lg:w-10 xl:h-12 xl:w-12 items-center justify-center overflow-hidden ease-in bg-gray-900 rounded-full group-hover:bg-opacity-0 duration-150 font-medium text-white transition-all hover:w-[175px]">
                   <span className="justify-center items-center flex">
                     <p className="flex gap-1 whitespace-nowrap text-sm opacity-0 transition-all duration-150 group-hover/button:-translate-x-2.5 group-hover/button:opacity-100">
-                      <a href="/.pdf" download="CV-Matheus.pdf" target="_blank">
+                      <a
+                        href="/CV-Matheus.pdf"
+                        download="CV-Matheus.pdf"
+                        target="_blank"
+                      >
                         Link to my CV
                       </a>
                       <File className="size-4 mb-1" />
