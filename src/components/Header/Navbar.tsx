@@ -8,7 +8,7 @@ interface NavBarProps {
 
 export const NavBar = ({ scrollToAbout, scrollToProjects }: NavBarProps) => {
   return (
-    <header className="flex justify-center items-center m-12 rounded-full w-auto h-20 ">
+    <header className="flex justify-center items-center m-12 rounded-full w-auto h-20">
       <div className="flex justify-center items-center">
         <Image
           src={Logo}

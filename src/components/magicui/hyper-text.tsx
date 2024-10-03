@@ -70,7 +70,7 @@ export default function HyperText({
     if (!trigger) {
       const timeout = setTimeout(() => {
         triggerAnimation(); // Reinicia a animação após 1 segundo
-      }, 3000);
+      }, 1000);
       return () => clearTimeout(timeout);
     }
   }, [trigger]);

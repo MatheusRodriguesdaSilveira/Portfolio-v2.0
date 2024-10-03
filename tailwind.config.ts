@@ -38,7 +38,7 @@ const config = {
       },
       },
       animation: {
-        'logo-cloud': 'logo-cloud 30s linear infinite', 
+        'logo-cloud': 'logo-cloud 20s linear infinite', 
     },
   },
 },

@@ -1,15 +1,17 @@
 "use client";
 import HyperText from "@/components/magicui/hyper-text";
-import { Ampersand, CodeXml } from "lucide-react";
+import { CodeXml } from "lucide-react";
 import { FaReact, FaHtml5, FaGithub, FaGitAlt } from "react-icons/fa";
 import {
   SiJavascript,
   SiTailwindcss,
   SiTypescript,
   SiNextdotjs,
+  SiNodedotjs,
 } from "react-icons/si";
 
 const logos = [
+  { name: "Node.js", icon: SiNodedotjs },
   { name: "Next.js", icon: SiNextdotjs },
   { name: "React", icon: FaReact },
   { name: "JavaScript", icon: SiJavascript },
@@ -53,6 +55,8 @@ export function ActionsGrid() {
 
                   const colorClass = (() => {
                     switch (logo.name) {
+                      case "Node.js":
+                        return "text-green-500";
                       case "React":
                         return "text-cyan-500";
                       case "JavaScript":

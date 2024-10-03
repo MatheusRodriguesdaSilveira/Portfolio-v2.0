@@ -11,8 +11,8 @@ interface BodyProps {
 export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
   return (
     <>
-      <div className="flex justify-between items-center mt-20 w-auto h-auto mx-24 px-6 py-20 max-sm:mx-10 max-sm:py-5 max-sm:flex-col">
-        <div className="flex flex-col gap-6 max-w-2xl">
+      <div className="flex justify-between items-center mt-20 w-auto h-auto mx-24 px-6 py-24 max-sm:mx-10 max-sm:py-5 max-sm:flex-col xl:mt-[-55px] 2xl:mt-20">
+        <div className="flex flex-col gap-6 2xl:max-w-2xl xl:max-w-lg ">
           <div className="flex flex-col items-start">
             <BlurFade delay={0.25 * 1.5} inView>
               <h1 className="text-zinc-200 text-6xl font-medium max-sm:text-3xl lg:text-5xl xl:text-6xl flex gap-4 max-sm:gap-1 mb-1.5 px-1">
@@ -57,7 +57,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
           </div>
           <div>
             <BlurFade delay={0.25 * 1.2} inView>
-              <p className="text-zinc-200 leading-loose text-xl mb-5 max-sm:text-sm lg:text-lg xl:text-xl">
+              <p className="text-zinc-200 leading-loose text-xl mb-5 max-sm:text-sm lg:text-lg xl:text-xl 2xl:text-xl">
                 Olá 👋 meu nome é Matheus, tenho 19 anos e sou Desenvolvedor
                 Frontend. Estou em busca de novas oportunidades na área de
                 tecnologia, onde possa aplicar e expandir minhas habilidades
@@ -101,7 +101,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
           </div>
         </div>
 
-        <div className="flex w-[500px] max-sm:w-[200px] lg:w-[400px] xl:w-[500px] max-sm:mt-32">
+        <div className="flex w-[500px] max-sm:w-[200px] lg:w-[400px] xl:w-[350px] 2xl:w-[500px] max-sm:mt-32">
           <BlurFade delay={0.25 * 1.6} inView>
             <Image src={Code} alt="code" className="rounded-lg" />
           </BlurFade>
