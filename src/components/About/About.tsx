@@ -30,7 +30,7 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
             </div>
 
             <div className="txt-about-me text-center lg:text-left max-sm:m-5">
-              <h2 className="text-4xl max-sm:text-3xl text-zinc-200 mb-8 max-sm:m-10 text-nowrap">
+              <h2 className="text-4xl max-sm:text-3xl text-zinc-100 mb-8 max-sm:m-10 text-nowrap">
                 <span className="bg-gradient-to-r from-sky-500 via-sky-300 to-sky-800 bg-clip-text text-transparent block">
                   Hello!
                 </span>{" "}

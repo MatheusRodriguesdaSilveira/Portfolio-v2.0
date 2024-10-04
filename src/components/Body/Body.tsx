@@ -11,13 +11,13 @@ interface BodyProps {
 export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
   return (
     <>
-      <div className="flex justify-between items-center mt-20 w-auto h-auto mx-24 px-6 py-24 max-sm:mx-10 max-sm:py-5 max-sm:flex-col xl:mt-[-55px] 2xl:mt-20">
+      <div className="flex justify-between items-center mt-20 w-auto h-auto mx-24 px-6 py-24 max-sm:mx-10 max-sm:py-5 max-sm:flex-col xl:mt-[-60px] 2xl:mt-20">
         <div className="flex flex-col gap-6 2xl:max-w-2xl xl:max-w-lg ">
           <div className="flex flex-col items-start">
             <BlurFade delay={0.25 * 1.5} inView>
-              <h1 className="text-zinc-200 text-6xl font-medium max-sm:text-3xl lg:text-5xl xl:text-6xl flex gap-4 max-sm:gap-1 mb-1.5 px-1">
+              <h1 className="text-zinc-200 text-6xl font-medium max-sm:text-3xl lg:text-5xl xl:text-4xl 2xl:text-6xl flex gap-4 max-sm:gap-1 mb-1.5 px-1">
                 FRONTEND
-                <div className="flex mt-2 gap-2 max-sm:gap-0.5 max-sm:px-2 max-sm:mt-[-8px]">
+                <div className="flex mt-2 gap-2 max-sm:gap-0.5 max-sm:px-2 max-sm:mt-[-8px] xl:mt-[-8px] 2xl:mt-[3px]">
                   <button
                     className="bounce-custom hover:text-blue-400 duration-300 "
                     style={{ animationDelay: "-0.3s" }}
@@ -26,7 +26,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
                       href="https://www.linkedin.com/in/matheus-rodrigues-da-silveira/"
                       target="_blank"
                     >
-                      <Linkedin className="max-sm:size-4" />
+                      <Linkedin className="max-sm:size-4 xl:size-4 2xl:size-6" />
                     </a>
                   </button>
                   <button
@@ -37,7 +37,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
                       href="https://github.com/MatheusRodriguesdaSilveira"
                       target="_blank"
                     >
-                      <GithubIcon className="max-sm:size-4" />
+                      <GithubIcon className="max-sm:size-4 xl:size-4 2xl:size-6" />
                     </a>
                   </button>
                   <button className="bounce-custom hover:text-red-400 duration-300 ">
@@ -45,19 +45,19 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
                       href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=matheussilveira2005@gmail.com&body=Olá,+Matheus,+tudo+bem?"
                       target="_blank"
                     >
-                      <AtSign className="max-sm:size-4" />
+                      <AtSign className="max-sm:size-4 xl:size-4 2xl:size-6" />
                     </a>
                   </button>
                 </div>
               </h1>
-              <h1 className="max-sm:text-5xl mb-10 max-sm:mb-5 mt-[-20px] max-sm:mt-[-15px] bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-800 group-hover:from-cyan-800 group-hover:to-blue-900 focus:ring-4 focus:outline-none focus:ring-cyan-200 text-8xl font-bold lg:text-7xl xl:text-8xl">
+              <h1 className="max-sm:text-5xl mb-10 max-sm:mb-5 mt-[-20px] max-sm:mt-[-15px] bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-800 group-hover:from-cyan-800 group-hover:to-blue-900 focus:ring-4 focus:outline-none focus:ring-cyan-200 text-8xl font-bold lg:text-7xl xl:text-7xl 2xl:text-8xl">
                 DEVELOPER
               </h1>
             </BlurFade>
           </div>
           <div>
             <BlurFade delay={0.25 * 1.2} inView>
-              <p className="text-zinc-200 leading-loose text-xl mb-5 max-sm:text-sm lg:text-lg xl:text-xl 2xl:text-xl">
+              <p className="text-zinc-200 leading-loose text-xl mb-5 max-sm:text-sm lg:text-lg xl:text-lg 2xl:text-xl">
                 Olá 👋 meu nome é Matheus, tenho 19 anos e sou Desenvolvedor
                 Frontend. Estou em busca de novas oportunidades na área de
                 tecnologia, onde possa aplicar e expandir minhas habilidades

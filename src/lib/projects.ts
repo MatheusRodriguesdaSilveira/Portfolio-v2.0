@@ -81,7 +81,7 @@ export const projects = [
       id: 7,
       image: "/weather app.jpeg",
       alt: "weather app",
-      title: "Project Sushi Shop",
+      title: "Project Weather App",
       description:
         "Este projeto é um aplicativo de clima em tempo real, usando uma api.",
       techStack: "Html | JavaScript | TailwindCss",

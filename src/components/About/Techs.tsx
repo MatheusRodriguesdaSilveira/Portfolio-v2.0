@@ -64,13 +64,13 @@ export function ActionsGrid() {
                       case "Tailwind CSS":
                         return "text-teal-400";
                       case "TypeScript":
-                        return "text-blue-500";
+                        return "text-blue-600";
                       case "HTML5":
-                        return "text-orange-400";
+                        return "text-orange-600";
                       case "Next.js":
                         return "text-gray-100";
                       case "Git":
-                        return "text-orange-500";
+                        return "text-orange-600";
                       case "GitHub":
                         return "text-purple-500";
                       default:
@@ -81,7 +81,7 @@ export function ActionsGrid() {
                   return (
                     <div key={key} className="flex items-center justify-center">
                       <IconComponent
-                        className={`h-14 w-14 ${colorClass} px-3 border-2 rounded-xl`}
+                        className={`h-14 w-14 ${colorClass} px-[11px] border-2 rounded-2xl`}
                         aria-label={logo.name}
                         title={logo.name}
                       />
