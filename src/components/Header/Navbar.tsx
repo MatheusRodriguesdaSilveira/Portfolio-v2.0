@@ -21,8 +21,8 @@ export const NavBar = ({ scrollToAbout, scrollToProjects }: NavBarProps) => {
 
   return (
     <>
-      <header className="flex justify-between items-center rounded-full w-auto font-semibold xl:m-28">
-        <div className="max-sm:hidden flex justify-center font-bold items-center text-4xl cursor-context-menu hover:scale-105 duration-300">
+      <header className="flex justify-between items-center rounded-full w-auto font-semibold xl:m-12 2xl:m-28">
+        <div className="max-sm:hidden flex justify-center font-bold items-center xl:text-2xl 2xl:text-4xl cursor-context-menu hover:scale-105 duration-300">
           <div className="items-center flex-col">
             <span className="text-white">{"<"}</span>
             <span className="text-indigo-600">matheus</span>

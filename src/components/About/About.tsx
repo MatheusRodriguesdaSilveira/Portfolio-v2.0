@@ -21,7 +21,7 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
           </div>
 
           <div className="flex flex-col lg:flex-row items-center">
-            <div className="mx-12 p-10">
+            <div className="mx-12 p-10 xl:my-20 xl:p-5">
               <Image
                 src={Me}
                 alt="Me"
