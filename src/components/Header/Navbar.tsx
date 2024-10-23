@@ -69,7 +69,7 @@ export const NavBar = ({ scrollToAbout, scrollToProjects }: NavBarProps) => {
             <AlignJustify className="xl:hidden text-white size-6" />
           </button>
         </div>
-        <div className="flex justify-center font-bold items-center text-xl cursor-context-menu">
+        <div className="xl:hidden flex justify-center font-bold items-center text-xl cursor-context-menu">
           <div className="items-center flex-col">
             <span className="text-white">{"<"}</span>
             <span className="text-indigo-600">matheus</span>
