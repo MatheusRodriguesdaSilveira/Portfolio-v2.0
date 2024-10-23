@@ -17,7 +17,7 @@ const logos = [
   { name: "JavaScript", icon: SiJavascript },
   { name: "TypeScript", icon: SiTypescript },
   { name: "HTML", icon: FaHtml5 },
-  { name: "Tailwind CSS", icon: SiTailwindcss },
+  { name: "TailwindCSS", icon: SiTailwindcss },
   { name: "Git", icon: FaGitAlt },
   { name: "GitHub", icon: FaGithub },
   { name: "Prisma", icon: SiPrisma },
@@ -25,8 +25,8 @@ const logos = [
 
 export function ActionsGrid() {
   return (
-    <div className="w-full flex flex-col justify-center items-center mb-20 mt-[-40px] p-6 rounded-lg">
-      <div className="flex justify-center items-center mt-2 space-x-2 leading-height ">
+    <div className="w-full flex flex-col justify-center items-center rounded-lg xl:mt-10">
+      <div className="flex justify-center items-center mt-2 space-x-2 leading-height">
         <HyperText className="text-xl md:text-3xl text-white" text="Skills" />
         <span className="text-white font-bold text-lg max-sm:text-sm">|</span>
         <HyperText
@@ -37,7 +37,7 @@ export function ActionsGrid() {
 
       <div className="mx-auto w-full px-4 md:px-8">
         <div
-          className="group relative mt-5 flex gap-6 overflow-hidden p-2"
+          className="group relative mt-5 flex gap-6 overflow-hidden p-4 md:p-6 lg:p-8 shadow-custom"
           style={{
             maskImage:
               "linear-gradient(to left, transparent 10%, black 50%, black 50%, transparent 90%)",
@@ -61,7 +61,7 @@ export function ActionsGrid() {
                         return "text-cyan-500 shadow-cyan-500/80";
                       case "JavaScript":
                         return "text-yellow-500 shadow-yellow-500/80";
-                      case "Tailwind CSS":
+                      case "TailwindCSS":
                         return "text-teal-400 shadow-teal-400/80";
                       case "TypeScript":
                         return "text-blue-600 shadow-blue-600/80";

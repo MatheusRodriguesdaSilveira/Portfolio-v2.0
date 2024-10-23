@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Code from "/public/code.png";
-import { MoveRight } from "lucide-react";
+import { Linkedin, MoveRight } from "lucide-react";
 import BlurFade from "@/components/magicui/blur-fade";
 import { IconColumn } from "./components/IconColumn";
 
@@ -17,7 +17,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
         <div className="flex flex-col gap-5 xl:px-12 xl:mb-10 max-sm:gap-3 max-sm:mt-4">
           <div className="flex flex-col items-start">
             <BlurFade delay={0.25 * 2.5} inView>
-              <div className="text-4xl lg:text-6xl xl:text-7xl max-sm:text-2xl">
+              <div className="text-4xl lg:text-6xl xl:text-7xl max-sm:text-3xl">
                 <h1 className="text-indigo-600 font-semibold">Olá, sou</h1>
                 <div className="text-white font-bold xl:-translate-x-12">
                   <span className="text-white">{"<"}</span>
@@ -92,32 +92,30 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-5 max-sm:gap-5 max-sm:mr-9 lg:gap-4 xl:gap-5">
                   <div className="flex">
-                    <button className="relative inline-flex items-center justify-center p-0.5 mb-2 max-sm:mb-1 overflow-hidden text-base max-sm:text-xs font-medium rounded-3xl max-sm:rounded-lg group bg-gradient-to-br from-purple-400 to-indigo-900 group-hover:from-cyan-800 group-hover:to-blue-900 hover:text-white text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800 duration-300 lg:mb-1 xl:mb-2">
-                      <span className="relative px-10 py-2.5 max-sm:px-3 max-sm:py-2.5 transition-all ease-in duration-300 bg-gray-950 rounded-3xl max-sm:rounded-lg group-hover:bg-opacity-0 lg:px-8 xl:px-10">
-                        <a
-                          href="https://www.linkedin.com/in/matheus-rodrigues-da-silveira/"
-                          target="_blank"
-                          className="m-1 text-nowrap"
-                        >
-                          My Contact
-                        </a>
-                      </span>
+                    <button className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium rounded-full group bg-gradient-to-br from-indigo-400 to-blue-900 text-white duration-300">
+                      <a
+                        href="https://www.linkedin.com/in/matheus-rodrigues-da-silveira/"
+                        target="_blank"
+                        className="flex text-nowrap relative xl:px-10 xl:py-3.5 px-6 py-2.5 transition-all ease-in duration-300 bg-gray-950 rounded-full group-hover:bg-opacity-0"
+                      >
+                        My Contact
+                      </a>
                     </button>
                   </div>
-
-                  <div className="flex justify-center items-center rounded-full p-0.5 mb-1 max-sm:mb-0 max-sm:justify-center bg-gradient-to-br from-purple-400 to-blue-900 group-hover:from-cyan-800 group-hover:to-blue-900 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800 duration-300">
+                  <div className="flex">
                     <button
-                      className="group/button relative inline-flex h-10 w-10 items-center justify-center overflow-hidden px-2 py-1.5 ease-in bg-gray-950 rounded-full group-hover:bg-opacity-0 duration-150 font-medium text-white transition-all hover:w-[140px] lg:h-10 lg:w-10 xl:h-12 xl:w-12"
                       onClick={scrollToProjects}
+                      className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium rounded-full group bg-gradient-to-br from-indigo-400 to-blue-900 text-white duration-300"
                     >
-                      <span className="justify-center items-center flex">
-                        <p className="inline-flex whitespace-nowrap text-sm opacity-0 transition-all duration-150 group-hover/button:-translate-x-3 group-hover/button:opacity-100">
-                          See my works!
-                        </p>
-
-                        <div className="absolute right-2 lg:right-2 xl:right-3.5">
-                          <MoveRight className="size-5" />
-                        </div>
+                      <span className="group/button relative inline-flex h-10 w-10 xl:px-[26px] xl:py-[26px] md:h-[50px] md:w-[50px] lg:h-10 lg:w-10 items-center justify-center overflow-hidden ease-in bg-gray-950 rounded-full group-hover:bg-opacity-0 duration-150 font-medium text-white transition-all hover:w-[135px]">
+                        <span className="justify-center items-center flex">
+                          <a className="flex gap-2 items-center whitespace-nowrap text-sm opacity-0 transition-all duration-150 group-hover/button:-translate-x-2.5 group-hover/button:opacity-100">
+                            See my works!
+                          </a>
+                          <div className="absolute right-2.5 lg:right-5 xl:right-3">
+                            <MoveRight className="size-5 xl:size-6" />
+                          </div>
+                        </span>
                       </span>
                     </button>
                   </div>

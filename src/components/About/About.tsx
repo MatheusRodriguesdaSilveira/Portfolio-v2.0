@@ -2,6 +2,8 @@ import React, { forwardRef } from "react";
 import Image from "next/image";
 import Me from "/public/minhafoto.png";
 import { File, GithubIcon, Linkedin, MoveRight } from "lucide-react";
+import BlurFade from "../magicui/blur-fade";
+import { ActionsGrid } from "./components/Techs";
 
 interface AboutProps {
   // Props, se necessárias
@@ -24,7 +26,7 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
                 src={Me}
                 alt="Me"
                 className=" p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500 brightness-90 shadow-2xl shadow-indigo-500/50"
-                width={850}
+                width={1200}
               />
             </div>
 
@@ -35,21 +37,58 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
                   Hello!
                 </span>{" "}
                 I'm Matheus Rodrigues
-                <span className="text-white">{"/>"}</span>
+                <span className="text-white">{" />"}</span>
               </h2>
 
               <p className="text-zinc-200 max-sm:m-10 mb-5">
-                Sou estudante de Análise e Desenvolvimento de Sistemas e estou à
-                procura de oportunidades na área da Tecnologia. Meu foco é
-                colocar minhas habilidades técnicas em prática, buscando
-                aprimorá-las em um ambiente colaborativo e inovador. Estou
-                empenhado em desenvolver minhas habilidades profissionais e
-                contribuir de forma significativa para o sucesso da equipe e dos
-                projetos da empresa 👨🏻‍💻.
+                Sou estudante de{" "}
+                <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                  Análise e Desenvolvimento de Sistemas
+                </span>{" "}
+                , com mais de um ano de experiência em{" "}
+                <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                  desenvolvimento frontend
+                </span>{" "}
+                e criação de{" "}
+                <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                  APIs
+                </span>
+                . Tenho sólidos conhecimentos em HTML, CSS, Tailwind,
+                JavaScript, React, além de experiência com Node.js e Prisma para
+                desenvolvimento de APIs robustas e eficientes. Já participei de
+                diversos projetos completos, desde a criação de{" "}
+                <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                  interfaces intuitivas
+                </span>{" "}
+                até a {""}
+                <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                  implementação de backends
+                </span>{" "}
+                escaláveis. Estou em busca de{" "}
+                <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                  oportunidades
+                </span>{" "}
+                para aplicar e expandir minhas{" "}
+                <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                  habilidades
+                </span>{" "}
+                em{" "}
+                <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                  programação
+                </span>{" "}
+                em um ambiente{" "}
+                <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                  colaborativo
+                </span>{" "}
+                e{" "}
+                <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                  inovador
+                </span>
+                .
               </p>
 
               <div className="flex items-center gap-3 max-sm:mb-10 max-sm:justify-center max-lg:justify-center">
-                <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-full group bg-gradient-to-br from-indigo-400 to-blue-900 group-hover:from-cyan-800 group-hover:to-blue-900 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800 duration-300">
+                <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium rounded-full group bg-gradient-to-br from-indigo-400 to-blue-900 text-white focus:ring-4 focus:outline-none duration-300">
                   <span className="relative px-4 py-3.5 transition-all ease-in duration-300 bg-gray-950 rounded-full group-hover:bg-opacity-0">
                     <a
                       href="https://www.linkedin.com/in/matheus-rodrigues-da-silveira/"
@@ -60,7 +99,7 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
                   </span>
                 </button>
 
-                <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-full group bg-gradient-to-br from-indigo-400 to-blue-900 group-hover:from-cyan-800 group-hover:to-blue-900 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800 duration-300">
+                <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium rounded-full group bg-gradient-to-br from-indigo-400 to-blue-900 text-white focus:ring-4 focus:outline-none duration-300">
                   <span className="relative px-4 py-3.5 transition-all ease-in duration-300 bg-gray-950 rounded-full group-hover:bg-opacity-0">
                     <a
                       href="https://github.com/MatheusRodriguesdaSilveira"
@@ -71,29 +110,31 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
                   </span>
                 </button>
 
-                <div className="flex justify-center items-center rounded-full p-0.5 mb-1 max-sm:mb-1.5 max-sm:justify-center bg-gradient-to-br from-indigo-400 to-blue-900 group-hover:from-cyan-800 group-hover:to-blue-900 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800 duration-300">
-                  <button className="group/button relative inline-flex h-[54px] w-[54px] px-4 py-3.5 md:h-[50px] md:w-[50px] lg:h-10 lg:w-10 xl:h-12 xl:w-12 items-center justify-center overflow-hidden ease-in bg-gray-950 rounded-full group-hover:bg-opacity-0 duration-150 font-medium text-white transition-all hover:w-[175px]">
+                <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium rounded-full group bg-gradient-to-br from-indigo-400 to-blue-900 text-white focus:ring-4 focus:outline-none duration-300">
+                  <span className="group/button relative inline-flex px-[26px] py-[26px] h-[54px] w-[54px] md:h-[50px] md:w-[50px] lg:h-10 lg:w-10 items-center justify-center overflow-hidden ease-in bg-gray-950 rounded-full group-hover:bg-opacity-0 duration-150 font-medium text-white transition-all hover:w-[175px]">
                     <span className="justify-center items-center flex">
-                      <p className="flex gap-1 whitespace-nowrap text-sm opacity-0 transition-all duration-150 group-hover/button:-translate-x-2.5 group-hover/button:opacity-100">
-                        <a
-                          href="/CV-MatheusRodrigues.pdf"
-                          download="CV-MatheusRodrigues.pdf"
-                          target="_blank"
-                        >
-                          Meu currículo
-                        </a>
-                        <File className="size-4 mb-1" />
-                      </p>
-                      <div className="absolute right-4 lg:right-2 xl:right-3.5">
-                        <MoveRight className="size-5" />
+                      <a
+                        href="/CV-MatheusRodrigues.pdf"
+                        download="CV-MatheusRodrigues.pdf"
+                        target="_blank"
+                        className="flex gap-2 items-center whitespace-nowrap text-sm opacity-0 transition-all duration-150 group-hover/button:-translate-x-2.5 group-hover/button:opacity-100"
+                      >
+                        Meu currículo
+                        <File className="size-5 mb-1 mr-2" />
+                      </a>
+                      <div className="absolute right-4 lg:right-5 xl:right-3">
+                        <MoveRight className="size-6" />
                       </div>
                     </span>
-                  </button>
-                </div>
+                  </span>
+                </button>
               </div>
             </div>
           </div>
         </div>
+        <BlurFade delay={0.25 * 1.5} inView>
+          <ActionsGrid />
+        </BlurFade>
       </>
     );
   }

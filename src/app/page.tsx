@@ -50,9 +50,6 @@ export default function Page() {
         <div ref={aboutRef}>
           <AboutPage />
         </div>
-        <BlurFade delay={0.25 * 1} inView>
-          <ActionsGrid />
-        </BlurFade>
       </BlurFade>
       <Hr />
 
