@@ -12,7 +12,7 @@ interface BodyProps {
 export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
   return (
     <>
-      <div className="flex flex-col xl:flex-row items-center h-auto mx-5 xl:px-20 2xl:m-12 2xl:p-20 max-sm:mx-20">
+      <div className="flex flex-col xl:flex-row items-center h-auto mx-5 xl:px-14 2xl:m-12 2xl:p-20 max-sm:mx-20">
         <IconColumn />
         <div className="flex flex-col gap-5 xl:px-10 2xl:px-12 2xl:mb-10 max-sm:gap-3 max-sm:mt-4">
           <div className="flex flex-col items-start">
@@ -32,7 +32,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
           <div className="xl:pr-[150px]  mb-12 max-sm:mb-6">
             <BlurFade delay={0.25 * 2.6} inView>
               <div className="flex items-center max-sm:flex-col">
-                <p className="text-zinc-200 text-left leading-loose mb-4 text-sm lg:text-lg xl:text-base max-sm:text-xs max-sm:leading-relaxed max-sm:text-left">
+                <p className="text-zinc-200 text-left leading-loose mb-4 text-sm lg:text-lg xl:text-base 2xl:text-lg max-sm:text-xs max-sm:leading-relaxed max-sm:text-left">
                   👋 Meu nome é{" "}
                   <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
                     Matheus
@@ -125,7 +125,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
           </div>
         </div>
 
-        <div className="flex mt-32 w-[250px] md:w-[400px] xl:w-full xl:mt-5 2xl:w-screen 2xl:mt-3">
+        <div className="flex mt-32 w-[250px] md:w-[400px] xl:w-[2000px] xl:mt-5 2xl:w-screen 2xl:mt-3">
           <BlurFade delay={0.25 * 3.2} inView>
             <Image src={Code} alt="code" className="img rounded-lg" />
           </BlurFade>
