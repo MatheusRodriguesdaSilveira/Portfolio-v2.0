@@ -17,10 +17,10 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
       className="p-5 sm:p-16 m-4 sm:m-16 flex flex-col items-center"
     >
       <div className="text-5xl mb-8 max-sm:text-3xl text-nowrap max-sm:m-10 flex gap-2">
-        <h2 className="pb-2 bg-gradient-to-r from-sky-500 via-sky-300 to-sky-800 bg-clip-text text-transparent">
-          My
-        </h2>
-        <h2 className="text-zinc-400">Projects💻</h2>
+        <span className="text-white">{"<"}</span>
+        <h2 className="text-indigo-600">My</h2>
+        <h2 className="text-zinc-300">Projects💻</h2>
+        <span className="text-white">{"/>"}</span>
       </div>
 
       <BlurFade delay={0.25 * 2} inView>
@@ -75,7 +75,7 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
             Projects in progress
           </p>
           <div className="items-center justify-center flex">
-            <div className="h-11 w-11 animate-spin rounded-full border-4 border-gray-500 border-t-cyan-300"></div>
+            <div className="h-12 w-12 animate-spin rounded-full border-4 border-gray-400 border-t-indigo-600"></div>
           </div>
         </div>
       </div>

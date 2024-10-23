@@ -1,8 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import Code from "/public/code.png";
-import { AtSign, GithubIcon, Linkedin, MoveRight } from "lucide-react";
+import { MoveRight } from "lucide-react";
 import BlurFade from "@/components/magicui/blur-fade";
+import { IconColumn } from "./components/IconColumn";
 
 interface BodyProps {
   scrollToProjects: () => void;
@@ -11,99 +12,124 @@ interface BodyProps {
 export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
   return (
     <>
-      <div className="flex justify-between items-center mt-20 w-auto h-auto mx-24 px-6 py-24 max-sm:mx-10 max-sm:py-5 max-sm:flex-col xl:mt-[-60px] 2xl:mt-20">
-        <div className="flex flex-col gap-6 2xl:max-w-2xl xl:max-w-lg ">
+      <div className="flex flex-col xl:flex-row items-center h-auto mx-5 xl:m-12 xl:p-20 max-sm:mx-20">
+        <IconColumn />
+        <div className="flex flex-col gap-5 xl:px-12 xl:mb-10 max-sm:gap-3 max-sm:mt-4">
           <div className="flex flex-col items-start">
-            <BlurFade delay={0.25 * 1.5} inView>
-              <h1 className="text-zinc-200 text-6xl font-medium max-sm:text-3xl lg:text-5xl xl:text-4xl 2xl:text-6xl flex gap-4 max-sm:gap-1 mb-1.5 px-1">
-                FRONTEND
-                <div className="flex mt-2 gap-2 max-sm:gap-0.5 max-sm:px-2 max-sm:mt-[-8px] xl:mt-[-8px] 2xl:mt-[3px]">
-                  <button
-                    className="bounce-custom hover:text-blue-400 duration-300 "
-                    style={{ animationDelay: "-0.3s" }}
-                  >
-                    <a
-                      href="https://www.linkedin.com/in/matheus-rodrigues-da-silveira/"
-                      target="_blank"
-                    >
-                      <Linkedin className="max-sm:size-4 xl:size-4 2xl:size-6" />
-                    </a>
-                  </button>
-                  <button
-                    className="bounce-custom hover:text-indigo-600 duration-300 "
-                    style={{ animationDelay: "-0.13s" }}
-                  >
-                    <a
-                      href="https://github.com/MatheusRodriguesdaSilveira"
-                      target="_blank"
-                    >
-                      <GithubIcon className="max-sm:size-4 xl:size-4 2xl:size-6" />
-                    </a>
-                  </button>
-                  <button className="bounce-custom hover:text-red-400 duration-300 ">
-                    <a
-                      href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=matheussilveira2005@gmail.com&body=Olá,+Matheus,+tudo+bem?"
-                      target="_blank"
-                    >
-                      <AtSign className="max-sm:size-4 xl:size-4 2xl:size-6" />
-                    </a>
-                  </button>
+            <BlurFade delay={0.25 * 2.5} inView>
+              <div className="text-4xl lg:text-6xl xl:text-7xl max-sm:text-2xl">
+                <h1 className="text-indigo-600 font-semibold">Olá, sou</h1>
+                <div className="text-white font-bold xl:-translate-x-12">
+                  <span className="text-white">{"<"}</span>
+                  <span>Desenvolvedor</span>{" "}
+                  <span className="text-indigo-600">FullStack</span>{" "}
+                  <span className="text-white">{"/>"}</span>
                 </div>
-              </h1>
-              <h1 className="max-sm:text-5xl mb-10 max-sm:mb-5 mt-[-20px] max-sm:mt-[-15px] bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-800 group-hover:from-cyan-800 group-hover:to-blue-900 focus:ring-4 focus:outline-none focus:ring-cyan-200 text-8xl font-bold lg:text-7xl xl:text-7xl 2xl:text-8xl">
-                DEVELOPER
-              </h1>
+              </div>
             </BlurFade>
           </div>
-          <div>
-            <BlurFade delay={0.25 * 1.2} inView>
-              <p className="text-zinc-200 leading-loose text-xl mb-5 max-sm:text-sm lg:text-lg xl:text-lg 2xl:text-xl">
-                Olá 👋 meu nome é Matheus, tenho 19 anos e sou Desenvolvedor
-                Frontend. Estou em busca de novas oportunidades na área de
-                tecnologia, onde possa aplicar e expandir minhas habilidades
-                técnicas, contribuindo para o desenvolvimento e sucesso dos
-                projetos. Sinta-se à vontade para explorar meus trabalhos!
-              </p>
 
-              <div className="flex items-center gap-5 max-sm:gap-5 max-sm:mr-9 lg:gap-4 xl:gap-5">
-                <div className="flex">
-                  <button className="relative inline-flex items-center justify-center p-0.5 mb-2 max-sm:mb-1 overflow-hidden text-base max-sm:text-xs font-medium rounded-3xl max-sm:rounded-lg group bg-gradient-to-br from-cyan-400 to-blue-900 group-hover:from-cyan-800 group-hover:to-blue-900 hover:text-white text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800 duration-300 lg:mb-1 xl:mb-2">
-                    <span className="relative px-10 py-2.5 max-sm:px-3 max-sm:py-2.5 transition-all ease-in duration-300 bg-gray-900 rounded-3xl max-sm:rounded-lg group-hover:bg-opacity-0 lg:px-8 xl:px-10">
-                      <a
-                        href="https://www.linkedin.com/in/matheus-rodrigues-da-silveira/"
-                        target="_blank"
-                        className="m-1 text-nowrap"
-                      >
-                        My Contact
-                      </a>
-                    </span>
-                  </button>
-                </div>
+          <div className="xl:pr-[150px]  mb-12 max-sm:mb-6">
+            <BlurFade delay={0.25 * 2.6} inView>
+              <div className="flex items-center max-sm:flex-col">
+                <p className="text-zinc-200 text-left leading-loose mb-4 text-sm lg:text-lg max-sm:text-xs max-sm:leading-relaxed max-sm:text-left">
+                  👋 Meu nome é{" "}
+                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                    Matheus
+                  </span>{" "}
+                  e tenho 19 anos e sou{" "}
+                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                    Desenvolvedor FullStack
+                  </span>
+                  . Estou em busca de novas oportunidades na{" "}
+                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                    área de tecnologia
+                  </span>
+                  , onde possa aplicar minhas habilidades técnicas e continuar
+                  aprimorando-as, enquanto contribuo para o{" "}
+                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                    sucesso
+                  </span>{" "}
+                  e{" "}
+                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                    inovação
+                  </span>{" "}
+                  dos projetos. Tenho{" "}
+                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                    experiência prática
+                  </span>{" "}
+                  na criação de{" "}
+                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                    APIs
+                  </span>
+                  ,{" "}
+                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                    desenvolvimento de sites responsivos
+                  </span>{" "}
+                  e{" "}
+                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                    e-commerces
+                  </span>{" "}
+                  otimizados, sempre focado em proporcionar experiências de{" "}
+                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                    alta qualidade
+                  </span>{" "}
+                  para os{" "}
+                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                    usuários
+                  </span>
+                  .{" "}
+                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600 ">
+                    Fique à vontade para explorar meus projetos e conhecer mais
+                    sobre meu trabalho!
+                  </span>{" "}
+                  🚀
+                </p>
+              </div>
+            </BlurFade>
 
-                <div className="flex justify-center items-center rounded-full p-0.5 mb-1 max-sm:mb-0 max-sm:justify-center bg-gradient-to-br from-cyan-400 to-blue-900 group-hover:from-cyan-800 group-hover:to-blue-900 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800 duration-300">
-                  <button
-                    className="group/button relative inline-flex h-12 w-12 max-sm:h-9 max-sm:w-9  items-center justify-center overflow-hidden max-sm:px-2 max-sm:py-1.5 ease-in bg-gray-900 rounded-full group-hover:bg-opacity-0 duration-150 font-medium text-white transition-all hover:w-[165px] lg:h-10 lg:w-10 xl:h-12 xl:w-12"
-                    onClick={scrollToProjects}
-                  >
-                    <span className="justify-center items-center flex">
-                      <p className="inline-flex whitespace-nowrap text-sm opacity-0 transition-all duration-150 group-hover/button:-translate-x-2.5 group-hover/button:opacity-100">
-                        See my works!
-                      </p>
+            <BlurFade delay={0.25 * 3.2} inView>
+              <div className="flex items-center gap-4">
+                <div className="flex items-center gap-5 max-sm:gap-5 max-sm:mr-9 lg:gap-4 xl:gap-5">
+                  <div className="flex">
+                    <button className="relative inline-flex items-center justify-center p-0.5 mb-2 max-sm:mb-1 overflow-hidden text-base max-sm:text-xs font-medium rounded-3xl max-sm:rounded-lg group bg-gradient-to-br from-purple-400 to-indigo-900 group-hover:from-cyan-800 group-hover:to-blue-900 hover:text-white text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800 duration-300 lg:mb-1 xl:mb-2">
+                      <span className="relative px-10 py-2.5 max-sm:px-3 max-sm:py-2.5 transition-all ease-in duration-300 bg-gray-950 rounded-3xl max-sm:rounded-lg group-hover:bg-opacity-0 lg:px-8 xl:px-10">
+                        <a
+                          href="https://www.linkedin.com/in/matheus-rodrigues-da-silveira/"
+                          target="_blank"
+                          className="m-1 text-nowrap"
+                        >
+                          My Contact
+                        </a>
+                      </span>
+                    </button>
+                  </div>
 
-                      <div className="absolute right-3.5 max-sm:right-2 lg:right-2 xl:right-3.5">
-                        <MoveRight className="size-5" />
-                      </div>
-                    </span>
-                  </button>
+                  <div className="flex justify-center items-center rounded-full p-0.5 mb-1 max-sm:mb-0 max-sm:justify-center bg-gradient-to-br from-purple-400 to-blue-900 group-hover:from-cyan-800 group-hover:to-blue-900 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800 duration-300">
+                    <button
+                      className="group/button relative inline-flex h-10 w-10 items-center justify-center overflow-hidden px-2 py-1.5 ease-in bg-gray-950 rounded-full group-hover:bg-opacity-0 duration-150 font-medium text-white transition-all hover:w-[140px] lg:h-10 lg:w-10 xl:h-12 xl:w-12"
+                      onClick={scrollToProjects}
+                    >
+                      <span className="justify-center items-center flex">
+                        <p className="inline-flex whitespace-nowrap text-sm opacity-0 transition-all duration-150 group-hover/button:-translate-x-3 group-hover/button:opacity-100">
+                          See my works!
+                        </p>
+
+                        <div className="absolute right-2 lg:right-2 xl:right-3.5">
+                          <MoveRight className="size-5" />
+                        </div>
+                      </span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </BlurFade>
           </div>
         </div>
 
-        <div className="flex w-[500px] max-sm:w-[200px] lg:w-[400px] xl:w-[350px] 2xl:w-[500px] max-sm:mt-32">
-          <BlurFade delay={0.25 * 1.6} inView>
-            <Image src={Code} alt="code" className="rounded-lg" />
+        <div className="flex mt-32 w-[250px] md:w-[400px] xl:w-screen xl:mt-3">
+          <BlurFade delay={0.25 * 3.2} inView>
+            <Image src={Code} alt="code" className="img rounded-lg" />
           </BlurFade>
         </div>
       </div>

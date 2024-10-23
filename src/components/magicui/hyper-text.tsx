@@ -13,7 +13,9 @@ interface HyperTextProps {
   animateOnLoad?: boolean;
 }
 
-const alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+const alphabets = "A1B2C3D4E5F6G7H8I9J0K1L2M3N4O5P6Q7R8S9T0U1V2W3X4Y5Z6".split(
+  ""
+);
 
 const getRandomInt = (max: number) => Math.floor(Math.random() * max);
 
@@ -77,7 +79,7 @@ export default function HyperText({
 
   return (
     <div
-      className="overflow-hidden py-2 flex cursor-default scale-100"
+      className="overflow-hidden py-1 bg-clip-text text-transparent bg-gradient-to-br from-cyan-400 to-blue-800 group-hover:from-cyan-800 group-hover:to-blue-900 focus:ring-4 focus:outline-none focus:ring-cyan-200 flex cursor-default scale-100"
       onMouseEnter={triggerAnimation}
     >
       <AnimatePresence mode="wait">

@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import { Body } from "../components/Body/Body";
 import { NavBar } from "../components/Header/Navbar";
 import { Footer } from "../components/Footer/Footer";
-import { ActionsGrid } from "../components/About/Techs";
+import { ActionsGrid } from "../components/About/components/Techs";
 import Hr from "../components/ui/hr";
 import BlurFade from "@/components/magicui/blur-fade";
 import Projects from "@/components/Works/Projects";
@@ -37,7 +37,7 @@ export default function Page() {
 
   return (
     <>
-      <BlurFade delay={0.25 * 0.07} inView>
+      <BlurFade delay={0.25 * 2} inView>
         <NavBar
           scrollToAbout={scrollToAbout}
           scrollToProjects={scrollToProjects}

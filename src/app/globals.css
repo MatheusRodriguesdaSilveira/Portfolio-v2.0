@@ -18,7 +18,7 @@ header a {
 
 header a:hover {
   color: #fff;
-  transform: scale(1.09);
+  transform: scale(1);
 }
 
 header nav ul {
@@ -30,10 +30,6 @@ header nav li {
   padding: 0 40px;
 }
 
-nav ul li a:hover {
-  color: #00f2ff;
-}
-
 nav ul li a::before {
   content: "";
   position: absolute;
@@ -42,7 +38,7 @@ nav ul li a::before {
   bottom: 0px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #00ffff;
+  background-color: #3730a3;
   visibility: hidden;
   transition: all 0.3s ease-in-out 0s;
 }
@@ -129,7 +125,7 @@ nav ul li a:hover::before {
   }
 }
 
-img {
+.img {
   animation: flutuar 2s ease-in-out infinite alternate;
 }
 
