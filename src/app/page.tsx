@@ -5,7 +5,7 @@ import { NavBar } from "../components/Header/Navbar";
 import { Footer } from "../components/Footer/Footer";
 import { ActionsGrid } from "../components/About/components/Techs";
 import Hr from "../components/ui/hr";
-import BlurFade from "@/components/magicui/blur-fade";
+import BlurFade from "@/components/ui/blur-fade";
 import Projects from "@/components/Works/Projects";
 import AboutPage from "@/components/About/About";
 

@@ -1,13 +1,10 @@
-import React, { forwardRef, Ref } from "react";
+import React, { forwardRef } from "react";
 import { projects } from "@/lib/projects";
 import { SquareArrowOutUpRight, Github } from "lucide-react";
 import Image from "next/image";
-import { OutlineButton } from "../ui/outline-button";
-import BlurFade from "../magicui/blur-fade";
+import BlurFade from "../ui/blur-fade";
 
-interface ProjectsProps {
-  // funcinando mesmo sem as props
-}
+interface ProjectsProps {}
 
 const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
   return (
@@ -16,68 +13,78 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
       id="projects"
       className="p-5 sm:p-16 m-4 sm:m-16 flex flex-col items-center"
     >
-      <div className="text-5xl mb-8 max-sm:text-3xl text-nowrap max-sm:m-10 flex gap-2">
+      {/* Title */}
+      <div className="text-5xl mb-12 max-sm:text-3xl flex gap-2 items-center">
         <span className="text-white">{"<"}</span>
         <h2 className="text-indigo-600">My</h2>
         <h2 className="text-zinc-300">Projects💻</h2>
         <span className="text-white">{"/>"}</span>
       </div>
 
-      <BlurFade delay={0.25 * 2} inView>
-        <div className="flex flex-col lg:flex-row items-center gap-10 sm:gap-10 justify-center w-full sm:w-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10 w-full">
-            {projects?.map((project) => (
-              <div key={project.id} className="portfolio-content">
-                <div className="row">
+      {/* Project Cards */}
+      <BlurFade delay={0.5} inView>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 w-full max-w-7xl h-full">
+          {projects?.map((project) => (
+            <BlurFade delay={0.25 * 4.2} inView>
+              <div
+                key={project.id}
+                className="flex flex-col items-center p-5 max-h-[420px] bg-neutral-300/5 rounded-3xl shadow-lg shadow-indigo-300/30 overflow-hidden border border-indigo-300 transition-transform duration-500 transform hover:scale-95"
+              >
+                {/* Project Image */}
+                <div className="w-full h-[520px] relative mx-5 rounded-3xl overflow-hidden shadow-md">
                   <Image
                     src={project.image}
                     alt={project.alt}
-                    width={400}
-                    height={300}
-                    className="animate-none"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-3xl border border-zinc-800"
                     priority
                   />
-                  <div className="layer max-sm:text-xs">
-                    <h5 className="font-bold text-xl">{project.title}</h5>
-                    <p>{project.description}</p>
-                    <p className="font-bold">{project.techStack}</p>
-                    <div className="flex">
-                      <OutlineButton className="m-3">
-                        <a
-                          href={project.liveLink}
-                          target="_blank"
-                          aria-label={`Live preview of ${project.title}`}
-                        >
-                          <SquareArrowOutUpRight className="size-5 hover:text-zinc-800 hover:scale-110 duration-300" />
-                        </a>
-                      </OutlineButton>
-                      <OutlineButton className="m-3">
-                        <a
-                          href={project.repoLink}
-                          target="_blank"
-                          aria-label={`GitHub repository for ${project.title}`}
-                        >
-                          <Github className="size-5 hover:text-zinc-800 hover:scale-110 duration-300" />
-                        </a>
-                      </OutlineButton>
-                    </div>
+                </div>
+
+                {/* Project Info */}
+                <div className="p-3 text-left">
+                  <h5 className="text-sm xl:text-lg font-bold text-indigo-600 mb-1">
+                    {project.title}
+                  </h5>
+                  <p className="text-sm text-white/70 font-light mb-3 line-clamp-3">
+                    {project.description}
+                  </p>
+
+                  {/* Action Buttons */}
+                  <div className="flex justify-center gap-4 mt-2">
+                    <a
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Live preview of ${project.title}`}
+                      className="text-white hover:text-indigo-600"
+                    >
+                      <SquareArrowOutUpRight className="size-4 xl:size-6 hover:scale-95 transition-transform duration-500" />
+                    </a>
+                    <a
+                      href={project.repoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`GitHub repository for ${project.title}`}
+                      className="text-white hover:text-indigo-600"
+                    >
+                      <Github className="size-4 xl:size-6 hover:scale-95 transition-transform duration-500" />
+                    </a>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+            </BlurFade>
+          ))}
         </div>
       </BlurFade>
 
-      <div className="portfolio-content text-nowrap">
-        <div className="justify-center items-center">
-          <p className="m-5 text-3xl text-center text-gray-400">
-            Projects in progress
-          </p>
-          <div className="items-center justify-center flex">
-            <div className="h-12 w-12 animate-spin rounded-full border-4 border-gray-400 border-t-indigo-600"></div>
-          </div>
-        </div>
+      {/* Loading Spinner */}
+      <div className="mt-12 flex justify-center items-center flex-col">
+        <p className="text-2xl xl:text-3xl text-gray-400 mb-4">
+          Projects in progress
+        </p>
+        <div className="w-9 h-9 xl:w-12 xl:h-12 border-4 border-gray-400 border-t-indigo-600 rounded-full animate-spin"></div>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 "use client";
-import HyperText from "@/components/magicui/hyper-text";
+import BlurFade from "@/components/ui/blur-fade";
+import HyperText from "@/components/ui/hyper-text";
 import { FaReact, FaHtml5, FaGithub, FaGitAlt } from "react-icons/fa";
 import {
   SiJavascript,
@@ -26,14 +27,16 @@ const logos = [
 export function ActionsGrid() {
   return (
     <div className="w-full flex flex-col justify-center items-center rounded-lg xl:mt-10">
-      <div className="flex justify-center items-center mt-2 space-x-2 leading-height">
-        <HyperText className="text-xl md:text-3xl text-white" text="Skills" />
-        <span className="text-white font-bold text-lg max-sm:text-sm">|</span>
-        <HyperText
-          className="text-xl md:text-3xl text-white"
-          text="Technologies"
-        />
-      </div>
+      <BlurFade delay={0.25 * 4.2} inView>
+        <div className="flex justify-center items-center mt-2 space-x-2 leading-height">
+          <HyperText className="text-xl md:text-3xl text-white" text="Skills" />
+          <span className="text-white font-bold text-lg max-sm:text-sm">|</span>
+          <HyperText
+            className="text-xl md:text-3xl text-white"
+            text="Technologies"
+          />
+        </div>
+      </BlurFade>
 
       <div className="mx-auto w-full px-4 md:px-8">
         <div
@@ -79,19 +82,21 @@ export function ActionsGrid() {
                   })();
 
                   return (
-                    <div
-                      key={key}
-                      className="flex flex-col items-center justify-center"
-                    >
-                      <IconComponent
-                        className={`h-14 w-14 ${colorClass} px-[11px] border-2 border-indigo-300 rounded-2xl shadow-md transition duration-300 ease-in-out transform hover:scale-105`}
-                        aria-label={logo.name}
-                        title={logo.name}
-                      />
-                      <span className="text-sm text-gray-300 mt-2">
-                        {logo.name}
-                      </span>
-                    </div>
+                    <BlurFade delay={0.25 * 5} inView>
+                      <div
+                        key={key}
+                        className="flex flex-col items-center justify-center"
+                      >
+                        <IconComponent
+                          className={`h-14 w-14 ${colorClass} px-[11px] border-2 border-indigo-300 rounded-2xl shadow-md transition duration-300 ease-in-out transform hover:scale-105`}
+                          aria-label={logo.name}
+                          title={logo.name}
+                        />
+                        <span className="text-sm text-gray-300 mt-2">
+                          {logo.name}
+                        </span>
+                      </div>
+                    </BlurFade>
                   );
                 })}
               </div>

@@ -21,12 +21,12 @@ export const NavBar = ({ scrollToAbout, scrollToProjects }: NavBarProps) => {
 
   return (
     <>
-      <header className="flex justify-between items-center rounded-full w-auto font-semibold xl:m-10 2xl:m-28">
-        <div className="max-sm:hidden flex justify-center font-bold items-center xl:text-2xl 2xl:text-4xl cursor-context-menu hover:scale-105 duration-300">
+      <header className="flex justify-between items-center rounded-full w-auto font-semibold xl:m-10 2xl:m-28 max-lg:hidden">
+        <div className="flex justify-center font-bold items-center xl:text-2xl 2xl:text-4xl cursor-context-menu hover:scale-105 duration-300">
           <div className="items-center flex-col">
             <span className="text-white">{"<"}</span>
             <span className="text-indigo-600">matheus</span>
-            <span className="text-white pr-2">-silveira</span>
+            <span className="text-white pr-1">-silveira</span>
             <span className="text-white">{"/>"}</span>
           </div>
         </div>
@@ -48,9 +48,9 @@ export const NavBar = ({ scrollToAbout, scrollToProjects }: NavBarProps) => {
                 <ChartNoAxesCombined className="size-5" />
               </a>
             </li>
-            <button className="nav-link hover:scale-105 duration-300">
+            <button className="nav-link hover:scale-105 duration-300 rounded-lg">
               <a
-                className="cursor-pointer flex gap-1 bg-indigo-700 rounded-xl px-5 py-2"
+                className="cursor-pointer flex gap-1 bg-indigo-700 rounded-xl px-5 py-2 text-white"
                 href="https://www.linkedin.com/in/matheus-rodrigues-da-silveira/"
                 target="_blank"
               >
@@ -62,35 +62,36 @@ export const NavBar = ({ scrollToAbout, scrollToProjects }: NavBarProps) => {
         </nav>
       </header>
 
-      <header className="m-10 h-full">
-        {/* Botão para abrir menu mobile */}
-        <div className="mt-10 flex justify-end text-zinc-100 px-3">
-          <button onClick={handleOpenMenu}>
-            <AlignJustify className="xl:hidden text-white size-6" />
-          </button>
-        </div>
-        <div className="xl:hidden flex justify-center font-bold items-center text-xl cursor-context-menu">
-          <div className="items-center flex-col">
-            <span className="text-white">{"<"}</span>
-            <span className="text-indigo-600">matheus</span>
-            <span className="text-white pr-2">-silveira</span>
-            <span className="text-white">{"/>"}</span>
-          </div>
-        </div>
-        {/* Menu mobile */}
-        {isMenuOpen && (
-          <div className="xl:hidden mb-10 h-full fixed top-0 right-0 z-50 w-3/5 bg-zinc-950/50 ease-in-out duration-300">
-            <div className="mt-10 flex justify-end text-zinc-100 px-3">
-              <button onClick={handleOpenMenu}>
-                <X className="text-white size-6" />
-              </button>
+      <header className="xl:hidden mb-10">
+        <nav className="border-gray-200">
+          <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <div className="flex justify-center font-bold items-center text-xl cursor-context-menu m-5">
+              <span className="text-white">{"<"}</span>
+              <span className="text-indigo-600">matheus</span>
+              <span className="text-white">-silveira</span>
+              <span className="text-white pl-0.5">{"/>"}</span>
             </div>
+            <button
+              onClick={handleOpenMenu}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
+              className="text-white"
+            >
+              <AlignJustify className="size-6" />
+            </button>
+          </div>
 
-            <nav className="mx-4">
-              <ul className="flex-col text-right items-center text-zinc-100 flex gap-3">
-                <li className="nav-link">
+          {isMenuOpen && (
+            <div className="top-0 right-0 w-2/2 h-full transition-transform duration-300 ease-in-out md:hidden">
+              <div className="flex justify-end p-4">
+                <button onClick={handleOpenMenu} className="text-white">
+                  <X className="size-6" />
+                </button>
+              </div>
+              <ul className="font-medium flex flex-col p-4 border border-gray-600 rounded-lg">
+                <li>
                   <a
-                    className="cursor-pointer flex gap-1"
+                    className="cursor-pointer flex gap-1 py-2 hover:bg-gray-700 rounded transition"
                     onClick={() => {
                       scrollToAbout();
                       handleOpenMenu();
@@ -100,9 +101,9 @@ export const NavBar = ({ scrollToAbout, scrollToProjects }: NavBarProps) => {
                     <User className="size-5" />
                   </a>
                 </li>
-                <li className="nav-link">
+                <li>
                   <a
-                    className="cursor-pointer flex gap-1"
+                    className="cursor-pointer flex gap-1 py-2 hover:bg-gray-700 rounded transition"
                     onClick={() => {
                       scrollToProjects();
                       handleOpenMenu();
@@ -112,28 +113,21 @@ export const NavBar = ({ scrollToAbout, scrollToProjects }: NavBarProps) => {
                     <ChartNoAxesCombined className="size-5" />
                   </a>
                 </li>
-                <li className="nav-link hover:scale-105 duration-300">
+                <li>
                   <a
-                    className="cursor-pointer flex gap-1"
+                    className="cursor-pointer flex gap-1 py-2 hover:bg-gray-700 rounded transition"
                     href="https://www.linkedin.com/in/matheus-rodrigues-da-silveira/"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Contact
                     <Linkedin className="size-5" />
                   </a>
                 </li>
               </ul>
-            </nav>
-          </div>
-        )}
-
-        {/* Overlay para fechar o menu clicando fora */}
-        {isMenuOpen && (
-          <div
-            className="bg-transparent z-40 w-full h-full fixed top-0 left-0 ease-in-out duration-30"
-            onClick={handleOpenMenu}
-          ></div>
-        )}
+            </div>
+          )}
+        </nav>
       </header>
     </>
   );
