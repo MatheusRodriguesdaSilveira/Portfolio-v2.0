@@ -21,7 +21,7 @@ export const NavBar = ({ scrollToAbout, scrollToProjects }: NavBarProps) => {
 
   return (
     <>
-      <header className="flex justify-between items-center rounded-full w-auto font-semibold xl:m-10 2xl:m-28 max-lg:hidden">
+      <header className="flex justify-between items-center rounded-full w-auto font-semibold xl:m-16 xl:mx-20 2xl:m-24 max-lg:hidden">
         <div className="flex justify-center font-bold items-center xl:text-2xl 2xl:text-4xl cursor-context-menu hover:scale-105 duration-300">
           <div className="items-center flex-col">
             <span className="text-white">{"<"}</span>
@@ -75,59 +75,57 @@ export const NavBar = ({ scrollToAbout, scrollToProjects }: NavBarProps) => {
               onClick={handleOpenMenu}
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
-              className="text-white"
+              className="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-400 rounded-lg md:hidden"
             >
-              <AlignJustify className="size-6" />
+              {isMenuOpen ? "" : <AlignJustify className="w-5 h-5" />}
             </button>
           </div>
-
-          {isMenuOpen && (
-            <div className="top-0 right-0 w-2/2 h-full transition-transform duration-300 ease-in-out md:hidden">
-              <div className="flex justify-end p-4">
-                <button onClick={handleOpenMenu} className="text-white">
-                  <X className="size-6" />
-                </button>
-              </div>
-              <ul className="font-medium flex flex-col p-4 border border-gray-600 rounded-lg">
-                <li>
-                  <a
-                    className="cursor-pointer flex gap-1 py-2 hover:bg-gray-700 rounded transition"
-                    onClick={() => {
-                      scrollToAbout();
-                      handleOpenMenu();
-                    }}
-                  >
-                    About me
-                    <User className="size-5" />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="cursor-pointer flex gap-1 py-2 hover:bg-gray-700 rounded transition"
-                    onClick={() => {
-                      scrollToProjects();
-                      handleOpenMenu();
-                    }}
-                  >
-                    Projects
-                    <ChartNoAxesCombined className="size-5" />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="cursor-pointer flex gap-1 py-2 hover:bg-gray-700 rounded transition"
-                    href="https://www.linkedin.com/in/matheus-rodrigues-da-silveira/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Contact
-                    <Linkedin className="size-5" />
-                  </a>
-                </li>
-              </ul>
-            </div>
-          )}
         </nav>
+
+        {isMenuOpen && (
+          <div className="fixed inset-0 bg-zinc-950/90 flex flex-col items-center z-50">
+            <ul className="font-medium text-center space-y-6 flex flex-col items-start mt-40">
+              <li>
+                <a
+                  onClick={() => {
+                    scrollToAbout();
+                    handleOpenMenu();
+                  }}
+                  className="text-white text-2xl hover:text-indigo-400 flex gap-2"
+                >
+                  About me <User className="size-7" />
+                </a>
+              </li>
+              <li>
+                <a
+                  onClick={() => {
+                    scrollToProjects();
+                    handleOpenMenu();
+                  }}
+                  className="text-white text-2xl hover:text-indigo-400 flex gap-2"
+                >
+                  Projects <ChartNoAxesCombined className="size-7" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/matheus-rodrigues-da-silveira/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white text-2xl hover:text-indigo-400 flex gap-2"
+                >
+                  Contact <Linkedin className="size-7" />
+                </a>
+              </li>
+            </ul>
+            <button
+              onClick={handleOpenMenu}
+              className="absolute top-4 right-4 text-gray-400 hover:text-white p-2"
+            >
+              <X className="w-8 h-8" />
+            </button>
+          </div>
+        )}
       </header>
     </>
   );
