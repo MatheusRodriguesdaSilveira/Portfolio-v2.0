@@ -48,15 +48,19 @@ export const NavBar = ({ scrollToAbout, scrollToProjects }: NavBarProps) => {
                 <ChartNoAxesCombined className="size-5" />
               </a>
             </li>
-            <button className="nav-link hover:scale-105 duration-300 rounded-lg">
-              <a
-                className="cursor-pointer flex gap-1 bg-indigo-700 rounded-xl px-5 py-2 text-white"
-                href="https://www.linkedin.com/in/matheus-rodrigues-da-silveira/"
-                target="_blank"
-              >
-                Contact
-                <Linkedin className="size-5" />
-              </a>
+
+            <button className="relative flex items-center px-2 overflow-hidden font-medium transition-all bg-indigo-500 rounded-lg hover:scale-105 duration-300 group">
+              <span className="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full bg-indigo-600 rounded-md group-hover:translate-x-0"></span>
+              <span className="flex gap-1 items-center relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white">
+                <a
+                  className="cursor-pointer flex gap-1 rounded-xl px-5 py-2 text-white"
+                  href="https://www.linkedin.com/in/matheus-rodrigues-da-silveira/"
+                  target="_blank"
+                >
+                  Contact
+                  <Linkedin className="size-5" />
+                </a>
+              </span>
             </button>
           </ul>
         </nav>

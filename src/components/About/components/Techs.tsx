@@ -82,7 +82,7 @@ export function ActionsGrid() {
                   })();
 
                   return (
-                    <BlurFade delay={0.25 * 5} inView>
+                    <BlurFade delay={0.25 * 3} inView>
                       <div
                         key={key}
                         className="flex flex-col items-center justify-center"

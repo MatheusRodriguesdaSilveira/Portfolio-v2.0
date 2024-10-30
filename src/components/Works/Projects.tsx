@@ -14,12 +14,14 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
       className="p-5 sm:p-16 m-4 sm:m-16 flex flex-col items-center"
     >
       {/* Title */}
-      <div className="text-5xl mb-12 max-sm:text-3xl flex gap-2 items-center">
-        <span className="text-white">{"<"}</span>
-        <h2 className="text-indigo-600">My</h2>
-        <h2 className="text-zinc-300">Projects💻</h2>
-        <span className="text-white">{"/>"}</span>
-      </div>
+      <BlurFade delay={0.25 * 4.2} inView>
+        <div className="text-5xl mb-12 max-sm:text-3xl flex gap-2 items-center">
+          <span className="text-white">{"<"}</span>
+          <h2 className="text-indigo-600">My</h2>
+          <h2 className="text-zinc-300">Projects💻</h2>
+          <span className="text-white">{"/>"}</span>
+        </div>
+      </BlurFade>
 
       {/* Project Cards */}
       <BlurFade delay={0.5} inView>
@@ -81,7 +83,7 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
 
       {/* Loading Spinner */}
       <div className="mt-12 flex justify-center items-center flex-col">
-        <p className="text-2xl xl:text-3xl text-gray-400 mb-4">
+        <p className="text-2xl xl:text-3xl text-gray-400 mb-4 text-nowrap flex">
           Projects in progress
         </p>
         <div className="w-9 h-9 xl:w-12 xl:h-12 border-4 border-gray-400 border-t-indigo-600 rounded-full animate-spin"></div>

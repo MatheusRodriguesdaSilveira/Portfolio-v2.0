@@ -9,7 +9,7 @@ export const Footer = () => {
       <div className="flex flex-col lg:flex-row items-center">
         <div className="text-center lg:text-left">
           <h2 className="text-3xl max-sm:text-xl font-medium mb-8 max-sm:m-12">
-            <span className="text-nowrap bg-gradient-to-r from-indigo-500 to-blue-800 bg-clip-text text-transparent block">
+            <span className="text-nowrap bg-gradient-to-r from-indigo-500 to-blue-800 bg-clip-text text-transparent block ">
               © 2024 Copyright Matheus R. Silveira
             </span>
           </h2>

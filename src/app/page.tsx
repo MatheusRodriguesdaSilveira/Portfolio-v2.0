@@ -8,6 +8,7 @@ import Hr from "../components/ui/hr";
 import BlurFade from "@/components/ui/blur-fade";
 import Projects from "@/components/Works/Projects";
 import AboutPage from "@/components/About/About";
+import ContactPage from "@/components/Contact/Contact";
 
 export default function Page() {
   const projectsRef = useRef<HTMLDivElement | null>(null);
@@ -57,6 +58,10 @@ export default function Page() {
         <div ref={projectsRef}>
           <Projects />
         </div>
+      </BlurFade>
+      <Hr />
+      <BlurFade delay={0.25 * 2.2} inView>
+        <ContactPage />
       </BlurFade>
       <Hr />
       <BlurFade delay={0.25 * 1} inView>
