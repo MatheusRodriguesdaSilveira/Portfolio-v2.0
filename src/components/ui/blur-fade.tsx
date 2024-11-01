@@ -15,8 +15,8 @@ interface BlurFadeProps {
   children: React.ReactNode;
   className?: string;
   variant?: {
-    hidden: { y: number };
-    visible: { y: number };
+    hidden: { y: number; opacity: number; filter: string };
+    visible: { y: number; opacity: number; filter: string };
   };
   duration?: number;
   delay?: number;
@@ -32,18 +32,18 @@ export default function BlurFade({
   variant,
   duration = 0.4,
   delay = 0,
-  yOffset = 6,
+  yOffset = 10,
   inView = false,
   inViewMargin = "-50px",
   blur = "6px",
 }: BlurFadeProps) {
   const ref = useRef(null);
-  const inViewResult = useInView(ref, { margin: inViewMargin }); // Remova `once: true`
+  const inViewResult = useInView(ref, { margin: inViewMargin, once: false });
   const isInView = !inView || inViewResult;
 
   const defaultVariants: Variants = {
     hidden: { y: yOffset, opacity: 0, filter: `blur(${blur})` },
-    visible: { y: -yOffset, opacity: 1, filter: `blur(0px)` },
+    visible: { y: 0, opacity: 1, filter: `blur(0px)` },
   };
   const combinedVariants = variant || defaultVariants;
 
@@ -60,7 +60,7 @@ export default function BlurFade({
           duration,
           ease: "easeOut",
         }}
-        className={className}
+        className={`block ${className}`} // Adicione 'block' para garantir que o espaço é respeitado
       >
         {children}
       </motion.div>

@@ -24,7 +24,7 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
 
           <div className="flex flex-col lg:flex-row items-center">
             <BlurFade delay={0.25 * 5} inView>
-              <div className="mx-12 p-10 xl:my-20 xl:p-5 w-[350px] md:w-[400px] xl:w-[335px] 2xl:w-[400px]">
+              <div className="mx-12 p-10 xl:my-20 xl:p-5 w-[400px] md:w-[400px] xl:w-[335px] 2xl:w-[400px]">
                 <Image
                   src={Me}
                   alt="Me"

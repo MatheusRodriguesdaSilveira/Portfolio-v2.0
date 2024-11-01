@@ -12,6 +12,18 @@ type projects = {
 export const projects = [
     {
       id: 1,
+      image: "/system pizza.jpeg",
+      alt: "pizzaria",
+      title: "System Pizza",
+      description:
+        "Sistema completo para uma aplicação de pedidos em uma pizzaria, com funcionalidades de autenticação, gerenciamento de pedidos e criação de produtos.",
+      techStack: "Next Js | React | Node Js | Prisma | PostgreSQL | TypeScript | TailwindCss",
+      liveLink: "https://system-pizza-frontend.vercel.app",
+      repoLink:
+        "https://github.com/MatheusRodriguesdaSilveira/SystemPizza-Backend",
+    },
+    {
+      id: 2,
       image: "/hamburgueria.jpeg",
       alt: "hamburgueria",
       title: "Project Burger",
@@ -23,7 +35,7 @@ export const projects = [
         "https://github.com/MatheusRodriguesdaSilveira/Projeto-do-zero-ao-deploy-com-HTML-CSS-TailwindCSS-JavaScript",
     },
     {
-      id: 2,
+      id: 3,
       image: "/sushi.jpeg",
       alt: "sushi shop",
       title: "Project Sushi Shop",
@@ -34,7 +46,7 @@ export const projects = [
       repoLink: "https://github.com/MatheusRodriguesdaSilveira/Sushi-Shop",
     },
     {
-      id: 3,
+      id: 4,
       image: "/gd sports.jpeg",
       alt: "project clothing store",
       title: "Project Clothing store",
@@ -45,7 +57,7 @@ export const projects = [
       repoLink: "https://github.com/MatheusRodriguesdaSilveira/Project-GD-Sports",
     },
     {
-      id: 4,
+      id: 5,
       image: "/in orbit.jpeg",
       alt: "in orbit",
       title: "In.Orbit",
@@ -56,18 +68,18 @@ export const projects = [
       repoLink: "https://github.com/MatheusRodriguesdaSilveira/In.Orbit-Frontend",
     },
     {
-      id: 4,
+      id: 6,
       image: "/task list.png",
       alt: "task list",
       title: "Task List",
       description:
-        "Aplicação web que permite aos usuários adicionar, visualizar e remover tarefas de uma lista.",
+        "Aplicação web que permite aos usuários adicionar tarefas, com funcionalidades para editar, concluir, excluir e reorganizar a posição das tarefas dentro da lista.",
       techStack: "React | Next | TypeScript | TailwindCss",
       liveLink: "https://task-list-black-six.vercel.app",
       repoLink: "https://github.com/MatheusRodriguesdaSilveira/Task-List",
     },
     {
-      id: 5,
+      id: 7,
       image: "/student list.png",
       alt: "student list",
       title: "Project Student List App",
@@ -78,7 +90,7 @@ export const projects = [
       repoLink: "https://github.com/MatheusRodriguesdaSilveira/Grade-Table"
     },
     {
-      id: 7,
+      id: 8,
       image: "/weather app.jpeg",
       alt: "weather app",
       title: "Project Weather App",

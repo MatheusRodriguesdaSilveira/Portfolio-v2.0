@@ -3,6 +3,7 @@ import { projects } from "@/lib/projects";
 import { SquareArrowOutUpRight, Github } from "lucide-react";
 import Image from "next/image";
 import BlurFade from "../ui/blur-fade";
+import { AnimatePresence } from "framer-motion";
 
 interface ProjectsProps {}
 
@@ -24,62 +25,61 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
       </BlurFade>
 
       {/* Project Cards */}
-      <BlurFade delay={0.5} inView>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 w-full max-w-7xl h-full">
-          {projects?.map((project) => (
-            <BlurFade delay={0.25 * 4.2} inView>
-              <div
-                key={project.id}
-                className="flex flex-col items-center p-5 max-h-[420px] bg-neutral-300/5 rounded-3xl shadow-lg shadow-indigo-300/30 overflow-hidden border border-indigo-300 transition-transform duration-500 transform hover:scale-95"
-              >
-                {/* Project Image */}
-                <div className="w-full h-[520px] relative mx-5 rounded-3xl overflow-hidden shadow-md">
-                  <Image
-                    src={project.image}
-                    alt={project.alt}
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-3xl border border-zinc-800"
-                    priority
-                  />
-                </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 w-full max-w-7xl h-full">
+        {projects?.map((project) => (
+          <BlurFade delay={0.25 * 4.2} inView>
+            <div
+              key={project.id}
+              className="flex flex-col items-center p-5 max-h-[420px] bg-neutral-300/5 rounded-3xl shadow-lg shadow-indigo-300/30 overflow-hidden border border-indigo-300 transition-transform duration-500 transform hover:scale-95"
+            >
+              {/* Project Image */}
+              <div className="w-full relative mx-5 rounded-3xl overflow-hidden shadow-md">
+                <Image
+                  src={project.image}
+                  alt={project.alt}
+                  width={400}
+                  height={400}
+                  style={{ objectFit: "cover" }}
+                  className="rounded-3xl border border-zinc-800"
+                  priority
+                />
+              </div>
 
-                {/* Project Info */}
-                <div className="p-3 text-left">
-                  <h5 className="text-sm xl:text-lg font-bold text-indigo-600 mb-1">
-                    {project.title}
-                  </h5>
-                  <p className="text-sm text-white/70 font-light mb-3 line-clamp-3">
-                    {project.description}
-                  </p>
+              {/* Project Info */}
+              <div className="p-3 text-left">
+                <h5 className="text-sm xl:text-lg font-bold text-indigo-600 mb-1">
+                  {project.title}
+                </h5>
+                <p className="text-sm text-white/70 font-light mb-3 line-clamp-3">
+                  {project.description}
+                </p>
 
-                  {/* Action Buttons */}
-                  <div className="flex justify-center gap-4 mt-2">
-                    <a
-                      href={project.liveLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`Live preview of ${project.title}`}
-                      className="text-white hover:text-indigo-600"
-                    >
-                      <SquareArrowOutUpRight className="size-4 xl:size-6 hover:scale-95 transition-transform duration-500" />
-                    </a>
-                    <a
-                      href={project.repoLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`GitHub repository for ${project.title}`}
-                      className="text-white hover:text-indigo-600"
-                    >
-                      <Github className="size-4 xl:size-6 hover:scale-95 transition-transform duration-500" />
-                    </a>
-                  </div>
+                {/* Action Buttons */}
+                <div className="flex justify-center gap-4 mt-2">
+                  <a
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Live preview of ${project.title}`}
+                    className="text-white hover:text-indigo-600"
+                  >
+                    <SquareArrowOutUpRight className="size-4 xl:size-6 hover:scale-95 transition-transform duration-500" />
+                  </a>
+                  <a
+                    href={project.repoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`GitHub repository for ${project.title}`}
+                    className="text-white hover:text-indigo-600"
+                  >
+                    <Github className="size-4 xl:size-6 hover:scale-95 transition-transform duration-500" />
+                  </a>
                 </div>
               </div>
-            </BlurFade>
-          ))}
-        </div>
-      </BlurFade>
+            </div>
+          </BlurFade>
+        ))}
+      </div>
 
       {/* Loading Spinner */}
       <div className="mt-12 flex justify-center items-center flex-col">
