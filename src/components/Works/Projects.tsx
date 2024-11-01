@@ -3,7 +3,6 @@ import { projects } from "@/lib/projects";
 import { SquareArrowOutUpRight, Github } from "lucide-react";
 import Image from "next/image";
 import BlurFade from "../ui/blur-fade";
-import { AnimatePresence } from "framer-motion";
 
 interface ProjectsProps {}
 
@@ -16,7 +15,7 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
     >
       {/* Title */}
       <BlurFade delay={0.25 * 4.2} inView>
-        <div className="text-5xl mb-12 max-sm:text-3xl flex gap-2 items-center">
+        <div className="text-5xl mb-20 max-sm:text-3xl flex gap-2 items-center">
           <span className="text-white">{"<"}</span>
           <h2 className="text-indigo-600">My</h2>
           <h2 className="text-zinc-300">Projects💻</h2>
@@ -34,15 +33,21 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
             >
               {/* Project Image */}
               <div className="w-full relative mx-5 rounded-3xl overflow-hidden shadow-md">
-                <Image
-                  src={project.image}
-                  alt={project.alt}
-                  width={400}
-                  height={400}
-                  style={{ objectFit: "cover" }}
-                  className="rounded-3xl border border-zinc-800"
-                  priority
-                />
+                <a
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src={project.image}
+                    alt={project.alt}
+                    width={400}
+                    height={400}
+                    style={{ objectFit: "cover" }}
+                    className="rounded-3xl border border-zinc-900"
+                    priority
+                  />
+                </a>
               </div>
 
               {/* Project Info */}
@@ -50,6 +55,9 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
                 <h5 className="text-sm xl:text-lg font-bold text-indigo-600 mb-1">
                   {project.title}
                 </h5>
+                <p className="text-sm text-white/70 mb-3 line-clamp-3 font-bold">
+                  {project.techStack}
+                </p>
                 <p className="text-sm text-white/70 font-light mb-3 line-clamp-3">
                   {project.description}
                 </p>

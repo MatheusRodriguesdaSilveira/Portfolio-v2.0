@@ -14,7 +14,7 @@ export const projects = [
       id: 1,
       image: "/system pizza.jpeg",
       alt: "pizzaria",
-      title: "System Pizza",
+      title: "System Pizza🍕",
       description:
         "Sistema completo para uma aplicação de pedidos em uma pizzaria, com funcionalidades de autenticação, gerenciamento de pedidos e criação de produtos.",
       techStack: "Next Js | React | Node Js | Prisma | PostgreSQL | TypeScript | TailwindCss",
@@ -26,7 +26,7 @@ export const projects = [
       id: 2,
       image: "/hamburgueria.jpeg",
       alt: "hamburgueria",
-      title: "Project Burger",
+      title: "Project Burger🍔",
       description:
         "Trabalho focado na criação de um site para uma hamburgueria, com diversas funcionalidades, onde o pedido feito é redirecionado para o WhatsApp.",
       techStack: "Html | JavaScript | TailwindCss",
@@ -38,7 +38,7 @@ export const projects = [
       id: 3,
       image: "/sushi.jpeg",
       alt: "sushi shop",
-      title: "Project Sushi Shop",
+      title: "Project Sushi Shop🍣",
       description:
         "Projeto de um e-commerce, com diversas funcionalidades, como exibição de produtos, carrinho de compras e o redirecionamento para o WhatsApp.",
       techStack: "React | Next | TypeScript | TailwindCss",
@@ -49,7 +49,7 @@ export const projects = [
       id: 4,
       image: "/gd sports.jpeg",
       alt: "project clothing store",
-      title: "Project Clothing store",
+      title: "Project Clothing Store⚽",
       description:
         "Este projeto é uma loja virtual dinâmica, na qual os pedidos são redirecionados diretamente para o contato no WhatsApp.",
       techStack: "Html | JavaScript | TailwindCss",
@@ -60,7 +60,7 @@ export const projects = [
       id: 5,
       image: "/in orbit.jpeg",
       alt: "in orbit",
-      title: "In.Orbit",
+      title: "In.Orbit📅",
       description:
         "Aplicação web que permite aos usuários adicionar metas com base nos dias da semana, onde essa apliação usa um backend feito em Node Js.",
       techStack: "React | Node Js | TypeScript | TailwindCss",
@@ -71,7 +71,7 @@ export const projects = [
       id: 6,
       image: "/task list.png",
       alt: "task list",
-      title: "Task List",
+      title: "Task List✔️",
       description:
         "Aplicação web que permite aos usuários adicionar tarefas, com funcionalidades para editar, concluir, excluir e reorganizar a posição das tarefas dentro da lista.",
       techStack: "React | Next | TypeScript | TailwindCss",
@@ -82,7 +82,7 @@ export const projects = [
       id: 7,
       image: "/student list.png",
       alt: "student list",
-      title: "Project Student List App",
+      title: "Project Student List App👨‍🎓",
       description:
         "Aplicação web que permite aos usuários adicionar, visualizar e editar, remover alunos de uma lista de notas.",
       techStack: "React | Next | TypeScript | TailwindCss",
@@ -93,7 +93,7 @@ export const projects = [
       id: 8,
       image: "/weather app.jpeg",
       alt: "weather app",
-      title: "Project Weather App",
+      title: "Project Weather App☀️",
       description:
         "Este projeto é um aplicativo de clima em tempo real, usando uma api.",
       techStack: "Html | JavaScript | TailwindCss",
