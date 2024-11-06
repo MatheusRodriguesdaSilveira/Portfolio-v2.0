@@ -28,7 +28,7 @@ export const projects = [
       alt: "hamburgueria",
       title: "Project Burger🍔",
       description:
-        "Trabalho focado na criação de um site para uma hamburgueria, com diversas funcionalidades, onde o pedido feito é redirecionado para o WhatsApp.",
+        "Trabalho focado na criação de um site para uma hamburgueria, com diversas funcionalidades, onde o pedido feito é redirecionado para o WhatsApp com todos os detalhes do pedido.",
       techStack: "Html | JavaScript | TailwindCss",
       liveLink: "https://project-burger-alpha.vercel.app",
       repoLink:
@@ -51,7 +51,7 @@ export const projects = [
       alt: "project clothing store",
       title: "Project Clothing Store⚽",
       description:
-        "Este projeto é uma loja virtual dinâmica, na qual os pedidos são redirecionados diretamente para o contato no WhatsApp.",
+        "Este projeto é uma loja virtual dinâmica, na qual os pedidos são redirecionados diretamente para o contato no WhatsApp com todos os itens inseridos no carrinho.",
       techStack: "Html | JavaScript | TailwindCss",
       liveLink: "https://project-gd-sports.vercel.app",
       repoLink: "https://github.com/MatheusRodriguesdaSilveira/Project-GD-Sports",
@@ -84,7 +84,7 @@ export const projects = [
       alt: "student list",
       title: "Project Student List App👨‍🎓",
       description:
-        "Aplicação web que permite aos usuários adicionar, visualizar e editar, remover alunos de uma lista de notas.",
+        "Aplicação web que permite aos usuários adicionar tarefas, com funcionalidades para editar, concluir, excluir e reorganizar a posição das tarefas .",
       techStack: "React | Next | TypeScript | TailwindCss",
       liveLink: "https://grade-table.vercel.app",
       repoLink: "https://github.com/MatheusRodriguesdaSilveira/Grade-Table"
@@ -95,7 +95,7 @@ export const projects = [
       alt: "weather app",
       title: "Project Weather App☀️",
       description:
-        "Este projeto é um aplicativo de clima em tempo real, usando uma api.",
+        "Este projeto é um aplicativo de clima em tempo real, consumindo uma api pública de tempo chamada OpenWeatherMap.",
       techStack: "Html | JavaScript | TailwindCss",
       liveLink: "https://project-weatherapp.vercel.app",
       repoLink: "https://github.com/MatheusRodriguesdaSilveira/Weather-App",

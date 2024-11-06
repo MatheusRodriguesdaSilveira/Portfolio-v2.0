@@ -24,15 +24,12 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
       </BlurFade>
 
       {/* Project Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 w-full max-w-7xl h-full">
-        {projects?.map((project) => (
-          <BlurFade delay={0.25 * 4.2} inView>
-            <div
-              key={project.id}
-              className="flex flex-col items-center p-5 max-h-[420px] bg-neutral-300/5 rounded-3xl shadow-lg shadow-indigo-300/30 overflow-hidden border border-indigo-300 transition-transform duration-500 transform hover:scale-95"
-            >
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl mx-auto sm:p-6 lg:p-0">
+        {projects?.map((project, index) => (
+          <BlurFade key={project.id} delay={0.25 * (index + 1)} inView>
+            <div className="flex flex-col items-center p-5 md:p-5 lg:p-5 bg-zinc-950/50 rounded-3xl shadow-lg shadow-indigo-300/30 overflow-hidden border border-indigo-300 transition-transform duration-500 transform hover:scale-95">
               {/* Project Image */}
-              <div className="w-full relative mx-5 rounded-3xl overflow-hidden shadow-md">
+              <div className="w-full h-48 md:h-56 lg:h-64 relative rounded-3xl border border-zinc-800 overflow-hidden">
                 <a
                   href={project.liveLink}
                   target="_blank"
@@ -42,45 +39,45 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
                     src={project.image}
                     alt={project.alt}
                     width={400}
-                    height={400}
+                    height={300}
                     style={{ objectFit: "cover" }}
-                    className="rounded-3xl border border-zinc-900"
+                    className="w-full h-full"
                     priority
                   />
                 </a>
               </div>
 
               {/* Project Info */}
-              <div className="p-3 text-left">
-                <h5 className="text-sm xl:text-lg font-bold text-indigo-600 mb-1">
+              <div className="w-full mt-4 text-left">
+                <h5 className="text-lg font-semibold text-indigo-600 mb-1">
                   {project.title}
                 </h5>
-                <p className="text-sm text-white/70 mb-3 line-clamp-3 font-bold">
+                {/* <p className="text-sm text-gray-300 mb-2 font-semibold">
                   {project.techStack}
-                </p>
-                <p className="text-sm text-white/70 font-light mb-3 line-clamp-3">
+                </p> */}
+                <p className="text-sm text-gray-400 mb-4 line-clamp-3">
                   {project.description}
                 </p>
 
                 {/* Action Buttons */}
-                <div className="flex justify-center gap-4 mt-2">
+                <div className="flex justify-center gap-4">
                   <a
                     href={project.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Live preview of ${project.title}`}
-                    className="text-white hover:text-indigo-600"
+                    className="text-gray-300 hover:text-indigo-600 transition-colors duration-300"
                   >
-                    <SquareArrowOutUpRight className="size-4 xl:size-6 hover:scale-95 transition-transform duration-500" />
+                    <SquareArrowOutUpRight className="w-5 h-5 md:w-6 md:h-6" />
                   </a>
                   <a
                     href={project.repoLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`GitHub repository for ${project.title}`}
-                    className="text-white hover:text-indigo-600"
+                    className="text-gray-300 hover:text-indigo-600 transition-colors duration-300"
                   >
-                    <Github className="size-4 xl:size-6 hover:scale-95 transition-transform duration-500" />
+                    <Github className="w-5 h-5 md:w-6 md:h-6" />
                   </a>
                 </div>
               </div>
