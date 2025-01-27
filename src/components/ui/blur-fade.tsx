@@ -48,22 +48,19 @@ export default function BlurFade({
   const combinedVariants = variant || defaultVariants;
 
   return (
-    <AnimatePresence>
-      <motion.div
-        ref={ref}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-        exit="hidden"
-        variants={combinedVariants}
-        transition={{
-          delay: 0.04 + delay,
-          duration,
-          ease: "easeOut",
-        }}
-        className={`block ${className}`} // Adicione 'block' para garantir que o espaço é respeitado
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={combinedVariants}
+      transition={{
+        delay: 0.04 + delay,
+        duration,
+        ease: "easeOut",
+      }}
+      className={`block ${className}`}
+    >
+      {children}
+    </motion.div>
   );
 }

@@ -24,12 +24,12 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
       </BlurFade>
 
       {/* Project Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl mx-auto sm:p-6 lg:p-0">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full 2xl:w-4/5 mx-auto sm:p-6 lg:p-0">
         {projects?.map((project, index) => (
           <BlurFade key={project.id} delay={0.25 * (index + 1)} inView>
             <div className="flex flex-col items-center p-5 md:p-5 lg:p-5 bg-zinc-950/50 rounded-3xl shadow-lg shadow-indigo-300/30 overflow-hidden border border-indigo-300 transition-transform duration-500 transform hover:scale-95">
               {/* Project Image */}
-              <div className="w-full h-48 md:h-56 lg:h-64 relative rounded-3xl border border-zinc-800 overflow-hidden">
+              <div className="w-full h-48 2xl:h-60 relative rounded-3xl border border-zinc-800 overflow-hidden">
                 <a
                   href={project.liveLink}
                   target="_blank"
@@ -55,7 +55,7 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
                 {/* <p className="text-sm text-gray-300 mb-2 font-semibold">
                   {project.techStack}
                 </p> */}
-                <p className="text-sm text-gray-400 mb-4 line-clamp-3">
+                <p className="text-sm text-gray-400 mb-4 xl:h-[110px] 2xl:h-[70px]">
                   {project.description}
                 </p>
 

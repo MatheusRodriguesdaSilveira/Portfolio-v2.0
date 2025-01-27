@@ -3,6 +3,7 @@ import {
   AlignJustify,
   ChartNoAxesCombined,
   Linkedin,
+  Sparkles,
   User,
   X,
 } from "lucide-react";
@@ -10,9 +11,14 @@ import {
 interface NavBarProps {
   scrollToAbout: () => void;
   scrollToProjects: () => void;
+  scrollToTechs: () => void;
 }
 
-export const NavBar = ({ scrollToAbout, scrollToProjects }: NavBarProps) => {
+export const NavBar = ({
+  scrollToAbout,
+  scrollToProjects,
+  scrollToTechs,
+}: NavBarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleOpenMenu = () => {
@@ -32,11 +38,17 @@ export const NavBar = ({ scrollToAbout, scrollToProjects }: NavBarProps) => {
         </div>
 
         <nav className="nav hidden md:block">
-          <ul className="flex gap-3 text-center items-center rounded-full text-zinc-400">
+          <ul className="flex text-center items-center rounded-full text-zinc-400">
             <li className="nav-link">
               <a className="cursor-pointer flex gap-1" onClick={scrollToAbout}>
                 About me
                 <User className="size-5" />
+              </a>
+            </li>
+            <li className="nav-link">
+              <a className="cursor-pointer flex gap-1" onClick={scrollToTechs}>
+                Skills
+                <Sparkles className="size-5" />
               </a>
             </li>
             <li className="nav-link">
@@ -98,6 +110,17 @@ export const NavBar = ({ scrollToAbout, scrollToProjects }: NavBarProps) => {
                   className="text-white text-2xl hover:text-indigo-400 flex gap-2"
                 >
                   About me <User className="size-7" />
+                </a>
+              </li>
+              <li>
+                <a
+                  onClick={() => {
+                    scrollToAbout();
+                    handleOpenMenu();
+                  }}
+                  className="text-white text-2xl hover:text-indigo-400 flex gap-2"
+                >
+                  Skills <Sparkles className="size-7" />
                 </a>
               </li>
               <li>

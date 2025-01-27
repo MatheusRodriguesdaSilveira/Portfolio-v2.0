@@ -3,7 +3,6 @@ import Image from "next/image";
 import Me from "/public/minhafoto.png";
 import { File, GithubIcon, Linkedin, MoveRight } from "lucide-react";
 import BlurFade from "../ui/blur-fade";
-import { ActionsGrid } from "./components/Techs";
 
 interface AboutProps {
   // Props, se necessárias
@@ -13,10 +12,10 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
   (props, ref) => {
     return (
       <>
-        <div className="p-4 sm:p-10 m-4 sm:m-10 max-sm:flex flex-col items-center">
+        <div className="p-5 sm:p-10 m-4 sm:m-10 xl:mx-0 xl:my-0 2xl:mx-20 2xl:my-28 max-sm:flex flex-col items-center">
           <BlurFade delay={0.25 * 2} inView>
             <div className="text-center mb-5">
-              <h2 className="text-zinc-300 text-3xl md:text-5xl ">
+              <h2 className="text-zinc-300 text-3xl md:text-5xl">
                 About <span className=" text-indigo-600">me.</span>
               </h2>
             </div>
@@ -24,7 +23,7 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
 
           <div className="flex flex-col lg:flex-row items-center">
             <BlurFade delay={0.25 * 5} inView>
-              <div className="mx-12 p-10 xl:my-20 xl:p-5 w-[400px] md:w-[400px] xl:w-[335px] 2xl:w-[400px]">
+              <div className="mx-12 p-10 xl:my-20 xl:mx-0 w-[400px] md:w-[400px] xl:w-[350px] 2xl:w-[400px]">
                 <Image
                   src={Me}
                   alt="Me"
@@ -101,6 +100,45 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
                   </span>
                   .
                 </p>
+                <p className="text-zinc-200 max-sm:m-10 mb-5">
+                  Tenho um{" "}
+                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                    interesse
+                  </span>{" "}
+                  genuíno em atuar tanto no{" "}
+                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                    frontend
+                  </span>{" "}
+                  quanto no{" "}
+                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                    backend
+                  </span>
+                  , com o objetivo de{" "}
+                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                    contribuir
+                  </span>{" "}
+                  de forma{" "}
+                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                    abrangente
+                  </span>{" "}
+                  para o{" "}
+                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                    desenvolvimento de sistemas funcionais e escaláveis
+                  </span>
+                  . Estou{" "}
+                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                    motivado
+                  </span>{" "}
+                  a integrar uma equipe onde possa{" "}
+                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                    não apenas
+                  </span>{" "}
+                  aplicar meus conhecimentos, mas também{" "}
+                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
+                    aprender e colaborar para o crescimento mútuo
+                  </span>
+                  .
+                </p>
               </BlurFade>
               <div className="flex items-center gap-3 max-sm:mb-10 max-sm:justify-center max-lg:justify-center">
                 <BlurFade delay={0.25 * 5.5} inView>
@@ -151,9 +189,6 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
             </div>
           </div>
         </div>
-        <BlurFade delay={0.25 * 1.5} inView>
-          <ActionsGrid />
-        </BlurFade>
       </>
     );
   }

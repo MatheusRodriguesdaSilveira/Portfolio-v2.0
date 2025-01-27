@@ -82,7 +82,7 @@ export default function HyperText({
       className="overflow-hidden py-1 bg-clip-text text-transparent bg-gradient-to-br from-cyan-400 to-blue-800 group-hover:from-cyan-800 group-hover:to-blue-900 focus:ring-4 focus:outline-none focus:ring-cyan-200 flex cursor-default scale-100"
       onMouseEnter={triggerAnimation}
     >
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="sync">
         {displayText.map((letter, i) => (
           <motion.h1
             key={i}
