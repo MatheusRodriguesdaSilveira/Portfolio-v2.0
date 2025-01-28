@@ -8,6 +8,7 @@ import {
   HandMetal,
   Rocket,
   Settings,
+  Zap,
 } from "lucide-react";
 import { FaReact, FaHtml5, FaGithub, FaGitAlt } from "react-icons/fa";
 import {
@@ -39,10 +40,10 @@ export function ActionsGrid() {
       <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-5 mb-20">
         {/* Front-end */}
         <BlurFade delay={0.25 * 4} inView>
+          <h2 className="md:text-3xl font-semibold text-white flex items-center justify-center gap-2 mb-5">
+            <Zap className="size-8 text-sky-400" /> Front-end
+          </h2>
           <div className="flex flex-col gap-2 items-center border border-zinc-500 rounded-xl px-24 py-10 xl:py-14 2xl:py-14 shadow-lg shadow-indigo-500/40 hover:scale-95 hover:shadow-indigo-500/70 duration-500">
-            <h2 className="md:text-3xl font-semibold text-white flex items-center gap-2">
-              <HandMetal className="size-8 text-sky-400" /> Front-end
-            </h2>
             <div className="flex gap-5">
               <div className="flex flex-col items-center gap-1">
                 <SiJavascript className="size-10 text-yellow-500" />
@@ -70,10 +71,10 @@ export function ActionsGrid() {
 
         {/* Back-end */}
         <BlurFade delay={0.25 * 5} inView>
+          <h2 className="md:text-3xl font-semibold text-white flex items-center justify-center gap-2 mb-5">
+            <Rocket className="size-8 text-rose-700" /> Back-end
+          </h2>
           <div className="flex flex-col gap-2 items-center border border-zinc-500 rounded-xl px-24 py-10 xl:py-14 2xl:py-14 shadow-lg shadow-indigo-500/40 hover:scale-95 hover:shadow-indigo-500/70 duration-500">
-            <h2 className="md:text-3xl font-semibold text-white flex items-center gap-2">
-              <Rocket className="size-8 text-rose-700" /> Back-end
-            </h2>
             <div className="flex gap-5">
               <div className="flex flex-col items-center gap-1">
                 <SiNodedotjs className="size-10 text-green-500" />
@@ -101,10 +102,10 @@ export function ActionsGrid() {
 
         {/* Other Technologies*/}
         <BlurFade delay={0.25 * 6} inView>
+          <h2 className="md:text-3xl font-semibold text-white flex items-center justify-center gap-2 mb-5">
+            <Settings className="size-7 text-pink-500" /> Other Technologies
+          </h2>
           <div className="flex flex-col gap-2 items-center border border-zinc-500 rounded-xl px-24 py-10 xl:py-14 2xl:py-14 shadow-lg shadow-indigo-500/40 hover:scale-95 hover:shadow-indigo-500/70 duration-500">
-            <h2 className="md:text-2xl font-semibold text-white flex items-center gap-2">
-              <Settings className="size-7 text-pink-500" /> Other Technologies
-            </h2>
             <div className="flex gap-4">
               <div className="flex flex-col items-center gap-1">
                 <FaGithub className="size-10 text-purple-500" />
@@ -136,11 +137,11 @@ export function ActionsGrid() {
 
         {/* Soft Skills*/}
         <BlurFade delay={0.25 * 7} inView>
+          <h2 className="md:text-3xl font-semibold text-white flex items-center justify-center gap-2 mb-5">
+            <BadgeCheck className="sm:size-5 md:size-7 text-yellow-300" />
+            Soft Skills
+          </h2>
           <div className="flex flex-col gap-2 items-center border border-zinc-500 rounded-xl px-24 py-10 xl:px-3 xl:py-4 2xl:py-10 shadow-lg shadow-indigo-500/40 hover:scale-95 hover:shadow-indigo-500/70 duration-700">
-            <h2 className="sm:text-sm md:text-2xl font-semibold text-white flex items-center gap-2">
-              <BadgeCheck className="sm:size-5 md:size-7 text-yellow-300" />
-              Soft Skills
-            </h2>
             <div className="grid grid-flow-col grid-rows-3 gap-2 xl:px-0 xl:gap-3 2xl:gap-4 text-xs xl:text-sm text-white font-bold">
               <div className="flex flex-col items-center gap-1">
                 <p className="flex gap-1">

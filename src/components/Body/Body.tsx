@@ -28,7 +28,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
 
                   {/* GradualSpacing para "Desenvolvedor" */}
                   <GradualSpacing
-                    className=""
+                    className="px-0.5"
                     text="Desenvolvedor"
                     duration={1}
                     delayMultiple={0.2}
