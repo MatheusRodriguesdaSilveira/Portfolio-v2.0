@@ -38,10 +38,10 @@ export function ActionsGrid() {
           </span>
         </h2>
       </BlurFade>
-      <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-5 mb-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center xl:gap-2 2xl:gap-5 mb-20">
         {/* Front-end */}
         <BlurFade delay={0.25 * 4} inView>
-          <div className="flex flex-col gap-2 items-center border border-zinc-500 rounded-xl xl:px-24 py-10 xl:py-14 2xl:py-14 shadow-lg shadow-indigo-500/40 hover:scale-95 hover:shadow-indigo-500/70 duration-500">
+          <div className="flex flex-col gap-2 items-center border border-zinc-500 rounded-xl xl:px-24 py-10 xl:py-9 2xl:py-14 shadow-lg shadow-indigo-500/40 hover:scale-95 hover:shadow-indigo-500/70 duration-500">
             <div className="flex items-center justify-center gap-1 mb-5">
               <Zap className="size-7 xl:size-8 text-sky-400" />
               <span className="text-xl md:text-3xl font-semibold text-white">
@@ -75,7 +75,7 @@ export function ActionsGrid() {
 
         {/* Back-end */}
         <BlurFade delay={0.25 * 5} inView>
-          <div className="flex flex-col gap-2 items-center border border-zinc-500 rounded-xl xl:px-24 py-10 xl:py-14 2xl:py-14 shadow-lg shadow-indigo-500/40 hover:scale-95 hover:shadow-indigo-500/70 duration-500">
+          <div className="flex flex-col gap-2 items-center border border-zinc-500 rounded-xl xl:px-24 py-10 xl:py-9 2xl:py-14 shadow-lg shadow-indigo-500/40 hover:scale-95 hover:shadow-indigo-500/70 duration-500">
             <div className="flex items-center justify-center gap-1 mb-5">
               <Rocket className="size-7 xl:size-8 text-rose-700" />
               <span className="text-xl md:text-3xl font-semibold text-white">
@@ -113,7 +113,7 @@ export function ActionsGrid() {
 
         {/* Other Technologies*/}
         <BlurFade delay={0.25 * 6} inView>
-          <div className="flex flex-col gap-2 items-center border border-zinc-500 rounded-xl xl:px-24 py-10 xl:py-14 2xl:py-14 shadow-lg shadow-indigo-500/40 hover:scale-95 hover:shadow-indigo-500/70 duration-500">
+          <div className="flex flex-col gap-2 items-center border border-zinc-500 rounded-xl xl:px-24 py-10 xl:py-9 2xl:py-14 shadow-lg shadow-indigo-500/40 hover:scale-95 hover:shadow-indigo-500/70 duration-500">
             <h2 className="md:text-3xl font-semibold text-white flex items-center justify-center gap-2 mb-5">
               <Settings className="size-7 text-pink-500" /> Other Technologies
             </h2>
@@ -148,12 +148,12 @@ export function ActionsGrid() {
 
         {/* Soft Skills*/}
         <BlurFade delay={0.25 * 7} inView>
-          <div className="flex flex-col gap-2 items-center border border-zinc-500 rounded-xl py-10 xl:px-24 xl:py-4 2xl:py-14 shadow-lg shadow-indigo-500/40 hover:scale-95 hover:shadow-indigo-500/70 duration-500">
+          <div className="flex flex-col gap-2 items-center border border-zinc-500 rounded-xl py-10 xl:px-5 xl:py-4 2xl:py-14 shadow-lg shadow-indigo-500/40 hover:scale-95 hover:shadow-indigo-500/70 duration-500">
             <h2 className="text-lg xl:text-3xl 2xl:mb-1 font-semibold text-white flex items-center justify-center gap-1">
               <BadgeCheck className="size-6 xl:size-7 text-yellow-300" />
               Soft Skills
             </h2>
-            <div className="grid grid-flow-col grid-rows-10 md:grid-rows-3 gap-1 px-5 xl:px-0 xl:gap-5 2xl:gap-2 text-xs xl:text-sm text-white font-bold text-balance md:text-balance">
+            <div className="grid grid-flow-col grid-rows-10 md:grid-rows-3 gap-1 px-5 xl:px-0 xl:gap-0 2xl:gap-2 text-xs xl:text-sm text-white font-bold text-balance md:text-balance">
               <div className="flex flex-col items-center gap-1">
                 <p className="flex gap-1">
                   <CheckCircle className="size-4 md:size-5 text-green-500" />

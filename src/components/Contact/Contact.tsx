@@ -37,8 +37,8 @@ const ContactPage = () => {
   return (
     <BlurFade delay={0.25 * 5} inView>
       <div className="min-h-screen flex items-center justify-center m-10">
-        <div className="border border-indigo-500 p-10 rounded-3xl shadow-indigo-700/50 shadow-2xl max-w-md w-full">
-          <div className="text-center mb-5">
+        <div className="border border-indigo-500 p-10 rounded-3xl shadow-indigo-700/50 shadow-2xl max-w-md xl:max-w-2xl xl:h-[500px] 2xl:h-[600px] w-full">
+          <div className="text-center 2xl:mb-12 xl:mb-0 mb-5">
             <h2 className="text-zinc-300 text-3xl md:text-5xl">
               Contact <span className="text-indigo-600">me.</span>
             </h2>
@@ -51,7 +51,7 @@ const ContactPage = () => {
             </div>
           )}
 
-          <form ref={form} onSubmit={sendEmail} className="space-y-4">
+          <form ref={form} onSubmit={sendEmail} className="space-y-2">
             <div>
               <label className="block text-sm font-medium text-indigo-500">
                 Nome
@@ -80,9 +80,8 @@ const ContactPage = () => {
               </label>
               <textarea
                 name="message"
-                className="mt-1 p-2 w-full text-white bg-transparent border border-indigo-400 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                className="h-[100px] xl:h-[90px] 2xl:h-[120px] mt-1 p-2 w-full text-white bg-transparent border border-indigo-400 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
                 placeholder="Como posso te ajudar?"
-                rows={3}
               ></textarea>
             </div>
             <div className="justify-center items-center flex">
@@ -90,9 +89,9 @@ const ContactPage = () => {
             </div>
           </form>
 
-          <div className="mt-6 text-center">
+          <div className="xl:mt-2 2xl:mt-6 mt-5 text-center">
             <p className="text-sm text-gray-600">Outros</p>
-            <div className="flex justify-center space-x-4 mt-2">
+            <div className="flex justify-center space-x-4 2xl:mt-2 xl:mt-0 mt-2">
               <a
                 href="https://www.linkedin.com/in/matheus-rodrigues-da-silveira/"
                 target="_blank"
