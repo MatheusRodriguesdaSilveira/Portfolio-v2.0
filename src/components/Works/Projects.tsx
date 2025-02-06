@@ -15,10 +15,10 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
     >
       {/* Title */}
       <BlurFade delay={0.25 * 4.2} inView>
-        <div className="text-5xl mb-20 max-sm:text-3xl flex gap-2 items-center">
+        <div className="text-5xl font-normal my-20 max-sm:text-3xl flex gap-2 items-center">
           <span className="text-white">{"<"}</span>
           <h2 className="text-indigo-600">My</h2>
-          <h2 className="text-zinc-300">Projects💻</h2>
+          <h2 className="text-zinc-200">Projects💻</h2>
           <span className="text-white">{"/>"}</span>
         </div>
       </BlurFade>
@@ -27,7 +27,7 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full 2xl:w-4/5 mx-auto sm:p-6 lg:p-0">
         {projects?.map((project, index) => (
           <BlurFade key={project.id} delay={0.25 * (index + 1)} inView>
-            <div className="flex flex-col items-center p-5 md:p-5 lg:p-5 bg-zinc-950/50 rounded-3xl shadow-lg shadow-indigo-300/30 overflow-hidden border border-indigo-300 transition-transform duration-500 transform hover:scale-95">
+            <div className="flex flex-col items-center p-5 md:p-5 lg:p-5 bg-zinc-950/50 rounded-3xl overflow-hidden border border-indigo-300 transform hover:shadow-xl shadow-lg shadow-indigo-300/30 hover:shadow-indigo-400/50 hover:scale-95 duration-500">
               {/* Project Image */}
               <div className="w-full h-48 2xl:h-60 relative rounded-3xl border border-zinc-800 overflow-hidden">
                 <a

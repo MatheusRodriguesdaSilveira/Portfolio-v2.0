@@ -44,20 +44,19 @@ export default function Page() {
         block: "start",
       });
     } else {
-      console.error("Elemento de referência para About não encontrado.");
+      console.error("Elemento de referência para Techs não encontrado.");
     }
   };
 
   return (
     <>
-      <BlurFade key="navbar" delay={0.25 * 2} inView>
-        <NavBar
-          scrollToAbout={scrollToAbout}
-          scrollToProjects={scrollToProjects}
-          scrollToTechs={scrollToTechs}
-        />
-        <Body scrollToProjects={scrollToProjects} />
-      </BlurFade>
+      <NavBar
+        scrollToAbout={scrollToAbout}
+        scrollToProjects={scrollToProjects}
+        scrollToTechs={scrollToTechs}
+      />
+
+      <Body scrollToProjects={scrollToProjects} />
       <Hr />
       <BlurFade key="about" delay={0.25 * 2.1} inView>
         <div ref={aboutRef}>

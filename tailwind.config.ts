@@ -2,10 +2,10 @@ import type { Config } from "tailwindcss";
 
 const config = {
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -19,12 +19,12 @@ const config = {
     extend: {
       colors: {
         zinc: {
-          950: '#111111', 
-          900: '#181818', 
+          950: "#111111",
         },
       },
       boxShadow: {
-        'custom': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+        custom:
+          "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
       },
       keyframes: {
         "accordion-down": {
@@ -35,16 +35,16 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        'logo-cloud': {
-          from: { transform: 'translateX(0)' },
-          to: { transform: 'translateX(calc(-100% - 4rem))' },
-      },
+        "logo-cloud": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - 4rem))" },
+        },
       },
       animation: {
-        'logo-cloud': 'logo-cloud 20s linear infinite', 
+        "logo-cloud": "logo-cloud 20s linear infinite",
+      },
     },
   },
-},
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
 
