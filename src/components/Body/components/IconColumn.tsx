@@ -4,7 +4,7 @@ import { AtSign, GithubIcon, Linkedin } from "lucide-react";
 export const IconColumn = () => {
   return (
     <>
-      <div className="flex flex-col max-md:flex-row items-center gap-3 mb-3 max-sm:flex-row max-sm:mb-10 text-white duration-300">
+      <div className="flex flex-col max-md:flex-row items-center gap-3 mb-3 max-sm:flex-row max-sm:mb-5 text-white duration-300">
         <BlurFade delay={0.25 * 3.2} inView>
           <a
             href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=matheussilveira2005@gmail.com&body=Olá,+Matheus,+tudo+bem?"

@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Body } from "../components/Body/Body";
 import { NavBar } from "../components/Header/Navbar";
 import { Footer } from "../components/Footer/Footer";
@@ -9,11 +9,41 @@ import BlurFade from "@/components/ui/blur-fade";
 import Projects from "@/components/Works/Projects";
 import AboutPage from "@/components/About/About";
 import ContactPage from "@/components/Contact/Contact";
+import ButtonScroll from "@/components/ui/ButtonScrollToTop";
+import { ArrowUp } from "lucide-react";
+import { AppleCardsCarouselDemo } from "@/components/Works/teste";
 
 export default function Page() {
   const projectsRef = useRef<HTMLDivElement | null>(null);
   const aboutRef = useRef<HTMLDivElement | null>(null);
   const techsRef = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const toggleVisibile = () => {
+      if (window.scrollY > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+    const handleScroll = () => {
+      if (window.scrollY < 300) {
+        setIsVisible(false);
+      }
+    };
+    window.addEventListener("scroll", toggleVisibile);
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", toggleVisibile);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setIsVisible(false);
+  };
 
   const scrollToProjects = () => {
     if (projectsRef.current) {
@@ -56,8 +86,15 @@ export default function Page() {
         scrollToTechs={scrollToTechs}
       />
 
+      {isVisible && (
+        <ButtonScroll onClick={scrollToTop}>
+          <ArrowUp className="text-indigo-600 size-6 " />
+        </ButtonScroll>
+      )}
+
       <Body scrollToProjects={scrollToProjects} />
       <Hr />
+
       <BlurFade key="about" delay={0.25 * 2.1} inView>
         <div ref={aboutRef}>
           <AboutPage />
@@ -72,7 +109,8 @@ export default function Page() {
       <Hr />
       <BlurFade key="projects" delay={0.25 * 2.2} inView>
         <div ref={projectsRef}>
-          <Projects />
+          {/* <Projects /> */}
+          <AppleCardsCarouselDemo />
         </div>
       </BlurFade>
       <Hr />

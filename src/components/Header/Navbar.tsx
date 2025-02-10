@@ -21,9 +21,36 @@ export const NavBar = ({
   scrollToTechs,
 }: NavBarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const handleOpenMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  useEffect(() => {
+    const toggleVisibile = () => {
+      if (window.scrollY > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+    const handleScroll = () => {
+      if (window.scrollY < 300) {
+        setIsVisible(false);
+      }
+    };
+    window.addEventListener("scroll", toggleVisibile);
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", toggleVisibile);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setIsVisible(false);
   };
 
   const [scrolled, setScrolled] = useState(false);
@@ -52,12 +79,15 @@ export const NavBar = ({
           scrolled ? `backdrop-blur-md` : `bg-zinc-900`
         } py-3 flex justify-between items-center rounded-full mx-32 fixed top-0 left-0 right-0 z-50 my-5 transition-all duration-500`}
       >
-        <div className="px-5 font-bold items-center text-2xl cursor-context-menu">
+        <button
+          onClick={scrollToTop}
+          className="px-5 font-bold items-center text-2xl"
+        >
           <span className="text-white text-xl">{"<"}</span>
           <span className="text-indigo-600">matheus</span>
           <span className="text-white">-silveira</span>
           <span className="text-white text-xl pl-0.5">{"/>"}</span>
-        </div>
+        </button>
 
         <nav className="nav hidden md:block">
           <ul className="flex text-center items-center rounded-full text-zinc-400">
@@ -121,22 +151,22 @@ export const NavBar = ({
         </nav>
       </motion.header>
 
-      <header className="xl:hidden mb-10">
+      <header className="xl:hidden mb-1">
         <nav className="border-gray-200">
           <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <div className="flex justify-center font-bold items-center text-xl cursor-context-menu m-5">
+            {/* <div className="flex justify-center font-bold items-center text-xl cursor-context-menu m-5">
               <span className="text-white">{"<"}</span>
               <span className="text-indigo-600">matheus</span>
               <span className="text-white">-silveira</span>
               <span className="text-white pl-0.5">{"/>"}</span>
-            </div>
+            </div> */}
             <button
               onClick={handleOpenMenu}
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
-              className="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-400 rounded-lg md:hidden"
+              className="inline-flex m-2 pr-0 items-center text-gray-400 rounded-lg md:hidden"
             >
-              {isMenuOpen ? "" : <AlignJustify className="w-5 h-5" />}
+              {isMenuOpen ? "" : <AlignJustify className="size-6" />}
             </button>
           </div>
         </nav>

@@ -24,7 +24,7 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
       </BlurFade>
 
       {/* Project Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full 2xl:w-4/5 mx-auto sm:p-6 lg:p-0">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full 2xl:w-5/6 mx-auto sm:p-6 lg:p-0">
         {projects?.map((project, index) => (
           <BlurFade key={project.id} delay={0.25 * (index + 1)} inView>
             <div className="flex flex-col items-center p-5 md:p-5 lg:p-5 bg-zinc-950/50 rounded-3xl overflow-hidden border border-indigo-300 transform hover:shadow-xl shadow-lg shadow-indigo-300/30 hover:shadow-indigo-400/50 hover:scale-95 duration-500">

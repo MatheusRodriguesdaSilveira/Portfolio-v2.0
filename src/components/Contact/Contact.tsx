@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Button from "../ui/Button";
 import BlurFade from "../ui/blur-fade";
+import { CircleUser } from "lucide-react";
 
 const ContactPage = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -37,11 +38,14 @@ const ContactPage = () => {
   return (
     <BlurFade delay={0.25 * 5} inView>
       <div className="min-h-screen flex items-center justify-center m-10">
-        <div className="border border-indigo-500 p-10 rounded-3xl shadow-indigo-700/50 shadow-2xl max-w-md xl:max-w-2xl xl:h-[500px] 2xl:h-[600px] w-full">
-          <div className="text-center 2xl:mb-12 xl:mb-0 mb-5">
-            <h2 className="text-zinc-300 text-3xl md:text-5xl">
-              Contact <span className="text-indigo-600">me.</span>
-            </h2>
+        <div className="border border-indigo-500 p-10 rounded-3xl shadow-indigo-700/50 shadow-2xl max-w-md xl:max-w-xl xl:h-[500px] 2xl:h-[600px] w-full">
+          <div className="text-center 2xl:mb-12 xl:mb-0 ">
+            <div className="flex items-center gap-1 justify-center">
+              <CircleUser className="text-indigo-600 size-6 xl:size-12" />
+              <h2 className="text-zinc-300 text-2xl md:text-5xl">
+                Contact <span className="text-indigo-600">me.</span>
+              </h2>
+            </div>
           </div>
 
           {/* Toast de sucesso */}
@@ -98,7 +102,7 @@ const ContactPage = () => {
                 rel="noopener noreferrer"
                 className="text-blue-500 hover:scale-110 duration-500"
               >
-                LinkedIn
+                Linkedin
               </a>
               <a
                 href="https://github.com/MatheusRodriguesdaSilveira"

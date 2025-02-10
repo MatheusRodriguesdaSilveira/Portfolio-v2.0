@@ -70,8 +70,8 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
         <div className="xl:pr-[150px] xl:mb-28 max-sm:mb-6">
           <BlurFade duration={0.6} delay={0.8} yOffset={10}>
             <div className="flex items-center max-sm:flex-col">
-              <BlurFade delay={0.25 * 5} inView>
-                <p className="text-zinc-200 text-left leading-loose mb-4 text-sm lg:text-lg xl:text-base 2xl:text-lg max-sm:text-xs max-sm:leading-relaxed max-sm:text-left">
+              <BlurFade delay={0.25 * 4} inView>
+                <p className="text-zinc-200 text-left leading-loose mb-4 text-sm lg:text-lg xl:text-base 2xl:text-lg max-sm:text-base max-sm:leading-relaxed max-sm:text-left">
                   👋 Meu nome é{" "}
                   <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
                     Matheus

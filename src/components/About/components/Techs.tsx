@@ -47,7 +47,7 @@ export function ActionsGrid() {
           </span>
         </h2>
       </BlurFade>
-      <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-5 xl:gap-2 2xl:gap-5 mb-20">
+      <div className="grid md:grid-cols-2 items-center justify-center gap-5 xl:gap-2 2xl:gap-5 mb-20">
         {/* Front-end */}
         <BlurFade delay={0.25 * 4} inView>
           <div className="group flex flex-col gap-2 items-center border border-zinc-500 rounded-xl xl:px-24 py-10 xl:py-9 2xl:py-14 shadow-lg shadow-indigo-500/40 hover:scale-95 hover:shadow-indigo-500/80 hover:-translate-y-2 duration-300 ease-in-out">
@@ -57,7 +57,7 @@ export function ActionsGrid() {
                 Front-end
               </span>
             </div>
-            <div className="grid grid-flow-col grid-rows-2 md:grid-rows-1 px-20 gap-5 xl:gap-4">
+            <div className="grid grid-flow-col grid-rows-1 md:grid-rows-1 px-10 gap-3 xl:gap-4">
               <div className="flex flex-col items-center gap-1">
                 <SiJavascript className="size-9 xl:size-10 text-yellow-500 transition-transform duration-300 group-hover:scale-110" />
                 <p className="text-white text-xs font-semibold">JavaScript</p>
@@ -95,7 +95,7 @@ export function ActionsGrid() {
                 Back-end
               </span>
             </div>
-            <div className="grid grid-flow-col grid-rows-2 md:grid-rows-1 gap-5 xl:gap-4">
+            <div className="grid grid-flow-col grid-rows-1 md:grid-rows-1 gap-3 xl:gap-4">
               <div className="flex flex-col items-center gap-1">
                 <SiNodedotjs className="size-9 xl:size-10 text-green-500 transition-transform duration-300 group-hover:scale-110" />
                 <p className="text-white text-xs font-semibold">Node.Js</p>
@@ -133,7 +133,7 @@ export function ActionsGrid() {
                 Other Technologies
               </span>
             </h2>
-            <div className="grid grid-flow-col grid-rows-2 md:grid-rows-1 gap-5 xl:gap-4">
+            <div className="grid grid-flow-col grid-rows-1 md:grid-rows-1 gap-3 xl:gap-4">
               <div className="flex flex-col items-center gap-1">
                 <FaGithub className="size-9 xl:size-10 text-purple-500 transition-transform duration-300 group-hover:scale-110" />
                 <p className="text-white text-xs font-semibold">GitHub</p>
@@ -164,12 +164,12 @@ export function ActionsGrid() {
 
         {/* Soft Skills*/}
         <BlurFade delay={0.25 * 7} inView>
-          <div className="group flex flex-col gap-2 items-center border border-zinc-500 rounded-xl py-10 xl:px-5 xl:py-4 2xl:py-14 shadow-lg shadow-indigo-500/40 hover:scale-95 hover:shadow-indigo-500/80 hover:-translate-y-2 duration-300 ease-in-out">
+          <div className="group flex flex-col gap-2 items-center border border-zinc-500 rounded-xl xl:px-24 py-10 lg:py-8 xl:py-4 2xl:py-14 shadow-lg shadow-indigo-500/40 hover:scale-95 hover:shadow-indigo-500/80 hover:-translate-y-2 duration-300 ease-in-out">
             <h2 className="text-lg xl:text-3xl 2xl:mb-1 font-semibold text-white flex items-center justify-center gap-1">
               <BadgeCheck className="size-6 xl:size-7 text-yellow-300 transition-transform duration-300 group-hover:rotate-12" />
               Soft Skills
             </h2>
-            <div className="grid grid-flow-col grid-rows-10 md:grid-rows-3 gap-1 px-5 xl:px-0 xl:gap-0 2xl:gap-2 text-xs xl:text-sm text-white font-bold text-balance md:text-balance">
+            <div className="grid grid-flow-col grid-rows-3 md:grid-rows-3 gap-1 px-5 xl:px-0 xl:gap-0 2xl:gap-2 text-xs xl:text-sm text-white font-bold text-balance md:text-balance">
               <div className="flex flex-col items-center gap-1">
                 <p className="flex gap-1">
                   <CheckCircle className="size-4 md:size-5 text-green-500" />
