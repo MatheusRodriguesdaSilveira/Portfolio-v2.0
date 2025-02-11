@@ -77,7 +77,7 @@ export const NavBar = ({
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={`max-sm:hidden border border-zinc-600 ${
           scrolled ? `backdrop-blur-md` : `bg-zinc-900`
-        } py-3 flex justify-between items-center rounded-full mx-32 fixed top-0 left-0 right-0 z-50 my-5 transition-all duration-500`}
+        } py-3 flex justify-between items-center rounded-full md:mx-20 xl:mx-16 2xl:mx-36 fixed top-0 left-0 right-0 z-50 my-5 transition-all duration-500`}
       >
         <button
           onClick={scrollToTop}
@@ -108,11 +108,11 @@ export const NavBar = ({
                 action: scrollToProjects,
               },
             ].map((item, index) => (
-              <div key={index} className="flex items-center gap-3">
+              <div key={index} className="flex items-center">
                 {index !== 0 && <div className="w-0.5 h-5 bg-zinc-500"></div>}
                 <motion.li
                   whileHover={{ color: "#818cf8" }}
-                  whileTap={{ scale: 0.9, opacity: 0.7 }} // Clique efeito de opacidade
+                  whileTap={{ scale: 0.9, opacity: 0.7 }}
                 >
                   <a
                     className="flex relative gap-1 cursor-pointer before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 before:bg-indigo-200 before:transition-all before:duration-300 hover:before:w-full"

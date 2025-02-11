@@ -7,6 +7,7 @@ import GradualSpacing from "../ui/gradual-spacing";
 import ShimmerButton from "../ui/ButtonMotion";
 import ButtonContact from "./components/ButtonContact";
 import ArrowDown from "./components/ArrowDown";
+import ButtonCv from "./components/ButtonCv";
 
 interface BodyProps {
   scrollToProjects: () => void;
@@ -131,12 +132,17 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
           <BlurFade duration={0.6} delay={1} yOffset={10}>
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-5 max-sm:gap-5 max-sm:mr-9 lg:gap-4 xl:gap-5">
-                <BlurFade delay={0.25 * 5} inView>
+                <BlurFade delay={0.25 * 5.4} inView>
+                  <div className="flex">
+                    <ButtonCv />
+                  </div>
+                </BlurFade>
+                <BlurFade delay={0.25 * 5.5} inView>
                   <div className="flex">
                     <ButtonContact />
                   </div>
                 </BlurFade>
-                <BlurFade delay={0.25 * 5.5} inView>
+                <BlurFade delay={0.25 * 5.6} inView>
                   <div className="flex">
                     <ShimmerButton scrollToProjects={scrollToProjects} />
                   </div>

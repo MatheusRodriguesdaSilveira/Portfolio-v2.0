@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
+import { File } from "lucide-react";
 
-const ButtonContact = () => {
+const ButtonCv = () => {
   return (
     <motion.button
       className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium rounded-full group bg-gradient-to-br from-indigo-400 to-blue-900 text-white duration-300"
@@ -23,14 +24,16 @@ const ButtonContact = () => {
 
       {/* Link do botão */}
       <a
-        href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=matheussilveira2005@gmail.com&body=Olá,+Matheus,+tudo+bem?"
+        href="/CV-MatheusRodrigues.pdf"
+        download="CV-MatheusRodrigues.pdf"
         target="_blank"
-        className="flex text-nowrap relative xl:px-10 xl:py-3.5 px-6 py-2.5 transition-all ease-in duration-300 bg-zinc-900 rounded-full group-hover:bg-opacity-0"
+        className="flex items-center text-nowrap relative xl:px-10 xl:py-3.5 px-6 py-2.5 transition-all ease-in duration-300 bg-zinc-900 rounded-full group-hover:bg-opacity-0"
       >
-        Vamos conversar?
+        Meu Currículo
+        <File className="ml-1 size-4" />
       </a>
     </motion.button>
   );
 };
 
-export default ButtonContact;
+export default ButtonCv;

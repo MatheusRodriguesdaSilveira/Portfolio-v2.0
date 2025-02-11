@@ -6,12 +6,11 @@ import { Footer } from "../components/Footer/Footer";
 import { ActionsGrid } from "../components/About/components/Techs";
 import Hr from "../components/ui/hr";
 import BlurFade from "@/components/ui/blur-fade";
-import Projects from "@/components/Works/Projects";
 import AboutPage from "@/components/About/About";
 import ContactPage from "@/components/Contact/Contact";
 import ButtonScroll from "@/components/ui/ButtonScrollToTop";
 import { ArrowUp } from "lucide-react";
-import { AppleCardsCarouselDemo } from "@/components/Works/teste";
+import { AppleCardsCarouselDemo } from "@/components/Works/Projects";
 
 export default function Page() {
   const projectsRef = useRef<HTMLDivElement | null>(null);
@@ -88,7 +87,7 @@ export default function Page() {
 
       {isVisible && (
         <ButtonScroll onClick={scrollToTop}>
-          <ArrowUp className="text-indigo-600 size-6 " />
+          <ArrowUp className="text-indigo-500 size-6 " />
         </ButtonScroll>
       )}
 
