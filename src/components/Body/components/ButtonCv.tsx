@@ -1,38 +1,22 @@
-import { motion } from "framer-motion";
-import { File } from "lucide-react";
+import { ArrowDownToLine, Download } from "lucide-react";
+import React from "react";
 
 const ButtonCv = () => {
   return (
-    <motion.button
-      className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium rounded-full group bg-gradient-to-br from-indigo-400 to-blue-900 text-white duration-300"
-      whileTap={{ scale: 0.95 }}
-      whileHover={{ scale: 1.05 }}
+    <button
+      type="submit"
+      className="flex text-white justify-center gap-2 items-center mx-auto shadow-xl bg-zinc-900 isolation-auto border-indigo-500 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-indigo-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group"
     >
-      {/* Efeito de brilho */}
-      <motion.div
-        className="absolute inset-0 bg-[linear-gradient(120deg,#6366f1_calc(var(--shimmer-x)-25%),#1e3a8a_var(--shimmer-x),#6366f1_calc(var(--shimmer-x)+25%))] [--shimmer-x:0%] rounded-full opacity-40"
-        initial={{ "--shimmer-x": "-100%" } as any}
-        animate={{ "--shimmer-x": "200%" } as any}
-        transition={{
-          "--shimmer-x": {
-            duration: 2.5,
-            repeat: Infinity,
-            ease: "easeInOut",
-          },
-        }}
-      />
-
-      {/* Link do botão */}
       <a
+        className="flex gap-1 items-center text-base font-semibold"
         href="/CV-MatheusRodrigues.pdf"
         download="CV-MatheusRodrigues.pdf"
         target="_blank"
-        className="flex items-center text-nowrap relative xl:px-10 xl:py-3.5 px-6 py-2.5 transition-all ease-in duration-300 bg-zinc-900 rounded-full group-hover:bg-opacity-0"
       >
-        Meu Currículo
-        <File className="ml-1 size-4" />
+        Download currículo
+        <ArrowDownToLine className="w-9 h-9 p-1.5 justify-end rotate-90 group-hover:-rotate-0 group-hover:bg-gray-50 group-hover:text-indigo-900 text-gray-50 ease-linear duration-300 rounded-full group-hover:border-none" />
       </a>
-    </motion.button>
+    </button>
   );
 };
 

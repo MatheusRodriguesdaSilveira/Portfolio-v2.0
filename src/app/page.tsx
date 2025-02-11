@@ -11,6 +11,7 @@ import ContactPage from "@/components/Contact/Contact";
 import ButtonScroll from "@/components/ui/ButtonScrollToTop";
 import { ArrowUp } from "lucide-react";
 import { AppleCardsCarouselDemo } from "@/components/Works/Projects";
+import { Experience } from "@/components/Trajectory/Experience";
 
 export default function Page() {
   const projectsRef = useRef<HTMLDivElement | null>(null);
@@ -103,6 +104,12 @@ export default function Page() {
       <BlurFade key="techs" delay={0.25 * 2.1} inView>
         <div ref={techsRef}>
           <ActionsGrid />
+        </div>
+      </BlurFade>
+      <Hr />
+      <BlurFade key="techs" delay={0.25 * 2.1} inView>
+        <div ref={techsRef}>
+          <Experience />
         </div>
       </BlurFade>
       <Hr />

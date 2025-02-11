@@ -107,13 +107,6 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
       <div className="relative w-full py-2 md:py-10">
         <div className="flex justify-end gap-2">
           <div className="flex justify-end gap-3 md:gap-2">
-            {/* <button
-              onClick={scrollLeft}
-              disabled={!canScrollLeft}
-              className="disabled:opacity-40 relative inline-flex h-10 w-10 md:h-14 md:w-14 animate-shimmer items-center justify-center rounded-full border border-slate-800 bg-[linear-gradient(110deg,#292929,45%,#473e8a,55%,#292929)] bg-[length:200%_100%] font-medium text-slate-400 transition-colors focus:outline-none"
-            >
-              <ArrowLeftCircle className="h-6 w-6 text-gray-400" />
-            </button> */}
             <button
               className="relative z-40 h-10 w-10 md:h-11 md:w-11 rounded-full flex items-center justify-center disabled:opacity-50 hover:scale-95 duration-300 shadow-[inset_0_0_0_2px_#616467] tracking-widest uppercase font-bold bg-transparent hover:bg-[#616467] hover:text-white dark:text-neutral-200 transition "
               onClick={scrollLeft}

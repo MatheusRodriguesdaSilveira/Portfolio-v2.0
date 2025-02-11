@@ -27,12 +27,12 @@ const ShimmerButton = ({
       />
 
       {/* Conteúdo do botão */}
-      <span className="group/button relative inline-flex h-10 w-10 xl:px-[26px] xl:py-[26px] md:h-[50px] md:w-[50px] lg:h-10 lg:w-10 items-center justify-center overflow-hidden ease-in bg-zinc-900 rounded-full group-hover:bg-opacity-0 duration-150 font-medium text-white transition-all hover:w-[135px] xl:hover:w-[150px]">
+      <span className="group/button relative inline-flex h-12 w-12 xl:px-[26px] xl:py-[26px] md:h-[50px] md:w-[50px] lg:h-10 lg:w-10 items-center justify-center overflow-hidden ease-in bg-zinc-900 rounded-full group-hover:bg-opacity-0 duration-150 font-medium text-white transition-all hover:w-[135px] xl:hover:w-[150px]">
         <span className="justify-center items-center flex">
           <a className="flex ml-2 mb-0.5 gap-2 items-center whitespace-nowrap text-sm opacity-0 transition-all duration-150 group-hover/button:-translate-x-4 group-hover/button:opacity-100">
             See my works
           </a>
-          <div className="absolute right-2.5 lg:right-5 xl:right-4">
+          <div className="absolute right-3.5 lg:right-5 xl:right-4">
             <MoveRight className="size-5 xl:size-5" />
           </div>
         </span>

@@ -8,8 +8,8 @@ export function AppleCardsCarouselDemo() {
   ));
 
   return (
-    <div className="w-full h-screen py-20 md:py-28">
-      <h2 className="max-w-7xl pl-5 mb-5 mx-auto text-3xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
+    <div className="w-full h-full md:h-screen py-16 md:py-28">
+      <h2 className="max-w-7xl pl-5 mx-auto text-3xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
         {"<My Projects💻/>"}
       </h2>
 
