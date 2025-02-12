@@ -78,13 +78,13 @@ export const NavBar = ({
         initial={{ y: -100, opacity: 0 }} // Animação de entrada
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className={`max-sm:hidden border border-zinc-600 ${
+        className={`hidden lg:flex border border-zinc-600 ${
           scrolled ? `backdrop-blur-md` : `bg-zinc-900`
         } py-3 flex justify-between items-center rounded-full md:mx-20 xl:mx-10 2xl:mx-32 fixed top-0 left-0 right-0 z-50 my-5 transition-all duration-500`}
       >
         <button
           onClick={scrollToTop}
-          className="px-5 font-bold text-center items-center text-2xl"
+          className="hidden md:flex px-5 font-bold text-center items-center text-2xl"
         >
           <span className="text-white text-xl">{"<"}</span>
           <span className="text-indigo-600">matheus</span>
@@ -159,7 +159,7 @@ export const NavBar = ({
         </nav>
       </motion.header>
 
-      <header className="lg:hidden mb-1">
+      <header className="xl:hidden mb-1">
         <nav className="border-gray-200">
           <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <button

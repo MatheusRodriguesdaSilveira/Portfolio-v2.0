@@ -15,7 +15,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
   return (
     <div className="flex flex-col mx-5 px-2 xl:flex-row-reverse xl:ml-20 xl:mt-36 items-center 2xl:mx-10 2xl:mt-0 2xl:p-20 2xl:h-screen">
       {/* Imagem Desktop */}
-      <div className="hidden lg:flex xl:w-[1700px] 2xl:w-full xl:mb-10 2xl:mt-24">
+      <div className="hidden xl:flex xl:w-[1700px] 2xl:w-full xl:mb-10 2xl:mt-24">
         <BlurFade delay={0.25 * 5} inView>
           <Image src={Code} alt="code" className="img w-full h-full" />
         </BlurFade>
@@ -67,7 +67,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
         </div>
 
         {/* Descrição Breve */}
-        <div className="xl:pr-[150px] xl:mb-28 max-sm:mb-6">
+        <div className="px-5 2xl:pr-20 xl:px-0 xl:pr-[0px] xl:mb-28 max-sm:mb-6">
           <BlurFade duration={0.6} delay={0.8} yOffset={10}>
             <div className="flex items-center max-sm:flex-col">
               <BlurFade delay={0.25 * 4} inView>
@@ -154,8 +154,8 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
 
           {/* Status */}
           <BlurFade delay={0.25 * 5.6} inView>
-            <div className="grid grid-cols-2 gap-1 mx-5 lg:flex xl:gap-1 xl:mx-0 2xl:gap-10">
-              <div className="flex gap-1 items-end">
+            <div className="grid grid-cols-2 gap-2 mx-10 lg:flex xl:gap-1 xl:mx-5 2xl:gap-10">
+              <div className="flex gap-1 lg:items-end">
                 <div className="text-4xl xl:text-5xl 2xl:text-7xl font-semibold text-indigo-500">
                   <Counter value={1} direction="up" />.
                   <Counter value={5} direction="up" />
@@ -164,7 +164,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
                   Anos de Experiência
                 </h1>
               </div>
-              <div className="flex gap-1 items-end">
+              <div className="flex gap-1 lg:items-end">
                 <div className="text-4xl xl:text-5xl 2xl:text-7xl font-semibold text-indigo-500">
                   0<Counter value={9} direction="up" />
                 </div>
@@ -172,7 +172,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
                   Projetos Realizados
                 </h1>
               </div>
-              <div className="flex gap-1 items-end">
+              <div className="flex gap-1 lg:items-end">
                 <div className="text-4xl xl:text-5xl 2xl:text-7xl font-semibold text-indigo-500">
                   +<Counter value={20} direction="up" />
                 </div>
@@ -180,7 +180,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
                   Repositórios GitHub
                 </h1>
               </div>
-              <div className="flex gap-1 items-end">
+              <div className="flex gap-1 lg:items-end">
                 <div className="text-4xl xl:text-5xl 2xl:text-7xl font-semibold text-indigo-500">
                   +<Counter value={130} direction="up" />
                 </div>
@@ -193,9 +193,13 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
         </div>
 
         {/* Imagem Mobile */}
-        <div className="flex mt-32 w-[350px] md:hidden">
+        <div className="flex mx-10 mt-32 w-[350px] xl:hidden justify-center items-center">
           <BlurFade delay={0.25 * 5.7} inView>
-            <Image src={Code} alt="code" className="img" />
+            <Image
+              src={Code}
+              alt="code"
+              className="img justify-center items-center"
+            />
           </BlurFade>
         </div>
       </div>
