@@ -2,13 +2,10 @@ import React from "react";
 import Image from "next/image";
 import Code from "/public/code.png";
 import BlurFade from "@/components/ui/blur-fade";
-import { IconColumn } from "./components/IconColumn";
 import GradualSpacing from "../ui/gradual-spacing";
 import ShimmerButton from "../ui/ButtonMotion";
-import ButtonContact from "./components/ButtonContact";
-import ArrowDown from "./components/ArrowDown";
 import ButtonCv from "./components/ButtonCv";
-import Counter, { TextTicker } from "../ui/TextCounter";
+import Counter from "../ui/TextCounter";
 
 interface BodyProps {
   scrollToProjects: () => void;
@@ -16,23 +13,24 @@ interface BodyProps {
 
 export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
   return (
-    <div className="flex flex-col xl:flex-row items-center mx-5 xl:px-16 xl:pt-[200px] 2xl:mx-0 2xl:p-20 max-sm:mx-4 max-sm:px-2 xl:h-screen">
-      <BlurFade duration={0.6} delay={0.2} yOffset={10}>
-        <div className="flex flex-col items-center justify-center xl:mb-10 gap-1">
-          <ArrowDown />
-          <IconColumn />
-        </div>
-      </BlurFade>
-      <div className="flex flex-col gap-5 xl:px-10 xl:mt-5 2xl:px-10 2xl:mb-20 max-sm:gap-3 max-sm:mt-4">
+    <div className="flex flex-col mx-5 px-2 xl:flex-row-reverse xl:ml-20 xl:mt-36 items-center 2xl:mx-10 2xl:mt-0 2xl:p-20 2xl:h-screen">
+      {/* Imagem Desktop */}
+      <div className="hidden lg:flex xl:w-[1700px] 2xl:w-full xl:mb-10 2xl:mt-24">
+        <BlurFade delay={0.25 * 5} inView>
+          <Image src={Code} alt="code" className="img w-full h-full" />
+        </BlurFade>
+      </div>
+
+      {/* Titulo Principal */}
+      <div className="flex flex-col gap-5 xl:gap-1 2xl:gap-1 max-sm:gap-3 max-sm:mt-4">
         <div className="flex flex-col items-start max-sm:items-center max-sm:text-center">
           <BlurFade duration={0.6} delay={0.2} yOffset={10}>
-            <div className="text-2xl lg:text-6xl xl:text-5xl 2xl:text-7xl 2xl:mt-24">
+            <div className="text-2xl lg:text-4xl xl:text-5xl 2xl:text-7xl 2xl:mt-24">
               <BlurFade delay={0.25 * 3.2} inView>
                 <h1 className="text-indigo-600 font-semibold">Olá, sou</h1>
                 <div className="flex flex-wrap justify-center xl:justify-start xl:flex-nowrap xl:-translate-x-7 2xl:-translate-x-10 mb-2 xl:gap-0 2xl:gap-1 text-white font-bold font-mono">
                   <span>{"<"}</span>
 
-                  {/* GradualSpacing para "Desenvolvedor" */}
                   <GradualSpacing
                     className="px-0.5"
                     text="Desenvolvedor"
@@ -40,7 +38,6 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
                     delayMultiple={0.2}
                   />
 
-                  {/* GradualSpacing para "FullStack" com atraso baseado na duração total de "Desenvolvedor" */}
                   <GradualSpacing
                     className="text-indigo-600"
                     text="FullStack"
@@ -69,6 +66,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
           </BlurFade>
         </div>
 
+        {/* Descrição Breve */}
         <div className="xl:pr-[150px] xl:mb-28 max-sm:mb-6">
           <BlurFade duration={0.6} delay={0.8} yOffset={10}>
             <div className="flex items-center max-sm:flex-col">
@@ -137,68 +135,69 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
             </div>
           </BlurFade>
 
-          <BlurFade duration={0.6} delay={1} yOffset={10}>
-            <div className="flex items-center gap-4">
-              <div className="flex mb-10 items-center gap-5 max-sm:gap-5 max-sm:mr-9 lg:gap-4 xl:gap-5">
-                <BlurFade delay={0.25 * 5.6} inView>
-                  <div className="flex">
-                    <ButtonCv />
-                  </div>
-                </BlurFade>
+          {/* Botões */}
+          <div className="flex items-center gap-4">
+            <div className="flex mb-10 items-center gap-5 max-sm:gap-5 max-sm:mr-9 lg:gap-4 xl:gap-5">
+              <BlurFade delay={0.25 * 5.6} inView>
+                <div className="flex">
+                  <ButtonCv />
+                </div>
+              </BlurFade>
 
-                <BlurFade delay={0.25 * 5.6} inView>
-                  <div className="flex">
-                    <ShimmerButton scrollToProjects={scrollToProjects} />
-                  </div>
-                </BlurFade>
+              <BlurFade delay={0.25 * 5.6} inView>
+                <div className="flex">
+                  <ShimmerButton scrollToProjects={scrollToProjects} />
+                </div>
+              </BlurFade>
+            </div>
+          </div>
+
+          {/* Status */}
+          <BlurFade delay={0.25 * 5.6} inView>
+            <div className="grid grid-cols-2 gap-1 mx-5 lg:flex xl:gap-1 xl:mx-0 2xl:gap-10">
+              <div className="flex gap-1 items-end">
+                <div className="text-4xl xl:text-5xl 2xl:text-7xl font-semibold text-indigo-500">
+                  <Counter value={1} direction="up" />.
+                  <Counter value={5} direction="up" />
+                </div>
+                <h1 className="text-xs lg:text-sm xl:text-sm 2xl:text-lg w-20 font-semibold text-zinc-400">
+                  Anos de Experiência
+                </h1>
+              </div>
+              <div className="flex gap-1 items-end">
+                <div className="text-4xl xl:text-5xl 2xl:text-7xl font-semibold text-indigo-500">
+                  0<Counter value={9} direction="up" />
+                </div>
+                <h1 className="text-xs lg:text-sm xl:text-sm 2xl:text-lg w-20 font-semibold text-zinc-400">
+                  Projetos Realizados
+                </h1>
+              </div>
+              <div className="flex gap-1 items-end">
+                <div className="text-4xl xl:text-5xl 2xl:text-7xl font-semibold text-indigo-500">
+                  +<Counter value={20} direction="up" />
+                </div>
+                <h1 className="text-xs lg:text-sm xl:text-sm 2xl:text-lg w-20 font-semibold text-zinc-400">
+                  Repositórios GitHub
+                </h1>
+              </div>
+              <div className="flex gap-1 items-end">
+                <div className="text-4xl xl:text-5xl 2xl:text-7xl font-semibold text-indigo-500">
+                  +<Counter value={130} direction="up" />
+                </div>
+                <h1 className="text-xs lg:text-sm xl:text-sm 2xl:text-lg w-20 font-semibold text-zinc-400">
+                  Commits Feitos
+                </h1>
               </div>
             </div>
-            <BlurFade delay={0.25 * 5.6} inView>
-              <div className="flex gap-10">
-                <div className="flex gap-1 items-end">
-                  <div className="text-7xl font-semibold text-indigo-500">
-                    <Counter value={1} direction="up" />.
-                    <Counter value={5} direction="up" />
-                  </div>
-                  <h1 className="text-lg w-20 font-semibold text-zinc-400">
-                    Anos de Experiência
-                  </h1>
-                </div>
-                <div className="flex gap-1 items-end">
-                  <div className="text-7xl font-semibold text-indigo-500">
-                    0<Counter value={9} direction="up" />
-                  </div>
-                  <h1 className="text-lg w-20 font-semibold text-zinc-400">
-                    Projetos Realizados
-                  </h1>
-                </div>
-                <div className="flex gap-1 items-end">
-                  <div className="text-7xl font-semibold text-indigo-500">
-                    +<Counter value={20} direction="up" />
-                  </div>
-                  <h1 className="text-lg w-20 font-semibold text-zinc-400">
-                    Repositórios GitHub
-                  </h1>
-                </div>
-                <div className="flex gap-1 items-end">
-                  <div className="text-7xl font-semibold text-indigo-500">
-                    +<Counter value={130} direction="up" />
-                  </div>
-                  <h1 className="text-lg w-20 font-semibold text-zinc-400">
-                    Commits Feitos
-                  </h1>
-                </div>
-              </div>
-            </BlurFade>
           </BlurFade>
         </div>
-      </div>
 
-      {/* Ajuste de responsividade da imagem */}
-      <div className="flex mt-32 w-[250px] md:w-[400px] xl:w-[4000px] xl:mt-1 2xl:w-screen 2xl:mt-3">
-        <BlurFade delay={0.25 * 0} inView>
-          <Image src={Code} alt="code" className="img rounded-lg" />
-        </BlurFade>
+        {/* Imagem Mobile */}
+        <div className="flex mt-32 w-[350px] md:hidden">
+          <BlurFade delay={0.25 * 5.7} inView>
+            <Image src={Code} alt="code" className="img" />
+          </BlurFade>
+        </div>
       </div>
     </div>
   );

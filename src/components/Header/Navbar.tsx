@@ -3,6 +3,7 @@ import {
   AlignJustify,
   ChartNoAxesCombined,
   Linkedin,
+  Rocket,
   Sparkles,
   User,
   X,
@@ -79,11 +80,11 @@ export const NavBar = ({
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={`max-sm:hidden border border-zinc-600 ${
           scrolled ? `backdrop-blur-md` : `bg-zinc-900`
-        } py-3 flex justify-between items-center rounded-full md:mx-20 xl:mx-16 2xl:mx-36 fixed top-0 left-0 right-0 z-50 my-5 transition-all duration-500`}
+        } py-3 flex justify-between items-center rounded-full md:mx-20 xl:mx-10 2xl:mx-32 fixed top-0 left-0 right-0 z-50 my-5 transition-all duration-500`}
       >
         <button
           onClick={scrollToTop}
-          className="px-5 font-bold items-center text-2xl"
+          className="px-5 font-bold text-center items-center text-2xl"
         >
           <span className="text-white text-xl">{"<"}</span>
           <span className="text-indigo-600">matheus</span>
@@ -96,22 +97,22 @@ export const NavBar = ({
             {[
               {
                 label: "About me",
-                icon: <User className="size-5" />,
+                icon: <User className="size-4 2xl:size-5" />,
                 action: scrollToAbout,
               },
               {
                 label: "Skills",
-                icon: <Sparkles className="size-5" />,
+                icon: <Sparkles className="size-4 2xl:size-5" />,
                 action: scrollToTechs,
               },
               {
-                label: "Experience",
-                icon: <Sparkles className="size-5" />,
+                label: "Journey",
+                icon: <Rocket className="size-4 2xl:size-5" />,
                 action: scrollToExperience,
               },
               {
                 label: "Projects",
-                icon: <ChartNoAxesCombined className="size-5" />,
+                icon: <ChartNoAxesCombined className="size-4 2xl:size-5" />,
                 action: scrollToProjects,
               },
             ].map((item, index) => (
@@ -122,7 +123,7 @@ export const NavBar = ({
                   whileTap={{ scale: 0.9, opacity: 0.7 }}
                 >
                   <a
-                    className="flex relative gap-1 cursor-pointer before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 before:bg-indigo-200 before:transition-all before:duration-300 hover:before:w-full"
+                    className="text-sm 2xl:text-base flex font-medium relative cursor-pointer before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 before:bg-indigo-200 before:transition-all before:duration-300 hover:before:w-full"
                     onClick={item.action}
                   >
                     {item.label}
@@ -158,15 +159,9 @@ export const NavBar = ({
         </nav>
       </motion.header>
 
-      <header className="xl:hidden mb-1">
+      <header className="lg:hidden mb-1">
         <nav className="border-gray-200">
           <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            {/* <div className="flex justify-center font-bold items-center text-xl cursor-context-menu m-5">
-              <span className="text-white">{"<"}</span>
-              <span className="text-indigo-600">matheus</span>
-              <span className="text-white">-silveira</span>
-              <span className="text-white pl-0.5">{"/>"}</span>
-            </div> */}
             <button
               onClick={handleOpenMenu}
               aria-expanded={isMenuOpen}

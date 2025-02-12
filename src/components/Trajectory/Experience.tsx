@@ -7,11 +7,21 @@ export function Experience() {
     {
       id: "2022/2023",
       content: (
-        <div className="bg-zinc-800/40 w-full min-h-52 rounded-lg flex flex-col py-3 px-4 text-primary gap-4">
+        <div className="bg-clip-border bg-gradient-to-r bg-zinc-800/50 from-slate-500/20 to-zinc-900/20 w-full min-h-52 rounded-2xl flex flex-col py-3 px-4 text-primary gap-4">
           <div className="flex flex-row justify-between gap-2 items-center">
-            <h3 className="text-2xl text-left font-bold text-white">
-              Etec Lauro Gomes 👨‍🎓🎓
-            </h3>
+            <div className="flex flex-col">
+              <h3 className="text-2xl text-left font-bold text-white">
+                Etec Lauro Gomes 👨‍🎓🎓
+              </h3>
+              <div className="flex gap-1">
+                <span className="text-sm font-bold text-white bg-slate-400/40 rounded-full px-2 py-1">
+                  Ensino Técnico
+                </span>
+                <span className="text-sm font-bold text-white bg-slate-400/40 rounded-full px-2 py-1">
+                  Formado
+                </span>
+              </div>
+            </div>
             <p className="text-sm text-white font-bold">
               Jan. de 2022 - Jul. de 2023
             </p>
@@ -40,8 +50,7 @@ export function Experience() {
             <span className="text-sm text-white font-bold bg-zinc-500/40 px-3 py-1 rounded-full">
               HTML5 | CSS3 | JavaScript | PHP | MySQL
             </span>
-
-            <span className="text-sm text-zinc-900 font-bold bg-green-500 px-3 py-1 rounded-full">
+            <span className="justify-end items-end text-sm text-zinc-900 font-bold bg-green-500 px-3 py-1 rounded-full">
               Concluido
             </span>
           </div>
@@ -52,11 +61,25 @@ export function Experience() {
       id: "2024",
       content: (
         <div className="flex flex-col gap-2">
-          <div className="bg-zinc-800/40 w-full min-h-52 rounded-lg flex flex-col py-3 px-4 text-primary gap-4">
+          {/* Bloco 1 */}
+          <div className="bg-clip-border bg-gradient-to-r bg-zinc-800/50 from-slate-500/20 to-zinc-900/20 w-full min-h-52 rounded-2xl flex flex-col py-3 px-4 text-primary gap-4">
             <div className="flex flex-row justify-between gap-2 items-center">
-              <h3 className="text-2xl text-left font-bold text-white">
-                Universidade Metodista de Sao Paulo 👨‍🎓🎓
-              </h3>
+              <div className="flex flex-col">
+                <h3 className="text-2xl text-left font-bold text-white">
+                  Universidade Metodista de Sao Paulo 👨‍🎓🎓
+                </h3>
+                <div className="flex gap-1">
+                  <span className="text-sm font-bold text-white bg-slate-400/40 rounded-full px-2 py-1">
+                    Ensino Superior
+                  </span>
+                  <span className="text-sm font-bold text-white bg-slate-400/40 rounded-full px-2 py-1">
+                    Tecnológo
+                  </span>
+                  <span className="text-sm font-bold text-white bg-slate-400/40 rounded-full px-2 py-1">
+                    Graduando
+                  </span>
+                </div>
+              </div>
               <p className="text-sm text-white font-bold">
                 Jan. de 2024 - Jul. de 2026
               </p>
@@ -93,22 +116,35 @@ export function Experience() {
               </span>
             </div>
           </div>
-          <div className="bg-zinc-800/40 w-full min-h-52 rounded-lg flex flex-col py-3 px-4 text-primary gap-4">
+
+          {/* Bloco 2 */}
+          <div className="bg-clip-border bg-gradient-to-r bg-zinc-800/50 from-slate-500/20 to-zinc-900/20 w-full min-h-52 rounded-2xl flex flex-col py-3 px-4 text-primary gap-4">
             <div className="flex flex-row justify-between gap-2 items-center">
-              <h3 className="text-2xl text-left font-bold text-white">
-                B7Web Full Stack 👨‍💻💻
-              </h3>
+              <div className="flex flex-col">
+                <h3 className="text-2xl text-left font-bold text-white">
+                  B7Web Full Stack 👨‍💻💻
+                </h3>
+                <div className="flex gap-1">
+                  <span className="text-sm font-bold text-white bg-slate-400/40 rounded-full px-2 py-1">
+                    Curso extracurricular
+                  </span>
+                  <span className="text-sm font-bold text-white bg-slate-400/40 rounded-full px-2 py-1">
+                    Autônomo
+                  </span>
+                </div>
+              </div>
               <p className="text-sm text-white font-bold">
-                Jan. de 2024 - Jul. de 2026
+                Julho. de 2024 - Indeterminado
               </p>
             </div>
             <div className="flex flex-row gap-3 h-full">
               <p className="max-w-[80%] text-white text-foreground">
                 O curso B7Web, criado por Bonieky Lacerda, é uma formação
-                prática em desenvolvimento web full stack, abordando HTML, CSS,
-                JavaScript, React, Node.js, PHP e MySQL. Com foco em projetos
-                reais, ensina desde os fundamentos até tecnologias avançadas,
-                incluindo API REST, autenticação e deploy, sendo ideal para
+                prática em Desenvolvimento Web Full Stack, abordando HTML/CSS,
+                Git/GitHub, TailwindCss, JavaScript, TypeScript React, Node.js,
+                PHP, MySQL. Com foco em projetos reais, ensina desde os
+                fundamentos básicos até as tecnologias avançadas, incluindo APIs
+                REST, autenticação, versionamento e deploy, sendo ideal para
                 iniciantes e profissionais que desejam se aprofundar na área. 🚀
               </p>
               <div className="bg-white max-w-[20%] h-min rounded-md p-4 aspect-square">
@@ -122,7 +158,8 @@ export function Experience() {
             </div>
             <div className="flex justify-between">
               <span className="text-sm text-white font-bold bg-zinc-500/40 px-3 py-1 rounded-full">
-                HTML5 | CSS3 | JavaScript | React | Node.js | PHP | MySQL
+                HTML/CSS | Git/GitHub | JavaScript | TypeScript | React |
+                Node.js | PHP | MySQL
               </span>
 
               <span className="text-sm text-zinc-900 font-bold bg-yellow-500 px-3 py-1 rounded-full">
@@ -137,10 +174,10 @@ export function Experience() {
       id: "2025",
       content: (
         <div className="flex flex-col gap-2">
-          <div className="bg-zinc-800/40 w-full min-h-52 rounded-lg flex flex-col py-3 px-4 text-primary gap-4">
+          <div className="bg-clip-border bg-gradient-to-r bg-zinc-800/50 from-slate-500/20 to-zinc-900/20 w-full min-h-52 rounded-2xl flex flex-col py-3 px-4 text-primary gap-4">
             <div className="flex flex-row justify-between gap-2 items-center">
               <h3 className="text-2xl text-left font-bold text-white">
-                Atualmente
+                💻 Atualmente
               </h3>
               <p className="text-sm text-white font-bold">
                 Jan. de 2025 - Dec. de 2025
@@ -165,10 +202,6 @@ export function Experience() {
               </div>
             </div>
             <div className="flex justify-between">
-              <span className="text-sm text-white font-bold bg-zinc-500/40 px-3 py-1 rounded-full">
-                Java | C# | Python | Banco de Dados | Redes
-              </span>
-
               <span className="text-sm text-zinc-900 font-bold bg-yellow-500 px-3 py-1 rounded-full">
                 Em andamento
               </span>

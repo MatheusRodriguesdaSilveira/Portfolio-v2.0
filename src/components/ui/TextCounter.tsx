@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
 
 export default function Counter({
@@ -20,13 +20,25 @@ export default function Counter({
     duration: 2000,
     mass: 1,
   });
+
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [startAnimation, setStartAnimation] = useState(false);
 
   useEffect(() => {
     if (isInView) {
+      const timeout = setTimeout(() => {
+        setStartAnimation(true);
+      }, 2000);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [isInView]);
+
+  useEffect(() => {
+    if (startAnimation) {
       motionValue.set(direction === "down" ? 0 : value);
     }
-  }, [motionValue, isInView]);
+  }, [motionValue, startAnimation]);
 
   useEffect(
     () =>
@@ -42,6 +54,7 @@ export default function Counter({
 
   return <span ref={ref} />;
 }
+
 export const TextTicker = () => {
   return (
     <div className="text-2xl font-semibold tabular-nums tracking-tight">
