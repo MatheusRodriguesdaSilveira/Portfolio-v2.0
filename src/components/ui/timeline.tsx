@@ -6,15 +6,10 @@ import {
   motion,
 } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 interface TimelineEntry {
-  title: string;
-  date: string;
-  description: string;
-  image: string;
-  content: string;
+  id: string;
+  content: React.ReactNode;
 }
-
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -36,14 +31,14 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div className="w-full font-thin md:px-10" ref={containerRef}>
+    <div className="w-full pb-32 font-thin md:px-10" ref={containerRef}>
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
         <h2 className="text-lg md:text-7xl font-bold text-black dark:text-white max-w-4xl">
           My Journey
         </h2>
       </div>
 
-      <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
+      <div ref={ref} className="relative max-w-7xl mx-auto pb-32">
         {data.map((item, index) => (
           <div
             key={index}
@@ -54,35 +49,15 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
               </div>
               <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-neutral-500 dark:text-neutral-500 ">
-                {item.title}
+                {item.id}
               </h3>
             </div>
 
             <div className="relative pl-20 pr-4 md:pl-4 w-full">
               <h3 className="md:hidden block text-2xl mb-4 text-left font-bold text-neutral-500 dark:text-neutral-500">
-                {item.title}
+                {item.id}
               </h3>
-              <div className="border border-border bg-card w-full min-h-52  rounded-lg flex flex-col py-3 px-4 text-primary gap-4">
-                <div className="flex flex-row justify-between gap-2 items-center">
-                  <h3 className="text-2xl text-left font-bold text-white">
-                    {item.content}
-                  </h3>
-                  <p className="text-sm text-white font-bold">{item.date}</p>
-                </div>
-                <div className="flex flex-row gap-3 h-full">
-                  <p className="max-w-[80%] text-white text-foreground">
-                    {item.description}
-                  </p>
-                  <div className="bg-white flex-1 max-w-[20%] h-min rounded-md p-4 aspect-square">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      width={100}
-                      height={100}
-                    />
-                  </div>
-                </div>
-              </div>
+              {item.content}
             </div>
           </div>
         ))}

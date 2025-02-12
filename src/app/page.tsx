@@ -17,6 +17,7 @@ export default function Page() {
   const projectsRef = useRef<HTMLDivElement | null>(null);
   const aboutRef = useRef<HTMLDivElement | null>(null);
   const techsRef = useRef<HTMLDivElement | null>(null);
+  const experienceRef = useRef<HTMLDivElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -77,6 +78,16 @@ export default function Page() {
       console.error("Elemento de referência para Techs não encontrado.");
     }
   };
+  const scrollToExperience = () => {
+    if (experienceRef.current) {
+      experienceRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    } else {
+      console.error("Elemento de referência para Experience não encontrado.");
+    }
+  };
 
   return (
     <>
@@ -84,6 +95,7 @@ export default function Page() {
         scrollToAbout={scrollToAbout}
         scrollToProjects={scrollToProjects}
         scrollToTechs={scrollToTechs}
+        scrollToExperience={scrollToExperience}
       />
 
       {isVisible && (
@@ -107,15 +119,14 @@ export default function Page() {
         </div>
       </BlurFade>
       <Hr />
-      <BlurFade key="techs" delay={0.25 * 2.1} inView>
-        <div ref={techsRef}>
+      <BlurFade key="experience" delay={0.25 * 2.1} inView>
+        <div ref={experienceRef}>
           <Experience />
         </div>
       </BlurFade>
       <Hr />
       <BlurFade key="projects" delay={0.25 * 2.2} inView>
         <div ref={projectsRef}>
-          {/* <Projects /> */}
           <AppleCardsCarouselDemo />
         </div>
       </BlurFade>

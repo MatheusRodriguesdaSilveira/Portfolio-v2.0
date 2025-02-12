@@ -13,12 +13,14 @@ interface NavBarProps {
   scrollToAbout: () => void;
   scrollToProjects: () => void;
   scrollToTechs: () => void;
+  scrollToExperience: () => void;
 }
 
 export const NavBar = ({
   scrollToAbout,
   scrollToProjects,
   scrollToTechs,
+  scrollToExperience,
 }: NavBarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -101,6 +103,11 @@ export const NavBar = ({
                 label: "Skills",
                 icon: <Sparkles className="size-5" />,
                 action: scrollToTechs,
+              },
+              {
+                label: "Experience",
+                icon: <Sparkles className="size-5" />,
+                action: scrollToExperience,
               },
               {
                 label: "Projects",
