@@ -15,12 +15,22 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
 
+  // Use ResizeObserver to handle dynamic resizing
   useEffect(() => {
+    const resizeObserver = new ResizeObserver(() => {
+      if (ref.current) {
+        const rect = ref.current.getBoundingClientRect();
+        setHeight(rect.height);
+      }
+    });
+
     if (ref.current) {
-      const rect = ref.current.getBoundingClientRect();
-      setHeight(rect.height);
+      resizeObserver.observe(ref.current);
     }
-  }, [ref]);
+
+    // Cleanup observer on unmount
+    return () => resizeObserver.disconnect();
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -33,7 +43,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   return (
     <div className="w-full pb-[200px] font-thin md:px-10" ref={containerRef}>
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-        <h2 className="text-lg md:text-7xl font-bold text-white max-w-4xl">
+        <h2 className="text-4xl md:text-7xl font-bold text-white max-w-4xl">
           My Journey
         </h2>
       </div>

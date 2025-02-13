@@ -37,7 +37,7 @@ const ContactPage = () => {
 
   return (
     <BlurFade delay={0.25 * 5} inView>
-      <div className="min-h-screen flex items-center justify-center m-10">
+      <div className="h-auto xl:min-h-screen flex items-center justify-center m-10">
         <div className="border border-indigo-500 p-10 rounded-3xl shadow-indigo-700/50 shadow-2xl max-w-md xl:max-w-xl xl:h-[500px] 2xl:h-[600px] w-full">
           <div className="text-center 2xl:mb-12 xl:mb-0 ">
             <div className="flex items-center gap-1 justify-center">

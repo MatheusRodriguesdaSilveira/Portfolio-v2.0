@@ -80,16 +80,20 @@ export const NavBar = ({
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={`hidden lg:flex border border-zinc-600 ${
           scrolled ? `backdrop-blur-md` : `bg-zinc-900`
-        } py-3 flex justify-between items-center rounded-full md:mx-20 xl:mx-10 2xl:mx-32 fixed top-0 left-0 right-0 z-50 my-5 transition-all duration-500`}
+        } py-3 flex justify-between items-center rounded-full md:mx-10 xl:mx-10 2xl:mx-32 fixed top-0 left-0 right-0 z-50 my-5 transition-all duration-500`}
       >
         <button
           onClick={scrollToTop}
-          className="hidden md:flex px-5 font-bold text-center items-center text-2xl"
+          className="hidden md:flex md:px-1 px-6 font-bold text-center items-center xl:text-2xl"
         >
-          <span className="text-white text-xl">{"<"}</span>
-          <span className="text-indigo-600">matheus</span>
-          <span className="text-white">-silveira</span>
-          <span className="text-white text-xl pl-0.5">{"/>"}</span>
+          <div className="flex items-center px-5">
+            <span className="text-white text-lg xl:text-2xl">{"<"}</span>
+            <span className="text-indigo-600">matheus</span>
+            <span className="text-white text-lg xl:text-2xl">{"-"}</span>
+            <span className="text-white">silveira</span>
+            <span className="text-white text-lg xl:text-xl pl-1">{"/"}</span>
+            <span className="text-white text-lg xl:text-2xl">{">"}</span>
+          </div>
         </button>
 
         <nav className="nav hidden md:block">

@@ -13,7 +13,7 @@ interface BodyProps {
 
 export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
   return (
-    <div className="flex flex-col mx-5 px-2 xl:flex-row-reverse xl:ml-20 xl:mt-36 items-center 2xl:mx-10 2xl:mt-0 2xl:p-20 2xl:h-screen">
+    <div className="flex flex-col mx-10 md:m-20 md:mt-36 md:h-screen xl:flex-row-reverse xl:ml-20 xl:mt-0 items-center 2xl:mx-10 2xl:mt-0 2xl:p-20 2xl:h-screen">
       {/* Imagem Desktop */}
       <div className="hidden xl:flex xl:w-[1700px] 2xl:w-full xl:mb-10 2xl:mt-24">
         <BlurFade delay={0.25 * 5} inView>
@@ -152,9 +152,9 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
             </div>
           </div>
 
-          {/* Status */}
+          {/* Status Desktop */}
           <BlurFade delay={0.25 * 5.6} inView>
-            <div className="grid grid-cols-2 gap-2 mx-10 lg:flex xl:gap-1 xl:mx-5 2xl:gap-10">
+            <div className="hidden md:flex  xl:gap-1 xl:mx-5 2xl:gap-10">
               <div className="flex gap-1 lg:items-end">
                 <div className="text-4xl xl:text-5xl 2xl:text-7xl font-semibold text-indigo-500">
                   <Counter value={1} direction="up" />.
@@ -190,18 +190,54 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
               </div>
             </div>
           </BlurFade>
-        </div>
 
-        {/* Imagem Mobile */}
-        <div className="flex mx-10 mt-32 w-[350px] xl:hidden justify-center items-center">
-          <BlurFade delay={0.25 * 5.7} inView>
-            <Image
-              src={Code}
-              alt="code"
-              className="img justify-center items-center"
-            />
+          {/* Status Mobile */}
+          <BlurFade delay={0.25 * 5.6} inView>
+            <div className="md:hidden grid grid-flow-col grid-rows-2 gap-3 md:grid-cols-4 md:gap-6 lg:gap-10 items-center justify-center">
+              <div className="flex gap-1 items-center text-right">
+                <h1 className="text-xs sm:text-sm md:text-base xl:text-lg w-16 sm:w-20 font-semibold text-zinc-400">
+                  Anos de Experiência
+                </h1>
+                <div className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-semibold text-indigo-500">
+                  <Counter value={1} direction="up" />.
+                  <Counter value={5} direction="up" />
+                </div>
+              </div>
+
+              <div className="flex gap-1 items-center text-right">
+                <h1 className="text-xs sm:text-sm md:text-base xl:text-lg w-16 sm:w-20 font-semibold text-zinc-400">
+                  Projetos Realizados
+                </h1>
+                <div className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-semibold text-indigo-500">
+                  0<Counter value={9} direction="up" />
+                </div>
+              </div>
+
+              <div className="flex gap-1 items-center text-left">
+                <div className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-semibold text-indigo-500">
+                  +<Counter value={20} direction="up" />
+                </div>
+                <h1 className="text-xs sm:text-sm md:text-base xl:text-lg w-16 sm:w-20 font-semibold text-zinc-400">
+                  Repositórios GitHub
+                </h1>
+              </div>
+
+              <div className="flex gap-1 items-center text-left">
+                <div className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-semibold text-indigo-500">
+                  +<Counter value={130} direction="up" />
+                </div>
+                <h1 className="text-xs sm:text-sm md:text-base xl:text-lg w-16 sm:w-20 font-semibold text-zinc-400">
+                  Commits Feitos
+                </h1>
+              </div>
+            </div>
           </BlurFade>
         </div>
+      </div>
+      <div className="xl:hidden flex mt-32 w-[250px] md:w-[400px] lg:w-[500px]">
+        <BlurFade delay={0.25 * 6} inView>
+          <Image src={Code} alt="code" className="img" />
+        </BlurFade>
       </div>
     </div>
   );
