@@ -165,8 +165,8 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
                     <span className="group/button relative inline-flex px-[26px] py-[26px] h-[54px] w-[54px] md:h-[50px] md:w-[50px] lg:h-10 lg:w-10 items-center justify-center overflow-hidden ease-in bg-zinc-900 rounded-full group-hover:bg-opacity-0 duration-150 font-medium text-white transition-all hover:w-[175px]">
                       <span className="justify-center items-center flex">
                         <a
-                          href="/CV-MatheusRodrigues.pdf"
-                          download="CV-MatheusRodrigues.pdf"
+                          href="/CV Matheus FullStack.pdf"
+                          download="CV Matheus FullStack.pdf"
                           target="_blank"
                           className="flex gap-2 items-center whitespace-nowrap text-sm opacity-0 transition-all duration-150 group-hover/button:-translate-x-2.5 group-hover/button:opacity-100"
                         >

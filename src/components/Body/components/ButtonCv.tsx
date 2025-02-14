@@ -9,8 +9,8 @@ const ButtonCv = () => {
     >
       <a
         className="flex gap-1 items-center text-sm text-nowrap lg:text-base font-semibold"
-        href="/CV-MatheusRodrigues.pdf"
-        download="CV-MatheusRodrigues.pdf"
+        href="/CV Matheus FullStack.pdf"
+        download="CV Matheus FullStack.pdf"
         target="_blank"
       >
         Download currículo
