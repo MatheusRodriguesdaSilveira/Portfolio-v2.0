@@ -80,7 +80,7 @@ export const NavBar = ({
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={`hidden lg:flex border border-zinc-600 ${
           scrolled ? `backdrop-blur-md` : `bg-zinc-900`
-        } py-3 flex justify-between items-center rounded-full md:mx-10 xl:mx-10 2xl:mx-32 fixed top-0 left-0 right-0 z-50 my-5 transition-all duration-500`}
+        } py-3 flex justify-between items-center rounded-full md:mx-10 xl:mx-10 2xl:mx-32 fixed top-0 left-0 right-0 z-50 mt-10 transition-all duration-500`}
       >
         <button
           onClick={scrollToTop}
