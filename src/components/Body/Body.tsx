@@ -6,6 +6,8 @@ import GradualSpacing from "../ui/gradual-spacing";
 import ShimmerButton from "../ui/ButtonMotion";
 import ButtonCv from "./components/ButtonCv";
 import Counter from "../ui/TextCounter";
+import { IconColumn } from "./components/IconColumn";
+import ArrowDown from "./components/ArrowDown";
 
 interface BodyProps {
   scrollToProjects: () => void;
@@ -13,7 +15,7 @@ interface BodyProps {
 
 export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
   return (
-    <div className="flex flex-col items-center mx-10 md:m-20 md:mt-36 md:h-screen lg:mt-20 lg:h-screen xl:flex-row-reverse xl:ml-20 xl:mt-20 2xl:mx-10 2xl:mt-0 2xl:p-20 2xl:h-screen">
+    <div className="flex flex-col items-center mx-10 md:m-20 md:mt-36 md:h-screen lg:mt-20 lg:h-screen xl:flex-row-reverse xl:ml-16 xl:mt-20 2xl:mx-16 2xl:mt-0 2xl:p-20 2xl:h-screen">
       {/* Imagem Desktop */}
       <div className="hidden w-[1500px] xl:flex xl:w-[1500px] 2xl:max-w-[2000px] xl:mb-12 2xl:mt-24">
         <BlurFade delay={0.25 * 5} inView>
@@ -21,10 +23,11 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
         </BlurFade>
       </div>
 
-      {/* Titulo Principal */}
+      {/* Conteudo */}
       <div className="flex flex-col gap-5 xl:gap-1 2xl:gap-1 max-sm:gap-3 max-sm:mt-4">
         <div className="flex flex-col items-start max-sm:items-center max-sm:text-center">
           <BlurFade duration={0.6} delay={0.2} yOffset={10}>
+            {/* Titulo Principal */}
             <div className="text-2xl lg:text-4xl xl:text-5xl 2xl:text-7xl 2xl:mt-24">
               <BlurFade delay={0.25 * 3.2} inView>
                 <h1 className="text-indigo-600 font-semibold">Olá, sou</h1>
@@ -234,6 +237,14 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
           </BlurFade>
         </div>
       </div>
+
+      <BlurFade duration={0.6} delay={0.2} yOffset={10}>
+        <div className="mr-5 lg:mt-10 xl:mt-0 xl:mr-2 2xl:mr-5 xl:mb-[180px] 2xl:mb-16">
+          <ArrowDown />
+          <IconColumn />
+        </div>
+      </BlurFade>
+
       <div className="xl:hidden flex mt-32 w-[250px] md:w-[400px] lg:w-[500px]">
         <BlurFade delay={0.25 * 6} inView>
           <Image src={Code} alt="code" className="img" />
