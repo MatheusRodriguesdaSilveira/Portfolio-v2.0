@@ -8,48 +8,46 @@ Bem-vindo ao meu portfólio! Aqui você encontrará meus projetos desenvolvidos 
 ![image](https://github.com/user-attachments/assets/159a34b6-d3ae-4e11-adee-59d3a60dede7)
 ![image](https://github.com/user-attachments/assets/83f0bfce-014a-4054-a973-22b3bc7c195b)
 
-
 ## Projetos
 
 Aqui estão alguns dos projetos que desenvolvi:
+
 ### 1. [Dev Blog](https://github.com/MatheusRodriguesdaSilveira/dev-blog)
+
 O **Dev Blog** é uma plataforma onde compartilho meus aprendizados e experiências no mundo do desenvolvimento. Os usuários podem visualizar artigos, pesquisar por palavras-chave e interagir com os posts através de comentários.
 
 ### 2. [System Pizza](https://github.com/MatheusRodriguesdaSilveira/system-pizza)
+
 O **System Pizza** é uma aplicação de pedidos de pizza com integração de menu, carrinho de compras e finalização de pedidos. O objetivo é oferecer uma experiência de compra fluída para os usuários, com a possibilidade de customização de pedidos.
 
 ### 3. [In.Orbit](https://github.com/MatheusRodriguesdaSilveira/In.Orbit)
+
 Desenvolvimento de um aplicativo de clima em tempo real utilizando APIs. Este é um projeto de aprendizado que abrange tanto o frontend quanto o backend.
 
 ### Acesse meu portifolio para mais!
-
 
 ## Tecnologias Usadas
 
 Tenho experiência com as seguintes tecnologias:
 
 - **Frontend:**
+
   - React
   - Tailwind CSS
   - JavaScript
   - Next.js
   - HTML5 & CSS3
 
-- **Backend:**
-  - Node.js
-  - Express.js
-  - APIs RESTful
-
 - **Ferramentas:**
   - Git/GitHub
   - Vercel (para deploy)
-  - Docker
 
 ## Como Rodar o Projeto
 
 1. **Clone este repositório**:
    ```bash
    git clone https://github.com/MatheusRodriguesdaSilveira/portfolio.git
+   ```
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
