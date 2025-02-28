@@ -33,6 +33,7 @@ type Card = {
   techStack: string;
   liveLink: string;
   repoLink: string;
+  frontLink: string;
   content: string;
 };
 
@@ -217,8 +218,8 @@ export const Card = ({
       <div>
         <AnimatePresence>
           {open && (
-            <div className="m-6 md:m-14 fixed inset-0 h-screen z-50 overflow-auto">
-              <motion.div
+            <div className="m-6 md:m-14 xl:mt-32 2xl:mt-40 fixed inset-0 flex items-center justify-center z-50">
+            <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -230,61 +231,68 @@ export const Card = ({
                 exit={{ opacity: 0 }}
                 ref={containerRef}
                 layoutId={layout ? `card-${card.title}` : undefined}
-                className="max-w-6xl mx-auto bg-zinc-950 h-fit z-[60] my-6 md:my-10 p-4 md:p-10 rounded-3xl font-sans relative"
+                className="max-w-7xl xl:max-w-3xl xl:h-[500px] 2xl:h-[700px] 2xl:max-w-4xl mx-auto bg-zinc-950 h-fit z-[60] my-6 md:my-10 p-4 md:p-10 xl:p-4 xl:my-6 rounded-3xl font-sans relative"
               >
                 <button
-                  className="sticky top-4 h-8 w-8 right-0 ml-auto bg-black dark:bg-white rounded-full flex items-center justify-center"
+                  className="sticky top-4 h-8 w-8 xl:h-6 xl:w-6 2xl:h-8 2xl:w-8 right-0 ml-auto bg-black dark:bg-white rounded-full flex items-center justify-center"
                   onClick={handleClose}
                 >
-                  <X className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
+                  <X className="h-6 w-6 xl:h-5 xl:w-5 2xl:h-6 2xl:w-6 text-neutral-100 dark:text-neutral-900" />
                 </button>
 
                 <motion.p
                   layoutId={layout ? `title-${card.title}` : undefined}
-                  className="text-xl md:text-4xl font-bold text-white"
+                  className="text-xl md:text-4xl xl:text-2xl 2xl:text-3xl font-bold text-white"
                 >
                   {card.title}
                 </motion.p>
 
                 <motion.p
                   layoutId={layout ? `category-${card.title}` : undefined}
-                  className="text-sm mt-2 font-medium text-white"
+                  className="text-xs mt-2 font-medium text-white"
                 >
                   📈{card.content}
                 </motion.p>
 
                 <motion.p
                   layoutId={layout ? `category-${card.title}` : undefined}
-                  className="text-sm md:text-base mt-4 font-medium text-white"
+                  className="text-sm xl:text-sm md:text-base mt-4 font-medium text-white"
                 >
                   👨‍💻{card.techStack}
                 </motion.p>
 
                 <motion.p
                   layoutId={layout ? `category-${card.title}` : undefined}
-                  className="items-center text-sm md:text-base font-medium text-white flex gap-2 mt-3"
+                  className="items-center text-sm xl:text-sm md:text-base font-medium text-white flex gap-2"
                 >
-                  <Github className="size-5" /> Frontend:
+                  <Github className="size-5 xl:size-4" /> Frontend:
+                  <a className="text-blue-500" href={card.frontLink}>
+                    Acesse o Repositório
+                  </a>
+                </motion.p>
+             {
+              card.repoLink ?
+
+                <motion.p
+                layoutId={layout ? `category-${card.title}` : undefined}
+                className="items-center text-sm xl:text-sm md:text-base font-medium text-white flex gap-2"
+                >
+                  <Github className="size-5 xl:size-4" /> Backend:
                   <a className="text-blue-500" href={card.repoLink}>
                     Acesse o Repositório
                   </a>
                 </motion.p>
+                :
+                <div>
+                  
+                </div>
+                }
 
                 <motion.p
                   layoutId={layout ? `category-${card.title}` : undefined}
-                  className="items-center text-sm md:text-base font-medium text-white flex gap-2"
+                  className="items-center text-sm xl:text-sm md:text-base font-medium text-white flex gap-2"
                 >
-                  <Github className="size-5" /> Backend:
-                  <a className="text-blue-500" href={card.repoLink}>
-                    Acesse o Repositório
-                  </a>
-                </motion.p>
-
-                <motion.p
-                  layoutId={layout ? `category-${card.title}` : undefined}
-                  className="items-center text-sm md:text-base font-medium text-white flex gap-2"
-                >
-                  <SquareArrowOutUpRight className="size-5" /> Deploy:
+                  <SquareArrowOutUpRight className="size-5 xl:size-4" /> Deploy:
                   <a
                     className="text-blue-500"
                     href={card.liveLink}
@@ -296,7 +304,7 @@ export const Card = ({
 
                 <div className="pt-5 flex justify-center">
                   <Image
-                    className="border border-zinc-700 rounded-3xl w-full max-w-xs md:max-w-[700px] md:h-[400px]"
+                    className="border border-zinc-700 rounded-3xl w-full max-w-xs xl:max-w-[400px] xl:h-[200px] 2xl:max-w-[700px] 2xl:h-[400px]"
                     src={card.image}
                     alt={card.title}
                     width={1000}
@@ -313,7 +321,7 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="rounded-3xl h-80 w-64 xl:h-[350px] xl:w-[500px] 2xl:h-[550px] 2xl:w-[700px] overflow-hidden flex flex-col items-start relative z-10"
+        className="rounded-3xl h-80 w-64 xl:h-[300px] xl:w-[400px] 2xl:h-[550px] 2xl:w-[700px] overflow-hidden flex flex-col items-start relative z-10"
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/30 z-30 pointer-events-none" />
 

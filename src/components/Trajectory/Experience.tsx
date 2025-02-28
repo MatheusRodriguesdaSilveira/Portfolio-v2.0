@@ -211,7 +211,7 @@ export function Experience() {
               me desenvolvendo profissionalmente. Estou sempre buscando novos
               desafios e oportunidades para aprimorar minhas habilidades.
             </p>
-            <div className="bg-white w-20 h-20 sm:w-24 sm:h-24 rounded-md p-2 sm:p-4 aspect-square mx-auto sm:mx-0">
+            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-md p-2 sm:p-4 aspect-square mx-auto sm:mx-0">
               <Image
                 src={"/favicon.png"}
                 alt={"Etec Lauro Gomes"}

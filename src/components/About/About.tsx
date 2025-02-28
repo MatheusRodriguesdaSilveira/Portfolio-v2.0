@@ -1,12 +1,9 @@
 import React, { forwardRef } from "react";
-import Image from "next/image";
-import Me from "/public/minhafoto.png";
-import { File, GithubIcon, Linkedin, MoveRight, User } from "lucide-react";
+import { File, GithubIcon, Linkedin, MoveRight } from "lucide-react";
 import BlurFade from "../ui/blur-fade";
 import { ImageBorder } from "./components/ImageBorder";
 
 interface AboutProps {
-  // Props, se necessárias
 }
 
 export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
@@ -15,7 +12,7 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
       <>
         <div className="p-5 sm:p-10 m-4 sm:m-10 xl:mx-0 xl:my-0 2xl:mx-20 2xl:mb-32 max-sm:flex flex-col items-center">
           <BlurFade delay={0.25 * 2} inView>
-            <div className="text-center mb-10 xl:mb-5 xl:mt-12 2xl:mt-24">
+            <div className="text-center mb-10 xl:mb-1 2xl:mb-10 xl:mt-28 2xl:mt-24">
               <h2 className="text-zinc-300 text-3xl xl:text-4xl 2xl:text-5xl">
                 About <span className=" text-indigo-600">me.</span>
               </h2>
@@ -27,19 +24,19 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
               <ImageBorder />
             </BlurFade>
 
-            <div className="txt-about-me text-center lg:text-left max-sm:m-5">
+            <div className="text-center lg:text-left max-sm:m-5">
               <BlurFade delay={0.25 * 3.5} inView>
-                <h2 className="2xl:text-4xl xl:text-3xl max-sm:text-3xl text-zinc-100 2xl:mb-8 xl:mb-4 max-sm:m-10 text-nowrap">
-                  <span className="text-indigo-600 font-semibold block">
-                    <span className="text-white">{"<"}</span>
+                <div className="2xl:text-4xl xl:text-3xl max-sm:text-3xl text-zinc-100 2xl:mb-3 xl:mb-2 max-sm:m-10 text-nowrap">
+                  <div className="text-indigo-600 font-semibold block">
+                    <span className="text-white font-thin">{"<"}</span>
                     Hello!
-                  </span>{" "}
+                  </div>{" "}
                   I'm Matheus Rodrigues
                   <span className="text-white">{" />"}</span>
-                </h2>
+                </div>
               </BlurFade>
               <BlurFade delay={0.25 * 4.5} inView>
-                <p className="text-zinc-200 max-sm:m-10 mb-5">
+                <p className="text-zinc-200 max-sm:m-10 mb-5 text-base xl:text-sm 2xl:text-base">
                   Sou estudante de{" "}
                   <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
                     Análise e Desenvolvimento de Sistemas
@@ -95,7 +92,7 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
                   </span>
                   .
                 </p>
-                <p className="text-zinc-200 max-sm:m-10 mb-5">
+                <p className="text-zinc-200 max-sm:m-10 mb-5 text-base xl:text-sm 2xl:text-base">
                   Tenho um{" "}
                   <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-indigo-600">
                     interesse

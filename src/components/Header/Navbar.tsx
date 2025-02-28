@@ -80,7 +80,7 @@ export const NavBar = ({
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={`hidden lg:flex border border-zinc-600 ${
           scrolled ? `backdrop-blur-md` : `bg-zinc-900`
-        } py-3 flex justify-between items-center rounded-full md:mx-10 xl:mx-10 2xl:mx-32 fixed top-0 left-0 right-0 z-50 mt-10 transition-all duration-500`}
+        } py-3 flex justify-between items-center rounded-full md:mx-10 xl:mx-10 2xl:mx-32 fixed top-0 left-0 right-0 z-40 mt-10 transition-all duration-500`}
       >
         <button
           onClick={scrollToTop}
@@ -121,7 +121,7 @@ export const NavBar = ({
               },
             ].map((item, index) => (
               <div key={index} className="flex items-center">
-                {index !== 0 && <div className="w-0.5 h-5 bg-zinc-500"></div>}
+                {index !== 0 && <div className="w-0.5 h-4 bg-zinc-500"></div>}
                 <motion.li
                   whileHover={{ color: "#818cf8" }}
                   whileTap={{ scale: 0.9, opacity: 0.7 }}
@@ -136,7 +136,7 @@ export const NavBar = ({
                 </motion.li>
               </div>
             ))}
-            <div className="w-0.5 h-5 bg-zinc-500"></div>
+            <div className="w-0.5 h-4 bg-zinc-500"></div>
 
             <li>
               <motion.button
@@ -144,7 +144,7 @@ export const NavBar = ({
                   backgroundColor: "#6366f1",
                   boxShadow: "0px 0px 10px #6366f1",
                 }}
-                className="relative flex items-center px-2 overflow-hidden font-medium transition-all bg-indigo-500 rounded-xl group"
+                className="relative flex items-center px-1 overflow-hidden font-medium transition-all bg-indigo-500 rounded-xl group"
               >
                 <span className="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-100 -translate-x-full bg-indigo-600 rounded-md group-hover:translate-x-0"></span>
                 <span className="flex gap-1 items-center relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white">

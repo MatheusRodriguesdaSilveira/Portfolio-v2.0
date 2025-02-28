@@ -28,10 +28,10 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
         <div className="flex flex-col items-start max-sm:items-center max-sm:text-center">
           <BlurFade duration={0.6} delay={0.2} yOffset={10}>
             {/* Titulo Principal */}
-            <div className="text-2xl lg:text-4xl xl:text-5xl 2xl:text-7xl 2xl:mt-24">
+            <div className="text-2xl lg:text-4xl xl:text-5xl xl:mt-16 2xl:text-7xl 2xl:mt-24">
               <BlurFade delay={0.25 * 3.2} inView>
                 <h1 className="text-indigo-600 font-semibold">Olá, sou</h1>
-                <div className="flex flex-wrap justify-center xl:justify-start xl:flex-nowrap xl:-translate-x-7 2xl:-translate-x-10 mb-2 xl:gap-0 2xl:gap-1 text-white font-bold font-mono">
+                <div className="flex flex-wrap justify-center xl:justify-start xl:flex-nowrap xl:-translate-x-6 2xl:-translate-x-10 mb-2 xl:gap-0 2xl:gap-1 text-white font-bold font-mono">
                   <span>{"<"}</span>
 
                   <GradualSpacing
@@ -61,7 +61,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
                       hidden: { opacity: 0, x: -20 },
                       visible: { opacity: 1, x: 0 },
                     }}
-                    initialDelay={("FullStack ".length + 5) * 0.2}
+                    initialDelay={("FullStack".length + 5) * 0.2}
                   />
                 </div>
               </BlurFade>
@@ -70,7 +70,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
         </div>
 
         {/* Descrição Breve */}
-        <div className="px-5 2xl:pr-20 xl:px-0 xl:pr-[0px] xl:mb-28 max-sm:mb-6">
+        <div className="px-5 2xl:pr-20 xl:px-0 xl:pr-[50px] xl:mb-28 max-sm:mb-6">
           <BlurFade duration={0.6} delay={0.8} yOffset={10}>
             <div className="flex items-center max-sm:flex-col">
               <BlurFade delay={0.25 * 4} inView>
@@ -157,7 +157,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
 
           {/* Status Desktop */}
           <BlurFade delay={0.25 * 5.6} inView>
-            <div className="hidden md:flex  xl:gap-1 xl:mx-5 2xl:gap-10">
+            <div className="hidden md:flex xl:gap-1 xl:mx-1 2xl:gap-10">
               <div className="flex gap-1 lg:items-end">
                 <div className="text-4xl xl:text-5xl 2xl:text-7xl font-semibold text-indigo-500">
                   <Counter value={1} direction="up" />.
@@ -239,7 +239,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
       </div>
 
       <BlurFade duration={0.6} delay={0.2} yOffset={10}>
-        <div className="mr-5 lg:mt-10 xl:mt-0 xl:mr-2 2xl:mr-5 xl:mb-[180px] 2xl:mb-16">
+        <div className="mr-5 lg:mt-10 xl:mt-0 xl:mr-3 2xl:mr-5 xl:mb-[120px] 2xl:mb-16">
           <ArrowDown />
           <IconColumn />
         </div>
