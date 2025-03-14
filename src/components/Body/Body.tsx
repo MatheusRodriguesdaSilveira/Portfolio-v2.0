@@ -15,9 +15,9 @@ interface BodyProps {
 
 export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
   return (
-    <div className="flex flex-col items-center mx-10 md:m-20 md:mt-36 md:h-screen lg:mt-20 lg:h-screen xl:flex-row-reverse xl:ml-16 xl:mt-20 2xl:mx-16 2xl:mt-0 2xl:p-20 2xl:h-screen">
+    <div className="flex flex-col items-center mx-10 md:m-20 md:mt-36 md:h-screen lg:mt-20 lg:h-screen xl:flex-row-reverse xl:ml-16 xl:mt-5 2xl:mx-16 2xl:mt-0 2xl:p-20 2xl:h-screen">
       {/* Imagem Desktop */}
-      <div className="hidden w-[1500px] xl:flex xl:w-[1500px] 2xl:max-w-[2000px] xl:mb-12 2xl:mt-24">
+      <div className="hidden w-[1500px] xl:flex xl:w-[1500px] 2xl:max-w-[2000px] xl:mt-16 2xl:mt-24">
         <BlurFade delay={0.25 * 5} inView>
           <Image src={Code} alt="code" className="img w-full h-full" />
         </BlurFade>
@@ -185,7 +185,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
               </div>
               <div className="flex gap-1 lg:items-end">
                 <div className="text-4xl xl:text-5xl 2xl:text-7xl font-semibold text-indigo-500">
-                  +<Counter value={130} direction="up" />
+                  +<Counter value={265} direction="up" />
                 </div>
                 <h1 className="text-xs lg:text-sm xl:text-sm 2xl:text-lg w-20 font-semibold text-zinc-400">
                   Commits Feitos
@@ -239,7 +239,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
       </div>
 
       <BlurFade duration={0.6} delay={0.2} yOffset={10}>
-        <div className="mr-5 lg:mt-10 xl:mt-0 xl:mr-3 2xl:mr-5 xl:mb-[120px] 2xl:mb-16">
+        <div className="mr-5 lg:mt-10 xl:mt-2 xl:mr-3 2xl:mr-5 xl:mb-[130px] 2xl:mb-16">
           <ArrowDown />
           <IconColumn />
         </div>
