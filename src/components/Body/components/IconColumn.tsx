@@ -11,7 +11,7 @@ export const IconColumn = () => {
             href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=matheussilveira2005@gmail.com&body=Olá,+Matheus,+tudo+bem?"
             target="_blank"
           >
-            <AtSign className="hover:text-indigo-600 size-5 xl:size-4 2xl:size-5 max-sm:text-3xl duration-300 hover:scale-105" />
+            <AtSign className="hover:text-yellow-300 size-5 xl:size-4 2xl:size-5 max-sm:text-3xl duration-300 hover:scale-105" />
           </a>
         </BlurFade>
         <BlurFade delay={0.25 * 3.2} inView>
@@ -19,7 +19,7 @@ export const IconColumn = () => {
             href="https://api.whatsapp.com/send?phone=5511910346829"
             target="_blank"
           >
-            <FaWhatsapp className="hover:text-indigo-600 size-5 xl:size-4 2xl:size-5 max-sm:text-3xl duration-300 hover:scale-105" />
+            <FaWhatsapp className="hover:text-yellow-300 size-5 xl:size-4 2xl:size-5 max-sm:text-3xl duration-300 hover:scale-105" />
           </a>
         </BlurFade>
         <BlurFade delay={0.25 * 4.2} inView>
@@ -27,7 +27,7 @@ export const IconColumn = () => {
             href="https://github.com/MatheusRodriguesdaSilveira"
             target="_blank"
           >
-            <GithubIcon className="hover:text-indigo-600 size-5 xl:size-4 2xl:size-5 max-sm:text-3xl duration-300 hover:scale-105" />
+            <GithubIcon className="hover:text-yellow-300 size-5 xl:size-4 2xl:size-5 max-sm:text-3xl duration-300 hover:scale-105" />
           </a>
         </BlurFade>
         <BlurFade delay={0.25 * 5.2} inView>
@@ -35,7 +35,7 @@ export const IconColumn = () => {
             href="https://www.linkedin.com/in/matheus-rodrigues-da-silveira/"
             target="_blank"
           >
-            <Linkedin className="hover:text-indigo-600 size-5 xl:size-4 2xl:size-5 max-sm:text-3xl duration-300 hover:scale-105" />
+            <Linkedin className="hover:text-yellow-300 size-5 xl:size-4 2xl:size-5 max-sm:text-3xl duration-300 hover:scale-105" />
           </a>
         </BlurFade>
       </div>
