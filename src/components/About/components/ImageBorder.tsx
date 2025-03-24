@@ -56,7 +56,7 @@ export const ImageBorder = () => {
             <Image
               src={Me}
               alt="Me"
-              className="p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500 brightness-90 shadow-lg shadow-indigo-500/50 hover:shadow-blue-500/70 duration-300"
+              className="p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500 brightness-90 shadow-lg shadow-yellow-400/60 hover:shadow-yellow-500/90 duration-300"
             />
           </div>
         </button>
