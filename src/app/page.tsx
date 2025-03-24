@@ -100,7 +100,7 @@ export default function Page() {
 
       {isVisible && (
         <ButtonScroll onClick={scrollToTop}>
-          <ArrowUp className="text-indigo-500 size-6 " />
+          <ArrowUp className="text-yellow-300 size-6 " />
         </ButtonScroll>
       )}
 
