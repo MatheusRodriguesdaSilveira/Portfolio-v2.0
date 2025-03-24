@@ -219,7 +219,7 @@ export const Card = ({
         <AnimatePresence>
           {open && (
             <div className="m-6 md:m-14 xl:mt-32 2xl:mt-40 fixed inset-0 flex items-center justify-center z-50">
-            <motion.div
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -261,46 +261,59 @@ export const Card = ({
                   👨‍💻{card.techStack}
                 </motion.p>
 
-                <motion.p
-                  layoutId={layout ? `category-${card.title}` : undefined}
-                  className="items-center text-sm xl:text-sm md:text-base font-medium text-white flex gap-2"
-                >
-                  <Github className="size-5 xl:size-4" /> Frontend:
-                  <a className="text-blue-500" href={card.frontLink}>
-                    Acesse o Repositório
-                  </a>
-                </motion.p>
-             {
-              card.repoLink ?
-
-                <motion.p
-                layoutId={layout ? `category-${card.title}` : undefined}
-                className="items-center text-sm xl:text-sm md:text-base font-medium text-white flex gap-2"
-                >
-                  <Github className="size-5 xl:size-4" /> Backend:
-                  <a className="text-blue-500" href={card.repoLink}>
-                    Acesse o Repositório
-                  </a>
-                </motion.p>
-                :
-                <div>
-                  
-                </div>
-                }
-
-                <motion.p
-                  layoutId={layout ? `category-${card.title}` : undefined}
-                  className="items-center text-sm xl:text-sm md:text-base font-medium text-white flex gap-2"
-                >
-                  <SquareArrowOutUpRight className="size-5 xl:size-4" /> Deploy:
-                  <a
-                    className="text-blue-500"
-                    href={card.liveLink}
-                    target="_blank"
+                {card.frontLink ? (
+                  <motion.p
+                    layoutId={layout ? `category-${card.title}` : undefined}
+                    className="items-center text-sm xl:text-sm md:text-base font-medium text-white flex gap-2"
                   >
-                    Acesse o Deploy
-                  </a>
-                </motion.p>
+                    <Github className="size-5 xl:size-4" /> Frontend:
+                    <a
+                      className="text-blue-500"
+                      target="_blank"
+                      href={card.frontLink}
+                    >
+                      Acesse o Repositório
+                    </a>
+                  </motion.p>
+                ) : (
+                  <div></div>
+                )}
+                {card.repoLink ? (
+                  <motion.p
+                    layoutId={layout ? `category-${card.title}` : undefined}
+                    className="items-center text-sm xl:text-sm md:text-base font-medium text-white flex gap-2"
+                  >
+                    <Github className="size-5 xl:size-4" /> Backend:
+                    <a
+                      className="text-blue-500"
+                      target="_blank"
+                      href={card.repoLink}
+                    >
+                      Acesse o Repositório
+                    </a>
+                  </motion.p>
+                ) : (
+                  <div></div>
+                )}
+
+                {card.liveLink ? (
+                  <motion.p
+                    layoutId={layout ? `category-${card.title}` : undefined}
+                    className="items-center text-sm xl:text-sm md:text-base font-medium text-white flex gap-2"
+                  >
+                    <SquareArrowOutUpRight className="size-5 xl:size-4" />{" "}
+                    Deploy:
+                    <a
+                      className="text-blue-500"
+                      href={card.liveLink}
+                      target="_blank"
+                    >
+                      Acesse o Deploy
+                    </a>
+                  </motion.p>
+                ) : (
+                  <div></div>
+                )}
 
                 <div className="pt-5 flex justify-center">
                   <Image
@@ -321,7 +334,7 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="rounded-3xl h-80 w-64 xl:h-[300px] xl:w-[400px] 2xl:h-[550px] 2xl:w-[700px] overflow-hidden flex flex-col items-start relative z-10"
+        className="rounded-3xl h-80 w-64 xl:h-[420px] xl:w-[400px] 2xl:h-[550px] 2xl:w-[500px] overflow-hidden flex flex-col items-start relative z-10"
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/30 z-30 pointer-events-none" />
 
