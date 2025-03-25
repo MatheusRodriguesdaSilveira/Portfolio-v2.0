@@ -25,12 +25,12 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
 
       {/* Conteudo */}
       <div className="flex flex-col gap-5 xl:gap-1 2xl:gap-1 max-sm:gap-3 max-sm:mt-4">
-        <div className="flex text-nowrap flex-col items-start max-sm:items-center max-sm:text-center">
+        <div className="flex text-nowrap flex-col items-start max-sm:items-center max-sm:text-start">
           <BlurFade duration={0.6} delay={0.2} yOffset={10}>
             {/* Titulo Principal */}
             <div className="text-2xl lg:text-4xl xl:text-5xl 2xl:text-7xl xl:mt-16 2xl:mt-24">
               <BlurFade delay={0.25 * 3.2} inView>
-                <div className="px-1">
+                <div className="">
                   <h1 className="text-yellow-300 font-semibold">Olá, sou</h1>
                   <div className="flex flex-wrap justify-center xl:justify-start xl:flex-nowrap text-white font-bold font-mono">
                     <div className="flex gap-2 items-center flex-nowrap text-nowrap">
@@ -45,13 +45,13 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
                           "Frontend",
                           "de Software",
                         ]}
-                        mainClassName="text-lg md:text-4xl xl:text-5xl 2xl:text-6xl px-2 sm:px-2 md:px-3 bg-yellow-300 text-zinc-900 overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+                        mainClassName="mt-1 xl:mt-1 2xl:mt-1 text-xl md:text-4xl xl:text-5xl 2xl:text-7xl px-2 sm:px-2 md:px-3 bg-yellow-300 text-zinc-900 overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
                         staggerFrom={"last"}
                         initial={{ y: "100%" }}
                         animate={{ y: 0 }}
                         exit={{ y: "-120%" }}
                         staggerDuration={0.025}
-                        splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-0.5"
+                        splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-0"
                         transition={{
                           type: "spring",
                           damping: 30,
@@ -68,7 +68,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
         </div>
 
         {/* Descrição Breve */}
-        <div className="px-5 2xl:pr-20 xl:px-0 xl:pr-[50px] xl:mb-28 max-sm:mb-6">
+        <div className="px-10 2xl:pr-20 xl:px-0 xl:pr-[50px] xl:mb-28 max-sm:mb-6">
           <BlurFade duration={0.6} delay={0.8} yOffset={10}>
             <div className="flex items-center max-sm:flex-col">
               <BlurFade delay={0.25 * 4} inView>
@@ -149,13 +149,13 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
           <div className="flex items-center gap-4 max-sm:justify-center max-sm:items-center">
             <div className="flex mb-10 items-center gap-5 max-sm:gap-5 max-sm:mr-9 lg:gap-4 xl:gap-5">
               <BlurFade delay={0.25 * 5.6} inView>
-                <div className="flex">
+                <div className="max-sm:pl-10 flex items-center justify-center">
                   <ButtonCv />
                 </div>
               </BlurFade>
 
               <BlurFade delay={0.25 * 5.6} inView>
-                <div className="flex">
+                <div className="flex max-sm:hidden ">
                   <ShimmerButton scrollToProjects={scrollToProjects} />
                 </div>
               </BlurFade>
@@ -219,7 +219,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
                   Projetos Realizados
                 </h1>
                 <div className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-semibold text-yellow-300">
-                  0<Counter value={9} direction="up" />
+                  +<Counter value={10} direction="up" />
                 </div>
               </div>
 
@@ -252,7 +252,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
         </div>
       </BlurFade>
 
-      <div className="xl:hidden flex mt-32 w-[250px] md:w-[400px] lg:w-[500px]">
+      <div className="xl:hidden flex mt-10 w-[250px] md:w-[400px] lg:w-[500px]">
         <BlurFade delay={0.25 * 6} inView>
           <Image src={Code2} alt="code" className="w-screen h-full" />
         </BlurFade>

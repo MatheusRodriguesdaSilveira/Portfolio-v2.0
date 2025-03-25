@@ -9,7 +9,7 @@ const ShimmerButton = ({
   return (
     <motion.button
       onClick={scrollToProjects}
-      className="max-sm:hidden relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium rounded-full group bg-gradient-to-br from-yellow-300 to-[#fcf403] text-white duration-300"
+      className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium rounded-full group bg-gradient-to-br from-yellow-300 to-[#fcf403] text-white duration-300"
       whileTap={{ scale: 0.9 }}
     >
       {/* Efeito de brilho */}

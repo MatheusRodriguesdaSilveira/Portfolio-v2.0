@@ -9,7 +9,7 @@ export function AppleCardsCarouselDemo() {
 
   return (
     <div className="w-full h-full md:h-screen py-16 md:py-40 xl:py-32 2xl:py-40">
-      <h2 className="max-w-7xl mx-auto text-3xl xl:text-4xl 2xl:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
+      <h2 className="px-2 max-w-7xl mx-auto text-3xl xl:text-4xl 2xl:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
         {"<My Projects💻/>"}
       </h2>
 
@@ -59,10 +59,10 @@ const data = [
     id: 3,
     thumb: "/api-vendas-thumb.png",
     image: "/api-vendas.png",
-    alt: "devblog",
+    alt: "api-vendas",
     title: "API-Vendas🛒",
     description:
-      "O projeto é uma plataforma web que combina funcionalidades de blog e rede social, permitindo que os usuários criem postagens com fotos e descrições, interajam por meio de curtidas e comentários.",
+      "Meu projeto API-Vendas é uma API que desenvolvi para gerenciar um sistema de vendas, permitindo o cadastro, consulta, edição e remoção de produtos, clientes e pedidos. A ideia é criar uma solução eficiente para controlar transações de um e-commerce ou qualquer sistema que envolva vendas.",
     techStack:
       "Node.js | TypeScript | TypeORM | ExpressJS | PostgreSQL | Redis | Docker | Swagger",
     liveLink: "",
@@ -70,7 +70,7 @@ const data = [
       "https://github.com/MatheusRodriguesdaSilveira/API-Vendas-Backend",
     frontLink: "",
     content:
-      "O DevBlog é uma plataforma web que combina funcionalidades de blog e rede social, permitindo que desenvolvedores criem postagens com textos e compartilhem conhecimentos sobre tecnologia. Além disso, os usuários poderão interagir por meio de curtidas e salvar postagens para leitura posterior. Atualmente, o projeto está em versão Beta e continua em desenvolvimento, com melhorias sendo implementadas para aprimorar a experiência do usuário, otimizar a arquitetura do código e tornar a plataforma mais acessível e responsiva.",
+      "Desenvolvi a API-Vendas com o objetivo de criar um sistema eficiente para gerenciar vendas, permitindo o cadastro, consulta, edição e remoção de produtos, clientes e pedidos. A ideia surgiu da necessidade de um controle mais organizado e automatizado para transações comerciais, seja em um e-commerce ou em qualquer sistema que envolva vendas.",
   },
   {
     id: 4,

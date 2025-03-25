@@ -207,9 +207,14 @@ export function Experience() {
                   <h3 className="text-lg sm:text-2xl font-bold text-white px-1 pb-1">
                     Gentrop Cloud Brasil 📊☁
                   </h3>
-                  <h4 className="text-sm sm:text-base text-zinc-300 font-bold bg-slate-400/40 px-2 py-0.5 rounded-full">
-                    Estágio em desenvolvimento de software
-                  </h4>
+                  <div className="py-2 flex gap-1 flex-wrap">
+                    <span className="text-xs sm:text-sm font-bold text-white bg-slate-400/40 rounded-full px-2 py-1 text-nowrap">
+                      Estágio
+                    </span>
+                    <span className="text-xs sm:text-sm font-bold text-white bg-slate-400/40 rounded-full px-2 py-1 text-nowrap">
+                      Desenvolvimento de Software
+                    </span>
+                  </div>
                 </div>
                 <p className="text-xs sm:text-sm text-white font-bold">
                   Abril de 2025 - Abril de 2026
@@ -243,12 +248,36 @@ export function Experience() {
               </div>
 
               {/* Tecnologias e Status */}
-              <div className="flex pt-2 flex-col sm:flex-row justify-between gap-2">
-                <span className="text-xs sm:text-sm text-white font-bold bg-zinc-500/40 px-3 py-1 rounded-full">
-                  JavaScript | TypeScript | Go | SQL | Salesforce | Google Cloud
-                  Platform | Google Workspace | IA
-                </span>
-                <span className="text-xs sm:text-sm text-zinc-900 font-bold bg-yellow-500 px-3 py-1 rounded-full text-center">
+              {/* Mobile */}
+              <div className="md:hidden flex pt-2 flex-col sm:flex-row justify-between gap-2">
+                <div className="flex flex-col gap-2">
+                  <span className="text-xs sm:text-sm text-white font-bold bg-zinc-500/40 px-3 py-1 rounded-full">
+                    JavaScript | TypeScript | Go | SQL | Python
+                  </span>
+                  <div className="flex flex-col sm:flex-row justify-between gap-2">
+                    <span className="text-xs sm:text-sm text-white font-bold bg-zinc-500/40 px-3 py-1 rounded-full">
+                      Salesforce | Google Cloud Platform | Google Workspace | IA
+                    </span>
+                    <span className="text-xs sm:text-sm text-zinc-900 font-bold bg-yellow-500 px-3 py-1 rounded-full text-center">
+                      Em andamento
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Desktop */}
+              <div className="max-sm:hidden flex flex-col sm:flex-row justify-between gap-2 items-start sm:items-center">
+                <div className="pb-2 flex flex-col">
+                  <div className="py-2 flex gap-1 flex-wrap">
+                    <span className="text-xs sm:text-sm font-bold text-white bg-slate-400/40 rounded-full px-2 py-1 text-nowrap">
+                      JavaScript | TypeScript | Go | SQL | Python
+                    </span>
+                    <span className="text-xs sm:text-sm font-bold text-white bg-slate-400/40 rounded-full px-2 py-1 text-nowrap">
+                      Salesforce | Google Cloud Platform | Google Workspace | IA{" "}
+                    </span>
+                  </div>
+                </div>
+                <span className="text-nowrap text-xs sm:text-sm text-zinc-900 font-bold bg-yellow-500 px-3 py-1 rounded-full w-auto items-center text-center">
                   Em andamento
                 </span>
               </div>

@@ -53,14 +53,14 @@ export function ActionsGrid() {
         {/* Front-end */}
         <BlurFade delay={0.25 * 4} inView>
           <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.25)">
-            <div className="group flex flex-col gap-2 items-center rounded-xl xl:px-24 py-10 xl:py-9 2xl:py-14 hover:-translate-y-2 duration-300 ease-in-out">
+            <div className="group flex flex-col gap-2 items-center rounded-xl px-5 xl:px-24 py-10 xl:py-9 2xl:py-14 hover:-translate-y-2 duration-300 ease-in-out">
               <div className="flex items-center justify-center gap-1 mb-5">
                 <Zap className="size-7 xl:size-8 text-sky-400 transition-transform duration-300 ease-in-out group-hover:rotate-[20deg] group-hover:scale-110" />
                 <span className="text-xl md:text-3xl font-semibold text-white">
                   Front-end
                 </span>
               </div>
-              <div className="grid grid-flow-col grid-rows-1 md:grid-rows-1 px-5 gap-3 xl:gap-4">
+              <div className="grid grid-flow-col grid-rows-2 md:grid-rows-1 px-5 gap-3 xl:gap-4">
                 <div className="flex flex-col items-center gap-1">
                   <SiJavascript className="size-7 xl:size-10 text-yellow-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
                   <p className="text-white text-xs font-semibold">JavaScript</p>
@@ -102,7 +102,7 @@ export function ActionsGrid() {
                   Back-end
                 </span>
               </div>
-              <div className="grid grid-flow-col grid-rows-1 md:grid-rows-1 gap-3 xl:gap-4">
+              <div className="grid grid-flow-col grid-rows-2 md:grid-rows-1 gap-3 xl:gap-4">
                 <div className="flex flex-col items-center gap-1">
                   <SiNodedotjs className="size-7 xl:size-10 text-green-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
                   <p className="text-white text-xs font-semibold">Node.Js</p>
@@ -150,7 +150,7 @@ export function ActionsGrid() {
                   Other Technologies
                 </span>
               </h2>
-              <div className="grid grid-flow-col grid-rows-1 md:grid-rows-1 gap-3 xl:gap-4">
+              <div className="grid grid-flow-col grid-rows-2 md:grid-rows-1 gap-3 xl:gap-4">
                 <div className="flex flex-col items-center gap-1">
                   <FaGithub className="size-7 xl:size-10 text-purple-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
                   <p className="text-white text-xs font-semibold">GitHub</p>

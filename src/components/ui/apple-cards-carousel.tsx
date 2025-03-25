@@ -231,7 +231,7 @@ export const Card = ({
                 exit={{ opacity: 0 }}
                 ref={containerRef}
                 layoutId={layout ? `card-${card.title}` : undefined}
-                className="max-w-7xl xl:max-w-3xl xl:h-[500px] 2xl:h-[700px] 2xl:max-w-4xl mx-auto bg-zinc-950 h-fit z-[60] my-6 md:my-10 p-4 md:p-10 xl:p-4 xl:my-6 rounded-3xl font-sans relative"
+                className="max-w-7xl xl:max-w-3xl xl:h-[600px] 2xl:h-[700px] 2xl:max-w-4xl mx-auto bg-zinc-950 h-fit z-[60] my-6 md:my-10 p-4 md:p-10 xl:p-4 xl:my-6 rounded-3xl font-sans relative"
               >
                 <button
                   className="sticky top-4 h-8 w-8 xl:h-6 xl:w-6 2xl:h-8 2xl:w-8 right-0 ml-auto bg-black dark:bg-white rounded-full flex items-center justify-center"
@@ -317,7 +317,7 @@ export const Card = ({
 
                 <div className="pt-5 flex justify-center">
                   <Image
-                    className="border border-zinc-700 rounded-3xl w-full max-w-xs xl:max-w-[400px] xl:h-[200px] 2xl:max-w-[700px] 2xl:h-[400px]"
+                    className="border border-zinc-700 rounded-3xl w-full max-w-xs xl:max-w-[500px] xl:h-[300px] 2xl:max-w-[700px] 2xl:h-[400px]"
                     src={card.image}
                     alt={card.title}
                     width={1000}
