@@ -233,7 +233,7 @@ export function Experience() {
                 </p>
                 <div className="bg-[#FED11A] w-20 h-20 sm:w-24 sm:h-24 rounded-md p-2 sm:p-4 aspect-square mx-auto sm:mx-0">
                   <Image
-                    src={"/gentrop_logo.jfif"}
+                    src={"/gentrop_logo.png"}
                     alt={"Metodista de Sao Paulo"}
                     width={100}
                     height={100}
