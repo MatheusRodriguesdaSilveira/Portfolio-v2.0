@@ -1,10 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import Code from "/public/imageDev.svg";
-import Code1 from "/public/imageCode.svg";
 import Code2 from "/public/imageCode2.svg";
 import BlurFade from "@/components/ui/blur-fade";
-import GradualSpacing from "../ui/gradual-spacing";
 import ShimmerButton from "../ui/ButtonMotion";
 import ButtonCv from "./components/ButtonCv";
 import Counter from "../ui/TextCounter";
@@ -48,7 +45,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
                           "Frontend",
                           "de Software",
                         ]}
-                        mainClassName="text-base md:text-6xl px-2 sm:px-2 md:px-3 bg-yellow-300 text-zinc-900 overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+                        mainClassName="text-lg md:text-4xl xl:text-5xl 2xl:text-6xl px-2 sm:px-2 md:px-3 bg-yellow-300 text-zinc-900 overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
                         staggerFrom={"last"}
                         initial={{ y: "100%" }}
                         animate={{ y: 0 }}
