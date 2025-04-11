@@ -1,23 +1,24 @@
 "use client";
+
 import BlurFade from "@/components/ui/blur-fade";
 import { VscVscode } from "react-icons/vsc";
-import {
-  BadgeCheck,
-  CheckCircle,
-  Figma,
-  HandMetal,
-  Rocket,
-  Settings,
-  Zap,
-} from "lucide-react";
+import { BadgeCheck, Figma, Rocket, Settings, Zap } from "lucide-react";
 import {
   FaReact,
   FaHtml5,
   FaGithub,
   FaGitAlt,
-  FaCss3,
   FaCss3Alt,
   FaDocker,
+  FaUsers,
+  FaBolt,
+  FaGraduationCap,
+  FaCalendarCheck,
+  FaPaintBrush,
+  FaCodeBranch,
+  FaServer,
+  FaDatabase,
+  FaBrain,
 } from "react-icons/fa";
 import {
   SiJavascript,
@@ -32,6 +33,10 @@ import {
   SiBeekeeperstudio,
   SiRedis,
   SiZod,
+  SiSwagger,
+  SiJest,
+  SiFastify,
+  SiVercel,
 } from "react-icons/si";
 import { PiFileSqlBold } from "react-icons/pi";
 import SpotlightCard from "@/components/ui/SpotlightCard ";
@@ -53,14 +58,14 @@ export function ActionsGrid() {
         {/* Front-end */}
         <BlurFade delay={0.25 * 4} inView>
           <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.25)">
-            <div className="group flex flex-col gap-2 items-center rounded-xl px-5 xl:px-24 py-10 xl:py-9 2xl:py-14 hover:-translate-y-2 duration-300 ease-in-out">
+            <div className="group flex flex-col gap-2 items-center rounded-xl xl:px-24 py-10 xl:py-10 2xl:py-14 hover:-translate-y-2 duration-300 ease-in-out">
               <div className="flex items-center justify-center gap-1 mb-5">
                 <Zap className="size-7 xl:size-8 text-sky-400 transition-transform duration-300 ease-in-out group-hover:rotate-[20deg] group-hover:scale-110" />
                 <span className="text-xl md:text-3xl font-semibold text-white">
                   Front-end
                 </span>
               </div>
-              <div className="grid grid-flow-col grid-rows-2 md:grid-rows-1 px-5 gap-3 xl:gap-4">
+              <div className="grid grid-flow-col grid-rows-2 md:grid-rows-2 lg:grid-rows-2 xl:grid-rows-2 2xl:grid-rows-1 px-5 gap-3 xl:gap-4">
                 <div className="flex flex-col items-center gap-1">
                   <SiJavascript className="size-7 xl:size-10 text-yellow-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
                   <p className="text-white text-xs font-semibold">JavaScript</p>
@@ -95,25 +100,45 @@ export function ActionsGrid() {
         {/* Back-end */}
         <BlurFade delay={0.25 * 5} inView>
           <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.25)">
-            <div className="group flex flex-col gap-2 items-center rounded-xl xl:px-24 py-10 xl:py-9 2xl:py-14 hover:-translate-y-2 duration-300 ease-in-out">
+            <div className="group flex flex-col gap-2 items-center rounded-xl xl:px-24 py-10 xl:py-10 2xl:py-14 hover:-translate-y-2 duration-300 ease-in-out">
               <div className="flex items-center justify-center gap-1 mb-5">
                 <Rocket className="size-7 xl:size-8 text-rose-700 transition-transform duration-300 ease-in-out group-hover:rotate-[20deg] group-hover:scale-110" />
                 <span className="text-xl md:text-3xl font-semibold text-white">
                   Back-end
                 </span>
               </div>
-              <div className="grid grid-flow-col grid-rows-2 md:grid-rows-1 gap-3 xl:gap-4">
+              <div className="grid grid-flow-col grid-rows-2 md:grid-rows-2 lg:grid-rows-2 xl:grid-rows-2 2xl:grid-rows-1 px-5 gap-3 xl:gap-4">
                 <div className="flex flex-col items-center gap-1">
                   <SiNodedotjs className="size-7 xl:size-10 text-green-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
                   <p className="text-white text-xs font-semibold">Node.Js</p>
                 </div>
                 <div className="flex flex-col items-center gap-1">
-                  <SiExpress className="size-7 xl:size-10 text-lime-600 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
+                  <SiExpress className="size-7 xl:size-10 text-green-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
                   <p className="text-white text-xs font-semibold">Express</p>
+                </div>
+                <div className="flex flex-col items-center gap-1">
+                  <SiSwagger className="size-7 xl:size-10 text-lime-600 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
+                  <p className="text-white text-xs font-semibold">Swagger</p>
                 </div>
                 <div className="flex flex-col items-center gap-1">
                   <SiTypescript className="size-7 xl:size-10 text-blue-600 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
                   <p className="text-white text-xs font-semibold">TypeScript</p>
+                </div>
+                <div className="flex flex-col items-center gap-1">
+                  <SiJest className="size-7 xl:size-10 text-red-600 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
+                  <p className="text-white text-xs font-semibold">Jest</p>
+                </div>
+                <div className="flex flex-col items-center gap-1">
+                  <SiRedis className="size-7 xl:size-10 text-red-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
+                  <p className="text-white text-xs font-semibold">Redis</p>
+                </div>
+                <div className="flex flex-col items-center gap-1">
+                  <SiFastify className="size-7 xl:size-10 text-zinc-950 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
+                  <p className="text-white text-xs font-semibold">Fastify</p>
+                </div>
+                <div className="flex flex-col items-center gap-1">
+                  <SiZod className="size-7 xl:size-10 text-sky-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
+                  <p className="text-white text-xs font-semibold">Zod</p>
                 </div>
                 <div className="flex flex-col items-center gap-1">
                   <SiPrisma className="size-7 xl:size-10 text-cyan-900 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
@@ -127,14 +152,6 @@ export function ActionsGrid() {
                   <SiPostgresql className="size-7 xl:size-10 text-sky-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
                   <p className="text-white text-xs font-semibold">PostgreSQL</p>
                 </div>
-                <div className="flex flex-col items-center gap-1">
-                  <SiRedis className="size-7 xl:size-10 text-red-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">Redis</p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <SiZod className="size-7 xl:size-10 text-sky-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">Zod</p>
-                </div>
               </div>
             </div>
           </SpotlightCard>
@@ -143,14 +160,16 @@ export function ActionsGrid() {
         {/* Other Technologies*/}
         <BlurFade delay={0.25 * 6} inView>
           <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.25)">
-            <div className="group flex flex-col gap-2 items-center rounded-xl xl:px-24 py-10 xl:py-9 2xl:py-14 hover:-translate-y-2 duration-300 ease-in-out">
-              <h2 className="md:text-3xl font-semibold text-white flex items-center justify-center gap-2 mb-5">
-                <Settings className="size-7 text-pink-500 transition-transform duration-300 group-hover:rotate-12" />
-                <span className="text-xl md:text-3xl font-semibold text-white">
-                  Other Technologies
-                </span>
-              </h2>
-              <div className="grid grid-flow-col grid-rows-2 md:grid-rows-1 gap-3 xl:gap-4">
+            <div className="group flex flex-col gap-2 items-center rounded-xl xl:px-24 py-10 xl:py-10 2xl:py-14 hover:-translate-y-2 duration-300 ease-in-out">
+              <div className="flex items-center justify-center gap-1 mb-5">
+                <h2 className="md:text-3xl font-semibold text-white flex items-center justify-center gap-2 mb-5">
+                  <Settings className="size-7 text-pink-500 transition-transform duration-300 group-hover:rotate-12" />
+                  <span className="text-xl md:text-3xl font-semibold text-white">
+                    Other Technologies
+                  </span>
+                </h2>
+              </div>
+              <div className="grid grid-flow-col grid-rows-2 md:grid-rows-2 lg:grid-rows-2 xl:grid-rows-2 2xl:grid-rows-1 px-5 gap-3 xl:gap-4">
                 <div className="flex flex-col items-center gap-1">
                   <FaGithub className="size-7 xl:size-10 text-purple-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
                   <p className="text-white text-xs font-semibold">GitHub</p>
@@ -179,6 +198,10 @@ export function ActionsGrid() {
                   <FaDocker className="size-7 xl:size-10 text-blue-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
                   <p className="text-white text-xs font-semibold">Docker</p>
                 </div>
+                <div className="flex flex-col items-center gap-1">
+                  <SiVercel className="size-7 xl:size-10 text-zinc-200 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
+                  <p className="text-white text-xs font-semibold">Vercel</p>
+                </div>
               </div>
             </div>
           </SpotlightCard>
@@ -187,64 +210,64 @@ export function ActionsGrid() {
         {/* Soft Skills*/}
         <BlurFade delay={0.25 * 7} inView>
           <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.25)">
-            <div className="group flex flex-col gap-2 items-center rounded-xl xl:px-24 py-10 xl:py-4 2xl:py-7 hover:-translate-y-2 duration-300 ease-in-out">
-              <h2 className="text-lg xl:text-3xl 2xl:mb-1 font-semibold text-white flex items-center justify-center gap-1">
-                <BadgeCheck className="size-6 xl:size-7 text-yellow-300 transition-transform duration-300 group-hover:rotate-12" />
-                Soft Skills
-              </h2>
-              <div className="grid grid-flow-col grid-rows-3 md:grid-rows-3 gap-1 px-5 xl:px-0 xl:gap-0 2xl:gap-2 text-xs xl:text-sm text-white font-bold text-balance md:text-balance">
+            <div className="group flex flex-col gap-2 items-center rounded-xl xl:px-24 py-10 xl:py-10 2xl:py-14 hover:-translate-y-2 duration-300 ease-in-out">
+              <div className="flex items-center justify-center gap-1 mb-5">
+                <h2 className="md:text-3xl font-semibold text-white flex items-center justify-center gap-2 mb-5">
+                  <BadgeCheck className="size-7 text-yellow-500 transition-transform duration-300 group-hover:rotate-12" />
+                  <span className="text-xl md:text-3xl font-semibold text-white">
+                    Soft Skills
+                  </span>
+                </h2>
+              </div>
+              <div className="grid grid-flow-col grid-rows-2 md:grid-rows-2 lg:grid-rows-2 xl:grid-rows-2 2xl:grid-rows-1 px-5 gap-3 xl:gap-4">
                 <div className="flex flex-col items-center gap-1">
-                  <p className="flex gap-1">
-                    <CheckCircle className="size-4 md:size-5 text-green-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                    Trabalho em equipe
+                  <FaUsers className="size-7 xl:size-10 text-green-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
+                  <p className="text-white text-xs font-semibold text-wrap">
+                    Colaboração
                   </p>
                 </div>
-                <div className="flex flex-col items-center gap-2">
-                  <p className="flex gap-1">
-                    <CheckCircle className="size-4 md:size-5 text-green-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
+                <div className="flex flex-col items-center gap-1">
+                  <FaBolt className="size-7 xl:size-10 text-yellow-300 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
+                  <p className="text-white text-xs font-semibold">
                     Proatividade
                   </p>
                 </div>
                 <div className="flex flex-col items-center gap-1">
-                  <p className="flex gap-1">
-                    <CheckCircle className="size-4 md:size-5 text-green-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                    Capacidade autodidata
-                  </p>
+                  <FaGraduationCap className="size-7 xl:size-10 text-lime-600 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
+                  <p className="text-white text-xs font-semibold">Autodidata</p>
                 </div>
                 <div className="flex flex-col items-center gap-1">
-                  <p className="flex gap-1">
-                    <CheckCircle className="size-4 md:size-5 text-green-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
+                  <FaCalendarCheck className="size-7 xl:size-10 text-blue-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
+                  <p className="text-white text-xs font-semibold">
                     Organização
                   </p>
                 </div>
                 <div className="flex flex-col items-center gap-1">
-                  <p className="flex gap-1">
-                    <CheckCircle className="size-4 md:size-5 text-green-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
+                  <FaPaintBrush className="size-7 xl:size-10 text-pink-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
+                  <p className="text-white text-xs font-semibold">
                     Criatividade
                   </p>
                 </div>
                 <div className="flex flex-col items-center gap-1">
-                  <p className="flex gap-1">
-                    <CheckCircle className="size-4 md:size-5 text-green-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                    Versionamento de Código
+                  <FaCodeBranch className="size-7 xl:size-10 text-red-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
+                  <p className="text-white text-xs font-semibold text-wrap">
+                    Versionamento
                   </p>
                 </div>
                 <div className="flex flex-col items-center gap-1">
-                  <p className="flex gap-1">
-                    <CheckCircle className="size-4 md:size-5 text-green-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                    APIs
+                  <FaServer className="size-7 xl:size-10 text-zinc-400 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
+                  <p className="text-white text-xs font-semibold">APIs</p>
+                </div>
+                <div className="flex flex-col items-center gap-1">
+                  <FaDatabase className="size-7 xl:size-10 text-sky-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
+                  <p className="text-white text-xs font-semibold text-wrap">
+                    Dados
                   </p>
                 </div>
                 <div className="flex flex-col items-center gap-1">
-                  <p className="flex gap-1">
-                    <CheckCircle className="size-4 md:size-5 text-green-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                    Estrutura de Dados
-                  </p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <p className="flex gap-1">
-                    <CheckCircle className="size-4 md:size-5 text-green-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                    Lógica de Programação
+                  <FaBrain className="size-7 xl:size-10 text-cyan-700 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
+                  <p className="text-white text-xs font-semibold text-wrap">
+                    Lógica
                   </p>
                 </div>
               </div>
