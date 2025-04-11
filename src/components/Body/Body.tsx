@@ -176,7 +176,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
               </div>
               <div className="flex gap-1 lg:items-end">
                 <div className="text-4xl xl:text-5xl 2xl:text-7xl font-semibold text-yellow-300">
-                  0<Counter value={9} direction="up" />
+                  +<Counter value={10} direction="up" />
                 </div>
                 <h1 className="text-xs lg:text-sm xl:text-sm 2xl:text-lg w-20 font-semibold text-zinc-400">
                   Projetos Realizados
@@ -192,7 +192,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
               </div>
               <div className="flex gap-1 lg:items-end">
                 <div className="text-4xl xl:text-5xl 2xl:text-7xl font-semibold text-yellow-300">
-                  +<Counter value={300} direction="up" />
+                  +<Counter value={400} direction="up" />
                 </div>
                 <h1 className="text-xs lg:text-sm xl:text-sm 2xl:text-lg w-20 font-semibold text-zinc-400">
                   Commits Feitos
@@ -234,7 +234,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToProjects }) => {
 
               <div className="flex gap-1 items-center text-left">
                 <div className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-semibold text-yellow-300">
-                  +<Counter value={300} direction="up" />
+                  +<Counter value={400} direction="up" />
                 </div>
                 <h1 className="text-xs sm:text-sm md:text-base xl:text-lg w-16 sm:w-20 font-semibold text-zinc-400">
                   Commits Feitos
