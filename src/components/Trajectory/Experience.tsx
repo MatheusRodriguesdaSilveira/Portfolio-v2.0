@@ -10,7 +10,10 @@ export function Experience() {
       content: (
         <div className="w-full min-h-52 rounded-2xl flex flex-col text-primary gap-4">
           {/* Título e Data */}
-          <SpotlightCard spotlightColor="rgba(8, 255, 0, 0.2)">
+          <SpotlightCard
+            className="py-6 px-6"
+            spotlightColor="rgba(8, 255, 0, 0.2)"
+          >
             <div className="flex flex-col sm:flex-row justify-between gap-2 items-start sm:items-center">
               <div className="flex flex-col">
                 <h3 className="text-lg sm:text-2xl font-bold text-white">
@@ -73,7 +76,10 @@ export function Experience() {
           {/* Bloco 1 */}
 
           <div className="w-full min-h-52 rounded-2xl flex flex-col text-primary gap-4">
-            <SpotlightCard spotlightColor="rgba(0, 229, 255, 0.2)">
+            <SpotlightCard
+              className="py-6 px-6"
+              spotlightColor="rgba(0, 229, 255, 0.2)"
+            >
               {/* Título e Data */}
               <div className="flex flex-col sm:flex-row justify-between gap-2 items-start sm:items-center">
                 <div className="flex flex-col">
@@ -136,7 +142,10 @@ export function Experience() {
 
           {/* Bloco 2 */}
           <div className="w-full min-h-52 rounded-2xl flex flex-col text-primary gap-4">
-            <SpotlightCard spotlightColor="rgba(0, 229, 255, 0.2)">
+            <SpotlightCard
+              className="py-6 px-6"
+              spotlightColor="rgba(0, 229, 255, 0.2)"
+            >
               {/* Título e Data */}
               <div className="flex flex-col sm:flex-row justify-between gap-2 items-start sm:items-center">
                 <div className="flex flex-col">
@@ -200,7 +209,10 @@ export function Experience() {
       content: (
         <div className="flex flex-col gap-2">
           <div className="w-full min-h-52 rounded-2xl flex flex-col text-primary gap-4">
-            <SpotlightCard spotlightColor="rgba(255, 226, 0, 0.31)">
+            <SpotlightCard
+              className="py-6 px-6"
+              spotlightColor="rgba(255, 226, 0, 0.31)"
+            >
               {/* Título e Data */}
               <div className="flex flex-col sm:flex-row justify-between gap-2 items-start sm:items-center">
                 <div className="pb-2 flex flex-col">
@@ -284,7 +296,10 @@ export function Experience() {
             </SpotlightCard>
           </div>
           <div className="w-full min-h-52 rounded-2xl flex flex-col text-primary gap-4">
-            <SpotlightCard spotlightColor="rgba(0, 24, 255, 0.3)">
+            <SpotlightCard
+              className="py-6 px-6"
+              spotlightColor="rgba(0, 24, 255, 0.3)"
+            >
               {/* Título e Data */}
               <div className="flex flex-col sm:flex-row justify-between gap-2 items-start sm:items-center">
                 <div className="flex flex-col">
