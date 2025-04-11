@@ -36,97 +36,62 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
               </BlurFade>
               <BlurFade delay={0.25 * 4.5} inView>
                 <p className="text-zinc-200 max-sm:m-10 mb-5 text-base xl:text-sm 2xl:text-base">
-                  Sou estudante de{" "}
+                  Sou desenvolvedor de software em formação, cursando{" "}
                   <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-yellow-300">
                     Análise e Desenvolvimento de Sistemas
                   </span>
-                  , com mais de um ano de experiência em{" "}
+                  , com mais de um ano de experiência prática em{" "}
                   <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-yellow-300">
-                    desenvolvimento frontend
-                  </span>{" "}
-                  e criação de{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-yellow-300">
-                    APIs
+                    projetos web
                   </span>
-                  . Tenho sólidos conhecimentos em{" "}
+                  . Embora tenha domínio em{" "}
                   <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-yellow-300">
-                    HTML, CSS, Tailwind, JavaScript, React
+                    frontend com HTML, CSS, Tailwind e React
                   </span>
-                  , além de experiência com{" "}
+                  , minha maior familiaridade está no{" "}
                   <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-yellow-300">
-                    Node.js
+                    desenvolvimento backend
+                  </span>
+                  . Tenho experiência sólida com{" "}
+                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-yellow-300">
+                    Node.js, TypeScript, JavaScript, Jest, Swagger, Express,
+                    Prisma e PostgreSQL
+                  </span>
+                  , construindo{" "}
+                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-yellow-300">
+                    APIs robustas, documentadas e escaláveis
+                  </span>
+                  . Já participei de{" "}
+                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-yellow-300">
+                    projetos completos
+                  </span>
+                  , desde a{" "}
+                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-yellow-300">
+                    arquitetura de banco de dados
                   </span>{" "}
-                  e{" "}
+                  até a entrega de{" "}
                   <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-yellow-300">
-                    Prisma
-                  </span>{" "}
-                  para desenvolvimento de APIs robustas e eficientes. Já
-                  participei de diversos projetos completos, desde a criação de{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-yellow-300">
-                    interfaces intuitivas
-                  </span>{" "}
-                  até a {""}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-yellow-300">
-                    implementação de backends
-                  </span>{" "}
-                  escaláveis. Estou em busca de{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-yellow-300">
-                    oportunidades
-                  </span>{" "}
-                  para aplicar e expandir minhas{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-yellow-300">
-                    habilidades
-                  </span>{" "}
-                  em{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-yellow-300">
-                    programação
-                  </span>{" "}
-                  em um ambiente{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-yellow-300">
-                    colaborativo
-                  </span>{" "}
-                  e{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-yellow-300">
-                    inovador
+                    endpoints funcionais e bem testados
                   </span>
                   .
                 </p>
                 <p className="text-zinc-200 max-sm:m-10 mb-5 text-base xl:text-sm 2xl:text-base">
-                  Tenho um{" "}
+                  Busco uma{" "}
                   <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-yellow-300">
-                    interesse
+                    oportunidade
                   </span>{" "}
-                  genuíno em atuar tanto no{" "}
+                  onde eu possa{" "}
                   <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-yellow-300">
-                    frontend
-                  </span>{" "}
-                  quanto no{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-yellow-300">
-                    backend
+                    crescer como desenvolvedor de software
                   </span>
-                  , com o objetivo de{" "}
+                  , contribuir com{" "}
                   <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-yellow-300">
-                    contribuir
+                    soluções reais
                   </span>{" "}
-                  de forma{" "}
+                  e colaborar em um{" "}
                   <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-yellow-300">
-                    abrangente
-                  </span>{" "}
-                  para o{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-yellow-300">
-                    desenvolvimento de sistemas funcionais e escaláveis
-                  </span>
-                  . Estou{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-yellow-300">
-                    motivado
-                  </span>{" "}
-                  a integrar uma equipe onde possa{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-yellow-300">
-                    não apenas
-                  </span>{" "}
-                  aplicar meus conhecimentos, mas também{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline max-sm:decoration-1 text-white decoration-yellow-300">
-                    aprender e colaborar para o crescimento mútuo
+                    time que valorize aprendizado contínuo, boas práticas e
+                    entrega de valor
                   </span>
                   .
                 </p>
