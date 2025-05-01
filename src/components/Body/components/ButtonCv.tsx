@@ -1,4 +1,4 @@
-import { ArrowDownToLine, Download } from "lucide-react";
+import { ArrowDownToLine } from "lucide-react";
 import React from "react";
 
 const ButtonCv = () => {
@@ -9,8 +9,8 @@ const ButtonCv = () => {
     >
       <a
         className="flex gap-1 items-center text-sm text-nowrap lg:text-base font-semibold"
-        href="/CV MatheusSilveiraFullStack.pdf"
-        download="CV MatheusSilveiraFullStack.pdf"
+        href="/CV_MatheusSilveira.pdf"
+        download="CV_MatheusSilveira.pdf"
         target="_blank"
       >
         Download currículo
