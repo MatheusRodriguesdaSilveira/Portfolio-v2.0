@@ -30,7 +30,7 @@ const data = [
     description:
       "O projeto é uma plataforma web que combina funcionalidades de blog e rede social, permitindo que os usuários criem postagens com fotos e descrições, interajam por meio de curtidas e comentários.",
     techStack:
-      "Next Js | React | Node Js | Prisma | PostgreSQL | TypeScript | TailwindCss",
+      "Next Js | React | Node.js | Prisma | PostgreSQL | TypeScript | TailwindCss",
     liveLink: "https://dev-blog-frontend-umber.vercel.app",
     repoLink: "https://github.com/MatheusRodriguesdaSilveira/DevBlog-Backend",
     frontLink: "https://github.com/MatheusRodriguesdaSilveira/DevBlog-Frontend",
@@ -39,6 +39,23 @@ const data = [
   },
   {
     id: 2,
+    thumb: "/agendamentoDeServicos.jpeg",
+    image: "/agendamentoDeServicos.jpeg",
+    alt: "agendamentoDeServicos",
+    title: "💇‍♀️ Agendamento de Serviços - API",
+    description:
+      "Mini aplicação Node.js voltada para gestão de agendamentos de uma profissional autônoma (ex: manicure). Utiliza boas práticas de arquitetura, testes, validações, autenticação e documentação via Swagger.",
+    techStack:
+      "Node.js | TypeScript | Jest | PostgreSQL | Swagger | Fastify | Design-Patterns | Prisma | Zod | JWT | Bcrypt",
+    liveLink: "",
+    repoLink:
+      "https://github.com/MatheusRodriguesdaSilveira/user-api-test-practice-pre-stage",
+    frontLink: "",
+    content:
+      "Mini aplicação Node.js voltada para gestão de agendamentos de uma profissional autônoma (ex: manicure). Utiliza boas práticas de arquitetura, testes, validações, autenticação e documentação via Swagger.",
+  },
+  {
+    id: 3,
     thumb: "/system pizza thumb.jpeg",
     image: "/system pizza.jpeg",
     alt: "pizzaria",
@@ -46,7 +63,7 @@ const data = [
     description:
       "Sistema completo para uma aplicação de pedidos em uma pizzaria, com funcionalidades de autenticação, gerenciamento de pedidos e criação de produtos.",
     techStack:
-      "Next Js | React | Node Js | Prisma | PostgreSQL | TypeScript | TailwindCss",
+      "Next Js | React | Node.js | Prisma | PostgreSQL | TypeScript | TailwindCss",
     liveLink: "https://system-pizza-frontend.vercel.app",
     repoLink:
       "https://github.com/MatheusRodriguesdaSilveira/SystemPizza-Backend",
@@ -56,7 +73,7 @@ const data = [
       "O System Pizza é um sistema completo para gestão de pedidos em pizzarias, oferecendo funcionalidades como autenticação de usuários, gerenciamento de pedidos e criação de produtos. Com uma interface intuitiva, o sistema permite que clientes personalizem seus pedidos e finalizem a compra de forma prática, enquanto o restaurante recebe e administra os pedidos em tempo real.",
   },
   {
-    id: 3,
+    id: 4,
     thumb: "/api-vendas-thumb.png",
     image: "/api-vendas.png",
     alt: "api-vendas",
@@ -73,14 +90,14 @@ const data = [
       "Desenvolvi a API-Vendas com o objetivo de criar um sistema eficiente para gerenciar vendas, permitindo o cadastro, consulta, edição e remoção de produtos, clientes e pedidos. A ideia surgiu da necessidade de um controle mais organizado e automatizado para transações comerciais, seja em um e-commerce ou em qualquer sistema que envolva vendas.",
   },
   {
-    id: 4,
+    id: 5,
     thumb: "/in orbit thumb.jpeg",
     image: "/in orbit.jpeg",
     alt: "in orbit",
     title: "In.Orbit📅",
     description:
       "Aplicação web que permite aos usuários adicionar metas com base nos dias da semana, onde essa apliação usa um backend feito em Node Js.",
-    techStack: "React | Node Js | TypeScript | TailwindCss",
+    techStack: "React | Node.js | TypeScript | TailwindCss",
     liveLink: "https://in-orbit-frontend-one.vercel.app",
     repoLink: "https://github.com/MatheusRodriguesdaSilveira/In.Orbit-Backend",
     frontLink:
@@ -89,7 +106,7 @@ const data = [
       "O In.Orbit é uma aplicação web que permite aos usuários adicionar e gerenciar metas com base nos dias da semana, ajudando na organização e acompanhamento de objetivos. O projeto conta com um backend desenvolvido em Node.js, garantindo uma estrutura robusta para o armazenamento e manipulação dos dados. Além do gerenciamento de metas, a aplicação oferece uma interface intuitiva e moderna, permitindo que os usuários visualizem seu progresso ao longo da semana. Novas funcionalidades estão sendo planejadas para tornar a experiência ainda mais completa e dinâmica. 🚀",
   },
   {
-    id: 5,
+    id: 6,
     thumb: "/gd sports thumb.jpeg",
     image: "/gd sports.jpeg",
     alt: "project clothing store",
@@ -105,7 +122,7 @@ const data = [
       "O GD Sport é uma loja virtual dinâmica que permite aos usuários navegar por uma variedade de produtos esportivos e realizar pedidos de forma prática. O diferencial do projeto é que todos os pedidos são redirecionados diretamente para o WhatsApp, com todos os itens inseridos no carrinho, facilitando o processo de compra e comunicação com o vendedor. A plataforma foi desenvolvida para proporcionar uma experiência de compra rápida e eficiente, com uma interface intuitiva e fácil de usar, visando atender tanto clientes quanto lojistas de forma direta e sem complicação.",
   },
   {
-    id: 6,
+    id: 7,
     thumb: "/hamburgueria.jpeg",
     image: "/hamburgueria.jpeg",
     alt: "hamburgueria",
@@ -120,7 +137,7 @@ const data = [
       "O Project Burger é um site desenvolvido para uma hamburgueria, oferecendo uma experiência interativa e prática para os clientes realizarem seus pedidos. A plataforma conta com diversas funcionalidades, permitindo que os usuários escolham seus lanches, personalizem os pedidos e enviem diretamente para o WhatsApp da hamburgueria, com todos os detalhes necessários para um atendimento rápido e eficiente. O projeto foi pensado para otimizar o processo de pedidos, tornando-o mais dinâmico e acessível, proporcionando uma navegação intuitiva e visual atraente para os clientes. 🚀🍔",
   },
   {
-    id: 7,
+    id: 8,
     thumb: "/sushi.jpeg",
     image: "/sushi.jpeg",
     alt: "sushi shop",
@@ -135,7 +152,7 @@ const data = [
       "O Project Sushi Shop é um e-commerce desenvolvido para restaurantes de sushi, proporcionando uma experiência prática e eficiente para os clientes realizarem seus pedidos online. A plataforma permite a exibição detalhada dos produtos, onde os usuários podem visualizar opções de sushis, combos e acompanhamentos disponíveis. Além disso, o sistema conta com um carrinho de compras, onde os clientes podem adicionar ou remover itens antes de finalizar o pedido. Após a escolha dos produtos, o pedido é redirecionado automaticamente para o WhatsApp do restaurante, contendo todos os detalhes necessários para agilizar o atendimento e garantir uma comunicação direta com o estabelecimento.",
   },
   {
-    id: 8,
+    id: 9,
     thumb: "/task list.png",
     image: "/task list.png",
     alt: "task list",
@@ -150,7 +167,7 @@ const data = [
       "O Task List é uma aplicação web desenvolvida para auxiliar os usuários na organização de suas atividades diárias. A plataforma permite adicionar tarefas de forma prática, contando com funcionalidades como edição, conclusão, exclusão e reorganização da posição das tarefas dentro da lista, garantindo maior flexibilidade e controle sobre as atividades. Com uma interface intuitiva e dinâmica, o Task List facilita o gerenciamento de tarefas, proporcionando uma experiência fluida e eficiente para acompanhar e organizar compromissos de maneira simples e acessível. ✅🚀",
   },
   {
-    id: 9,
+    id: 10,
     thumb: "/student list.png",
     image: "/student list.png",
     alt: "student list",
@@ -165,7 +182,7 @@ const data = [
       "O Project Student List App 👨‍🎓 é uma aplicação web desenvolvida para facilitar o gerenciamento de estudantes em uma lista interativa. A plataforma permite adicionar estudantes e conta com funcionalidades como edição, remoção e reorganização da posição dos alunos na lista, proporcionando um controle mais eficiente e organizado. Com uma interface intuitiva e responsiva, o Project Student List App torna a gestão de estudantes mais simples e prática, permitindo uma navegação fluida e dinâmica para acompanhar e administrar as informações com facilidade. 🎓🚀",
   },
   {
-    id: 10,
+    id: 11,
     thumb: "/weather app.jpeg",
     image: "/weather app.jpeg",
     alt: "weather app",
