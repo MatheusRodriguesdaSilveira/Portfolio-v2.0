@@ -20,10 +20,10 @@ export function Experience() {
                   Etec Lauro Gomes 👨‍🎓🎓
                 </h3>
                 <div className="py-2 flex gap-1 flex-wrap">
-                  <span className="text-xs sm:text-sm font-bold text-white bg-slate-400/40 rounded-full px-2 py-1 text-nowrap">
+                  <span className="text-xs sm:text-sm font-bold text-white bg-purple-600/40 rounded-full px-2 py-1 text-nowrap">
                     Ensino Técnico
                   </span>
-                  <span className="text-xs sm:text-sm font-bold text-white bg-slate-400/40 rounded-full px-2 py-1 text-nowrap">
+                  <span className="text-xs sm:text-sm font-bold text-white bg-purple-600/40 rounded-full px-2 py-1 text-nowrap">
                     Formado
                   </span>
                 </div>
@@ -87,13 +87,13 @@ export function Experience() {
                     Universidade Metodista de Sao Paulo 👨‍🎓🎓
                   </h3>
                   <div className="py-2 flex gap-1 flex-wrap">
-                    <span className="text-xs sm:text-sm font-bold text-white bg-slate-400/40 rounded-full px-2 py-1 text-nowrap">
+                    <span className="text-xs sm:text-sm font-bold text-white bg-purple-600/40 rounded-full px-2 py-1 text-nowrap">
                       Ensino Superior
                     </span>
-                    <span className="text-xs sm:text-sm font-bold text-white bg-slate-400/40 rounded-full px-2 py-1 text-nowrap">
+                    <span className="text-xs sm:text-sm font-bold text-white bg-purple-600/40 rounded-full px-2 py-1 text-nowrap">
                       Tecnológo
                     </span>
-                    <span className="text-xs sm:text-sm font-bold text-white bg-slate-400/40 rounded-full px-2 py-1 text-nowrap">
+                    <span className="text-xs sm:text-sm font-bold text-white bg-purple-600/40 rounded-full px-2 py-1 text-nowrap">
                       Graduando
                     </span>
                   </div>
@@ -131,7 +131,8 @@ export function Experience() {
               {/* Tecnologias e Status */}
               <div className="flex pt-2 flex-col sm:flex-row justify-between gap-2">
                 <span className="text-xs sm:text-sm text-white font-bold bg-zinc-500/40 px-3 py-1 rounded-full">
-                  Java | C# | Python | Banco de Dados | Redes
+                  Java | C# | Python | Banco de Dados | Redes | Gestão de
+                  Progetos
                 </span>
                 <span className="text-xs sm:text-sm text-zinc-900 font-bold bg-yellow-500 px-3 py-1 rounded-full text-center">
                   Em andamento
@@ -141,13 +142,13 @@ export function Experience() {
           </div>
 
           {/* Bloco 2 */}
-          <div className="w-full min-h-52 rounded-2xl flex flex-col text-primary gap-4">
+          {/* <div className="w-full min-h-52 rounded-2xl flex flex-col text-primary gap-4">
             <SpotlightCard
               className="py-6 px-6"
               spotlightColor="rgba(0, 229, 255, 0.2)"
-            >
-              {/* Título e Data */}
-              <div className="flex flex-col sm:flex-row justify-between gap-2 items-start sm:items-center">
+            > */}
+          {/* Título e Data */}
+          {/* <div className="flex flex-col sm:flex-row justify-between gap-2 items-start sm:items-center">
                 <div className="flex flex-col">
                   <h3 className="text-lg sm:text-2xl font-bold text-white">
                     B7Web Full Stack 👨‍💻💻
@@ -162,12 +163,12 @@ export function Experience() {
                   </div>
                 </div>
                 <p className="text-xs sm:text-sm text-white font-bold">
-                  Jul. de 2024 - Indeterminado
+                  Jul. de 2024 - 2025
                 </p>
-              </div>
+              </div> */}
 
-              {/* Conteúdo Principal */}
-              <div className="flex flex-col sm:flex-row gap-3">
+          {/* Conteúdo Principal */}
+          {/* <div className="flex flex-col sm:flex-row gap-3">
                 <p className="text-white text-sm sm:text-base leading-relaxed">
                   O curso B7Web, criado por Bonieky Lacerda, é uma formação
                   prática em Desenvolvimento Web Full Stack, abordando HTML/CSS,
@@ -187,10 +188,10 @@ export function Experience() {
                     className="w-full h-full object-contain"
                   />
                 </div>
-              </div>
+              </div> */}
 
-              {/* Tecnologias e Status */}
-              <div className="pt-2 flex flex-col sm:flex-row justify-between gap-2">
+          {/* Tecnologias e Status */}
+          {/* <div className="pt-2 flex flex-col sm:flex-row justify-between gap-2">
                 <span className="text-xs sm:text-sm text-white font-bold bg-zinc-500/40 px-3 py-1 rounded-full">
                   HTML/CSS | Git/GitHub | JavaScript | TypeScript | React |
                   Node.js | PHP | MySQL
@@ -198,9 +199,9 @@ export function Experience() {
                 <span className="text-xs sm:text-sm text-zinc-900 font-bold bg-yellow-500 px-3 py-1 rounded-full text-center">
                   Em andamento
                 </span>
-              </div>
-            </SpotlightCard>
-          </div>
+              </div> */}
+          {/* </SpotlightCard> */}
+          {/* </div> */}
         </div>
       ),
     },
@@ -220,11 +221,17 @@ export function Experience() {
                     Gentrop Cloud Brasil 📊☁
                   </h3>
                   <div className="py-2 flex gap-1 flex-wrap">
-                    <span className="text-xs sm:text-sm font-bold text-white bg-slate-400/40 rounded-full px-2 py-1 text-nowrap">
+                    <span className="text-xs sm:text-sm font-bold text-white bg-purple-600/40 rounded-full px-2 py-1 text-nowrap">
                       Estágio
                     </span>
-                    <span className="text-xs sm:text-sm font-bold text-white bg-slate-400/40 rounded-full px-2 py-1 text-nowrap">
+                    <span className="text-xs sm:text-sm font-bold text-white bg-purple-600/40 rounded-full px-2 py-1 text-nowrap">
                       Desenvolvimento de Software
+                    </span>
+                    <span className="text-xs sm:text-sm font-bold text-white bg-blue-600/40 rounded-full px-2 py-1 text-nowrap">
+                      Salesforce
+                    </span>
+                    <span className="text-xs sm:text-sm font-bold text-white bg-blue-600/40 rounded-full px-2 py-1 text-nowrap">
+                      Agentforce
                     </span>
                   </div>
                 </div>
@@ -236,17 +243,18 @@ export function Experience() {
               {/* Conteúdo Principal */}
               <div className="flex flex-col sm:flex-row gap-3">
                 <p className="text-white text-sm sm:text-base leading-relaxed">
-                  No meu estágio, vou desenvolver e implementar funcionalidades
-                  em sistemas e aplicativos, além de revisar e manter códigos
-                  existentes. Também irei realizar testes para garantir o
-                  funcionamento correto das aplicações e ajudar na documentação
-                  técnica dos projetos. Vou trabalhar em equipe, participando de
-                  reuniões e discussões técnicas, e terei a oportunidade de
-                  aprender sobre inteligência artificial, marketing digital e
-                  computação em nuvem, utilizando ferramentas como Google Cloud
-                  Platform, Vertex AI e Salesforce. Além disso, vou desenvolver
-                  e fazer o deploy de aplicações na nuvem, adquirindo
-                  experiência prática em tecnologias escaláveis. 🚀
+                  Atualmente, atuo no desenvolvimento e implementação de
+                  soluções avançadas em Agentforce, contribuindo ativamente para
+                  projetos de Inteligência Artificial em ambiente de produção.
+                  Minha rotina foca na arquitetura de agentes inteligentes
+                  através da criação de Flows complexos, Actions, Instruções e
+                  Tópicos, além da utilização estratégica do Prompt Builder. Sou
+                  responsável por integrar essas soluções a canais como
+                  WhatsApp, Google Chat e Slack, incluindo a criação e o disparo
+                  de templates via Meta para otimizar a comunicação. Unindo o
+                  core do Agentforce a automações robustas, busco constantemente
+                  aplicar tecnologias de ponta para entregar aplicações
+                  escaláveis e inovadoras. 🚀
                 </p>
                 <div className="bg-[#FED11A] w-20 h-20 sm:w-24 sm:h-24 rounded-md p-2 sm:p-4 aspect-square mx-auto sm:mx-0">
                   <Image
@@ -264,11 +272,12 @@ export function Experience() {
               <div className="md:hidden flex pt-2 flex-col sm:flex-row justify-between gap-2">
                 <div className="flex flex-col gap-2">
                   <span className="text-xs sm:text-sm text-white font-bold bg-zinc-500/40 px-3 py-1 rounded-full">
-                    JavaScript | TypeScript | Go | SQL | Python
+                    Salesforce | Apex | Agentforce | PromptBuilder | Flows | IA
+                    (LLMs)
                   </span>
                   <div className="flex flex-col sm:flex-row justify-between gap-2">
                     <span className="text-xs sm:text-sm text-white font-bold bg-zinc-500/40 px-3 py-1 rounded-full">
-                      Salesforce | Google Cloud Platform | Google Workspace | IA
+                      Apis | Arquitetura de Soluções | Gestão de Projetos
                     </span>
                     <span className="text-xs sm:text-sm text-zinc-900 font-bold bg-yellow-500 px-3 py-1 rounded-full text-center">
                       Em andamento
@@ -282,10 +291,11 @@ export function Experience() {
                 <div className="pb-2 flex flex-col">
                   <div className="py-2 flex gap-1 flex-wrap">
                     <span className="text-xs sm:text-sm font-bold text-white bg-slate-400/40 rounded-full px-2 py-1 text-nowrap">
-                      JavaScript | TypeScript | Go | SQL | Python
+                      Salesforce | Apex | Agentforce | PromptBuilder | Flows |
+                      IA(LLMs)
                     </span>
                     <span className="text-xs sm:text-sm font-bold text-white bg-slate-400/40 rounded-full px-2 py-1 text-nowrap">
-                      Salesforce | Google Cloud Platform | Google Workspace | IA{" "}
+                      Apis | Arquitetura de Soluções | Gestão de Projetos
                     </span>
                   </div>
                 </div>
@@ -295,6 +305,71 @@ export function Experience() {
               </div>
             </SpotlightCard>
           </div>
+
+          <div className="w-full min-h-52 rounded-2xl flex flex-col text-primary gap-4">
+            <SpotlightCard
+              className="py-6 px-6"
+              spotlightColor="rgba(0, 229, 255, 0.2)"
+            >
+              {/* Título e Data */}
+              <div className="flex flex-col sm:flex-row justify-between gap-2 items-start sm:items-center">
+                <div className="flex flex-col">
+                  <h3 className="text-lg sm:text-2xl font-bold text-white">
+                    Salesforce Trailhead & Certificação ☁️🤖
+                  </h3>
+                  <div className="py-2 flex gap-1 flex-wrap">
+                    <span className="text-xs sm:text-sm font-bold text-white bg-blue-600/40 rounded-full px-2 py-1 text-nowrap">
+                      Agentforce Specialist
+                    </span>
+                    <span className="text-xs sm:text-sm font-bold text-white bg-blue-600/40 rounded-full px-2 py-1 text-nowrap">
+                      Especialista em IA
+                    </span>
+                    <span className="text-xs sm:text-sm font-bold text-white bg-blue-600/40 rounded-full px-2 py-1 text-nowrap">
+                      Trailhead Academy
+                    </span>
+                  </div>
+                </div>
+                <p className="text-xs sm:text-sm text-white font-bold">
+                  Concluído em Jun. de 2025
+                </p>
+              </div>
+
+              {/* Conteúdo Principal */}
+              <div className="flex flex-col sm:flex-row gap-3">
+                <p className="text-white text-sm sm:text-base leading-relaxed">
+                  Em 2025, aprofundei meus conhecimentos na vanguarda da
+                  Inteligência Artificial do ecossistema Salesforce. Concluí a
+                  trilha oficial de capacitação na Trailhead Academy e obtive a
+                  certificação Salesforce Certified Agentforce Specialist.
+                  Durante essa jornada, dominei a arquitetura de agentes
+                  autônomos, focando na criação de soluções que integram
+                  raciocínio lógico, automação e IA generativa para resolver
+                  problemas complexos de negócio, consolidando minha
+                  especialização em Agentforce.
+                </p>
+                <div className="bg-white w-20 h-20 sm:w-24 sm:h-24 rounded-md p-2 sm:p-4 aspect-square mx-auto sm:mx-0">
+                  <Image
+                    src={"/certified_Agentforce-Specialist.png"}
+                    alt={"Salesforce Certified Agentforce Specialist"}
+                    width={100}
+                    height={100}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </div>
+
+              {/* Tecnologias e Status */}
+              <div className="flex pt-2 flex-col sm:flex-row justify-between gap-2">
+                <span className="text-xs sm:text-sm text-white font-bold bg-zinc-500/40 px-3 py-1 rounded-full">
+                  Agentforce | Prompt Builder | AI Agents | Flows | Apex | GenAI
+                </span>
+                <span className="text-xs sm:text-sm text-zinc-900 font-bold bg-green-500 px-3 py-1 rounded-full text-center">
+                  Certificado
+                </span>
+              </div>
+            </SpotlightCard>
+          </div>
+
           <div className="w-full min-h-52 rounded-2xl flex flex-col text-primary gap-4">
             <SpotlightCard
               className="py-6 px-6"
@@ -304,30 +379,41 @@ export function Experience() {
               <div className="flex flex-col sm:flex-row justify-between gap-2 items-start sm:items-center">
                 <div className="flex flex-col">
                   <h3 className="text-lg sm:text-2xl font-bold text-white">
-                    💻 Atualmente
+                    🚀 Analista Agentforce & Finalista ADS
                   </h3>
+                  <div className="py-2 flex gap-1 flex-wrap">
+                    <span className="text-xs sm:text-sm font-bold text-white bg-blue-600/40 rounded-full px-2 py-1 text-nowrap">
+                      Agentblazer Legend 2025
+                    </span>
+                    <span className="text-xs sm:text-sm font-bold text-white bg-purple-600/40 rounded-full px-2 py-1 text-nowrap">
+                      Agentblazer 2026 Journey
+                    </span>
+                  </div>
                 </div>
                 <p className="text-xs sm:text-sm text-white font-bold">
-                  Jan. de 2025 - Dec. de 2025
+                  Jan. de 2025 - Presente
                 </p>
               </div>
 
               {/* Conteúdo Principal */}
               <div className="flex flex-col sm:flex-row gap-3">
                 <p className="text-white text-sm sm:text-base leading-relaxed">
-                  Atualmente, estou estagiando como desenvolvedor de software
-                  pela Gentrop, trabalhando na plataforma Salesforce e Google
-                  Cloud. Estou estudando na Universidade Metodista de São Paulo,
-                  cursando Análise e Desenvolvimento de Sistemas, também
-                  continuo estudando programação, desenvolvendo projetos
-                  pessoais e me desenvolvendo profissionalmente. Estou sempre
-                  buscando novos desafios e oportunidades para aprimorar minhas
-                  habilidades.
+                  Atualmente, atuo como Analista Agentforce, liderando o
+                  desenvolvimento de agentes inteligentes e automações complexas
+                  em Salesforce. Sigo aprimorando minha expertise através da
+                  trilha Agentblazer 2026, explorando novos conceitos de
+                  Champion, Innovator e Legend para projetar estratégias de IA
+                  ainda mais avançadas. Minha rotina envolve a integração do
+                  Agentforce com WhatsApp, Google Chat e Slack, além do domínio
+                  de Prompt Builder e disparos via Meta. Paralelamente, estou na
+                  reta final da graduação em Análise e Desenvolvimento de
+                  Sistemas, com conclusão prevista para Julho de 2026, unindo a
+                  base acadêmica sólida à inovação prática da IA generativa.
                 </p>
                 <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-md p-2 sm:p-4 aspect-square mx-auto sm:mx-0">
                   <Image
                     src={"/favicon.png"}
-                    alt={"Etec Lauro Gomes"}
+                    alt={"Trajetória Matheus"}
                     width={100}
                     height={100}
                     className="w-full h-full object-contain"
@@ -337,8 +423,12 @@ export function Experience() {
 
               {/* Tecnologias e Status */}
               <div className="pt-2 flex flex-col sm:flex-row justify-between gap-2">
+                <span className="text-xs sm:text-sm text-white font-bold bg-zinc-500/40 px-3 py-1 rounded-full">
+                  Agentforce Specialist | Salesforce | Meta API | AI Strategy |
+                  ADS 🎓
+                </span>
                 <span className="text-xs sm:text-sm text-zinc-900 font-bold bg-yellow-500 px-3 py-1 rounded-full text-center">
-                  Em andamento
+                  Em andamento (Finalista 2026)
                 </span>
               </div>
             </SpotlightCard>
