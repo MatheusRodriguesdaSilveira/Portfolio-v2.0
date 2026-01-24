@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Body } from "../components/Body/Body";
 import { NavBar } from "../components/Header/Navbar";
 import { Footer } from "../components/Footer/Footer";
-import { ActionsGrid } from "../components/About/components/Techs";
+import ActionsGrid from "../components/About/components/Techs";
 import Hr from "../components/ui/hr";
 import BlurFade from "@/components/ui/blur-fade";
 import AboutPage from "@/components/About/About";
