@@ -88,7 +88,7 @@ export const NavBar = ({
         >
           <div className="flex items-center px-5">
             <span className="text-white text-lg xl:text-2xl">{"<"}</span>
-            <span className="text-yellow-300">matheus</span>
+            <span className="text-cyan-600">matheus</span>
             <span className="text-white text-lg xl:text-2xl">{"-"}</span>
             <span className="text-white">silveira</span>
             <span className="text-white text-lg xl:text-xl pl-1">{"/"}</span>
@@ -127,7 +127,7 @@ export const NavBar = ({
                   whileTap={{ scale: 0.9, opacity: 0.7 }}
                 >
                   <a
-                    className="text-sm 2xl:text-base flex font-medium relative cursor-pointer before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 before:bg-yellow-300 before:transition-all before:duration-300 hover:before:w-full"
+                    className="text-sm 2xl:text-base flex font-medium relative cursor-pointer before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 before:bg-cyan-600 before:transition-all before:duration-300 hover:before:w-full"
                     onClick={item.action}
                   >
                     {item.label}
@@ -139,8 +139,8 @@ export const NavBar = ({
             <div className="w-0.5 h-4 bg-zinc-500"></div>
 
             <li>
-              <motion.button className="relative flex items-center px-1 overflow-hidden font-medium transition-all bg-yellow-300 rounded-xl group">
-                <span className="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-100 -translate-x-full bg-amber-400 rounded-md group-hover:translate-x-0"></span>
+              <motion.button className="relative flex items-center px-1 overflow-hidden font-medium transition-all bg-cyan-600 rounded-xl group">
+                <span className="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-100 -translate-x-full bg-sky-700 rounded-md group-hover:translate-x-0"></span>
                 <span className="flex gap-1 items-center relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white">
                   <a
                     className="cursor-pointer flex gap-1 rounded-xl px-5 py-2 text-zinc-900"
@@ -180,7 +180,7 @@ export const NavBar = ({
                     scrollToAbout();
                     handleOpenMenu();
                   }}
-                  className="text-white text-2xl hover:text-yellow-300 flex gap-2"
+                  className="text-white text-2xl hover:text-cyan-600 flex gap-2"
                 >
                   About me <User className="size-7" />
                 </a>
@@ -191,7 +191,7 @@ export const NavBar = ({
                     scrollToTechs();
                     handleOpenMenu();
                   }}
-                  className="text-white text-2xl hover:text-yellow-300 flex gap-2"
+                  className="text-white text-2xl hover:text-cyan-600 flex gap-2"
                 >
                   Skills <Sparkles className="size-7" />
                 </a>
@@ -202,7 +202,7 @@ export const NavBar = ({
                     scrollToProjects();
                     handleOpenMenu();
                   }}
-                  className="text-white text-2xl hover:text-yellow-300 flex gap-2"
+                  className="text-white text-2xl hover:text-cyan-600 flex gap-2"
                 >
                   Projects <ChartNoAxesCombined className="size-7" />
                 </a>
@@ -212,7 +212,7 @@ export const NavBar = ({
                   href="https://www.linkedin.com/in/matheus-rodrigues-da-silveira/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white text-2xl hover:text-yellow-300 flex gap-2"
+                  className="text-white text-2xl hover:text-cyan-600 flex gap-2"
                 >
                   Contact <Linkedin className="size-7" />
                 </a>
