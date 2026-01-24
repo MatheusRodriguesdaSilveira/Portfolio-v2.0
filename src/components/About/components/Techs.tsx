@@ -1,280 +1,182 @@
-"use client";
-
-import BlurFade from "@/components/ui/blur-fade";
-import { VscVscode } from "react-icons/vsc";
-import { BadgeCheck, Figma, Rocket, Settings, Zap } from "lucide-react";
+import Image from "next/image";
 import {
   FaReact,
-  FaHtml5,
-  FaGithub,
+  FaNodeJs,
   FaGitAlt,
-  FaCss3Alt,
   FaDocker,
-  FaUsers,
-  FaBolt,
-  FaGraduationCap,
-  FaCalendarCheck,
-  FaPaintBrush,
-  FaCodeBranch,
-  FaServer,
+  FaJsSquare,
   FaDatabase,
-  FaBrain,
+  FaCloud,
+  FaCogs,
+  FaGithub,
+  FaCode,
+  FaSalesforce,
+  FaHtml5,
 } from "react-icons/fa";
 import {
-  SiJavascript,
-  SiTailwindcss,
   SiTypescript,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiPrisma,
-  SiPostgresql,
-  SiExpress,
-  SiInsomnia,
-  SiBeekeeperstudio,
-  SiRedis,
-  SiZod,
-  SiSwagger,
-  SiJest,
   SiFastify,
-  SiVercel,
+  SiPostgresql,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiInsomnia,
+  SiSwagger,
 } from "react-icons/si";
-import { PiFileSqlBold } from "react-icons/pi";
-import SpotlightCard from "@/components/ui/SpotlightCard ";
 
-export function ActionsGrid() {
+import SalesforceIcon from "/public/SalesforceIcon.png";
+import AgentforceIcon from "/public/AgentforceIcon.png";
+import FlowIcon from "/public/FlowIcon.png";
+import SpotlightCard from "@/components/ui/SpotlightCard ";
+import BlurFade from "@/components/ui/blur-fade";
+
+export default function AboutTech() {
   return (
-    <div className="p-5 sm:p-10 m-4 sm:m-10 xl:mx-20 xl:my-28 2xl:mx-28 2xl:my-32 max-sm:flex flex-col items-center">
+    <section className="mt-20 px-4">
       <BlurFade delay={0.25 * 3.5} inView>
         <h2 className="text-4xl max-sm:text-3xl text-zinc-100 text-nowrap items-center justify-center flex py-10 xl:py-10 2xl:py-12">
           <span className="text-zinc-300 font-semibold block">
             <span className="text-white">{"{ "}</span>
             proficiência
-            <span className="text-yellow-300">.</span>
+            <span className="text-cyan-600">.</span>
             <span className="text-white">{" }"}</span>
           </span>
         </h2>
       </BlurFade>
-      <div className="grid md:grid-cols-2 items-center justify-center gap-5 xl:gap-2 2xl:gap-2 mb-20">
-        {/* Front-end */}
-        <BlurFade delay={0.25 * 4} inView>
-          <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.25)">
-            <div className="group flex flex-col gap-2 items-center rounded-xl xl:px-24 py-10 xl:py-10 2xl:py-14 hover:-translate-y-2 duration-300 ease-in-out">
-              <div className="flex items-center justify-center gap-1 mb-5">
-                <Zap className="size-7 xl:size-8 text-sky-400 transition-transform duration-300 ease-in-out group-hover:rotate-[20deg] group-hover:scale-110" />
-                <span className="text-xl md:text-3xl font-semibold text-white">
-                  Front-end
-                </span>
-              </div>
-              <div className="grid grid-flow-col grid-rows-2 md:grid-rows-2 lg:grid-rows-2 xl:grid-rows-2 2xl:grid-rows-1 px-5 gap-3 xl:gap-4">
-                <div className="flex flex-col items-center gap-1">
-                  <SiJavascript className="size-7 xl:size-10 text-yellow-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">JavaScript</p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <FaReact className="size-7 xl:size-10 text-blue-700 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">React</p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <SiNextdotjs className="size-7 xl:size-10 text-white transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">Next.Js</p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <FaHtml5 className="size-7 xl:size-10 text-orange-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">Html</p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <FaCss3Alt className="size-7 xl:size-10 text-blue-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">Css</p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <SiTailwindcss className="size-7 xl:size-10 text-sky-400 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">
-                    TailwindCss
-                  </p>
-                </div>
-              </div>
-            </div>
-          </SpotlightCard>
-        </BlurFade>
+      <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* CARD 1 — Salesforce */}
+        <SpotlightCard>
+          <CardWrapper title="Salesforce & Agentforce">
+            <TechIcon
+              icon={FaSalesforce}
+              color="text-blue-400"
+              label="Salesforce"
+            />
+            <TechImage src={AgentforceIcon} label="Agentforce" />
+            <TechImage src={FlowIcon} label="Flows" />
+            <TechIcon icon={FaCogs} label="Actions" />
+            <TechIcon icon={FaCloud} label="Prompt Templates" />
+            <TechIcon icon={FaCode} label="Apex" />
+          </CardWrapper>
+        </SpotlightCard>
 
-        {/* Back-end */}
-        <BlurFade delay={0.25 * 5} inView>
-          <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.25)">
-            <div className="group flex flex-col gap-2 items-center rounded-xl xl:px-24 py-10 xl:py-10 2xl:py-14 hover:-translate-y-2 duration-300 ease-in-out">
-              <div className="flex items-center justify-center gap-1 mb-5">
-                <Rocket className="size-7 xl:size-8 text-rose-700 transition-transform duration-300 ease-in-out group-hover:rotate-[20deg] group-hover:scale-110" />
-                <span className="text-xl md:text-3xl font-semibold text-white">
-                  Back-end
-                </span>
-              </div>
-              <div className="grid grid-flow-col grid-rows-2 md:grid-rows-2 lg:grid-rows-2 xl:grid-rows-2 2xl:grid-rows-1 px-5 gap-3 xl:gap-4">
-                <div className="flex flex-col items-center gap-1">
-                  <SiNodedotjs className="size-7 xl:size-10 text-green-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">Node.Js</p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <SiExpress className="size-7 xl:size-10 text-green-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">Express</p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <SiSwagger className="size-7 xl:size-10 text-lime-600 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">Swagger</p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <SiTypescript className="size-7 xl:size-10 text-blue-600 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">TypeScript</p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <SiJest className="size-7 xl:size-10 text-red-600 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">Jest</p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <SiRedis className="size-7 xl:size-10 text-red-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">Redis</p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <SiFastify className="size-7 xl:size-10 text-zinc-950 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">Fastify</p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <SiZod className="size-7 xl:size-10 text-sky-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">Zod</p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <SiPrisma className="size-7 xl:size-10 text-cyan-900 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">Prisma</p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <PiFileSqlBold className="size-7 xl:size-10 text-sky-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">SQL</p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <SiPostgresql className="size-7 xl:size-10 text-sky-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">PostgreSQL</p>
-                </div>
-              </div>
-            </div>
-          </SpotlightCard>
-        </BlurFade>
+        {/* CARD 2 — Backend */}
+        <SpotlightCard>
+          <CardWrapper title="Backend & APIs">
+            <TechIcon icon={FaNodeJs} label="Node.js" color="text-green-400" />
+            <TechIcon
+              icon={SiTypescript}
+              label="TypeScript"
+              color="text-blue-400"
+            />
+            <TechIcon icon={SiFastify} label="Fastify" color="text-zinc-300" />
+            <TechIcon icon={SiSwagger} label="Swagger" color="text-green-400" />
+            <TechIcon
+              icon={FaDatabase}
+              label="REST APIs"
+              color="text-yellow-400"
+            />
+            <TechIcon
+              icon={SiPostgresql}
+              label="PostgreSQL"
+              color="text-sky-400"
+            />
+          </CardWrapper>
+        </SpotlightCard>
 
-        {/* Other Technologies*/}
-        <BlurFade delay={0.25 * 6} inView>
-          <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.25)">
-            <div className="group flex flex-col gap-2 items-center rounded-xl xl:px-24 py-10 xl:py-10 2xl:py-14 hover:-translate-y-2 duration-300 ease-in-out">
-              <div className="flex items-center justify-center gap-1 mb-5">
-                <h2 className="md:text-3xl font-semibold text-white flex items-center justify-center gap-2 mb-5">
-                  <Settings className="size-7 text-pink-500 transition-transform duration-300 group-hover:rotate-12" />
-                  <span className="text-xl md:text-3xl font-semibold text-white">
-                    Other Technologies
-                  </span>
-                </h2>
-              </div>
-              <div className="grid grid-flow-col grid-rows-2 md:grid-rows-2 lg:grid-rows-2 xl:grid-rows-2 2xl:grid-rows-1 px-5 gap-3 xl:gap-4">
-                <div className="flex flex-col items-center gap-1">
-                  <FaGithub className="size-7 xl:size-10 text-purple-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">GitHub</p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <FaGitAlt className="size-7 xl:size-10 text-orange-400 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">Git</p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <Figma className="size-7 xl:size-10 text-pink-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">Figma</p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <VscVscode className="size-7 xl:size-10 text-blue-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">VsCode</p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <SiInsomnia className="size-7 xl:size-10 text-indigo-700 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">Insomnia</p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <SiBeekeeperstudio className="size-7 xl:size-10 text-yellow-300 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">Beekeeper</p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <FaDocker className="size-7 xl:size-10 text-blue-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">Docker</p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <SiVercel className="size-7 xl:size-10 text-zinc-200 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">Vercel</p>
-                </div>
-              </div>
-            </div>
-          </SpotlightCard>
-        </BlurFade>
+        {/* CARD 3 — Frontend */}
+        <SpotlightCard>
+          <CardWrapper title="Frontend">
+            <TechIcon icon={FaReact} label="React" color="text-cyan-400" />
+            <TechIcon
+              icon={FaJsSquare}
+              label="JavaScript"
+              color="text-yellow-300"
+            />
+            <TechIcon icon={SiNextdotjs} label="Next.js" color="text-white" />
+            <TechIcon icon={FaHtml5} label="HTML5" color="text-orange-400" />
+            <TechIcon
+              icon={SiTailwindcss}
+              label="Tailwind CSS"
+              color="text-cyan-300"
+            />
+            <TechIcon icon={FaCogs} label="UI/UX" color="text-pink-400" />
+          </CardWrapper>
+        </SpotlightCard>
 
-        {/* Soft Skills*/}
-        <BlurFade delay={0.25 * 7} inView>
-          <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.25)">
-            <div className="group flex flex-col gap-2 items-center rounded-xl xl:px-24 py-10 xl:py-10 2xl:py-14 hover:-translate-y-2 duration-300 ease-in-out">
-              <div className="flex items-center justify-center gap-1 mb-5">
-                <h2 className="md:text-3xl font-semibold text-white flex items-center justify-center gap-2 mb-5">
-                  <BadgeCheck className="size-7 text-yellow-500 transition-transform duration-300 group-hover:rotate-12" />
-                  <span className="text-xl md:text-3xl font-semibold text-white">
-                    Soft Skills
-                  </span>
-                </h2>
-              </div>
-              <div className="grid grid-flow-col grid-rows-2 md:grid-rows-2 lg:grid-rows-2 xl:grid-rows-2 2xl:grid-rows-1 px-5 gap-3 xl:gap-4">
-                <div className="flex flex-col items-center gap-1">
-                  <FaUsers className="size-7 xl:size-10 text-green-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold text-wrap">
-                    Colaboração
-                  </p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <FaBolt className="size-7 xl:size-10 text-yellow-300 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">
-                    Proatividade
-                  </p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <FaGraduationCap className="size-7 xl:size-10 text-lime-600 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">Autodidata</p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <FaCalendarCheck className="size-7 xl:size-10 text-blue-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">
-                    Organização
-                  </p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <FaPaintBrush className="size-7 xl:size-10 text-pink-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">
-                    Criatividade
-                  </p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <FaCodeBranch className="size-7 xl:size-10 text-red-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold text-wrap">
-                    Versionamento
-                  </p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <FaServer className="size-7 xl:size-10 text-zinc-400 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold">APIs</p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <FaDatabase className="size-7 xl:size-10 text-sky-500 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold text-wrap">
-                    Dados
-                  </p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <FaBrain className="size-7 xl:size-10 text-cyan-700 transition-transform duration-300 group-hover:scale-110 ease-in-out group-hover:rotate-[5deg]" />
-                  <p className="text-white text-xs font-semibold text-wrap">
-                    Lógica
-                  </p>
-                </div>
-              </div>
-            </div>
-          </SpotlightCard>
-        </BlurFade>
+        {/* CARD 4 — Workflow */}
+        <SpotlightCard>
+          <CardWrapper title="Dev Workflow">
+            <TechIcon icon={FaGitAlt} label="Git" color="text-orange-500" />
+            <TechIcon icon={FaGithub} label="GitHub" color="text-purple-400" />
+            <TechIcon
+              icon={SiInsomnia}
+              label="Insomnia"
+              color="text-indigo-400"
+            />
+            <TechIcon icon={FaDocker} label="Docker" color="text-blue-400" />
+            <TechIcon icon={FaCloud} label="Deploy" color="text-indigo-400" />
+            <TechIcon
+              icon={FaCogs}
+              label="Automations"
+              color="text-emerald-400"
+            />
+          </CardWrapper>
+        </SpotlightCard>
       </div>
+    </section>
+  );
+}
+
+function CardWrapper({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="group flex flex-col items-center rounded-xl px-6 sm:px-10 py-8 sm:py-12 hover:-translate-y-2 transition-all duration-300">
+      <h3 className="text-xl sm:text-2xl font-semibold text-white mb-6 text-center">
+        {title}
+      </h3>
+
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">{children}</div>
+    </div>
+  );
+}
+
+function TechImage({ src, label }: { src: any; label: string }) {
+  return (
+    <div className="flex flex-col items-center mt-1 gap-2">
+      <Image
+        src={src}
+        alt={label}
+        width={45}
+        height={45}
+        className="object-contain group-hover:scale-110 transition"
+      />
+      <span className="text-xs sm:text-sm text-zinc-300">{label}</span>
+    </div>
+  );
+}
+
+function TechIcon({
+  icon: Icon,
+  label,
+  color = "text-zinc-300",
+}: {
+  icon: any;
+  label: string;
+  color?: string;
+}) {
+  return (
+    <div className="flex flex-col items-center gap-2">
+      <Icon
+        className={`size-10 sm:size-12 ${color} group-hover:scale-110 transition`}
+      />
+      <span className="text-xs sm:text-sm text-zinc-300 cursor-pointer">
+        {label}
+      </span>
     </div>
   );
 }
