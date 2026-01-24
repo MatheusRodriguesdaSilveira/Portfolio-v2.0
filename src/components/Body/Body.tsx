@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Code2 from "../../../public/imageCode.png";
+import Code2 from "../../../public/ImageCode.png";
 import BlurFade from "@/components/ui/blur-fade";
 import ShimmerButton from "../ui/ButtonMotion";
 import ButtonCv from "./components/ButtonCv";
