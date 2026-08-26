@@ -10,14 +10,15 @@ import AboutPage from "@/components/About/About";
 import ContactPage from "@/components/Contact/Contact";
 import ButtonScroll from "@/components/ui/ButtonScrollToTop";
 import { ArrowUp } from "lucide-react";
-import { AppleCardsCarouselDemo } from "@/components/Works/Projects";
 import { Experience } from "@/components/Trajectory/Experience";
+import { AgentsSection } from "@/components/Agents/Agents";
 
 export default function Page() {
-  const projectsRef = useRef<HTMLDivElement | null>(null);
+  const contactRef = useRef<HTMLDivElement | null>(null);
   const aboutRef = useRef<HTMLDivElement | null>(null);
   const techsRef = useRef<HTMLDivElement | null>(null);
   const experienceRef = useRef<HTMLDivElement | null>(null);
+  const agentsRef = useRef<HTMLDivElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -46,14 +47,14 @@ export default function Page() {
     setIsVisible(false);
   };
 
-  const scrollToProjects = () => {
-    if (projectsRef.current) {
-      projectsRef.current.scrollIntoView({
+  const scrollToContact = () => {
+    if (contactRef.current) {
+      contactRef.current.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
     } else {
-      console.error("Elemento de referência para projetos não encontrado.");
+      console.error("Elemento de referência para contato não encontrado.");
     }
   };
 
@@ -89,13 +90,25 @@ export default function Page() {
     }
   };
 
+  const scrollToAgents = () => {
+    if (agentsRef.current) {
+      agentsRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    } else {
+      console.error("Elemento de referência para Agentes não encontrado.");
+    }
+  };
+
   return (
     <>
       <NavBar
         scrollToAbout={scrollToAbout}
-        scrollToProjects={scrollToProjects}
+        scrollToContact={scrollToContact}
         scrollToTechs={scrollToTechs}
         scrollToExperience={scrollToExperience}
+        scrollToAgents={scrollToAgents}
       />
 
       {isVisible && (
@@ -104,35 +117,37 @@ export default function Page() {
         </ButtonScroll>
       )}
 
-      <Body scrollToProjects={scrollToProjects} />
+      <Body scrollToContact={scrollToContact} />
       <Hr />
 
       <BlurFade key="about" delay={0.25 * 2.1} inView>
-        <div ref={aboutRef}>
+        <div ref={aboutRef} id="about">
           <AboutPage />
         </div>
       </BlurFade>
       <Hr />
       <BlurFade key="techs" delay={0.25 * 2.1} inView>
-        <div ref={techsRef}>
+        <div ref={techsRef} id="skills">
           <ActionsGrid />
         </div>
       </BlurFade>
       <Hr />
       <BlurFade key="experience" delay={0.25 * 2.1} inView>
-        <div ref={experienceRef}>
+        <div ref={experienceRef} id="journey">
           <Experience />
         </div>
       </BlurFade>
       <Hr />
-      <BlurFade key="projects" delay={0.25 * 2.2} inView>
-        <div ref={projectsRef}>
-          <AppleCardsCarouselDemo />
+      <BlurFade key="agents" delay={0.25 * 2.1} inView>
+        <div ref={agentsRef} id="agentes">
+          <AgentsSection />
         </div>
       </BlurFade>
       <Hr />
       <BlurFade key="contact" delay={0.25 * 2.2} inView>
-        <ContactPage />
+        <div ref={contactRef} id="contact">
+          <ContactPage />
+        </div>
       </BlurFade>
       <Hr />
       <BlurFade key="footer" delay={0.25 * 1} inView>

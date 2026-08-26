@@ -4,7 +4,7 @@ import { Card, Carousel } from "../ui/apple-cards-carousel";
 
 export function AppleCardsCarouselDemo() {
   const cards = data.map((card, index) => (
-    <Card key={card.image} card={card} index={index} />
+    <Card key={card.id} card={card} index={index} />
   ));
 
   return (
@@ -21,6 +21,66 @@ export function AppleCardsCarouselDemo() {
 }
 
 const data = [
+  {
+    id: 12,
+    thumb: "/AgentforceIcon.png",
+    image: "/AgentforceIcon.png",
+    alt: "agente de suporte técnico IT",
+    title: "Agente de Suporte Técnico (IT)🛠️",
+    description:
+      "Agente de IA integrado ao Google Chat para diagnóstico e resolução de problemas técnicos, com automação de abertura de chamados e gestão de escalonamento.",
+    techStack: "Agentforce | Apex | Flows | Google Chat | WhatsApp API",
+    liveLink: "",
+    repoLink: "",
+    frontLink: "",
+    content:
+      "Agente de IA integrado ao Google Chat para diagnóstico e resolução de problemas técnicos, com automação de abertura de chamados e gestão de escalonamento. Inclui arquitetura multiagente para controle do ciclo de vida de dispositivos e logística via WhatsApp.",
+  },
+  {
+    id: 13,
+    thumb: "/AgentforceIcon.png",
+    image: "/AgentforceIcon.png",
+    alt: "agente SDR de vendas",
+    title: "Agente SDR de Vendas📈",
+    description:
+      "Agente de qualificação de leads usando a metodologia BANT, com validação de CNPJ via API e agendamento automático de reuniões.",
+    techStack: "Agentforce | Prompt Builder | REST APIs | Flows",
+    liveLink: "",
+    repoLink: "",
+    frontLink: "",
+    content:
+      "Agente de qualificação de leads usando a metodologia BANT, com validação de CNPJ via API e agendamento automático de reuniões — aumentando a escalabilidade do funil de vendas.",
+  },
+  {
+    id: 14,
+    thumb: "/AgentforceIcon.png",
+    image: "/AgentforceIcon.png",
+    alt: "agente de recuperação de crédito",
+    title: "Agente de Recuperação de Crédito💳",
+    description:
+      "Agente financeiro para atendimento em larga escala via WhatsApp: renegociação de dívidas, simulação de parcelamentos e escolha de forma de pagamento.",
+    techStack: "Agentforce | Apex | WhatsApp API | Data Cloud",
+    liveLink: "",
+    repoLink: "",
+    frontLink: "",
+    content:
+      "Agente financeiro para atendimento em larga escala via WhatsApp: renegociação de dívidas, simulação de parcelamentos e escolha de forma de pagamento (Pix/Boleto), com regras de negócio e explicação de conceitos financeiros para aumentar a taxa de acordos.",
+  },
+  {
+    id: 15,
+    thumb: "/AgentforceIcon.png",
+    image: "/AgentforceIcon.png",
+    alt: "Agent Guigo - Agentforce World Tour SP",
+    title: "Agent Guigo (Agentforce World Tour SP)🎪",
+    description:
+      "Agente desenvolvido para o Agentforce World Tour São Paulo: triagem personalizada, quizzes interativos e diagnóstico de perfil.",
+    techStack: "Agentforce | IA Generativa | Data Cloud",
+    liveLink: "",
+    repoLink: "",
+    frontLink: "",
+    content:
+      "Agente desenvolvido para o Agentforce World Tour São Paulo: triagem personalizada, quizzes interativos, diagnóstico de perfil e portfólio de agentes. Levou mais de 500 visitantes ao stand da Gentrop para interagir com a solução.",
+  },
   {
     id: 1,
     thumb: "/devblog thumb.jpeg",

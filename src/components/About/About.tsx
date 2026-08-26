@@ -13,7 +13,7 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
           <BlurFade delay={0.25 * 2} inView>
             <div className="text-center mb-10 xl:mb-1 2xl:mb-10 xl:mt-28 2xl:mt-24">
               <h2 className="text-zinc-300 text-3xl xl:text-4xl 2xl:text-5xl">
-                About <span className=" text-cyan-600">me.</span>
+                About <span className=" text-brand">me.</span>
               </h2>
             </div>
           </BlurFade>
@@ -25,8 +25,8 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
 
             <div className="text-center lg:text-left max-sm:m-5">
               <BlurFade delay={0.25 * 3.5} inView>
-                <div className="2xl:text-4xl xl:text-3xl max-sm:text-3xl text-zinc-100 2xl:mb-3 xl:mb-2 max-sm:m-10 text-nowrap">
-                  <div className="text-cyan-600 font-semibold block">
+                <div className="2xl:text-4xl xl:text-3xl max-sm:text-2xl text-zinc-100 2xl:mb-3 xl:mb-2 mb-4 sm:text-nowrap">
+                  <div className="text-brand font-semibold block">
                     <span className="text-white font-thin">{"<"}</span>
                     Hello!
                   </div>{" "}
@@ -35,59 +35,59 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
                 </div>
               </BlurFade>
               <BlurFade delay={0.25 * 4.5} inView>
-                <p className="text-zinc-200 max-sm:m-10 mb-2 text-base xl:text-sm 2xl:text-base">
+                <p className="text-zinc-200 mb-2 text-base xl:text-sm 2xl:text-base">
                   Sou{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-cyan-600">
+                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
                     Desenvolvedor de Software
                   </span>{" "}
                   com foco em{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-cyan-600">
+                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
                     Salesforce e Agentforce
                   </span>
                   . Atualmente atuo como{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-cyan-600">
-                    estagiário na área de desenvolvimento
+                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
+                    Analista Agentforce Jr na Gentrop
                   </span>
                   , aplicando minhas habilidades técnicas na criação de{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-cyan-600">
+                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
                     soluções inteligentes e automações escaláveis
                   </span>
                   .
                 </p>
 
-                <p className="text-zinc-200 max-sm:m-10 mb-2 text-base xl:text-sm 2xl:text-base">
+                <p className="text-zinc-200 mb-2 text-base xl:text-sm 2xl:text-base">
                   Atuo diretamente na construção de{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-cyan-600">
+                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
                     agentes inteligentes
                   </span>{" "}
                   utilizando{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-cyan-600">
+                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
                     Prompt Templates, Instructions e Actions
                   </span>{" "}
                   integrados a{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-cyan-600">
+                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
                     Salesforce Flows
                   </span>
                   , automatizando processos e aumentando a{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-cyan-600">
+                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
                     eficiência operacional
                   </span>
                   .
                 </p>
 
-                <p className="text-zinc-200 max-sm:m-10 mb-4 text-base xl:text-sm 2xl:text-base">
+                <p className="text-zinc-200 mb-4 text-base xl:text-sm 2xl:text-base">
                   Possuo experiência prática no desenvolvimento de{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-cyan-600">
+                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
                     APIs, sites responsivos e e-commerces otimizados
                   </span>
                   , com foco em{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-cyan-600">
+                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
                     performance, usabilidade e qualidade da experiência do
                     usuário
                   </span>
                   . Busco evoluir constantemente minhas skills enquanto
                   contribuo para{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-cyan-600">
+                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
                     projetos inovadores e de alto impacto
                   </span>
                   .
@@ -95,11 +95,12 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
               </BlurFade>
               <div className="flex items-center gap-3 max-sm:mb-10 max-sm:justify-center max-lg:justify-center">
                 <BlurFade delay={0.25 * 5.5} inView>
-                  <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium rounded-full group bg-gradient-to-br from-cyan-600 via-cyan-600 to-cyan-600 text-white focus:ring-4 focus:outline-none duration-300">
+                  <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium rounded-full group bg-gradient-to-br from-brand via-brand to-brand text-white focus:ring-4 focus:outline-none duration-300">
                     <span className="relative px-4 py-3.5 transition-all ease-in duration-300 bg-zinc-900 rounded-full group-hover:bg-opacity-0 group-hover:text-zinc-950">
                       <a
                         href="https://www.linkedin.com/in/matheus-rodrigues-da-silveira/"
                         target="_blank"
+                        aria-label="Ver perfil no LinkedIn"
                       >
                         <Linkedin />
                       </a>
@@ -107,11 +108,12 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
                   </button>
                 </BlurFade>
                 <BlurFade delay={0.25 * 6.5} inView>
-                  <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium rounded-full group bg-gradient-to-br from-cyan-600 via-cyan-600 to-cyan-600 text-white focus:ring-4 focus:outline-none duration-300">
+                  <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium rounded-full group bg-gradient-to-br from-brand via-brand to-brand text-white focus:ring-4 focus:outline-none duration-300">
                     <span className="relative px-4 py-3.5 transition-all ease-in duration-300 bg-zinc-900 rounded-full group-hover:bg-opacity-0 group-hover:text-zinc-950">
                       <a
                         href="https://github.com/MatheusRodriguesdaSilveira"
                         target="_blank"
+                        aria-label="Ver perfil no GitHub"
                       >
                         <GithubIcon />
                       </a>
@@ -119,7 +121,7 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
                   </button>
                 </BlurFade>
                 <BlurFade delay={0.25 * 7.5} inView>
-                  <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium rounded-full group bg-gradient-to-br from-cyan-600 via-cyan-600 to-cyan-600 text-white focus:ring-4 focus:outline-none duration-300">
+                  <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium rounded-full group bg-gradient-to-br from-brand via-brand to-brand text-white focus:ring-4 focus:outline-none duration-300">
                     <span className="group/button relative inline-flex px-[26px] py-[26px] h-[54px] w-[54px] md:h-[50px] md:w-[50px] lg:h-10 lg:w-10 items-center justify-center overflow-hidden ease-in bg-zinc-900 rounded-full group-hover:bg-opacity-0 duration-150 font-medium text-white transition-all hover:w-[175px]  group-hover:text-zinc-950">
                       <span className="justify-center items-center flex">
                         <a

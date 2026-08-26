@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
   AlignJustify,
-  ChartNoAxesCombined,
+  Bot,
   Linkedin,
   Rocket,
   Sparkles,
@@ -12,16 +12,18 @@ import { motion } from "framer-motion";
 
 interface NavBarProps {
   scrollToAbout: () => void;
-  scrollToProjects: () => void;
+  scrollToContact: () => void;
   scrollToTechs: () => void;
   scrollToExperience: () => void;
+  scrollToAgents: () => void;
 }
 
 export const NavBar = ({
   scrollToAbout,
-  scrollToProjects,
+  scrollToContact,
   scrollToTechs,
   scrollToExperience,
+  scrollToAgents,
 }: NavBarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -88,7 +90,7 @@ export const NavBar = ({
         >
           <div className="flex items-center px-5">
             <span className="text-white text-lg xl:text-2xl">{"<"}</span>
-            <span className="text-cyan-600">matheus</span>
+            <span className="text-brand">matheus</span>
             <span className="text-white text-lg xl:text-2xl">{"-"}</span>
             <span className="text-white">silveira</span>
             <span className="text-white text-lg xl:text-xl pl-1">{"/"}</span>
@@ -101,23 +103,27 @@ export const NavBar = ({
             {[
               {
                 label: "About me",
+                href: "#about",
                 icon: <User className="size-4 2xl:size-5" />,
                 action: scrollToAbout,
               },
               {
                 label: "Skills",
+                href: "#skills",
                 icon: <Sparkles className="size-4 2xl:size-5" />,
                 action: scrollToTechs,
               },
               {
                 label: "Journey",
+                href: "#journey",
                 icon: <Rocket className="size-4 2xl:size-5" />,
                 action: scrollToExperience,
               },
               {
-                label: "Projects",
-                icon: <ChartNoAxesCombined className="size-4 2xl:size-5" />,
-                action: scrollToProjects,
+                label: "Agentes",
+                href: "#agentes",
+                icon: <Bot className="size-4 2xl:size-5" />,
+                action: scrollToAgents,
               },
             ].map((item, index) => (
               <div key={index} className="flex items-center">
@@ -127,8 +133,12 @@ export const NavBar = ({
                   whileTap={{ scale: 0.9, opacity: 0.7 }}
                 >
                   <a
-                    className="text-sm 2xl:text-base flex font-medium relative cursor-pointer before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 before:bg-cyan-600 before:transition-all before:duration-300 hover:before:w-full"
-                    onClick={item.action}
+                    href={item.href}
+                    className="text-sm 2xl:text-base flex font-medium relative cursor-pointer before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 before:bg-brand before:transition-all before:duration-300 hover:before:w-full"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      item.action();
+                    }}
                   >
                     {item.label}
                     {item.icon}
@@ -139,7 +149,7 @@ export const NavBar = ({
             <div className="w-0.5 h-4 bg-zinc-500"></div>
 
             <li>
-              <motion.button className="relative flex items-center px-1 overflow-hidden font-medium transition-all bg-cyan-600 rounded-xl group">
+              <motion.button className="relative flex items-center px-1 overflow-hidden font-medium transition-all bg-brand rounded-xl group">
                 <span className="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-100 -translate-x-full bg-sky-700 rounded-md group-hover:translate-x-0"></span>
                 <span className="flex gap-1 items-center relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white">
                   <a
@@ -164,7 +174,7 @@ export const NavBar = ({
               onClick={handleOpenMenu}
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
-              className="inline-flex m-2 pr-0 items-center text-gray-400 rounded-lg md:hidden"
+              className="inline-flex m-2 pr-0 items-center text-gray-400 rounded-lg lg:hidden"
             >
               {isMenuOpen ? "" : <AlignJustify className="size-6" />}
             </button>
@@ -176,35 +186,54 @@ export const NavBar = ({
             <ul className="font-medium text-center space-y-6 flex flex-col items-start mt-40">
               <li>
                 <a
-                  onClick={() => {
+                  href="#about"
+                  onClick={(e) => {
+                    e.preventDefault();
                     scrollToAbout();
                     handleOpenMenu();
                   }}
-                  className="text-white text-2xl hover:text-cyan-600 flex gap-2"
+                  className="text-white text-2xl hover:text-brand flex gap-2"
                 >
                   About me <User className="size-7" />
                 </a>
               </li>
               <li>
                 <a
-                  onClick={() => {
+                  href="#skills"
+                  onClick={(e) => {
+                    e.preventDefault();
                     scrollToTechs();
                     handleOpenMenu();
                   }}
-                  className="text-white text-2xl hover:text-cyan-600 flex gap-2"
+                  className="text-white text-2xl hover:text-brand flex gap-2"
                 >
                   Skills <Sparkles className="size-7" />
                 </a>
               </li>
               <li>
                 <a
-                  onClick={() => {
-                    scrollToProjects();
+                  href="#journey"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToExperience();
                     handleOpenMenu();
                   }}
-                  className="text-white text-2xl hover:text-cyan-600 flex gap-2"
+                  className="text-white text-2xl hover:text-brand flex gap-2"
                 >
-                  Projects <ChartNoAxesCombined className="size-7" />
+                  Journey <Rocket className="size-7" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#agentes"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToAgents();
+                    handleOpenMenu();
+                  }}
+                  className="text-white text-2xl hover:text-brand flex gap-2"
+                >
+                  Agentes <Bot className="size-7" />
                 </a>
               </li>
               <li>
@@ -212,7 +241,7 @@ export const NavBar = ({
                   href="https://www.linkedin.com/in/matheus-rodrigues-da-silveira/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white text-2xl hover:text-cyan-600 flex gap-2"
+                  className="text-white text-2xl hover:text-brand flex gap-2"
                 >
                   Contact <Linkedin className="size-7" />
                 </a>

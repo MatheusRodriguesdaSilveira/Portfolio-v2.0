@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Currículo Agentforce — Matheus Rodrigues da Silveira</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --ink: #1a1a1a;
+    --muted: #55606b;
+    --faint: #8a94a0;
+    --line: #e2e6ea;
+    --accent: #146c7a;
+    --accent-tint: #eaf4f6;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 13.5px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 800px;
+    margin: 40px auto 80px;
+    padding: 0 24px;
+  }
+
+  /* ---------- Header ---------- */
+
+  header.cv-header {
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--accent);
+  }
+
+  h1 {
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0 0 4px;
+    color: var(--ink);
+  }
+
+  .role {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  .badges {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .contact {
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .contact a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .contact .sep {
+    color: var(--faint);
+    margin: 0 6px;
+  }
+
+  /* ---------- Sections ---------- */
+
+  section { margin-top: 20px; }
+
+  h2 {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .summary {
+    font-size: 13.5px;
+    color: var(--ink);
+  }
+
+  /* ---------- Experience entries ---------- */
+
+  .entry { margin-bottom: 14px; }
+  .entry:last-child { margin-bottom: 0; }
+
+  .entry-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .entry-title { font-weight: 700; font-size: 14px; color: var(--ink); }
+  .entry-date { font-weight: 700; font-size: 12px; color: var(--ink); white-space: nowrap; }
+
+  .entry-org {
+    color: var(--accent);
+    font-size: 12.5px;
+    font-weight: 600;
+    margin-bottom: 3px;
+  }
+
+  .entry-summary {
+    font-size: 13px;
+    color: var(--ink);
+    margin: 2px 0 6px;
+  }
+
+  ul.bullets {
+    margin: 0;
+    padding-left: 16px;
+  }
+
+  ul.bullets li {
+    font-size: 13px;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+
+  ul.bullets li::marker {
+    color: var(--accent);
+  }
+
+  .subhead {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 8px 0 4px;
+  }
+
+  /* ---------- Two-col rows (education / certs) ---------- */
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 5px 0;
+  }
+
+  .row:not(:last-child) { border-bottom: 1px solid var(--line); }
+
+  .row-title { font-weight: 700; font-size: 13px; color: var(--ink); }
+  .row-org { color: var(--muted); font-size: 12px; }
+  .row-date { font-weight: 700; font-size: 12px; color: var(--ink); white-space: nowrap; }
+
+  /* ---------- Skills ---------- */
+
+  .skill-line { margin-bottom: 6px; font-size: 13px; }
+  .skill-line:last-child { margin-bottom: 0; }
+  .skill-label { font-weight: 700; color: var(--ink); }
+  .skill-values { color: var(--ink); }
+
+  @media (max-width: 640px) {
+    h1 { font-size: 22px; }
+  }
+
+  @media print {
+    .page { margin: 0; padding: 0; max-width: none; }
+    .entry, .row, .cv-header, section { break-inside: avoid; page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <header class="cv-header">
+    <h1>Matheus Rodrigues da Silveira</h1>
+    <div class="role">Analista Agentforce Jr · Especialista em Agentes Autônomos (Salesforce)</div>
+    <div class="badges">2x Salesforce Certified · Agentblazer Legend 2026</div>
+    <div class="contact">
+      São Bernardo do Campo, SP<span class="sep">•</span>(11) 91034-6829<span class="sep">•</span><a href="mailto:matheussilveira2005@gmail.com">matheussilveira2005@gmail.com</a><span class="sep">•</span><a href="https://linkedin.com/in/matheus-rodrigues-da-silveira">linkedin.com/in/matheus-rodrigues-da-silveira</a><span class="sep">•</span><a href="https://github.com/MatheusRodriguesdaSilveira">github.com/MatheusRodriguesdaSilveira</a><span class="sep">•</span><a href="https://portfolio-matheussilveira.vercel.app">portfolio-matheussilveira.vercel.app</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>Resumo Profissional</h2>
+    <p class="summary">
+      Especialista em Agentforce com histórico real de agentes autônomos em produção — da concepção à arquitetura
+      multiagente. Na Gentrop, projetei e escalei quatro agentes que hoje atendem clientes via WhatsApp e Google
+      Chat, unindo Agent Builder, Data Cloud e Apex para automatizar operações críticas de negócio. Sou 2x
+      Salesforce Certified (Agentforce Specialist e Data 360 Consultant) e Agentblazer Legend 2026, sempre
+      explorando a fronteira do que a plataforma permite construir com IA generativa.
+    </p>
+  </section>
+
+  <section>
+    <h2>Experiência Profissional</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div class="entry-title">Analista Agentforce Jr</div>
+        <div class="entry-date">Abr/2026 – Atual</div>
+      </div>
+      <div class="entry-org">Gentrop · São Paulo, SP</div>
+      <p class="entry-summary">
+        Desenvolvimento e implementação de soluções de IA no ecossistema Salesforce, com foco em automação,
+        escalabilidade e impacto real nos negócios.
+      </p>
+      <ul class="bullets">
+        <li>Criação de agentes autônomos com o Agent Builder para fluxos complexos e multi-etapas</li>
+        <li>Gerenciamento de dados unificados no Data Cloud para <em>grounding</em> em tempo real</li>
+        <li>Actions customizadas com Apex e Flows avançados; Prompt Engineering para respostas consistentes</li>
+        <li>Integração de agentes com sistemas externos (REST APIs, WhatsApp, Google Chat)</li>
+      </ul>
+      <div class="subhead">Projetos de destaque</div>
+      <ul class="bullets">
+        <li><strong>Agente de Suporte Técnico (IT):</strong> integrado ao Google Chat para diagnóstico e abertura de chamados, com escalonamento e arquitetura multiagente para ciclo de vida de dispositivos e logística via WhatsApp</li>
+        <li><strong>Agente SDR (Vendas):</strong> qualificação de leads com metodologia BANT, validação de CNPJ via API e agendamento automático de reuniões</li>
+        <li><strong>Agente de Recuperação de Crédito:</strong> atendimento em larga escala via WhatsApp, renegociação de dívidas, simulação de parcelamento e pagamento via Pix/Boleto</li>
+        <li><strong>Agent Guigo (Agentforce World Tour SP):</strong> triagem personalizada e quizzes interativos; levou mais de 500 visitantes ao stand da Gentrop</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div class="entry-title">Desenvolvedor de Software</div>
+        <div class="entry-date">Abr/2025 – Abr/2026</div>
+      </div>
+      <div class="entry-org">Gentrop · São Paulo, SP</div>
+      <p class="entry-summary">Desenvolvimento e deploy de soluções Agentforce em ambiente de produção.</p>
+      <ul class="bullets">
+        <li>Aplicações escaláveis com flows complexos, topics, actions personalizadas e instruction sets</li>
+        <li>Integração do Agentforce com WhatsApp, Google App Script e websites; classes Apex customizadas</li>
+        <li>Colaboração em arquitetura de soluções e documentação técnica compartilhada com o time</li>
+        <li>Conquista da certificação Agentforce Specialist; participação no workshop "Build Better Agents" (Salesforce)</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div class="entry-title">Desenvolvedor Full Stack — Freelance (Autônomo)</div>
+        <div class="entry-date">Abr/2024 – Mar/2025</div>
+      </div>
+      <div class="entry-org">São Paulo, SP</div>
+      <p class="entry-summary">
+        Base técnica em React, Node.js e TypeScript que hoje sustenta as integrações back-end dos agentes
+        Agentforce em produção.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Formação Acadêmica</h2>
+    <div class="row">
+      <div>
+        <div class="row-title">Tecnólogo em Análise e Desenvolvimento de Sistemas</div>
+        <div class="row-org">Universidade Metodista de São Paulo (UMESP)</div>
+      </div>
+      <div class="row-date">Fev/2024 – Jul/2026</div>
+    </div>
+    <div class="row">
+      <div>
+        <div class="row-title">Técnico em Informática para Internet</div>
+        <div class="row-org">Etec Lauro Gomes</div>
+      </div>
+      <div class="row-date">Fev/2022 – Jun/2023</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Certificações</h2>
+    <div class="row">
+      <div>
+        <div class="row-title">Salesforce Certified Agentforce Specialist</div>
+        <div class="row-org">Salesforce</div>
+      </div>
+    </div>
+    <div class="row">
+      <div>
+        <div class="row-title">Salesforce Certified Data 360 Consultant</div>
+        <div class="row-org">Salesforce · ID 7905614</div>
+      </div>
+      <div class="row-date">Jul/2026</div>
+    </div>
+    <div class="row">
+      <div>
+        <div class="row-title">Agentblazer Legend 2026</div>
+        <div class="row-org">Trailhead by Salesforce</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Habilidades Técnicas</h2>
+    <p class="skill-line">
+      <span class="skill-label">Salesforce: </span
+      ><span class="skill-values">Agentforce · Agent Builder · Data Cloud · Flow Builder · Apex · LWC · Salesforce CLI · Prompt Builder · Topics &amp; Actions</span>
+    </p>
+    <p class="skill-line">
+      <span class="skill-label">Integrações de suporte: </span
+      ><span class="skill-values">Node.js · TypeScript · REST APIs · WhatsApp Business API · Google Chat / AppScript</span>
+    </p>
+    <p class="skill-line">
+      <span class="skill-label">Idiomas: </span
+      ><span class="skill-values">Português (nativo) · Inglês (Professional Working)</span>
+    </p>
+  </section>
+</div>
+
+</body>
+</html>
