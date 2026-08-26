@@ -21,6 +21,7 @@ const config = {
         zinc: {
           950: "#111111",
         },
+        brand: "#08c8fc",
       },
       boxShadow: {
         custom:

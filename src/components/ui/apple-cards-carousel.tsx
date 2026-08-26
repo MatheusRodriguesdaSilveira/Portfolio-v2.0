@@ -340,7 +340,9 @@ export const Card = ({
 
         <div className="relative z-40 p-2 px-5">
           <motion.p className="items-center text-base md:text-lg font-medium text-white flex gap-2 justify-center underline underline-offset-2">
-            Acesse o Projeto!
+            {card.liveLink || card.repoLink || card.frontLink
+              ? "Acesse o Projeto!"
+              : "Ver detalhes"}
           </motion.p>
           <motion.p className="mb-2 text-white text-xl md:text-3xl font-semibold max-w-xs text-left [text-wrap:balance] font-sans mt-2">
             {card.title}

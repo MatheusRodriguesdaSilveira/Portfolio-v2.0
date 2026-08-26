@@ -12,6 +12,8 @@ import {
   FaCode,
   FaSalesforce,
   FaHtml5,
+  FaPuzzlePiece,
+  FaTerminal,
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -26,6 +28,7 @@ import {
 import SalesforceIcon from "/public/SalesforceIcon.png";
 import AgentforceIcon from "/public/AgentforceIcon.png";
 import FlowIcon from "/public/FlowIcon.png";
+import DataCloudIcon from "/public/data_cloud.png";
 import SpotlightCard from "@/components/ui/SpotlightCard ";
 import BlurFade from "@/components/ui/blur-fade";
 
@@ -37,7 +40,7 @@ export default function AboutTech() {
           <span className="text-zinc-300 font-semibold block">
             <span className="text-white">{"{ "}</span>
             proficiência
-            <span className="text-cyan-600">.</span>
+            <span className="text-brand">.</span>
             <span className="text-white">{" }"}</span>
           </span>
         </h2>
@@ -52,10 +55,20 @@ export default function AboutTech() {
               label="Salesforce"
             />
             <TechImage src={AgentforceIcon} label="Agentforce" />
+            <TechImage src={DataCloudIcon} label="Data Cloud" />
             <TechImage src={FlowIcon} label="Flows" />
-            <TechIcon icon={FaCogs} label="Actions" />
-            <TechIcon icon={FaCloud} label="Prompt Templates" />
+            <TechIcon icon={FaCloud} label="Prompt Builder" />
             <TechIcon icon={FaCode} label="Apex" />
+            <TechIcon
+              icon={FaPuzzlePiece}
+              label="LWC"
+              color="text-orange-400"
+            />
+            <TechIcon
+              icon={FaTerminal}
+              label="Salesforce CLI"
+              color="text-emerald-400"
+            />
           </CardWrapper>
         </SpotlightCard>
 
@@ -123,6 +136,13 @@ export default function AboutTech() {
           </CardWrapper>
         </SpotlightCard>
       </div>
+
+      <BlurFade delay={0.25 * 5} inView>
+        <p className="text-center text-sm sm:text-base text-zinc-400 mt-10">
+          <span className="font-semibold text-white">Idiomas:</span>{" "}
+          Português (nativo) · Inglês (Professional Working)
+        </p>
+      </BlurFade>
     </section>
   );
 }

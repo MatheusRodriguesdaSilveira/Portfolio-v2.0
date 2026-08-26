@@ -3,13 +3,13 @@ import { GithubIcon, Linkedin, AtSign } from "lucide-react";
 export const Footer = () => {
   return (
     <div
-      className="p-4 sm:p-10 m-10 sm:m-10 max-sm:flex gap flex-col items-center pc:h-screen flex"
+      className="p-4 sm:p-10 m-4 sm:m-10 max-sm:flex gap flex-col items-center lg:min-h-screen flex"
       id="copyright"
     >
       <div className="flex flex-col lg:flex-row items-center">
         <div className="text-center lg:text-left">
-          <h2 className="text-3xl max-sm:text-xl font-medium mb-8 max-sm:m-12">
-            <span className="text-nowrap bg-gradient-to-r from-cyan-500 to-cyan-400 bg-clip-text text-transparent block ">
+          <h2 className="text-3xl max-sm:text-lg font-medium mb-8 max-sm:m-6">
+            <span className="sm:text-nowrap bg-gradient-to-r from-cyan-500 to-cyan-400 bg-clip-text text-transparent block ">
               © 2026 Copyright Matheus R. Silveira
             </span>
           </h2>
