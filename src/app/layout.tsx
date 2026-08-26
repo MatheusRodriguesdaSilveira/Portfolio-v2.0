@@ -13,11 +13,31 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+const siteUrl = "https://portfolio-matheussilveira.vercel.app";
+const siteDescription =
+  "Matheus Rodrigues da Silveira — Analista Agentforce Jr | Desenvolvedor Salesforce & Agentforce | 2x Salesforce Certified. Agentes autônomos de IA, Data Cloud e automação.";
+
 export const metadata: Metadata = {
-  title: "Portfólio | Matheus",
-  description: "Meu portfólio pessoal | Matheus Rodrigues da Silveira",
+  metadataBase: new URL(siteUrl),
+  title: "Matheus Silveira | Analista Agentforce Jr",
+  description: siteDescription,
   icons: {
     icon: "/favicon.png",
+  },
+  openGraph: {
+    title: "Matheus Silveira | Analista Agentforce Jr",
+    description: siteDescription,
+    url: siteUrl,
+    siteName: "Matheus Silveira — Portfólio",
+    images: ["/matheus.png"],
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Matheus Silveira | Analista Agentforce Jr",
+    description: siteDescription,
+    images: ["/matheus.png"],
   },
 };
 
@@ -27,7 +47,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-mantine-color-scheme>
+    <html lang="pt-BR">
       <head>
         <link rel="icon" type="image/png" href="/favicon.png" />
       </head>
