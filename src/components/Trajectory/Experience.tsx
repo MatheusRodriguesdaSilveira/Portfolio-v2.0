@@ -337,7 +337,7 @@ export function Experience() {
                 </p>
                 <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-full border-2 border-purple-500 p-1 aspect-square mx-auto sm:mx-0 shrink-0">
                   <Image
-                    src={"/better agents.jfif"}
+                    src={"/better-agents-workshop-badge.jpg"}
                     alt={"Agentforce Workshop Badge"}
                     width={112}
                     height={112}
