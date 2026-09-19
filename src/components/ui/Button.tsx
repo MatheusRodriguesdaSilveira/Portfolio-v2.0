@@ -1,6 +1,9 @@
 import { Rocket } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Button = () => {
+  const { language } = useLanguage();
+
   return (
     <button
       className="relative flex items-center px-6 py-3 overflow-hidden font-medium transition-all bg-cyan-500 rounded-md group"
@@ -15,7 +18,8 @@ const Button = () => {
       </span>
       <span className="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full bg-brand rounded-md group-hover:translate-x-0"></span>
       <span className="flex gap-1 text-sm xl:text-base items-center relative w-full text-left text-zinc-900 transition-colors duration-200 ease-in-out group-hover:text-zinc-900">
-        Envie-me um email <Rocket className="size-5" />
+        {language === "pt" ? "Envie-me um email" : "Send me an email"}{" "}
+        <Rocket className="size-5" />
       </span>
     </button>
   );

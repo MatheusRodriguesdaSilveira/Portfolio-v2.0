@@ -6,11 +6,13 @@ import {
   motion,
 } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 interface TimelineEntry {
   id: string;
   content: React.ReactNode;
 }
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
+  const { language } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
@@ -41,10 +43,13 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div className="w-full pb-[200px] font-thin md:px-10" ref={containerRef}>
+    <div
+      className="relative w-full pb-[200px] font-thin md:px-10"
+      ref={containerRef}
+    >
       <div className="max-w-7xl mx-auto pt-28 px-4 md:px-8 lg:px-10">
         <h2 className="text-4xl md:text-7xl font-bold text-white max-w-4xl">
-          My Journey
+          {language === "pt" ? "Minha Jornada" : "My Journey"}
         </h2>
       </div>
 

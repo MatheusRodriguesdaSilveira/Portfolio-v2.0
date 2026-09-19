@@ -3,8 +3,10 @@ import emailjs from "@emailjs/browser";
 import Button from "../ui/Button";
 import BlurFade from "../ui/blur-fade";
 import { CircleUser } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ContactPage = () => {
+  const { language } = useLanguage();
   const form = useRef<HTMLFormElement>(null);
   const [showToast, setShowToast] = useState(false);
 
@@ -51,20 +53,26 @@ const ContactPage = () => {
           {/* Toast de sucesso */}
           {showToast && (
             <div className="bg-green-500 text-white px-4 py-2 rounded-md mb-4 text-center">
-              E-mail enviado com sucesso!
+              {language === "pt"
+                ? "E-mail enviado com sucesso!"
+                : "Email sent successfully!"}
             </div>
           )}
 
           <form ref={form} onSubmit={sendEmail} className="space-y-2">
             <div>
               <label className="block text-sm font-medium text-cyan-300">
-                Nome
+                {language === "pt" ? "Nome" : "Name"}
               </label>
               <input
                 type="text"
                 name="name"
                 className="mt-1 p-2 w-full text-white bg-transparent border border-cyan-400 rounded-md focus:ring-cyan-300 focus:border-cyan-300"
-                placeholder="Deixe seu nome aqui..."
+                placeholder={
+                  language === "pt"
+                    ? "Deixe seu nome aqui..."
+                    : "Leave your name here..."
+                }
               />
             </div>
             <div>
@@ -75,17 +83,25 @@ const ContactPage = () => {
                 type="email"
                 name="email"
                 className="mt-1 p-2 w-full text-white bg-transparent border border-cyan-400 rounded-md focus:ring-cyan-300 focus:border-cyan-300"
-                placeholder="Insira o seu email aqui.."
+                placeholder={
+                  language === "pt"
+                    ? "Insira o seu email aqui.."
+                    : "Enter your email here.."
+                }
               />
             </div>
             <div>
               <label className="block text-sm font-medium text-cyan-300">
-                Mensagem
+                {language === "pt" ? "Mensagem" : "Message"}
               </label>
               <textarea
                 name="message"
                 className="h-[100px] xl:h-[90px] 2xl:h-[120px] mt-1 p-2 w-full text-white bg-transparent border border-cyan-400 rounded-md focus:ring-cyan-300 focus:border-cyan-300"
-                placeholder="Como posso te ajudar?"
+                placeholder={
+                  language === "pt"
+                    ? "Como posso te ajudar?"
+                    : "How can I help you?"
+                }
               ></textarea>
             </div>
             <div className="justify-center items-center flex">
@@ -94,7 +110,9 @@ const ContactPage = () => {
           </form>
 
           <div className="xl:mt-2 2xl:mt-6 mt-5 text-center">
-            <p className="text-sm text-gray-600">Outros</p>
+            <p className="text-sm text-gray-600">
+              {language === "pt" ? "Outros" : "Other"}
+            </p>
             <div className="flex justify-center space-x-4 2xl:mt-2 xl:mt-0 mt-2">
               <a
                 href="https://www.linkedin.com/in/matheus-rodrigues-da-silveira/"

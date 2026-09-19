@@ -2,11 +2,14 @@ import React, { forwardRef } from "react";
 import { File, GithubIcon, Linkedin, MoveRight } from "lucide-react";
 import BlurFade from "../ui/blur-fade";
 import { ImageBorder } from "./components/ImageBorder";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface AboutProps {}
 
 export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
   (props, ref) => {
+    const { language } = useLanguage();
+
     return (
       <>
         <div className="p-5 sm:p-10 m-4 sm:m-10 xl:mx-0 xl:my-0 2xl:mx-20 2xl:mb-32 max-sm:flex flex-col items-center">
@@ -35,63 +38,126 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
                 </div>
               </BlurFade>
               <BlurFade delay={0.25 * 4.5} inView>
-                <p className="text-zinc-200 mb-2 text-base xl:text-sm 2xl:text-base">
-                  Sou{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
-                    Desenvolvedor de Software
-                  </span>{" "}
-                  com foco em{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
-                    Salesforce e Agentforce
-                  </span>
-                  . Atualmente atuo como{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
-                    Analista Agentforce Jr na Gentrop
-                  </span>
-                  , aplicando minhas habilidades técnicas na criação de{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
-                    soluções inteligentes e automações escaláveis
-                  </span>
-                  .
-                </p>
+                {language === "pt" ? (
+                  <>
+                    <p className="text-zinc-200 mb-2 text-base xl:text-sm 2xl:text-base">
+                      Sou{" "}
+                      <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
+                        Desenvolvedor de Software
+                      </span>{" "}
+                      com foco em{" "}
+                      <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
+                        Salesforce e Agentforce
+                      </span>
+                      . Atualmente atuo como{" "}
+                      <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
+                        Analista Agentforce Jr na Gentrop
+                      </span>
+                      , aplicando minhas habilidades técnicas na criação de{" "}
+                      <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
+                        soluções inteligentes e automações escaláveis
+                      </span>
+                      .
+                    </p>
 
-                <p className="text-zinc-200 mb-2 text-base xl:text-sm 2xl:text-base">
-                  Atuo diretamente na construção de{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
-                    agentes inteligentes
-                  </span>{" "}
-                  utilizando{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
-                    Prompt Templates, Instructions e Actions
-                  </span>{" "}
-                  integrados a{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
-                    Salesforce Flows
-                  </span>
-                  , automatizando processos e aumentando a{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
-                    eficiência operacional
-                  </span>
-                  .
-                </p>
+                    <p className="text-zinc-200 mb-2 text-base xl:text-sm 2xl:text-base">
+                      Atuo diretamente na construção de{" "}
+                      <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
+                        agentes inteligentes
+                      </span>{" "}
+                      utilizando{" "}
+                      <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
+                        Prompt Templates, Instructions e Actions
+                      </span>{" "}
+                      integrados a{" "}
+                      <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
+                        Salesforce Flows
+                      </span>
+                      , automatizando processos e aumentando a{" "}
+                      <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
+                        eficiência operacional
+                      </span>
+                      .
+                    </p>
 
-                <p className="text-zinc-200 mb-4 text-base xl:text-sm 2xl:text-base">
-                  Possuo experiência prática no desenvolvimento de{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
-                    APIs, sites responsivos e e-commerces otimizados
-                  </span>
-                  , com foco em{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
-                    performance, usabilidade e qualidade da experiência do
-                    usuário
-                  </span>
-                  . Busco evoluir constantemente minhas skills enquanto
-                  contribuo para{" "}
-                  <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
-                    projetos inovadores e de alto impacto
-                  </span>
-                  .
-                </p>
+                    <p className="text-zinc-200 mb-4 text-base xl:text-sm 2xl:text-base">
+                      Possuo experiência prática no desenvolvimento de{" "}
+                      <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
+                        APIs, sites responsivos e e-commerces otimizados
+                      </span>
+                      , com foco em{" "}
+                      <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
+                        performance, usabilidade e qualidade da experiência do
+                        usuário
+                      </span>
+                      . Busco evoluir constantemente minhas skills enquanto
+                      contribuo para{" "}
+                      <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
+                        projetos inovadores e de alto impacto
+                      </span>
+                      .
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <p className="text-zinc-200 mb-2 text-base xl:text-sm 2xl:text-base">
+                      I'm a{" "}
+                      <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
+                        Software Developer
+                      </span>{" "}
+                      focused on{" "}
+                      <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
+                        Salesforce and Agentforce
+                      </span>
+                      . I currently work as an{" "}
+                      <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
+                        Agentforce Jr Analyst at Gentrop
+                      </span>
+                      , applying my technical skills to build{" "}
+                      <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
+                        intelligent solutions and scalable automations
+                      </span>
+                      .
+                    </p>
+
+                    <p className="text-zinc-200 mb-2 text-base xl:text-sm 2xl:text-base">
+                      I work directly on building{" "}
+                      <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
+                        intelligent agents
+                      </span>{" "}
+                      using{" "}
+                      <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
+                        Prompt Templates, Instructions and Actions
+                      </span>{" "}
+                      integrated with{" "}
+                      <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
+                        Salesforce Flows
+                      </span>
+                      , automating processes and increasing{" "}
+                      <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
+                        operational efficiency
+                      </span>
+                      .
+                    </p>
+
+                    <p className="text-zinc-200 mb-4 text-base xl:text-sm 2xl:text-base">
+                      I have hands-on experience building{" "}
+                      <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
+                        APIs, responsive websites and optimized e-commerces
+                      </span>
+                      , focused on{" "}
+                      <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
+                        performance, usability and quality user experience
+                      </span>
+                      . I'm constantly evolving my skills while contributing
+                      to{" "}
+                      <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
+                        innovative, high-impact projects
+                      </span>
+                      .
+                    </p>
+                  </>
+                )}
               </BlurFade>
               <div className="flex items-center gap-3 max-sm:mb-10 max-sm:justify-center max-lg:justify-center">
                 <BlurFade delay={0.25 * 5.5} inView>
@@ -100,7 +166,11 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
                       <a
                         href="https://www.linkedin.com/in/matheus-rodrigues-da-silveira/"
                         target="_blank"
-                        aria-label="Ver perfil no LinkedIn"
+                        aria-label={
+                          language === "pt"
+                            ? "Ver perfil no LinkedIn"
+                            : "View LinkedIn profile"
+                        }
                       >
                         <Linkedin />
                       </a>
@@ -113,7 +183,11 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
                       <a
                         href="https://github.com/MatheusRodriguesdaSilveira"
                         target="_blank"
-                        aria-label="Ver perfil no GitHub"
+                        aria-label={
+                          language === "pt"
+                            ? "Ver perfil no GitHub"
+                            : "View GitHub profile"
+                        }
                       >
                         <GithubIcon />
                       </a>
@@ -130,7 +204,7 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
                           target="_blank"
                           className="flex gap-2 items-center whitespace-nowrap text-sm opacity-0 transition-all duration-150 group-hover/button:-translate-x-2.5 group-hover/button:opacity-100"
                         >
-                          Meu currículo
+                          {language === "pt" ? "Meu currículo" : "My resume"}
                           <File className="size-5 mb-1 mr-2" />
                         </a>
                         <div className="absolute right-4 lg:right-5 xl:right-3">

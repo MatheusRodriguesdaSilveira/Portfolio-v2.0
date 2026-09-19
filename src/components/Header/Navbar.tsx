@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import {
   AlignJustify,
   Bot,
+  Languages,
   Linkedin,
   Rocket,
   Sparkles,
@@ -9,6 +10,7 @@ import {
   X,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface NavBarProps {
   scrollToAbout: () => void;
@@ -25,6 +27,7 @@ export const NavBar = ({
   scrollToExperience,
   scrollToAgents,
 }: NavBarProps) => {
+  const { language, toggleLanguage } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -120,7 +123,7 @@ export const NavBar = ({
                 action: scrollToExperience,
               },
               {
-                label: "Agentes",
+                label: language === "pt" ? "Agentes" : "Agents",
                 href: "#agentes",
                 icon: <Bot className="size-4 2xl:size-5" />,
                 action: scrollToAgents,
@@ -146,6 +149,22 @@ export const NavBar = ({
                 </motion.li>
               </div>
             ))}
+            <div className="w-0.5 h-4 bg-zinc-500"></div>
+
+            <li>
+              <button
+                onClick={toggleLanguage}
+                aria-label={
+                  language === "pt"
+                    ? "Switch to English"
+                    : "Mudar para Português"
+                }
+                className="flex items-center gap-1 text-sm 2xl:text-base font-semibold text-zinc-400 hover:text-brand transition-colors px-2"
+              >
+                <Languages className="size-4 2xl:size-5" />
+                {language === "pt" ? "EN" : "PT"}
+              </button>
+            </li>
             <div className="w-0.5 h-4 bg-zinc-500"></div>
 
             <li>
@@ -233,7 +252,8 @@ export const NavBar = ({
                   }}
                   className="text-white text-2xl hover:text-brand flex gap-2"
                 >
-                  Agentes <Bot className="size-7" />
+                  {language === "pt" ? "Agentes" : "Agents"}{" "}
+                  <Bot className="size-7" />
                 </a>
               </li>
               <li>
@@ -245,6 +265,20 @@ export const NavBar = ({
                 >
                   Contact <Linkedin className="size-7" />
                 </a>
+              </li>
+              <li>
+                <button
+                  onClick={toggleLanguage}
+                  aria-label={
+                    language === "pt"
+                      ? "Switch to English"
+                      : "Mudar para Português"
+                  }
+                  className="text-white text-2xl hover:text-brand flex gap-2"
+                >
+                  {language === "pt" ? "EN" : "PT"}
+                  <Languages className="size-7" />
+                </button>
               </li>
             </ul>
             <button

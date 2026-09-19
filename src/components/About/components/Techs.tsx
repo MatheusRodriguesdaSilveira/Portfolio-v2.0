@@ -31,15 +31,18 @@ import FlowIcon from "/public/FlowIcon.png";
 import DataCloudIcon from "/public/data_cloud.png";
 import SpotlightCard from "@/components/ui/SpotlightCard ";
 import BlurFade from "@/components/ui/blur-fade";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function AboutTech() {
+  const { language } = useLanguage();
+
   return (
     <section className="mt-20 px-4">
       <BlurFade delay={0.25 * 3.5} inView>
         <h2 className="text-4xl max-sm:text-3xl text-zinc-100 text-nowrap items-center justify-center flex py-10 xl:py-10 2xl:py-12">
           <span className="text-zinc-300 font-semibold block">
             <span className="text-white">{"{ "}</span>
-            proficiência
+            {language === "pt" ? "proficiência" : "proficiency"}
             <span className="text-brand">.</span>
             <span className="text-white">{" }"}</span>
           </span>
@@ -139,8 +142,12 @@ export default function AboutTech() {
 
       <BlurFade delay={0.25 * 5} inView>
         <p className="text-center text-sm sm:text-base text-zinc-400 mt-10">
-          <span className="font-semibold text-white">Idiomas:</span>{" "}
-          Português (nativo) · Inglês (Professional Working)
+          <span className="font-semibold text-white">
+            {language === "pt" ? "Idiomas:" : "Languages:"}
+          </span>{" "}
+          {language === "pt"
+            ? "Português (nativo) · Inglês (Professional Working)"
+            : "Portuguese (native) · English (Professional Working)"}
         </p>
       </BlurFade>
     </section>

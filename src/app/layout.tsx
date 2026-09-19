@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import EmbeddedMessaging from "@/components/EmbeddedMessaging";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -61,8 +62,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-900 font-thin top-0 z-50`}
       >
-        {children}
-        <EmbeddedMessaging />
+        <LanguageProvider>
+          {children}
+          <EmbeddedMessaging />
+        </LanguageProvider>
       </body>
     </html>
   );

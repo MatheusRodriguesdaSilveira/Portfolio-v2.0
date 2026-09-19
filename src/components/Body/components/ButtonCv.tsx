@@ -1,7 +1,10 @@
 import { ArrowDownToLine } from "lucide-react";
 import React from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ButtonCv = () => {
+  const { language } = useLanguage();
+
   return (
     <button
       type="submit"
@@ -13,7 +16,7 @@ const ButtonCv = () => {
         download="CV_MatheusSilveira.pdf"
         target="_blank"
       >
-        Download currículo
+        {language === "pt" ? "Download currículo" : "Download resume"}
         <ArrowDownToLine className="w-9 h-9 p-1.5 justify-end rotate-90 group-hover:-rotate-0 group-hover:bg-gray-50 group-hover:text-indigo-900 text-zinc-100 ease-linear duration-300 rounded-full group-hover:border-none" />
       </a>
     </button>

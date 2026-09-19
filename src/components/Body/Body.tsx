@@ -8,12 +8,15 @@ import Counter from "../ui/TextCounter";
 import { IconColumn } from "./components/IconColumn";
 import ArrowDown from "./components/ArrowDown";
 import RotatingText from "../ui/RotatingText";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface BodyProps {
   scrollToContact: () => void;
 }
 
 export const Body: React.FC<BodyProps> = ({ scrollToContact }) => {
+  const { language } = useLanguage();
+
   return (
     <div className="flex flex-col items-center mx-5 md:m-20 md:mt-36 md:min-h-screen lg:mt-20 lg:min-h-screen xl:flex-row-reverse xl:ml-16 xl:mt-5 2xl:mx-16 2xl:mt-0 2xl:p-20 2xl:min-h-screen">
       {/* Imagem Desktop */}
@@ -29,11 +32,13 @@ export const Body: React.FC<BodyProps> = ({ scrollToContact }) => {
         <div className="flex flex-col items-start max-sm:items-center">
           <BlurFade duration={0.6} delay={0.2} yOffset={10}>
             <div className="text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl xl:mt-16 2xl:mt-24">
-              <h1 className="text-brand font-semibold">Olá, eu sou</h1>
+              <h1 className="text-brand font-semibold">
+                {language === "pt" ? "Olá, eu sou" : "Hello, I'm"}
+              </h1>
 
               <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-white font-bold font-mono">
                 <h2 className="text-zinc-100 font-semibold whitespace-nowrap">
-                  Desenvolvedor
+                  {language === "pt" ? "Desenvolvedor" : "Developer"}
                 </h2>
 
                 <RotatingText
@@ -62,46 +67,95 @@ export const Body: React.FC<BodyProps> = ({ scrollToContact }) => {
         {/* Descrição */}
         <div className="px-10 xl:px-0 xl:pr-[50px] xl:mb-28 max-sm:mb-6">
           <BlurFade delay={0.8} yOffset={10}>
-            <p className="text-zinc-200 leading-loose text-sm lg:text-lg">
-              👋 Meu nome é{" "}
-              <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
-                Matheus
-              </span>
-              , tenho{" "}
-              <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
-                20 anos
-              </span>{" "}
-              e sou{" "}
-              <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
-                Desenvolvedor de Software
-              </span>{" "}
-              com foco em{" "}
-              <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
-                Salesforce e Agentforce
-              </span>
-              .
-            </p>
+            {language === "pt" ? (
+              <>
+                <p className="text-zinc-200 leading-loose text-sm lg:text-lg">
+                  👋 Meu nome é{" "}
+                  <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
+                    Matheus
+                  </span>
+                  , tenho{" "}
+                  <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
+                    20 anos
+                  </span>{" "}
+                  e sou{" "}
+                  <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
+                    Desenvolvedor de Software
+                  </span>{" "}
+                  com foco em{" "}
+                  <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
+                    Salesforce e Agentforce
+                  </span>
+                  .
+                </p>
 
-            <p className="text-zinc-200 leading-loose text-sm lg:text-lg">
-              Atualmente atuo como{" "}
-              <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
-                Analista Agentforce Jr na Gentrop
-              </span>
-              , criando e escalando{" "}
-              <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
-                agentes autônomos de IA
-              </span>{" "}
-              que transformam operações de negócio. Trabalho na construção
-              desses agentes utilizando{" "}
-              <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
-                Prompt Templates, Instructions e Actions
-              </span>{" "}
-              integrados a{" "}
-              <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
-                Flows
-              </span>
-              , automatizando processos e melhorando a eficiência operacional.
-            </p>
+                <p className="text-zinc-200 leading-loose text-sm lg:text-lg">
+                  Atualmente atuo como{" "}
+                  <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
+                    Analista Agentforce Jr na Gentrop
+                  </span>
+                  , criando e escalando{" "}
+                  <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
+                    agentes autônomos de IA
+                  </span>{" "}
+                  que transformam operações de negócio. Trabalho na
+                  construção desses agentes utilizando{" "}
+                  <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
+                    Prompt Templates, Instructions e Actions
+                  </span>{" "}
+                  integrados a{" "}
+                  <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
+                    Flows
+                  </span>
+                  , automatizando processos e melhorando a eficiência
+                  operacional.
+                </p>
+              </>
+            ) : (
+              <>
+                <p className="text-zinc-200 leading-loose text-sm lg:text-lg">
+                  👋 My name is{" "}
+                  <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
+                    Matheus
+                  </span>
+                  , I'm{" "}
+                  <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
+                    20 years old
+                  </span>{" "}
+                  and I'm a{" "}
+                  <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
+                    Software Developer
+                  </span>{" "}
+                  focused on{" "}
+                  <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
+                    Salesforce and Agentforce
+                  </span>
+                  .
+                </p>
+
+                <p className="text-zinc-200 leading-loose text-sm lg:text-lg">
+                  I currently work as an{" "}
+                  <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
+                    Agentforce Jr Analyst at Gentrop
+                  </span>
+                  , building and scaling{" "}
+                  <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
+                    autonomous AI agents
+                  </span>{" "}
+                  that transform business operations. I build these agents
+                  using{" "}
+                  <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
+                    Prompt Templates, Instructions and Actions
+                  </span>{" "}
+                  integrated with{" "}
+                  <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
+                    Flows
+                  </span>
+                  , automating processes and improving operational
+                  efficiency.
+                </p>
+              </>
+            )}
           </BlurFade>
 
           {/* Botões */}
@@ -125,7 +179,11 @@ export const Body: React.FC<BodyProps> = ({ scrollToContact }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="shrink-0"
-                aria-label="Verificar certificação Salesforce Certified Agentforce Specialist"
+                aria-label={
+                  language === "pt"
+                    ? "Verificar certificação Salesforce Certified Agentforce Specialist"
+                    : "Verify Salesforce Certified Agentforce Specialist certification"
+                }
               >
                 <Image
                   src="/certified_Agentforce-Specialist.png"
@@ -140,7 +198,11 @@ export const Body: React.FC<BodyProps> = ({ scrollToContact }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="shrink-0"
-                aria-label="Verificar certificação Salesforce Certified Data 360 Consultant"
+                aria-label={
+                  language === "pt"
+                    ? "Verificar certificação Salesforce Certified Data 360 Consultant"
+                    : "Verify Salesforce Certified Data 360 Consultant certification"
+                }
               >
                 <Image
                   src="/2026-01_Badge_SF-Certified_D360-Con_High-Res.png"
@@ -168,15 +230,21 @@ export const Body: React.FC<BodyProps> = ({ scrollToContact }) => {
                 +
                 <Stat
                   value={2}
-                  label="Anos de Experiência"
-                  mobileLabel="Anos"
+                  label={
+                    language === "pt"
+                      ? "Anos de Experiência"
+                      : "Years of Experience"
+                  }
+                  mobileLabel={language === "pt" ? "Anos" : "Years"}
                 />
               </div>
               <div className="flex items-start text-2xl sm:text-4xl xl:text-6xl font-semibold text-brand">
                 +
                 <Stat
                   value={96}
-                  label="Badges Trailhead"
+                  label={
+                    language === "pt" ? "Badges Trailhead" : "Trailhead Badges"
+                  }
                   mobileLabel="Badges"
                 />
               </div>
@@ -185,8 +253,10 @@ export const Body: React.FC<BodyProps> = ({ scrollToContact }) => {
                 <Stat
                   value={50}
                   suffix="k"
-                  label="Pontos Trailhead"
-                  mobileLabel="Pontos"
+                  label={
+                    language === "pt" ? "Pontos Trailhead" : "Trailhead Points"
+                  }
+                  mobileLabel={language === "pt" ? "Pontos" : "Points"}
                 />
               </div>
             </div>
