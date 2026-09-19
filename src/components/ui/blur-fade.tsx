@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   AnimatePresence,
   motion,
@@ -15,15 +15,14 @@ interface BlurFadeProps {
   children: React.ReactNode;
   className?: string;
   variant?: {
-    hidden: { y: number; opacity: number; filter: string };
-    visible: { y: number; opacity: number; filter: string };
+    hidden: { y: number; opacity: number };
+    visible: { y: number; opacity: number };
   };
   duration?: number;
   delay?: number;
   yOffset?: number;
   inView?: boolean;
   inViewMargin?: MarginType;
-  blur?: string;
 }
 
 export default function BlurFade({
@@ -35,15 +34,29 @@ export default function BlurFade({
   yOffset = 10,
   inView = false,
   inViewMargin = "-50px",
-  blur = "6px",
 }: BlurFadeProps) {
   const ref = useRef(null);
   const inViewResult = useInView(ref, { margin: inViewMargin, once: true });
-  const isInView = !inView || inViewResult;
+  // hasBeenVisible is a belt-and-suspenders latch: once this section has been
+  // shown, it stays shown forever, even if something else (a context update
+  // elsewhere in the tree causing a reflow, for example) ever made Framer's
+  // own `once` tracking re-evaluate isInView as false.
+  const [hasBeenVisible, setHasBeenVisible] = useState(false);
+  const isInView = !inView || inViewResult || hasBeenVisible;
 
+  useEffect(() => {
+    if (isInView) setHasBeenVisible(true);
+  }, [isInView]);
+
+  // No `filter: blur()` here on purpose: combined with the Navbar's
+  // backdrop-blur, animated CSS filters on other elements are a known
+  // trigger for a Chromium/Edge GPU-compositing bug where content silently
+  // disappears after a later re-render (works fine in headless/software
+  // rendering, which is why it wasn't reproducible with automated testing).
+  // Keeping the fade/slide, dropping the blur, removes that risk entirely.
   const defaultVariants: Variants = {
-    hidden: { y: yOffset, opacity: 0, filter: `blur(${blur})` },
-    visible: { y: 0, opacity: 1, filter: `blur(0px)` },
+    hidden: { y: yOffset, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
   };
   const combinedVariants = variant || defaultVariants;
 
@@ -58,6 +71,7 @@ export default function BlurFade({
         duration,
         ease: "easeOut",
       }}
+      style={{ willChange: "opacity, transform" }}
       className={`block ${className}`}
     >
       {children}
