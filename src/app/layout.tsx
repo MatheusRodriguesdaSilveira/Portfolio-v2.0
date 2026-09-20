@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import EmbeddedMessaging from "@/components/EmbeddedMessaging";
 import { LanguageProvider } from "@/contexts/LanguageContext";
@@ -49,6 +50,42 @@ export const viewport: Viewport = {
   minimumScale: 1,
 };
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Matheus Rodrigues da Silveira",
+  jobTitle: "Analista Agentforce Jr",
+  description: siteDescription,
+  url: siteUrl,
+  image: `${siteUrl}/matheus.png`,
+  worksFor: {
+    "@type": "Organization",
+    name: "Gentrop",
+  },
+  alumniOf: [
+    {
+      "@type": "CollegeOrUniversity",
+      name: "UMESP - Universidade Metodista de São Paulo",
+    },
+    {
+      "@type": "EducationalOrganization",
+      name: "Etec Lauro Gomes",
+    },
+  ],
+  knowsAbout: [
+    "Agentforce",
+    "Salesforce",
+    "Data Cloud",
+    "Flow Builder",
+    "Apex",
+    "Lightning Web Components",
+  ],
+  sameAs: [
+    "https://github.com/MatheusRodriguesdaSilveira",
+    "https://www.linkedin.com/in/matheus-rodrigues-da-silveira/",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -58,6 +95,10 @@ export default function RootLayout({
     <html lang="pt-BR" suppressHydrationWarning>
       <head>
         <link rel="icon" type="image/png" href="/favicon.png" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-900 font-thin top-0 z-50`}
@@ -67,6 +108,7 @@ export default function RootLayout({
           {children}
           <EmbeddedMessaging />
         </LanguageProvider>
+        <Analytics />
       </body>
     </html>
   );
