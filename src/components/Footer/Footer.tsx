@@ -3,7 +3,7 @@ import { GithubIcon, Linkedin, AtSign } from "lucide-react";
 export const Footer = () => {
   return (
     <div
-      className="p-4 sm:p-10 m-4 sm:m-10 max-sm:flex gap flex-col items-center lg:min-h-screen flex"
+      className="p-4 sm:p-10 m-4 sm:m-10 flex flex-col items-center"
       id="copyright"
     >
       <div className="flex flex-col lg:flex-row items-center">
@@ -20,6 +20,7 @@ export const Footer = () => {
                 <a
                   href="https://www.linkedin.com/in/matheus-rodrigues-da-silveira/"
                   target="_blank"
+                  aria-label="LinkedIn"
                 >
                   <Linkedin className="size-5" />
                 </a>
@@ -31,6 +32,7 @@ export const Footer = () => {
                 <a
                   href="https://github.com/MatheusRodriguesdaSilveira"
                   target="_blank"
+                  aria-label="GitHub"
                 >
                   <GithubIcon className="size-5" />
                 </a>
@@ -42,6 +44,7 @@ export const Footer = () => {
                 <a
                   href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=matheussilveira2005@gmail.com&body=Olá,+Matheus,+tudo+bem?"
                   target="_blank"
+                  aria-label="E-mail"
                 >
                   <AtSign className="size-5" />
                 </a>
