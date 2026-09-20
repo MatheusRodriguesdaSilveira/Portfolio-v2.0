@@ -40,28 +40,40 @@ export const ImageBorder = () => {
         </button>
 
         {/* Braces */}
-        <button className="profile_item absolute left-[-15px] top-[70px] xl:left-[-25px] xl:top-[100px] 2xl:left-[-15px] 2xl:top-[100px] rounded-full cursor-pointer border border-gray-400/50 p-1 xl:p-1.5 active:scale-95 hover:scale-95 transition-all duration-500 hover:shadow-xl hover:shadow-lime-500/50">
+        <button
+          aria-label="Code"
+          className="profile_item absolute left-[-15px] top-[70px] xl:left-[-25px] xl:top-[100px] 2xl:left-[-15px] 2xl:top-[100px] rounded-full cursor-pointer border border-gray-400/50 p-1 xl:p-1.5 active:scale-95 hover:scale-95 transition-all duration-500 hover:shadow-xl hover:shadow-lime-500/50"
+        >
           <span className="size-6 xl:size-7 2xl:size-10 rounded-full bg-zinc-700 flex items-center justify-center p-1">
             <Braces className="size-6 text-lime-600" />
           </span>
         </button>
 
         {/* JavaScript */}
-        <button className="profile_item absolute right-[-15px] top-[70px] xl:right-[-25px] xl:top-[100px] 2xl:right-[-15px] 2xl:top-[100px] rounded-full cursor-pointer border border-gray-400/50 p-1 xl:p-1.5 active:scale-95 hover:scale-95 transition-all duration-500 hover:shadow-xl hover:shadow-yellow-500/50">
+        <button
+          aria-label="JavaScript"
+          className="profile_item absolute right-[-15px] top-[70px] xl:right-[-25px] xl:top-[100px] 2xl:right-[-15px] 2xl:top-[100px] rounded-full cursor-pointer border border-gray-400/50 p-1 xl:p-1.5 active:scale-95 hover:scale-95 transition-all duration-500 hover:shadow-xl hover:shadow-yellow-500/50"
+        >
           <span className="size-6 xl:size-7 2xl:size-10 rounded-full bg-zinc-700 flex items-center justify-center p-1">
             <RiJavascriptFill className="size-6 text-yellow-300" />
           </span>
         </button>
 
         {/* Git */}
-        <button className="profile_item absolute left-[0] bottom-[40px] xl:left-[0] xl:bottom-[50px] 2xl:left-[0] 2xl:bottom-[60px] rounded-full cursor-pointer border border-gray-400/50 p-1 xl:p-1.5 active:scale-95 hover:scale-95 transition-all duration-500 hover:shadow-xl hover:shadow-orange-500/50">
+        <button
+          aria-label="Git"
+          className="profile_item absolute left-[0] bottom-[40px] xl:left-[0] xl:bottom-[50px] 2xl:left-[0] 2xl:bottom-[60px] rounded-full cursor-pointer border border-gray-400/50 p-1 xl:p-1.5 active:scale-95 hover:scale-95 transition-all duration-500 hover:shadow-xl hover:shadow-orange-500/50"
+        >
           <span className="size-6 xl:size-7 2xl:size-10 rounded-full bg-zinc-700 flex items-center justify-center p-1">
             <FaGitAlt className="size-6 text-orange-600" />
           </span>
         </button>
 
         {/* Node.js */}
-        <button className="profile_item absolute right-[0] bottom-[40px] xl:right-[0] xl:bottom-[50px] 2xl:right-[0] 2xl:bottom-[60px] rounded-full cursor-pointer border border-gray-400/50 p-1 xl:p-1.5 active:scale-95 hover:scale-95 transition-all duration-500 hover:shadow-xl hover:shadow-green-500/50">
+        <button
+          aria-label="Node.js"
+          className="profile_item absolute right-[0] bottom-[40px] xl:right-[0] xl:bottom-[50px] 2xl:right-[0] 2xl:bottom-[60px] rounded-full cursor-pointer border border-gray-400/50 p-1 xl:p-1.5 active:scale-95 hover:scale-95 transition-all duration-500 hover:shadow-xl hover:shadow-green-500/50"
+        >
           <span className="size-6 xl:size-7 2xl:size-10 rounded-full bg-zinc-700 flex items-center justify-center p-1">
             <FaNodeJs className="size-6 text-green-500" />
           </span>
