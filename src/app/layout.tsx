@@ -55,12 +55,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" suppressHydrationWarning>
       <head>
         <link rel="icon" type="image/png" href="/favicon.png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-900 font-thin top-0 z-50`}
+        suppressHydrationWarning
       >
         <LanguageProvider>
           {children}
