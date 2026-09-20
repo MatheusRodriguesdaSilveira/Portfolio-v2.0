@@ -83,9 +83,10 @@ export const NavBar = ({
         initial={{ y: -100, opacity: 0 }} // Animação de entrada
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className={`hidden lg:flex border border-zinc-600 ${
-          scrolled ? `backdrop-blur-md` : `bg-zinc-900`
-        } py-3 flex justify-between items-center rounded-full md:mx-10 xl:mx-10 2xl:mx-32 fixed top-0 left-0 right-0 z-40 mt-10 transition-all duration-500`}
+        className={`hidden lg:flex border border-zinc-600 backdrop-blur-md ${
+          scrolled ? `bg-zinc-900/70` : `bg-zinc-900`
+        } py-3 flex justify-between items-center rounded-full md:mx-10 xl:mx-10 2xl:mx-32 fixed top-0 left-0 right-0 z-40 mt-10 transition-colors duration-500`}
+        style={{ transform: "translateZ(0)" }}
       >
         <button
           onClick={scrollToTop}
