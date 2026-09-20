@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
 
 export default function Counter({
@@ -10,49 +10,45 @@ export default function Counter({
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const motionValue = useMotionValue(direction === "down" ? value : 0);
+  // Plain damping/stiffness only: mixing that model with duration/bounce
+  // (as this used to) leaves Framer Motion to guess which config wins, and
+  // for a small target like 2 the spring could settle "at rest" on an
+  // overshoot before ever reaching the real value, so no further "change"
+  // events fired and the number stayed blank.
   const springValue = useSpring(motionValue, {
-    damping: 100,
+    damping: 30,
     stiffness: 100,
-    restSpeed: 0.01,
-    restDelta: 0.01,
-    bounce: 0.5,
-    velocity: 0.5,
-    duration: 2000,
-    mass: 1,
   });
 
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [startAnimation, setStartAnimation] = useState(false);
+
+  // The rendered number is never allowed to depend on the animation
+  // succeeding: it starts correct and the spring only animates on top of it.
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.textContent = Intl.NumberFormat("en-US").format(value);
+    }
+  }, [value]);
 
   useEffect(() => {
     if (isInView) {
-      const timeout = setTimeout(() => {
-        setStartAnimation(true);
-      }, 2000);
-
-      return () => clearTimeout(timeout);
-    }
-  }, [isInView]);
-
-  useEffect(() => {
-    if (startAnimation) {
       motionValue.set(direction === "down" ? 0 : value);
     }
-  }, [motionValue, startAnimation]);
+  }, [isInView, motionValue, value, direction]);
 
   useEffect(
     () =>
       springValue.on("change", (latest) => {
         if (ref.current) {
           ref.current.textContent = Intl.NumberFormat("en-US").format(
-            latest.toFixed(0) as any
+            Math.round(latest)
           );
         }
       }),
     [springValue]
   );
 
-  return <span ref={ref} />;
+  return <span ref={ref}>{Intl.NumberFormat("en-US").format(value)}</span>;
 }
 
 export const TextTicker = () => {
