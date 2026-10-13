@@ -23,8 +23,8 @@ export function AppleCardsCarouselDemo() {
 const data = [
   {
     id: 12,
-    thumb: "/AgentforceIcon.png",
-    image: "/AgentforceIcon.png",
+    thumb: "/AgentforceIcon.webp",
+    image: "/AgentforceIcon.webp",
     alt: "agente de suporte técnico IT",
     title: "Agente de Suporte Técnico (IT)🛠️",
     description:
@@ -38,8 +38,8 @@ const data = [
   },
   {
     id: 13,
-    thumb: "/AgentforceIcon.png",
-    image: "/AgentforceIcon.png",
+    thumb: "/AgentforceIcon.webp",
+    image: "/AgentforceIcon.webp",
     alt: "agente SDR de vendas",
     title: "Agente SDR de Vendas📈",
     description:
@@ -53,8 +53,8 @@ const data = [
   },
   {
     id: 14,
-    thumb: "/AgentforceIcon.png",
-    image: "/AgentforceIcon.png",
+    thumb: "/AgentforceIcon.webp",
+    image: "/AgentforceIcon.webp",
     alt: "agente de recuperação de crédito",
     title: "Agente de Recuperação de Crédito💳",
     description:
@@ -68,8 +68,8 @@ const data = [
   },
   {
     id: 15,
-    thumb: "/AgentforceIcon.png",
-    image: "/AgentforceIcon.png",
+    thumb: "/AgentforceIcon.webp",
+    image: "/AgentforceIcon.webp",
     alt: "Agent Guigo - Agentforce World Tour SP",
     title: "Agent Guigo (Agentforce World Tour SP)🎪",
     description:
@@ -83,8 +83,8 @@ const data = [
   },
   {
     id: 1,
-    thumb: "/devblog thumb.jpeg",
-    image: "/devblog.jpeg",
+    thumb: "/devblog thumb.webp",
+    image: "/devblog.webp",
     alt: "devblog",
     title: "DevBlog📚",
     description:
@@ -99,8 +99,8 @@ const data = [
   },
   {
     id: 2,
-    thumb: "/agendamentoDeServicos.jpeg",
-    image: "/agendamentoDeServicos.jpeg",
+    thumb: "/agendamentoDeServicos.webp",
+    image: "/agendamentoDeServicos.webp",
     alt: "agendamentoDeServicos",
     title: "💇‍♀️ Agendamento de Serviços - API",
     description:
@@ -116,8 +116,8 @@ const data = [
   },
   {
     id: 3,
-    thumb: "/system pizza thumb.jpeg",
-    image: "/system pizza.jpeg",
+    thumb: "/system pizza thumb.webp",
+    image: "/system pizza.webp",
     alt: "pizzaria",
     title: "System Pizza🍕",
     description:
@@ -134,8 +134,8 @@ const data = [
   },
   {
     id: 4,
-    thumb: "/api-vendas-thumb.png",
-    image: "/api-vendas.png",
+    thumb: "/api-vendas-thumb.webp",
+    image: "/api-vendas.webp",
     alt: "api-vendas",
     title: "API-Vendas🛒",
     description:
@@ -151,8 +151,8 @@ const data = [
   },
   {
     id: 5,
-    thumb: "/in orbit thumb.jpeg",
-    image: "/in orbit.jpeg",
+    thumb: "/in orbit thumb.webp",
+    image: "/in orbit.webp",
     alt: "in orbit",
     title: "In.Orbit📅",
     description:
@@ -167,8 +167,8 @@ const data = [
   },
   {
     id: 6,
-    thumb: "/gd sports thumb.jpeg",
-    image: "/gd sports.jpeg",
+    thumb: "/gd sports thumb.webp",
+    image: "/gd sports.webp",
     alt: "project clothing store",
     title: "Project Clothing Store⚽",
     description:
@@ -183,8 +183,8 @@ const data = [
   },
   {
     id: 7,
-    thumb: "/hamburgueria.jpeg",
-    image: "/hamburgueria.jpeg",
+    thumb: "/hamburgueria.webp",
+    image: "/hamburgueria.webp",
     alt: "hamburgueria",
     title: "Project Burger🍔",
     description:
@@ -198,8 +198,8 @@ const data = [
   },
   {
     id: 8,
-    thumb: "/sushi.jpeg",
-    image: "/sushi.jpeg",
+    thumb: "/sushi.webp",
+    image: "/sushi.webp",
     alt: "sushi shop",
     title: "Project Sushi Shop🍣",
     description:
@@ -213,8 +213,8 @@ const data = [
   },
   {
     id: 9,
-    thumb: "/task list.png",
-    image: "/task list.png",
+    thumb: "/task list.webp",
+    image: "/task list.webp",
     alt: "task list",
     title: "Task List✔️",
     description:
@@ -228,8 +228,8 @@ const data = [
   },
   {
     id: 10,
-    thumb: "/student list.png",
-    image: "/student list.png",
+    thumb: "/student list.webp",
+    image: "/student list.webp",
     alt: "student list",
     title: "Project Student List App👨‍🎓",
     description:
@@ -243,8 +243,8 @@ const data = [
   },
   {
     id: 11,
-    thumb: "/weather app.jpeg",
-    image: "/weather app.jpeg",
+    thumb: "/weather app.webp",
+    image: "/weather app.webp",
     alt: "weather app",
     title: "Project Weather App☀️",
     description:

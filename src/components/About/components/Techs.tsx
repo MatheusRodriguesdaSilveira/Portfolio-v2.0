@@ -25,10 +25,10 @@ import {
   SiSwagger,
 } from "react-icons/si";
 
-import SalesforceIcon from "/public/SalesforceIcon.png";
-import AgentforceIcon from "/public/AgentforceIcon.png";
-import FlowIcon from "/public/FlowIcon.png";
-import DataCloudIcon from "/public/data_cloud.png";
+import SalesforceIcon from "/public/SalesforceIcon.webp";
+import AgentforceIcon from "/public/AgentforceIcon.webp";
+import FlowIcon from "/public/FlowIcon.webp";
+import DataCloudIcon from "/public/data_cloud.webp";
 import SpotlightCard from "@/components/ui/SpotlightCard ";
 import BlurFade from "@/components/ui/blur-fade";
 import { useLanguage } from "@/contexts/LanguageContext";

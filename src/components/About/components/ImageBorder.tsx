@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Me from "/public/matheus.png";
+import Me from "/public/matheus.webp";
 
-import SalesforceIcon from "/public/SalesforceIcon.png";
-import AgentforceIcon from "/public/AgentforceIcon.png";
-import FlowIcon from "/public/FlowIcon.png";
+import SalesforceIcon from "/public/SalesforceIcon.webp";
+import AgentforceIcon from "/public/AgentforceIcon.webp";
+import FlowIcon from "/public/FlowIcon.webp";
 
 import { FaGitAlt, FaNodeJs } from "react-icons/fa";
 import { RiJavascriptFill } from "react-icons/ri";

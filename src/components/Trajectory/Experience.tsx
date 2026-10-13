@@ -252,7 +252,7 @@ export function Experience() {
                 </p>
                 <div className="w-20 h-20 sm:w-24 sm:h-24 aspect-square mx-auto sm:mx-0 shrink-0">
                   <Image
-                    src={"/certified_Agentforce-Specialist.png"}
+                    src={"/certified_Agentforce-Specialist.webp"}
                     alt={"Salesforce Certified Agentforce Specialist"}
                     width={100}
                     height={100}
@@ -337,7 +337,7 @@ export function Experience() {
                 </p>
                 <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-full border-2 border-purple-500 p-1 aspect-square mx-auto sm:mx-0 shrink-0">
                   <Image
-                    src={"/better-agents-workshop-badge.jpg"}
+                    src={"/better-agents-workshop-badge.webp"}
                     alt={"Agentforce Workshop Badge"}
                     width={112}
                     height={112}
@@ -429,7 +429,7 @@ export function Experience() {
                 </p>
                 <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-full border-2 border-blue-500 p-1 aspect-square mx-auto sm:mx-0 shrink-0 bg-white/10">
                   <Image
-                    src={"/agentblazer.png"}
+                    src={"/agentblazer.webp"}
                     alt={"Agentblazer Legend Badge"}
                     width={112}
                     height={112}
@@ -534,7 +534,7 @@ export function Experience() {
                 </p>
                 <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-full border-2 border-blue-500 p-1 aspect-square mx-auto sm:mx-0 shrink-0 bg-white/10">
                   <Image
-                    src={"/agentblazer.png"}
+                    src={"/agentblazer.webp"}
                     alt={"Agentblazer Legend 2026 Badge"}
                     width={112}
                     height={112}
@@ -639,7 +639,7 @@ export function Experience() {
                 </p>
                 <div className="bg-[#FED11A] w-20 h-20 sm:w-24 sm:h-24 rounded-md p-2 sm:p-4 aspect-square mx-auto sm:mx-0">
                   <Image
-                    src={"/gentrop_logo.png"}
+                    src={"/gentrop_logo.webp"}
                     alt={"Gentrop Cloud Brasil"}
                     width={100}
                     height={100}
@@ -796,7 +796,7 @@ export function Experience() {
                 </p>
                 <div className="w-20 h-20 sm:w-24 sm:h-24 aspect-square mx-auto sm:mx-0 shrink-0">
                   <Image
-                    src={"/2026-01_Badge_SF-Certified_D360-Con_High-Res.png"}
+                    src={"/2026-01_Badge_SF-Certified_D360-Con_High-Res.webp"}
                     alt={"Salesforce Certified Data 360 Consultant"}
                     width={100}
                     height={100}

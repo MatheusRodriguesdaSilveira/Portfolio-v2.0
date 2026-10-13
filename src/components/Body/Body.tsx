@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Code2 from "../../../public/ImageCode.png";
+import Code2 from "../../../public/ImageCode.webp";
 import BlurFade from "@/components/ui/blur-fade";
 import ShimmerButton from "../ui/ButtonMotion";
 import ButtonCv from "./components/ButtonCv";
@@ -186,7 +186,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToContact }) => {
                 }
               >
                 <Image
-                  src="/certified_Agentforce-Specialist.png"
+                  src="/certified_Agentforce-Specialist.webp"
                   alt="Salesforce Certified Agentforce Specialist"
                   width={40}
                   height={40}
@@ -205,7 +205,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToContact }) => {
                 }
               >
                 <Image
-                  src="/2026-01_Badge_SF-Certified_D360-Con_High-Res.png"
+                  src="/2026-01_Badge_SF-Certified_D360-Con_High-Res.webp"
                   alt="Salesforce Certified Data 360 Consultant"
                   width={40}
                   height={40}

@@ -12,7 +12,7 @@ type projects = {
 export const projects = [
     {
       id: 1,
-      image: "/system pizza.jpeg",
+      image: "/system pizza.webp",
       alt: "pizzaria",
       title: "System Pizza🍕",
       description:
@@ -24,7 +24,7 @@ export const projects = [
     },
     {
       id: 2,
-      image: "/devblog.jpeg",
+      image: "/devblog.webp",
       alt: "devblog",
       title: "DevBlog📚",
       description:"O projeto é uma plataforma web que combina funcionalidades de blog e rede social, permitindo que os usuários criem postagens com fotos e descrições, interajam por meio de curtidas e comentários.",
@@ -35,7 +35,7 @@ export const projects = [
     },
     {
       id: 3,
-      image: "/in orbit.jpeg",
+      image: "/in orbit.webp",
       alt: "in orbit",
       title: "In.Orbit📅",
       description:
@@ -46,7 +46,7 @@ export const projects = [
     },
     {
       id: 4,
-      image: "/gd sports.jpeg",
+      image: "/gd sports.webp",
       alt: "project clothing store",
       title: "Project Clothing Store⚽",
       description:
@@ -57,7 +57,7 @@ export const projects = [
     },
     {
       id: 5,
-      image: "/hamburgueria.jpeg",
+      image: "/hamburgueria.webp",
       alt: "hamburgueria",
       title: "Project Burger🍔",
       description:
@@ -69,7 +69,7 @@ export const projects = [
     },
     {
       id: 6,
-      image: "/sushi.jpeg",
+      image: "/sushi.webp",
       alt: "sushi shop",
       title: "Project Sushi Shop🍣",
       description:
@@ -80,7 +80,7 @@ export const projects = [
     },
     {
       id: 7,
-      image: "/task list.png",
+      image: "/task list.webp",
       alt: "task list",
       title: "Task List✔️",
       description:
@@ -91,7 +91,7 @@ export const projects = [
     },
     {
       id: 8,
-      image: "/student list.png",
+      image: "/student list.webp",
       alt: "student list",
       title: "Project Student List App👨‍🎓",
       description:
@@ -102,7 +102,7 @@ export const projects = [
     },
     {
       id: 9,
-      image: "/weather app.jpeg",
+      image: "/weather app.webp",
       alt: "weather app",
       title: "Project Weather App☀️",
       description:
