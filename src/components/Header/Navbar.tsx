@@ -138,13 +138,14 @@ export const NavBar = ({
                 >
                   <a
                     href={item.href}
-                    className="text-sm 2xl:text-base flex font-medium relative cursor-pointer before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 before:bg-brand before:transition-all before:duration-300 hover:before:w-full"
+                    aria-label={item.label}
+                    className="text-sm 2xl:text-base flex items-center gap-1 font-medium relative cursor-pointer px-2 before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 before:bg-brand before:transition-all before:duration-300 hover:before:w-full"
                     onClick={(e) => {
                       e.preventDefault();
                       item.action();
                     }}
                   >
-                    {item.label}
+                    <span className="hidden xl:inline">{item.label}</span>
                     {item.icon}
                   </a>
                 </motion.li>
