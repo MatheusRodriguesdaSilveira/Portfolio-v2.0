@@ -1,17 +1,22 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import { Body } from "../components/Body/Body";
 import { NavBar } from "../components/Header/Navbar";
-import { Footer } from "../components/Footer/Footer";
-import ActionsGrid from "../components/About/components/Techs";
 import Hr from "../components/ui/hr";
 import BlurFade from "@/components/ui/blur-fade";
-import AboutPage from "@/components/About/About";
-import ContactPage from "@/components/Contact/Contact";
 import ButtonScroll from "@/components/ui/ButtonScrollToTop";
 import { ArrowUp } from "lucide-react";
-import { Experience } from "@/components/Trajectory/Experience";
-import { AgentsSection } from "@/components/Agents/Agents";
+
+// Below-the-fold sections: code-split into their own chunks so the initial
+// JS payload only has to cover the Hero/Navbar. ssr stays true so this
+// content is still present in the server-rendered HTML for SEO/crawlers.
+const ActionsGrid = dynamic(() => import("../components/About/components/Techs"), { ssr: true });
+const Footer = dynamic(() => import("../components/Footer/Footer").then((m) => m.Footer), { ssr: true });
+const AboutPage = dynamic(() => import("@/components/About/About"), { ssr: true });
+const ContactPage = dynamic(() => import("@/components/Contact/Contact"), { ssr: true });
+const Experience = dynamic(() => import("@/components/Trajectory/Experience").then((m) => m.Experience), { ssr: true });
+const AgentsSection = dynamic(() => import("@/components/Agents/Agents").then((m) => m.AgentsSection), { ssr: true });
 
 export default function Page() {
   const contactRef = useRef<HTMLDivElement | null>(null);
