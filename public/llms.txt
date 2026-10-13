@@ -1,0 +1,31 @@
+# Matheus Rodrigues da Silveira
+
+> Agentforce Jr Analyst at Gentrop (Salesforce ecosystem), Brazil. Builds autonomous AI agents on Agentforce, Data Cloud, Flow Builder and Apex, plus Node.js/TypeScript backends. 2x Salesforce Certified. Portfolio site in Portuguese (PT-BR) with an English toggle.
+
+## Who this is
+
+- Current role: Analista Agentforce Jr at Gentrop (promoted April 2026; previously Software Developer at Gentrop, Apr 2025 - Apr 2026).
+- Certifications: Salesforce Certified Agentforce Specialist (Jun 2025); Salesforce Certified Data 360 Consultant (Jul 2026, Credential ID 7905614, verify at sforce.co/verifycerts).
+- Trailhead: Agentblazer Legend 2025 and Legend 2026.
+- Education: Tecnólogo em Análise e Desenvolvimento de Sistemas, UMESP (Feb 2024 - Jun 2026); Técnico em Informática para Internet, Etec Lauro Gomes (Feb 2022 - Jun 2023).
+- Prior experience: Full Stack Developer (Freelance), Apr 2024 - Mar 2025.
+- Core skills: Agentforce, Data Cloud, Flow Builder, Apex, Lightning Web Components, Salesforce CLI, Node.js, TypeScript, REST APIs.
+- Languages: Portuguese (native), English (Professional Working).
+
+## Real Agentforce projects (Gentrop, internal — no public demo link)
+
+- IT support agent integrated with Google Chat for diagnosing issues and automating ticket creation/escalation, plus a multi-agent architecture for device lifecycle and WhatsApp logistics.
+- Sales SDR agent qualifying leads with the BANT methodology, CNPJ validation via API, and automatic meeting scheduling.
+- Consortium pre-sales agent over WhatsApp, with business rules and financial concept explanations to increase deal conversion.
+- "Guigo" agent built for the Agentforce World Tour São Paulo: personalized triage, interactive quizzes and a profile-matching portfolio of agents, drawing 500+ booth visitors.
+
+## Pages
+
+- [Portfolio](https://portfolio-matheussilveira.vercel.app/): single-page site — Hero, About, Skills, Journey (career timeline), Agentforce agent case studies, Contact.
+- [Resume PDF](https://portfolio-matheussilveira.vercel.app/CV_MatheusSilveira.pdf)
+
+## Contact
+
+- Email: matheussilveira2005@gmail.com
+- LinkedIn: https://www.linkedin.com/in/matheus-rodrigues-da-silveira/
+- GitHub: https://github.com/MatheusRodriguesdaSilveira

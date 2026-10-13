@@ -24,6 +24,24 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Matheus Silveira | Analista Agentforce Jr",
   description: siteDescription,
+  keywords: [
+    "Matheus Rodrigues da Silveira",
+    "Agentforce",
+    "Salesforce",
+    "Agentforce Specialist",
+    "Data Cloud",
+    "Data 360 Consultant",
+    "Flow Builder",
+    "Apex",
+    "Lightning Web Components",
+    "Desenvolvedor Salesforce",
+    "Agentes de IA",
+    "Gentrop",
+  ],
+  authors: [{ name: "Matheus Rodrigues da Silveira", url: siteUrl }],
+  alternates: {
+    canonical: siteUrl,
+  },
   icons: {
     icon: "/favicon.png",
   },
@@ -32,7 +50,7 @@ export const metadata: Metadata = {
     description: siteDescription,
     url: siteUrl,
     siteName: "Matheus Silveira — Portfólio",
-    images: ["/matheus.png"],
+    images: [{ url: "/matheus.webp", width: 800, height: 800 }],
     locale: "pt_BR",
     type: "website",
   },
@@ -40,7 +58,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Matheus Silveira | Analista Agentforce Jr",
     description: siteDescription,
-    images: ["/matheus.png"],
+    images: ["/matheus.webp"],
   },
 };
 
@@ -57,7 +75,7 @@ const personJsonLd = {
   jobTitle: "Analista Agentforce Jr",
   description: siteDescription,
   url: siteUrl,
-  image: `${siteUrl}/matheus.png`,
+  image: `${siteUrl}/matheus.webp`,
   worksFor: {
     "@type": "Organization",
     name: "Gentrop",
