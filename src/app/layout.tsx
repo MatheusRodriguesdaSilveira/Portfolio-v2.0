@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
-// import EmbeddedMessaging from "@/components/EmbeddedMessaging"; // see note below, temporarily disabled
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const geistSans = localFont({
@@ -132,12 +131,8 @@ export default function RootLayout({
       >
         <LanguageProvider>
           {children}
-          {/* Widget temporarily disabled: the Salesforce Embedded Service
-              deployment is stuck in a login redirect loop (ERR_TOO_MANY_REDIRECTS),
-              firing on every page load for every visitor with no working chat
-              in return. Re-enable once the guest login issue is fixed on the
-              Salesforce side. */}
-          {/* <EmbeddedMessaging /> */}
+          {/* The Agentforce chat is loaded on demand from the Agents
+              section (see components/EmbeddedMessaging.tsx), not site-wide. */}
         </LanguageProvider>
         <Analytics />
       </body>

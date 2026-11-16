@@ -1,6 +1,59 @@
+import { useState } from "react";
+import { Loader2, MessageCircle } from "lucide-react";
 import BlurFade from "@/components/ui/blur-fade";
 import SpotlightCard from "@/components/ui/SpotlightCard ";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { openAgentChat } from "@/components/EmbeddedMessaging";
+
+function AgentChatButton() {
+  const { language } = useLanguage();
+  const pt = language === "pt";
+  const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
+
+  const handleClick = async () => {
+    setStatus("loading");
+    try {
+      await openAgentChat(language);
+      setStatus("idle");
+    } catch (err) {
+      console.error("Agent chat unavailable:", err);
+      setStatus("error");
+    }
+  };
+
+  return (
+    <div className="flex flex-col items-center gap-2 mt-6">
+      <button
+        type="button"
+        onClick={handleClick}
+        disabled={status === "loading"}
+        className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm sm:text-base font-bold text-zinc-900 transition hover:brightness-110 disabled:opacity-70"
+      >
+        {status === "loading" ? (
+          <Loader2 className="size-5 animate-spin" aria-hidden="true" />
+        ) : (
+          <MessageCircle className="size-5" aria-hidden="true" />
+        )}
+        {status === "loading"
+          ? pt
+            ? "Conectando ao agente..."
+            : "Connecting to the agent..."
+          : pt
+            ? "Converse com meu agente Agentforce"
+            : "Chat with my Agentforce agent"}
+      </button>
+      <p className="text-xs text-zinc-500 max-w-md text-center">
+        {status === "error"
+          ? pt
+            ? "O chat está indisponível agora. Tente de novo em alguns minutos."
+            : "The chat is unavailable right now. Please try again in a few minutes."
+          : pt
+            ? "Agente real rodando no meu org Salesforce. Demo com dados fictícios: não envie dados pessoais."
+            : "A real agent running in my Salesforce org. Demo with fictitious data: please don't share personal information."}
+      </p>
+    </div>
+  );
+}
 
 const agents = [
   {
@@ -166,6 +219,7 @@ export function AgentsSection() {
               ? "Agentes de IA reais que arquitetei e coloquei em produção na Gentrop. Como envolvem sistemas e dados de clientes, não têm deploy público — os cards abaixo detalham a arquitetura de cada um."
               : "Real AI agents I architected and shipped to production at Gentrop. Since they involve client systems and data, they don't have a public deploy — the cards below detail each one's architecture."}
           </p>
+          <AgentChatButton />
         </div>
       </BlurFade>
 
