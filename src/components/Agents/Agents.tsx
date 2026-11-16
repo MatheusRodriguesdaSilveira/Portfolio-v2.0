@@ -189,6 +189,7 @@ const agents = [
     },
     stack: "Agentforce | IA Generativa | Data Cloud",
     spotlightColor: "rgba(255, 226, 0, 0.31)",
+    scenario: "evento" as AgentScenario,
     highlight: {
       pt: "+500 visitantes no stand",
       en: "+500 visitors at the booth",
@@ -247,6 +248,36 @@ const agents = [
     stack: "Agentforce | Prompt Builder | REST APIs | Flows",
     spotlightColor: "rgba(0, 229, 255, 0.2)",
     scenario: "sdr" as AgentScenario,
+  },
+  {
+    emoji: "🍽️",
+    title: {
+      pt: "Agente Consultivo de Food Service",
+      en: "Food Service Advisory Agent",
+    },
+    description: {
+      pt: "Agente consultivo via WhatsApp para a indústria de alimentos: mapeia a principal dor do restaurante, recomenda produtos do catálogo conforme o histórico de compras e encaminha o lead qualificado ao distribuidor.",
+      en: "Consultative WhatsApp agent for the food industry: maps the restaurant's main pain point, recommends catalog products based on purchase history, and routes the qualified lead to the distributor.",
+    },
+    architecture: {
+      pt: [
+        "Abordagem consultiva: ouve a dor antes de recomendar",
+        "Recomendação cruzando dor e compras recentes com o catálogo",
+        "Protocolo de objeção com uma única tentativa de reengajamento",
+        "Subagente de confiança e segurança para dúvidas sobre o canal",
+        "Registro de interesse e resumo da conversa no CRM",
+      ],
+      en: [
+        "Consultative approach: listens to the pain point before recommending",
+        "Recommendations cross pain point and recent purchases with the catalog",
+        "Objection protocol with a single re-engagement attempt",
+        "Trust and security subagent for doubts about the channel",
+        "Interest and conversation summary recorded in the CRM",
+      ],
+    },
+    stack: "Agentforce | Flows | Knowledge | WhatsApp",
+    spotlightColor: "rgba(249, 115, 22, 0.2)",
+    scenario: "food" as AgentScenario,
   },
 ];
 

@@ -22,6 +22,8 @@ const SITE_URL =
 const SCRT2_URL =
   "https://orgfarm-72b4ae14b8-dev-ed.develop.my.salesforce-scrt.com";
 const READY_TIMEOUT_MS = 20000;
+const BUTTON_FALLBACK_MS = 3000;
+const CLEAR_SESSION_TIMEOUT_MS = 4000;
 
 declare global {
   interface Window {
@@ -33,7 +35,12 @@ declare global {
         siteUrl: string,
         options: { scrt2URL: string },
       ) => void;
-      utilAPI?: { launchChat: () => Promise<unknown> };
+      utilAPI?: {
+        launchChat: () => Promise<unknown>;
+      };
+      userVerificationAPI?: {
+        clearSession: (shouldEndConversation?: boolean) => Promise<unknown>;
+      };
       prechatAPI?: {
         setHiddenPrechatFields: (fields: Record<string, string>) => void;
       };
@@ -52,12 +59,18 @@ function loadAgentChat(language: string): Promise<void> {
       READY_TIMEOUT_MS,
     );
 
+    // launchChat() silently does nothing if called before the widget has
+    // created its button, so wait for that (with a short fallback after Ready).
+    const done = () => {
+      window.clearTimeout(timer);
+      resolve();
+    };
+    window.addEventListener("onEmbeddedMessagingButtonCreated", done, {
+      once: true,
+    });
     window.addEventListener(
       "onEmbeddedMessagingReady",
-      () => {
-        window.clearTimeout(timer);
-        resolve();
-      },
+      () => window.setTimeout(done, BUTTON_FALLBACK_MS),
       { once: true },
     );
 
@@ -92,22 +105,88 @@ function loadAgentChat(language: string): Promise<void> {
 }
 
 /**
- * Demo scenario the agent should open in. It travels as the hidden pre-chat
- * field "Cenario" -> channel parameter -> Omni-Channel flow ->
- * MessagingSession.Cenario__c, which the agent's router reads on the first
- * message. It only applies when a new conversation starts; inside an ongoing
- * conversation the visitor can still switch by asking for another scenario.
+ * Which demo agent should answer. Each card has its own Agentforce agent; the
+ * value travels as the hidden pre-chat field "Cenario" -> channel parameter ->
+ * Omni-Channel flow, which routes the conversation to that agent. Without a
+ * scenario the flow routes to the general "Portfolio Demo" agent.
  */
-export type AgentScenario = "consorcio" | "credito" | "sdr" | "ti";
+export type AgentScenario =
+  | "consorcio"
+  | "credito"
+  | "sdr"
+  | "ti"
+  | "evento"
+  | "food";
 
-/** Loads the widget (first call only) and opens the chat window. */
+// A conversation is bound to the agent it was routed to, and the widget
+// resumes the last conversation on every page load. We remember which agent
+// the current conversation belongs to and, when the visitor picks another card
+// (or ended the chat), end it with clearSession() so a new one is routed.
+const CONVERSATION_AGENT_KEY = "portfolio-chat-agent";
+
+function storageGet(key: string): string | null {
+  try {
+    return window.localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function storageSet(key: string, value: string | null) {
+  try {
+    if (value === null) window.localStorage.removeItem(key);
+    else window.localStorage.setItem(key, value);
+  } catch {
+    // Storage blocked (private mode etc.): every click then starts fresh.
+  }
+}
+
+let endListenerAttached = false;
+function forgetAgentWhenConversationEnds() {
+  if (endListenerAttached) return;
+  endListenerAttached = true;
+  window.addEventListener("onEmbeddedMessagingConversationClosed", () =>
+    storageSet(CONVERSATION_AGENT_KEY, null),
+  );
+}
+
+const sleep = (ms: number) =>
+  new Promise<void>((resolve) => window.setTimeout(resolve, ms));
+
+/**
+ * Ends whatever conversation the widget would resume (no-op if there is none).
+ * clearSession() can hang while the widget is still restoring a conversation
+ * right after page load, so each attempt is time-boxed and retried.
+ */
+async function endCurrentConversation() {
+  const api = window.embeddedservice_bootstrap?.userVerificationAPI;
+  if (!api) return;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    const finished = await Promise.race([
+      api.clearSession(true).then(
+        () => true,
+        () => true,
+      ),
+      sleep(CLEAR_SESSION_TIMEOUT_MS).then(() => false),
+    ]);
+    if (finished) return;
+  }
+}
+
+/** Loads the widget if needed and opens the chat with the card's agent. */
 export async function openAgentChat(
   lang: "pt" | "en",
   scenario?: AgentScenario,
 ): Promise<void> {
+  const wantedAgent = scenario ?? "geral";
   await loadAgentChat(lang === "pt" ? "pt_BR" : "en_US");
-  window.embeddedservice_bootstrap?.prechatAPI?.setHiddenPrechatFields({
-    Cenario: scenario ?? "",
-  });
-  await window.embeddedservice_bootstrap?.utilAPI?.launchChat();
+  forgetAgentWhenConversationEnds();
+
+  const bootstrap = window.embeddedservice_bootstrap;
+  if (storageGet(CONVERSATION_AGENT_KEY) !== wantedAgent) {
+    await endCurrentConversation();
+    storageSet(CONVERSATION_AGENT_KEY, wantedAgent);
+  }
+  bootstrap?.prechatAPI?.setHiddenPrechatFields({ Cenario: scenario ?? "" });
+  await bootstrap?.utilAPI?.launchChat();
 }
