@@ -3,23 +3,70 @@ import { Loader2, MessageCircle } from "lucide-react";
 import BlurFade from "@/components/ui/blur-fade";
 import SpotlightCard from "@/components/ui/SpotlightCard ";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { openAgentChat } from "@/components/EmbeddedMessaging";
+import { openAgentChat, type AgentScenario } from "@/components/EmbeddedMessaging";
 
-function AgentChatButton() {
+type ChatStatus = "idle" | "loading" | "error";
+
+function useAgentChat(scenario?: AgentScenario) {
   const { language } = useLanguage();
-  const pt = language === "pt";
-  const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
+  const [status, setStatus] = useState<ChatStatus>("idle");
 
-  const handleClick = async () => {
+  const open = async () => {
     setStatus("loading");
     try {
-      await openAgentChat(language);
+      await openAgentChat(language, scenario);
       setStatus("idle");
     } catch (err) {
       console.error("Agent chat unavailable:", err);
       setStatus("error");
     }
   };
+
+  return { status, open };
+}
+
+/** Compact per-card button that opens the chat directly in that card's scenario. */
+function TryAgentButton({ scenario }: { scenario: AgentScenario }) {
+  const { language } = useLanguage();
+  const pt = language === "pt";
+  const { status, open } = useAgentChat(scenario);
+
+  return (
+    <div className="flex flex-col items-start gap-1">
+      <button
+        type="button"
+        onClick={open}
+        disabled={status === "loading"}
+        className="inline-flex items-center gap-2 rounded-full border border-brand px-4 py-1.5 text-xs sm:text-sm font-bold text-brand transition hover:bg-brand hover:text-zinc-900 disabled:opacity-70"
+      >
+        {status === "loading" ? (
+          <Loader2 className="size-4 animate-spin" aria-hidden="true" />
+        ) : (
+          <MessageCircle className="size-4" aria-hidden="true" />
+        )}
+        {status === "loading"
+          ? pt
+            ? "Conectando..."
+            : "Connecting..."
+          : pt
+            ? "Testar este agente"
+            : "Try this agent"}
+      </button>
+      {status === "error" && (
+        <span className="text-xs text-zinc-500">
+          {pt
+            ? "Chat indisponível agora. Tente de novo em alguns minutos."
+            : "Chat unavailable right now. Try again in a few minutes."}
+        </span>
+      )}
+    </div>
+  );
+}
+
+function AgentChatButton() {
+  const { language } = useLanguage();
+  const pt = language === "pt";
+  const { status, open: handleClick } = useAgentChat();
 
   return (
     <div className="flex flex-col items-center gap-2 mt-6">
@@ -86,6 +133,7 @@ const agents = [
     },
     stack: "Agentforce | Flows | WhatsApp",
     spotlightColor: "rgba(34, 197, 94, 0.2)",
+    scenario: "consorcio" as AgentScenario,
   },
   {
     emoji: "💳",
@@ -115,6 +163,7 @@ const agents = [
     },
     stack: "Agentforce | Flows | WhatsApp",
     spotlightColor: "rgba(168, 85, 247, 0.2)",
+    scenario: "credito" as AgentScenario,
   },
   {
     emoji: "🎪",
@@ -171,6 +220,7 @@ const agents = [
     },
     stack: "Agentforce | Apex | Flows | Google Chat | WhatsApp",
     spotlightColor: "rgba(59, 130, 246, 0.2)",
+    scenario: "ti" as AgentScenario,
   },
   {
     emoji: "📈",
@@ -196,6 +246,7 @@ const agents = [
     },
     stack: "Agentforce | Prompt Builder | REST APIs | Flows",
     spotlightColor: "rgba(0, 229, 255, 0.2)",
+    scenario: "sdr" as AgentScenario,
   },
 ];
 
@@ -216,8 +267,8 @@ export function AgentsSection() {
           </h2>
           <p className="text-zinc-400 text-sm mt-3 max-w-2xl mx-auto">
             {language === "pt"
-              ? "Agentes de IA reais que arquitetei e coloquei em produção na Gentrop. Como envolvem sistemas e dados de clientes, não têm deploy público — os cards abaixo detalham a arquitetura de cada um."
-              : "Real AI agents I architected and shipped to production at Gentrop. Since they involve client systems and data, they don't have a public deploy — the cards below detail each one's architecture."}
+              ? "Agentes de IA reais que arquitetei e coloquei em produção na Gentrop. Os originais rodam com dados de clientes, então recriei versões de demonstração no meu próprio org Salesforce: clique em \"Testar este agente\" e veja os registros sendo criados de verdade, com dados fictícios."
+              : "Real AI agents I architected and shipped to production at Gentrop. The originals run on client data, so I rebuilt demo versions in my own Salesforce org: click \"Try this agent\" and watch real records get created, with fictitious data."}
           </p>
           <AgentChatButton />
         </div>
@@ -278,9 +329,12 @@ export function AgentsSection() {
                 </ul>
               </div>
 
-              <span className="text-xs sm:text-sm text-white font-bold bg-zinc-500/40 px-3 py-1 rounded-full self-start mt-auto">
-                {agent.stack}
-              </span>
+              <div className="mt-auto flex flex-wrap items-center justify-between gap-3">
+                <span className="text-xs sm:text-sm text-white font-bold bg-zinc-500/40 px-3 py-1 rounded-full">
+                  {agent.stack}
+                </span>
+                {agent.scenario && <TryAgentButton scenario={agent.scenario} />}
+              </div>
             </SpotlightCard>
           </BlurFade>
         ))}

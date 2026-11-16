@@ -34,6 +34,9 @@ declare global {
         options: { scrt2URL: string },
       ) => void;
       utilAPI?: { launchChat: () => Promise<unknown> };
+      prechatAPI?: {
+        setHiddenPrechatFields: (fields: Record<string, string>) => void;
+      };
     };
   }
 }
@@ -88,8 +91,23 @@ function loadAgentChat(language: string): Promise<void> {
   return readyPromise;
 }
 
+/**
+ * Demo scenario the agent should open in. It travels as the hidden pre-chat
+ * field "Cenario" -> channel parameter -> Omni-Channel flow ->
+ * MessagingSession.Cenario__c, which the agent's router reads on the first
+ * message. It only applies when a new conversation starts; inside an ongoing
+ * conversation the visitor can still switch by asking for another scenario.
+ */
+export type AgentScenario = "consorcio" | "credito" | "sdr" | "ti";
+
 /** Loads the widget (first call only) and opens the chat window. */
-export async function openAgentChat(lang: "pt" | "en"): Promise<void> {
+export async function openAgentChat(
+  lang: "pt" | "en",
+  scenario?: AgentScenario,
+): Promise<void> {
   await loadAgentChat(lang === "pt" ? "pt_BR" : "en_US");
+  window.embeddedservice_bootstrap?.prechatAPI?.setHiddenPrechatFields({
+    Cenario: scenario ?? "",
+  });
   await window.embeddedservice_bootstrap?.utilAPI?.launchChat();
 }
