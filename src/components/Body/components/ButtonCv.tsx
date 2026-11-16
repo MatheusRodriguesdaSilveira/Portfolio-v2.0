@@ -12,8 +12,16 @@ const ButtonCv = () => {
     >
       <a
         className="flex gap-1 items-center text-sm text-nowrap lg:text-base font-semibold"
-        href="/CV_MatheusSilveira.pdf"
-        download="CV_MatheusSilveira.pdf"
+        href={
+          language === "pt"
+            ? "/CV_MatheusSilveira.pdf"
+            : "/Resume_MatheusSilveira_EN.pdf"
+        }
+        download={
+          language === "pt"
+            ? "CV_MatheusSilveira.pdf"
+            : "Resume_MatheusSilveira_EN.pdf"
+        }
         target="_blank"
       >
         {language === "pt" ? "Download currículo" : "Download resume"}

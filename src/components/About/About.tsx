@@ -81,19 +81,23 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
                     </p>
 
                     <p className="text-zinc-200 mb-4 text-base xl:text-sm 2xl:text-base">
-                      Possuo experiência prática no desenvolvimento de{" "}
+                      Também atuo na{" "}
                       <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
-                        APIs, sites responsivos e e-commerces otimizados
+                        frente com o cliente
                       </span>
-                      , com foco em{" "}
+                      : conduzo reuniões de discovery, entendo as dores do
+                      negócio e desenho{" "}
                       <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
-                        performance, usabilidade e qualidade da experiência do
-                        usuário
+                        blueprints de agentes
+                      </span>{" "}
+                      que viram arquitetura e entrega. Como{" "}
+                      <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
+                        Salesforce Partner FDE
                       </span>
-                      . Busco evoluir constantemente minhas skills enquanto
-                      contribuo para{" "}
+                      , meu foco é adoção, não só deploy: caso de uso certo,
+                      KPI de negócio e integrações sólidas com{" "}
                       <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
-                        projetos inovadores e de alto impacto
+                        WhatsApp (Meta), APIs REST e Apex
                       </span>
                       .
                     </p>
@@ -141,18 +145,23 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
                     </p>
 
                     <p className="text-zinc-200 mb-4 text-base xl:text-sm 2xl:text-base">
-                      I have hands-on experience building{" "}
+                      I'm also{" "}
                       <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
-                        APIs, responsive websites and optimized e-commerces
+                        client-facing
                       </span>
-                      , focused on{" "}
+                      : I lead discovery meetings, dig into business pain
+                      points and design{" "}
                       <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
-                        performance, usability and quality user experience
+                        agent blueprints
+                      </span>{" "}
+                      that turn into architecture and delivery. As a{" "}
+                      <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
+                        Salesforce Partner FDE
                       </span>
-                      . I'm constantly evolving my skills while contributing
-                      to{" "}
+                      , I focus on adoption, not just deployment: the right
+                      use case, business KPIs and solid integrations with{" "}
                       <span className="font-semibold underline-offset-2 decoration-2 underline text-white decoration-brand">
-                        innovative, high-impact projects
+                        WhatsApp (Meta), REST APIs and Apex
                       </span>
                       .
                     </p>
@@ -199,8 +208,16 @@ export const AboutPage = forwardRef<HTMLDivElement, AboutProps>(
                     <span className="group/button relative inline-flex px-[26px] py-[26px] h-[54px] w-[54px] md:h-[50px] md:w-[50px] lg:h-10 lg:w-10 items-center justify-center overflow-hidden ease-in bg-zinc-900 rounded-full group-hover:bg-opacity-0 duration-150 font-medium text-white transition-all hover:w-[175px]  group-hover:text-zinc-950">
                       <span className="justify-center items-center flex">
                         <a
-                          href="/CV_MatheusSilveira.pdf"
-                          download="CV_MatheusSilveira.pdf"
+                          href={
+                            language === "pt"
+                              ? "/CV_MatheusSilveira.pdf"
+                              : "/Resume_MatheusSilveira_EN.pdf"
+                          }
+                          download={
+                            language === "pt"
+                              ? "CV_MatheusSilveira.pdf"
+                              : "Resume_MatheusSilveira_EN.pdf"
+                          }
                           target="_blank"
                           className="flex gap-2 items-center whitespace-nowrap text-sm opacity-0 transition-all duration-150 group-hover/button:-translate-x-2.5 group-hover/button:opacity-100"
                         >

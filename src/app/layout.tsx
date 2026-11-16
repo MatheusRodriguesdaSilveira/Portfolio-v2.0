@@ -18,17 +18,20 @@ const geistMono = localFont({
 
 const siteUrl = "https://portfolio-matheussilveira.vercel.app";
 const siteDescription =
-  "Matheus Rodrigues da Silveira — Analista Agentforce Jr | Desenvolvedor Salesforce & Agentforce | 2x Salesforce Certified. Agentes autônomos de IA, Data Cloud e automação.";
+  "Matheus Rodrigues da Silveira — Salesforce Partner FDE (Forward Deployed Engineer) | Desenvolvedor & Consultor Agentforce | 2x Salesforce Certified. Agentes de IA em produção com Apex, Flows, LWC, Data Cloud e WhatsApp.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Matheus Silveira | Analista Agentforce Jr",
+  title: "Matheus Silveira | Agentforce Engineer · Salesforce Partner FDE",
   description: siteDescription,
   keywords: [
     "Matheus Rodrigues da Silveira",
     "Agentforce",
     "Salesforce",
     "Agentforce Specialist",
+    "Salesforce Partner FDE",
+    "Forward Deployed Engineer",
+    "Agentforce Consultant",
     "Data Cloud",
     "Data 360 Consultant",
     "Flow Builder",
@@ -36,6 +39,8 @@ export const metadata: Metadata = {
     "Lightning Web Components",
     "Desenvolvedor Salesforce",
     "Agentes de IA",
+    "WhatsApp Business API",
+    "Marketing Cloud",
     "Gentrop",
   ],
   authors: [{ name: "Matheus Rodrigues da Silveira", url: siteUrl }],
@@ -46,7 +51,7 @@ export const metadata: Metadata = {
     icon: "/favicon.png",
   },
   openGraph: {
-    title: "Matheus Silveira | Analista Agentforce Jr",
+    title: "Matheus Silveira | Agentforce Engineer · Salesforce Partner FDE",
     description: siteDescription,
     url: siteUrl,
     siteName: "Matheus Silveira — Portfólio",
@@ -56,7 +61,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Matheus Silveira | Analista Agentforce Jr",
+    title: "Matheus Silveira | Agentforce Engineer · Salesforce Partner FDE",
     description: siteDescription,
     images: ["/matheus.webp"],
   },
@@ -72,7 +77,7 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Matheus Rodrigues da Silveira",
-  jobTitle: "Analista Agentforce Jr",
+  jobTitle: "Agentforce Engineer · Salesforce Partner FDE",
   description: siteDescription,
   url: siteUrl,
   image: `${siteUrl}/matheus.webp`,
@@ -97,6 +102,9 @@ const personJsonLd = {
     "Flow Builder",
     "Apex",
     "Lightning Web Components",
+    "WhatsApp Business Platform",
+    "Marketing Cloud",
+    "Forward Deployed Engineering",
   ],
   sameAs: [
     "https://github.com/MatheusRodriguesdaSilveira",

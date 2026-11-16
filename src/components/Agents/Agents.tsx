@@ -35,6 +35,35 @@ const agents = [
     spotlightColor: "rgba(34, 197, 94, 0.2)",
   },
   {
+    emoji: "💳",
+    title: {
+      pt: "Agente de Recuperação de Crédito",
+      en: "Credit Recovery Agent",
+    },
+    description: {
+      pt: "Agente financeiro para atendimento em larga escala via WhatsApp: renegociação de dívidas, simulação de parcelamento e escolha da forma de pagamento, com regras de negócio e explicação de conceitos financeiros.",
+      en: "Financial agent for high-volume customer service over WhatsApp: debt renegotiation, installment simulation and payment-method selection, with business rules and plain-language explanations of financial terms.",
+    },
+    architecture: {
+      pt: [
+        "Atendimento em larga escala via WhatsApp",
+        "Renegociação de dívidas com regras de negócio financeiras",
+        "Simulação de parcelamento dentro da conversa",
+        "Escolha de pagamento via Pix ou Boleto",
+        "Explicação de conceitos financeiros para aumentar a taxa de acordos",
+      ],
+      en: [
+        "High-volume customer service over WhatsApp",
+        "Debt renegotiation driven by financial business rules",
+        "In-conversation installment simulation",
+        "Payment choice: Pix or bank slip",
+        "Plain-language financial explanations to raise agreement rates",
+      ],
+    },
+    stack: "Agentforce | Flows | WhatsApp",
+    spotlightColor: "rgba(168, 85, 247, 0.2)",
+  },
+  {
     emoji: "🎪",
     title: {
       pt: "Agent Guigo — Agentforce World Tour SP",
@@ -146,6 +175,11 @@ export function AgentsSection() {
             key={agent.title.pt}
             delay={0.25 * (2.5 + index * 0.5)}
             inView
+            className={
+              index === agents.length - 1 && agents.length % 2 === 1
+                ? "md:col-span-2"
+                : ""
+            }
           >
             <SpotlightCard
               spotlightColor={

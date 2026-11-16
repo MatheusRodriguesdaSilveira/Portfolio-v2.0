@@ -14,6 +14,8 @@ import {
   FaHtml5,
   FaPuzzlePiece,
   FaTerminal,
+  FaWhatsapp,
+  FaEnvelopeOpenText,
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -22,7 +24,6 @@ import {
   SiNextdotjs,
   SiTailwindcss,
   SiInsomnia,
-  SiSwagger,
 } from "react-icons/si";
 
 import SalesforceIcon from "/public/SalesforceIcon.webp";
@@ -72,12 +73,29 @@ export default function AboutTech() {
               label="Salesforce CLI"
               color="text-emerald-400"
             />
+            <TechIcon
+              icon={FaEnvelopeOpenText}
+              label="Marketing Cloud"
+              color="text-sky-300"
+            />
           </CardWrapper>
         </SpotlightCard>
 
-        {/* CARD 2 — Backend */}
+        {/* CARD 2 — Integrações */}
         <SpotlightCard>
-          <CardWrapper title="Backend & APIs">
+          <CardWrapper
+            title={language === "pt" ? "Integrações & APIs" : "Integrations & APIs"}
+          >
+            <TechIcon
+              icon={FaWhatsapp}
+              label="WhatsApp (Meta)"
+              color="text-green-400"
+            />
+            <TechIcon
+              icon={FaDatabase}
+              label="REST APIs"
+              color="text-yellow-400"
+            />
             <TechIcon icon={FaNodeJs} label="Node.js" color="text-green-400" />
             <TechIcon
               icon={SiTypescript}
@@ -85,12 +103,6 @@ export default function AboutTech() {
               color="text-blue-400"
             />
             <TechIcon icon={SiFastify} label="Fastify" color="text-zinc-300" />
-            <TechIcon icon={SiSwagger} label="Swagger" color="text-green-400" />
-            <TechIcon
-              icon={FaDatabase}
-              label="REST APIs"
-              color="text-yellow-400"
-            />
             <TechIcon
               icon={SiPostgresql}
               label="PostgreSQL"

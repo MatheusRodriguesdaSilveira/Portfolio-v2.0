@@ -159,6 +159,8 @@ Seções da página, em ordem: **Header → Hero → About → Proficiência (Sk
 Use estes dados ao escrever/atualizar qualquer texto do site. **Não** reintroduzir informações antigas (ex.: "estagiário").
 
 - **Cargo atual:** Analista Agentforce Jr na **Gentrop** (efetivado em 15/04/2026; antes foi estagiário/Desenvolvedor de Software na Gentrop, abr/2025–abr/2026).
+- **Salesforce Partner FDE** (Forward Deployed Engineer): concluiu o programa Agentforce FDE Ready (selo "Agentforce FDE Ready Practitioner") e integra a Salesforce FDE Partner Network (nov/2026). Workshop "Making Agents Matter" (Salesforce SP) + capstone com blueprint, guardrails e plano pós-go-live. É o principal diferencial: deixar em destaque.
+- **Posicionamento:** "Desenvolvedor & Consultor Agentforce" / "Agentforce Engineer & Consultant". Atua com clientes (discovery, blueprints, condução de reuniões), WhatsApp Business Platform (templates Meta), Apex, LWC, Flows, Data Cloud e Marketing Cloud. Cargo formal continua "Analista Agentforce Jr".
 - **Certificações:** **2x Salesforce Certified** — _Agentforce Specialist_ (jun/2025) + _Data 360 Consultant_ (emitida em 01/07/2026, ID 7905614, verificação em sforce.co/verifycerts).
 - **Trailhead:** Agentblazer **Legend 2025** (conquistado em 2025); **Legend 2026** — trilhas atualizadas do Agent Builder e Data 360 concluídas em 07/04/2026.
 - **Formação:** Tecnólogo em Análise e Desenvolvimento de Sistemas — UMESP (fev/2024 – concluído em 03/06/2026); técnico em Informática para Internet — Etec Lauro Gomes (fev/2022 – jun/2023).

@@ -820,6 +820,88 @@ export function Experience() {
               </div>
             </SpotlightCard>
           </div>
+
+          {/* Salesforce Partner FDE */}
+          <div className="w-full min-h-52 rounded-2xl flex flex-col text-primary gap-4">
+            <SpotlightCard
+              className="py-6 px-6"
+              spotlightColor="rgba(255, 226, 0, 0.25)"
+            >
+              <div className="flex flex-col sm:flex-row justify-between gap-2 items-start sm:items-center">
+                <div className="flex flex-col">
+                  <h3 className="text-lg sm:text-2xl font-bold text-white">
+                    🏅 Salesforce Partner FDE
+                  </h3>
+                  <div className="py-2 flex gap-1 flex-wrap">
+                    <span className="text-xs sm:text-sm font-bold text-white bg-yellow-600/40 rounded-full px-2 py-1 text-nowrap">
+                      Forward Deployed Engineer
+                    </span>
+                    <span className="text-xs sm:text-sm font-bold text-white bg-yellow-600/40 rounded-full px-2 py-1 text-nowrap">
+                      FDE Ready Practitioner
+                    </span>
+                  </div>
+                </div>
+                <p className="text-xs sm:text-sm text-white font-bold">
+                  {pt ? "Nov. de 2026" : "Nov. 2026"}
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3">
+                <p className="text-white text-sm sm:text-base leading-relaxed">
+                  {pt ? (
+                    <>
+                      Concluí o programa{" "}
+                      <Highlight>Agentforce FDE Ready</Highlight> e passei a
+                      integrar a{" "}
+                      <Highlight>Salesforce FDE Partner Network</Highlight>,
+                      rede de parceiros preparados para levar agentes de IA
+                      do build à produção e à adoção real. A jornada teve
+                      três etapas: os pré-requisitos técnicos (Agentforce
+                      Specialist, Data 360 Consultant e Agentblazer Legend),
+                      o workshop presencial{" "}
+                      <Highlight>&quot;Making Agents Matter&quot;</Highlight>{" "}
+                      na Salesforce São Paulo e um capstone: apresentar a
+                      expansão de um agente para um comitê executivo, com
+                      blueprint técnico, guardrails e plano de pós-go-live.
+                      Principal lição: <em>&quot;Deployed isn&apos;t
+                      adopted&quot;</em>.
+                    </>
+                  ) : (
+                    <>
+                      I completed the{" "}
+                      <Highlight>Agentforce FDE Ready</Highlight> program and
+                      joined the{" "}
+                      <Highlight>Salesforce FDE Partner Network</Highlight>,
+                      a group of partners prepared to take AI agents from
+                      build to production and real adoption. The journey
+                      had three stages: the technical prerequisites
+                      (Agentforce Specialist, Data 360 Consultant and
+                      Agentblazer Legend), the in-person{" "}
+                      <Highlight>&quot;Making Agents Matter&quot;</Highlight>{" "}
+                      workshop at Salesforce São Paulo, and a capstone:
+                      pitching an agent expansion to an executive steering
+                      committee, covering the technical blueprint,
+                      guardrails and a post-go-live care plan. Key takeaway:{" "}
+                      <em>&quot;Deployed isn&apos;t adopted&quot;</em>.
+                    </>
+                  )}
+                </p>
+                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-md p-2 sm:p-4 aspect-square mx-auto sm:mx-0 bg-white/10 flex items-center justify-center shrink-0">
+                  <span className="text-4xl">🏅</span>
+                </div>
+              </div>
+              <div className="flex pt-2 flex-col sm:flex-row justify-between gap-2 items-center">
+                <span className="text-xs sm:text-sm text-white font-bold bg-zinc-500/40 px-3 py-1 rounded-full">
+                  {pt
+                    ? "Blueprint | Guardrails | Adoção | Pós-go-live"
+                    : "Blueprint | Guardrails | Adoption | Post-go-live"}
+                </span>
+                <span className="text-xs sm:text-sm text-zinc-900 font-bold bg-yellow-500 px-3 py-1 rounded-full text-center">
+                  {pt ? "Conquistado" : "Earned"}
+                </span>
+              </div>
+            </SpotlightCard>
+          </div>
         </div>
       ),
     },

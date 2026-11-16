@@ -74,17 +74,13 @@ export const Body: React.FC<BodyProps> = ({ scrollToContact }) => {
                   <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
                     Matheus
                   </span>
-                  , tenho{" "}
+, sou{" "}
                   <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
-                    20 anos
+                    Salesforce Partner FDE
                   </span>{" "}
-                  e sou{" "}
+                  (Forward Deployed Engineer) e{" "}
                   <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
-                    Desenvolvedor de Software
-                  </span>{" "}
-                  com foco em{" "}
-                  <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
-                    Salesforce e Agentforce
+                    Desenvolvedor &amp; Consultor Agentforce
                   </span>
                   .
                 </p>
@@ -94,21 +90,23 @@ export const Body: React.FC<BodyProps> = ({ scrollToContact }) => {
                   <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
                     Analista Agentforce Jr na Gentrop
                   </span>
-                  , criando e escalando{" "}
+, levando{" "}
                   <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
-                    agentes autônomos de IA
+                    agentes de IA
                   </span>{" "}
-                  que transformam operações de negócio. Trabalho na
-                  construção desses agentes utilizando{" "}
+                  da discovery com o cliente e do{" "}
                   <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
-                    Prompt Templates, Instructions e Actions
+                    blueprint da solução
                   </span>{" "}
-                  integrados a{" "}
+                  até a produção, com{" "}
                   <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
-                    Flows
-                  </span>
-                  , automatizando processos e melhorando a eficiência
-                  operacional.
+                    Apex, Flows, LWC e Data Cloud
+                  </span>{" "}
+                  e integrações com{" "}
+                  <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
+                    WhatsApp (Meta)
+                  </span>{" "}
+                  e APIs REST.
                 </p>
               </>
             ) : (
@@ -118,17 +116,13 @@ export const Body: React.FC<BodyProps> = ({ scrollToContact }) => {
                   <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
                     Matheus
                   </span>
-                  , I'm{" "}
+, a{" "}
                   <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
-                    20 years old
+                    Salesforce Partner FDE
                   </span>{" "}
-                  and I'm a{" "}
+                  (Forward Deployed Engineer) and{" "}
                   <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
-                    Software Developer
-                  </span>{" "}
-                  focused on{" "}
-                  <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
-                    Salesforce and Agentforce
+                    Agentforce Engineer &amp; Consultant
                   </span>
                   .
                 </p>
@@ -138,21 +132,23 @@ export const Body: React.FC<BodyProps> = ({ scrollToContact }) => {
                   <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
                     Agentforce Jr Analyst at Gentrop
                   </span>
-                  , building and scaling{" "}
+, taking{" "}
                   <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
-                    autonomous AI agents
+                    AI agents
                   </span>{" "}
-                  that transform business operations. I build these agents
-                  using{" "}
+                  from customer discovery and the{" "}
                   <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
-                    Prompt Templates, Instructions and Actions
+                    solution blueprint
                   </span>{" "}
-                  integrated with{" "}
+                  all the way to production, with{" "}
                   <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
-                    Flows
-                  </span>
-                  , automating processes and improving operational
-                  efficiency.
+                    Apex, Flows, LWC and Data Cloud
+                  </span>{" "}
+                  and integrations with{" "}
+                  <span className="font-semibold underline underline-offset-2 decoration-2 decoration-brand text-white">
+                    WhatsApp (Meta)
+                  </span>{" "}
+                  and REST APIs.
                 </p>
               </>
             )}
@@ -218,7 +214,7 @@ export const Body: React.FC<BodyProps> = ({ scrollToContact }) => {
                 rel="noopener noreferrer"
                 className="text-xs sm:text-sm font-bold text-brand hover:underline underline-offset-2"
               >
-                2x Salesforce Certified
+                Salesforce Partner FDE · 2x Salesforce Certified
               </a>
             </div>
           </BlurFade>
