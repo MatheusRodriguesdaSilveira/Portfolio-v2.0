@@ -49,3 +49,15 @@ header nav li {
 .bounce-custom {
   animation: custom-bounce 1s infinite;
 }
+
+/* Agentforce chat (Salesforce Enhanced Chat). Colors inside the iframe come
+   from the deployment's Branding in the org; only the frame lives in our DOM.
+   Desktop only: on mobile Salesforce renders it full screen. */
+.embedded-messaging .embeddedMessagingFrame.eswIsDesktop.isMaximized {
+  border: 1px solid #0b5cab;
+  border-bottom: 0;
+  border-radius: 16px 16px 0 0;
+  box-shadow:
+    0 0 0 1px rgba(1, 118, 211, 0.2),
+    0 10px 40px -8px rgba(1, 118, 211, 0.45);
+}

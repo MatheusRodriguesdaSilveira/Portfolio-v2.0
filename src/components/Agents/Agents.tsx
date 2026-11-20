@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Loader2, MessageCircle } from "lucide-react";
+import { Loader2, MessageCircle, Send } from "lucide-react";
 import BlurFade from "@/components/ui/blur-fade";
 import SpotlightCard from "@/components/ui/SpotlightCard ";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -10,48 +10,101 @@ type ChatStatus = "idle" | "loading" | "error";
 function useAgentChat(scenario?: AgentScenario) {
   const { language } = useLanguage();
   const [status, setStatus] = useState<ChatStatus>("idle");
+  // Which control started the current request: a suggestion's text, or ""
+  // for the plain "Try this agent" button. Drives the per-control spinner.
+  const [pending, setPending] = useState<string | null>(null);
 
-  const open = async () => {
+  const open = async (message?: string) => {
     setStatus("loading");
+    setPending(message ?? "");
     try {
-      await openAgentChat(language, scenario);
+      await openAgentChat(language, scenario, message);
       setStatus("idle");
     } catch (err) {
       console.error("Agent chat unavailable:", err);
       setStatus("error");
+    } finally {
+      setPending(null);
     }
   };
 
-  return { status, open };
+  return { status, pending, open };
 }
 
-/** Compact per-card button that opens the chat directly in that card's scenario. */
-function TryAgentButton({ scenario }: { scenario: AgentScenario }) {
+type Suggestions = { pt: string[]; en: string[] };
+
+/**
+ * Card footer: one-click suggestions that open the chat with this card's agent
+ * and send the message for the visitor, plus the stack and the plain
+ * "Try this agent" button for anyone who'd rather type.
+ */
+function AgentCardFooter({
+  scenario,
+  suggestions,
+  stack,
+}: {
+  scenario: AgentScenario;
+  suggestions: Suggestions;
+  stack: string;
+}) {
   const { language } = useLanguage();
   const pt = language === "pt";
-  const { status, open } = useAgentChat(scenario);
+  const { status, pending, open } = useAgentChat(scenario);
+  const busy = status === "loading";
 
   return (
-    <div className="flex flex-col items-start gap-1">
-      <button
-        type="button"
-        onClick={open}
-        disabled={status === "loading"}
-        className="inline-flex items-center gap-2 rounded-full border border-brand px-4 py-1.5 text-xs sm:text-sm font-bold text-brand transition hover:bg-brand hover:text-zinc-900 disabled:opacity-70"
-      >
-        {status === "loading" ? (
-          <Loader2 className="size-4 animate-spin" aria-hidden="true" />
-        ) : (
-          <MessageCircle className="size-4" aria-hidden="true" />
-        )}
-        {status === "loading"
-          ? pt
-            ? "Conectando..."
-            : "Connecting..."
-          : pt
-            ? "Testar este agente"
-            : "Try this agent"}
-      </button>
+    <div className="mt-auto flex flex-col gap-4">
+      <div>
+        <h4 className="text-xs font-bold text-brand uppercase tracking-wide mb-2">
+          {pt ? "Comece com uma pergunta" : "Start with a question"}
+        </h4>
+        <div className="flex flex-wrap gap-2">
+          {suggestions[language].map((text) => (
+            <button
+              key={text}
+              type="button"
+              onClick={() => open(text)}
+              disabled={busy}
+              className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-800/80 px-3 py-1.5 text-left text-xs sm:text-sm text-zinc-100 transition hover:border-brand hover:text-white disabled:opacity-60"
+            >
+              {pending === text ? (
+                <Loader2
+                  className="size-3.5 shrink-0 animate-spin text-brand"
+                  aria-hidden="true"
+                />
+              ) : (
+                <Send className="size-3.5 shrink-0 text-brand" aria-hidden="true" />
+              )}
+              {text}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <span className="text-xs sm:text-sm text-white font-bold bg-zinc-500/40 px-3 py-1 rounded-full">
+          {stack}
+        </span>
+        <button
+          type="button"
+          onClick={() => open()}
+          disabled={busy}
+          className="inline-flex items-center gap-2 rounded-full border border-brand px-4 py-1.5 text-xs sm:text-sm font-bold text-brand transition hover:bg-brand hover:text-zinc-900 disabled:opacity-70"
+        >
+          {pending === "" ? (
+            <Loader2 className="size-4 animate-spin" aria-hidden="true" />
+          ) : (
+            <MessageCircle className="size-4" aria-hidden="true" />
+          )}
+          {pending === ""
+            ? pt
+              ? "Conectando..."
+              : "Connecting..."
+            : pt
+              ? "Testar este agente"
+              : "Try this agent"}
+        </button>
+      </div>
       {status === "error" && (
         <span className="text-xs text-zinc-500">
           {pt
@@ -60,6 +113,39 @@ function TryAgentButton({ scenario }: { scenario: AgentScenario }) {
         </span>
       )}
     </div>
+  );
+}
+
+const howToSteps = {
+  pt: [
+    "Escolha um agente abaixo",
+    "Toque numa sugestão e o chat já começa",
+    "Converse à vontade, com dados fictícios",
+  ],
+  en: [
+    "Pick an agent below",
+    "Tap a suggestion and the chat starts",
+    "Chat freely, using made-up data",
+  ],
+};
+
+function HowToTry() {
+  const { language } = useLanguage();
+
+  return (
+    <ol className="mx-auto mb-8 grid max-w-6xl grid-cols-1 gap-3 sm:grid-cols-3">
+      {howToSteps[language].map((step, i) => (
+        <li
+          key={step}
+          className="flex items-center gap-3 rounded-2xl border border-neutral-800 bg-zinc-900/60 px-4 py-3"
+        >
+          <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-brand text-sm font-bold text-zinc-900">
+            {i + 1}
+          </span>
+          <span className="text-sm text-zinc-200">{step}</span>
+        </li>
+      ))}
+    </ol>
   );
 }
 
@@ -72,7 +158,7 @@ function AgentChatButton() {
     <div className="flex flex-col items-center gap-2 mt-6">
       <button
         type="button"
-        onClick={handleClick}
+        onClick={() => handleClick()}
         disabled={status === "loading"}
         className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm sm:text-base font-bold text-zinc-900 transition hover:brightness-110 disabled:opacity-70"
       >
@@ -134,6 +220,10 @@ const agents = [
     stack: "Agentforce | Flows | WhatsApp",
     spotlightColor: "rgba(34, 197, 94, 0.2)",
     scenario: "consorcio" as AgentScenario,
+    suggestions: {
+      pt: ["Quero simular um consórcio de imóvel", "Como funciona o consórcio?"],
+      en: ["I want to simulate a real estate consortium", "How does a consortium work?"],
+    },
   },
   {
     emoji: "💳",
@@ -164,6 +254,10 @@ const agents = [
     stack: "Agentforce | Flows | WhatsApp",
     spotlightColor: "rgba(168, 85, 247, 0.2)",
     scenario: "credito" as AgentScenario,
+    suggestions: {
+      pt: ["Quero negociar a dívida DEMO-101", "O que acontece se eu atrasar?"],
+      en: ["I want to renegotiate debt DEMO-101", "What happens if I pay late?"],
+    },
   },
   {
     emoji: "🎪",
@@ -190,6 +284,10 @@ const agents = [
     stack: "Agentforce | IA Generativa | Data Cloud",
     spotlightColor: "rgba(255, 226, 0, 0.31)",
     scenario: "evento" as AgentScenario,
+    suggestions: {
+      pt: ["Sou a Ana Souza e quero fazer o quiz", "Sou o Bruno Lima: qual agente combina comigo?"],
+      en: ["I'm Ana Souza and I want to take the quiz", "I'm Bruno Lima: which agent fits me?"],
+    },
     highlight: {
       pt: "+500 visitantes no stand",
       en: "+500 visitors at the booth",
@@ -222,6 +320,10 @@ const agents = [
     stack: "Agentforce | Apex | Flows | Google Chat | WhatsApp",
     spotlightColor: "rgba(59, 130, 246, 0.2)",
     scenario: "ti" as AgentScenario,
+    suggestions: {
+      pt: ["Meu notebook não liga", "Quero abrir um chamado"],
+      en: ["My laptop won't turn on", "I want to open a ticket"],
+    },
   },
   {
     emoji: "📈",
@@ -248,6 +350,10 @@ const agents = [
     stack: "Agentforce | Prompt Builder | REST APIs | Flows",
     spotlightColor: "rgba(0, 229, 255, 0.2)",
     scenario: "sdr" as AgentScenario,
+    suggestions: {
+      pt: ["Sou a Ana, da Empresa Demo: quero benefícios para 50 pessoas", "Sou o Bruno, da Loja Teste: quero agendar uma reunião"],
+      en: ["I'm Ana from Demo Corp: we need benefits for 50 people", "I'm Bruno from Test Store: I want to book a meeting"],
+    },
   },
   {
     emoji: "🍽️",
@@ -278,6 +384,10 @@ const agents = [
     stack: "Agentforce | Flows | Knowledge | WhatsApp",
     spotlightColor: "rgba(249, 115, 22, 0.2)",
     scenario: "food" as AgentScenario,
+    suggestions: {
+      pt: ["Sou a Ana, do Restaurante Sabor: meu custo está alto", "Sou o Bruno, da Pizzaria Demo: o que vocês recomendam?"],
+      en: ["I'm Ana from Sabor Restaurant: my costs are too high", "I'm Bruno from Demo Pizzeria: what do you recommend?"],
+    },
   },
 ];
 
@@ -303,6 +413,10 @@ export function AgentsSection() {
           </p>
           <AgentChatButton />
         </div>
+      </BlurFade>
+
+      <BlurFade delay={0.25 * 2.25} inView>
+        <HowToTry />
       </BlurFade>
 
       <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -360,12 +474,11 @@ export function AgentsSection() {
                 </ul>
               </div>
 
-              <div className="mt-auto flex flex-wrap items-center justify-between gap-3">
-                <span className="text-xs sm:text-sm text-white font-bold bg-zinc-500/40 px-3 py-1 rounded-full">
-                  {agent.stack}
-                </span>
-                {agent.scenario && <TryAgentButton scenario={agent.scenario} />}
-              </div>
+              <AgentCardFooter
+                scenario={agent.scenario}
+                suggestions={agent.suggestions}
+                stack={agent.stack}
+              />
             </SpotlightCard>
           </BlurFade>
         ))}

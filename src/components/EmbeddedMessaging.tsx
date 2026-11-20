@@ -24,6 +24,7 @@ const SCRT2_URL =
 const READY_TIMEOUT_MS = 20000;
 const BUTTON_FALLBACK_MS = 3000;
 const CLEAR_SESSION_TIMEOUT_MS = 4000;
+const GREETING_TIMEOUT_MS = 12000;
 
 declare global {
   interface Window {
@@ -37,6 +38,7 @@ declare global {
       ) => void;
       utilAPI?: {
         launchChat: () => Promise<unknown>;
+        sendTextMessage: (message: string) => Promise<unknown>;
       };
       userVerificationAPI?: {
         clearSession: (shouldEndConversation?: boolean) => Promise<unknown>;
@@ -141,13 +143,20 @@ function storageSet(key: string, value: string | null) {
   }
 }
 
-let endListenerAttached = false;
-function forgetAgentWhenConversationEnds() {
-  if (endListenerAttached) return;
-  endListenerAttached = true;
-  window.addEventListener("onEmbeddedMessagingConversationClosed", () =>
-    storageSet(CONVERSATION_AGENT_KEY, null),
-  );
+// sendTextMessage() throws until the widget fires ConversationOpened, which
+// for a resumed conversation happens only after launchChat() has resolved.
+let conversationOpen = false;
+let conversationTrackingAttached = false;
+function trackConversation() {
+  if (conversationTrackingAttached) return;
+  conversationTrackingAttached = true;
+  window.addEventListener("onEmbeddedMessagingConversationOpened", () => {
+    conversationOpen = true;
+  });
+  window.addEventListener("onEmbeddedMessagingConversationClosed", () => {
+    conversationOpen = false;
+    storageSet(CONVERSATION_AGENT_KEY, null);
+  });
 }
 
 const sleep = (ms: number) =>
@@ -173,20 +182,68 @@ async function endCurrentConversation() {
   }
 }
 
-/** Loads the widget if needed and opens the chat with the card's agent. */
+/** Resolves on the next `name` window event, or after `timeoutMs` at the latest. */
+function waitForWindowEvent(name: string, timeoutMs: number): Promise<void> {
+  return new Promise((resolve) => {
+    const done = () => {
+      window.clearTimeout(timer);
+      window.removeEventListener(name, done);
+      resolve();
+    };
+    const timer = window.setTimeout(done, timeoutMs);
+    window.addEventListener(name, done, { once: true });
+  });
+}
+
+/**
+ * Loads the widget if needed and opens the chat with the card's agent.
+ * With `message`, also sends it as the visitor's first message (the
+ * suggestion chips on the cards), so nobody has to figure out what to type.
+ */
 export async function openAgentChat(
   lang: "pt" | "en",
   scenario?: AgentScenario,
+  message?: string,
 ): Promise<void> {
   const wantedAgent = scenario ?? "geral";
   await loadAgentChat(lang === "pt" ? "pt_BR" : "en_US");
-  forgetAgentWhenConversationEnds();
+  trackConversation();
 
   const bootstrap = window.embeddedservice_bootstrap;
   if (storageGet(CONVERSATION_AGENT_KEY) !== wantedAgent) {
     await endCurrentConversation();
+    conversationOpen = false;
     storageSet(CONVERSATION_AGENT_KEY, wantedAgent);
   }
   bootstrap?.prechatAPI?.setHiddenPrechatFields({ Cenario: scenario ?? "" });
+
+  // A brand-new conversation fires ConversationStarted during launchChat();
+  // a resumed one doesn't. Only a new one needs to wait for the greeting.
+  let startedNew = false;
+  const markStarted = () => {
+    startedNew = true;
+  };
+  window.addEventListener("onEmbeddedMessagingConversationStarted", markStarted, {
+    once: true,
+  });
+  const greeted = message
+    ? waitForWindowEvent(
+        "onEmbeddedMessagingFirstBotMessageSent",
+        GREETING_TIMEOUT_MS,
+      )
+    : null;
+
   await bootstrap?.utilAPI?.launchChat();
+  window.removeEventListener("onEmbeddedMessagingConversationStarted", markStarted);
+
+  if (!message) return;
+  if (!conversationOpen) {
+    await waitForWindowEvent(
+      "onEmbeddedMessagingConversationOpened",
+      GREETING_TIMEOUT_MS,
+    );
+  }
+  // Send after the agent's greeting so the transcript reads naturally.
+  if (startedNew && greeted) await greeted;
+  await bootstrap?.utilAPI?.sendTextMessage(message);
 }
