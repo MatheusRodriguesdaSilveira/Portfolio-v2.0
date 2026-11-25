@@ -137,7 +137,7 @@ src/
 
 ```
 
-Seções da página, em ordem: **Header → Hero → About → Proficiência (Skills) → Journey → Agentes Agentforce → Contact → Footer**.
+Seções da página, em ordem: **Header → Hero → Agentes Agentforce → About → Proficiência (Skills) → Journey (do mais recente ao mais antigo) → Contact → Footer**.
 
 > A seção **Projects** (carrossel de projetos web) foi removida da página em 2026-07-31 (a pedido do usuário). Os componentes (`src/components/Works/Projects.tsx`, `src/components/ui/apple-cards-carousel.tsx`, `src/lib/projects.ts`) continuam no repositório, só não são mais importados em `src/app/page.tsx` — reintroduzir é só voltar a importar `AppleCardsCarouselDemo` e restaurar `scrollToProjects`/`projectsRef`/o item "Projects" no Navbar.
 >

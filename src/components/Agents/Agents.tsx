@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { track } from "@vercel/analytics";
 import { Loader2, MessageCircle, Send } from "lucide-react";
 import BlurFade from "@/components/ui/blur-fade";
 import SpotlightCard from "@/components/ui/SpotlightCard ";
@@ -14,14 +15,18 @@ function useAgentChat(scenario?: AgentScenario) {
   // for the plain "Try this agent" button. Drives the per-control spinner.
   const [pending, setPending] = useState<string | null>(null);
 
-  const open = async (message?: string) => {
+  const open = async (message?: string, source = "button") => {
     setStatus("loading");
     setPending(message ?? "");
+    // Which agent, from where: never anything the visitor types.
+    const agent = scenario ?? "geral";
+    track("agent_chat_open", { agent, source });
     try {
       await openAgentChat(language, scenario, message);
       setStatus("idle");
     } catch (err) {
       console.error("Agent chat unavailable:", err);
+      track("agent_chat_error", { agent, source });
       setStatus("error");
     } finally {
       setPending(null);
@@ -59,11 +64,11 @@ function AgentCardFooter({
           {pt ? "Comece com uma pergunta" : "Start with a question"}
         </h4>
         <div className="flex flex-wrap gap-2">
-          {suggestions[language].map((text) => (
+          {suggestions[language].map((text, i) => (
             <button
               key={text}
               type="button"
-              onClick={() => open(text)}
+              onClick={() => open(text, `suggestion_${i + 1}`)}
               disabled={busy}
               className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-800/80 px-3 py-1.5 text-left text-xs sm:text-sm text-zinc-100 transition hover:border-brand hover:text-white disabled:opacity-60"
             >
@@ -396,7 +401,7 @@ export function AgentsSection() {
 
   return (
     <section className="mt-10 px-4">
-      <BlurFade delay={0.25 * 2} inView>
+      <BlurFade delay={0.1} inView>
         <div className="text-center mb-10">
           <h2 className="text-zinc-300 text-3xl xl:text-4xl 2xl:text-5xl">
             <span className="text-white">{"<"}</span>
@@ -415,7 +420,7 @@ export function AgentsSection() {
         </div>
       </BlurFade>
 
-      <BlurFade delay={0.25 * 2.25} inView>
+      <BlurFade delay={0.15} inView>
         <HowToTry />
       </BlurFade>
 
@@ -423,7 +428,7 @@ export function AgentsSection() {
         {agents.map((agent, index) => (
           <BlurFade
             key={agent.title.pt}
-            delay={0.25 * (2.5 + index * 0.5)}
+            delay={0.15 + (index % 2) * 0.1}
             inView
             className={
               index === agents.length - 1 && agents.length % 2 === 1

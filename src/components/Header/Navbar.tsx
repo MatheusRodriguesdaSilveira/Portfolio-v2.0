@@ -106,6 +106,12 @@ export const NavBar = ({
           <ul className="flex text-center items-center rounded-full text-zinc-400">
             {[
               {
+                label: language === "pt" ? "Agentes" : "Agents",
+                href: "#agentes",
+                icon: <Bot className="size-4 2xl:size-5" />,
+                action: scrollToAgents,
+              },
+              {
                 label: "About me",
                 href: "#about",
                 icon: <User className="size-4 2xl:size-5" />,
@@ -122,12 +128,6 @@ export const NavBar = ({
                 href: "#journey",
                 icon: <Rocket className="size-4 2xl:size-5" />,
                 action: scrollToExperience,
-              },
-              {
-                label: language === "pt" ? "Agentes" : "Agents",
-                href: "#agentes",
-                icon: <Bot className="size-4 2xl:size-5" />,
-                action: scrollToAgents,
               },
             ].map((item, index) => (
               <div key={index} className="flex items-center">
@@ -207,6 +207,20 @@ export const NavBar = ({
             <ul className="font-medium text-center space-y-6 flex flex-col items-start mt-40">
               <li>
                 <a
+                  href="#agentes"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToAgents();
+                    handleOpenMenu();
+                  }}
+                  className="text-white text-2xl hover:text-brand flex gap-2"
+                >
+                  {language === "pt" ? "Agentes" : "Agents"}{" "}
+                  <Bot className="size-7" />
+                </a>
+              </li>
+              <li>
+                <a
                   href="#about"
                   onClick={(e) => {
                     e.preventDefault();
@@ -242,20 +256,6 @@ export const NavBar = ({
                   className="text-white text-2xl hover:text-brand flex gap-2"
                 >
                   Journey <Rocket className="size-7" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#agentes"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToAgents();
-                    handleOpenMenu();
-                  }}
-                  className="text-white text-2xl hover:text-brand flex gap-2"
-                >
-                  {language === "pt" ? "Agentes" : "Agents"}{" "}
-                  <Bot className="size-7" />
                 </a>
               </li>
               <li>

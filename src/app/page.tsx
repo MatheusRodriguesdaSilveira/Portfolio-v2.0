@@ -47,6 +47,31 @@ export default function Page() {
     };
   }, []);
 
+  // Deep links (e.g. /#agentes shared on LinkedIn): the page renders in PT and
+  // may switch to the visitor's saved language right after, which changes the
+  // height of everything above the target. Keep it aligned while the layout
+  // settles, and let go as soon as the visitor interacts.
+  useEffect(() => {
+    const target = document.getElementById(window.location.hash.slice(1));
+    if (!target) return;
+
+    const observer = new ResizeObserver(() =>
+      target.scrollIntoView({ block: "start" }),
+    );
+    const interactions = ["wheel", "touchstart", "pointerdown", "keydown"];
+    const stop = () => {
+      window.clearTimeout(timer);
+      observer.disconnect();
+      interactions.forEach((name) => window.removeEventListener(name, stop));
+    };
+    const timer = window.setTimeout(stop, 3000);
+    interactions.forEach((name) =>
+      window.addEventListener(name, stop, { passive: true }),
+    );
+    observer.observe(document.body);
+    return stop;
+  }, []);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     setIsVisible(false);
@@ -122,7 +147,16 @@ export default function Page() {
         </ButtonScroll>
       )}
 
-      <Body scrollToContact={scrollToContact} />
+      <Body scrollToContact={scrollToContact} scrollToAgents={scrollToAgents} />
+      <Hr />
+
+      {/* The live agents are the main draw, so they come right after the hero.
+          scroll-mt keeps the title clear of the fixed navbar on desktop. */}
+      <BlurFade key="agents" inView>
+        <div ref={agentsRef} id="agentes" className="scroll-mt-10 lg:scroll-mt-32">
+          <AgentsSection />
+        </div>
+      </BlurFade>
       <Hr />
 
       <BlurFade key="about" delay={0.25 * 2.1} inView>
@@ -140,12 +174,6 @@ export default function Page() {
       <BlurFade key="experience" delay={0.25 * 2.1} inView>
         <div ref={experienceRef} id="journey">
           <Experience />
-        </div>
-      </BlurFade>
-      <Hr />
-      <BlurFade key="agents" delay={0.25 * 2.1} inView>
-        <div ref={agentsRef} id="agentes">
-          <AgentsSection />
         </div>
       </BlurFade>
       <Hr />

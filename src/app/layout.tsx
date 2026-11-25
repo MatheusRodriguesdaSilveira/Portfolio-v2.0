@@ -19,6 +19,14 @@ const siteUrl = "https://portfolio-matheussilveira.vercel.app";
 const siteDescription =
   "Matheus Rodrigues da Silveira — Salesforce Partner FDE (Forward Deployed Engineer) | Desenvolvedor & Consultor Agentforce | 2x Salesforce Certified. Agentes de IA em produção com Apex, Flows, LWC, Data Cloud e WhatsApp.";
 
+// PNG at LinkedIn's 1.91:1 ratio, so shared links get the large preview.
+const shareImage = {
+  url: "/og-agentes.png",
+  width: 1200,
+  height: 627,
+  alt: "Matheus Silveira: converse com 6 agentes Agentforce de demonstração no portfólio",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Matheus Silveira | Agentforce Engineer · Salesforce Partner FDE",
@@ -54,7 +62,7 @@ export const metadata: Metadata = {
     description: siteDescription,
     url: siteUrl,
     siteName: "Matheus Silveira — Portfólio",
-    images: [{ url: "/matheus.webp", width: 800, height: 800 }],
+    images: [shareImage],
     locale: "pt_BR",
     type: "website",
   },
@@ -62,7 +70,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Matheus Silveira | Agentforce Engineer · Salesforce Partner FDE",
     description: siteDescription,
-    images: ["/matheus.webp"],
+    images: [shareImage],
   },
 };
 

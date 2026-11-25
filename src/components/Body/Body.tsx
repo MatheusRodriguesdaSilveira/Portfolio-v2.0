@@ -9,12 +9,18 @@ import { IconColumn } from "./components/IconColumn";
 import ArrowDown from "./components/ArrowDown";
 import RotatingText from "../ui/RotatingText";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Bot } from "lucide-react";
+import { track } from "@vercel/analytics";
 
 interface BodyProps {
   scrollToContact: () => void;
+  scrollToAgents: () => void;
 }
 
-export const Body: React.FC<BodyProps> = ({ scrollToContact }) => {
+export const Body: React.FC<BodyProps> = ({
+  scrollToContact,
+  scrollToAgents,
+}) => {
   const { language } = useLanguage();
 
   return (
@@ -157,6 +163,21 @@ export const Body: React.FC<BodyProps> = ({ scrollToContact }) => {
           {/* Botões */}
           <div className="flex justify-start mt-6">
             <div className="flex flex-wrap items-center gap-5">
+              <BlurFade delay={0.9} inView>
+                <a
+                  href="#agentes"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    track("hero_agents_click", { language });
+                    scrollToAgents();
+                  }}
+                  className="inline-flex min-h-[52px] items-center gap-2 whitespace-nowrap rounded-full bg-brand px-5 text-sm font-bold text-zinc-900 transition hover:brightness-110 lg:text-base"
+                >
+                  <Bot className="size-5" aria-hidden="true" />
+                  {language === "pt" ? "Teste meus agentes" : "Try my agents"}
+                </a>
+              </BlurFade>
+
               <BlurFade delay={0.25 * 5.6} inView>
                 <ButtonCv />
               </BlurFade>
