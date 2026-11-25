@@ -16,7 +16,16 @@ header nav ul {
 
 header nav li {
   display: inline-block;
-  padding: 0 40px;
+  padding: 0 24px;
+  white-space: nowrap;
+}
+
+/* The roomier spacing only fits on wide screens: below this, 40px pushed the
+   Contact button out of the bar at 1024, 1280 and 1536px. */
+@media (min-width: 1700px) {
+  header nav li {
+    padding: 0 40px;
+  }
 }
 
 /* img flutuar */
